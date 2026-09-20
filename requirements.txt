@@ -1,0 +1,6 @@
+# Core dependencies for the Cascading Delay Intelligence foundation.
+# Additional dependencies will be added by feature branches as needed.
+pandas
+numpy
+streamlit
+plotly
