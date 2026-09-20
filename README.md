@@ -17,7 +17,8 @@ The full design (architecture, data workflow, business logic, and development co
 ```text
 Project foundation initialized.
 Data ingestion layer implemented (CSV/JSON loading from data/raw/).
-Validation, cleaning, integration, analytics, and dashboard are not implemented yet.
+Data-quality validation layer implemented (profiling + quality reports, no cleaning).
+Cleaning, integration, analytics, and dashboard are not implemented yet.
 ```
 
 ## Data Ingestion
@@ -29,6 +30,17 @@ raw data directory while preserving the original source files.
 - Raw datasets live in `data/raw/` and are treated as immutable
 - Usage: `load_dataset(path)`, `discover_datasets()`, `get_dataset_metadata()`
 - Tests: `pytest tests/test_ingestion.py`
+
+## Data Quality
+
+The validation layer profiles loaded DataFrames and reports quality
+issues without modifying data (via `pipeline/validation.py`).
+
+- Profiling: `profile_dataset()` — rows, columns, dtypes, missing, uniques, duplicates, numeric/categorical summaries
+- Checks: `check_missing_values()`, `check_duplicates()`, `check_required_columns()`, `check_data_types()`, `check_identifiers()`, `check_timestamps()`, `check_numeric_values()`, `check_categoricals()`
+- Dataset report: `validate_dataset()` → `{dataset, valid, status, checks, issues}` with `INFO/WARNING/ERROR` severity, plus `format_report()` for human-readable output
+- Raw files in `data/raw/` are never modified; cleaning is NOT part of this layer
+- Tests: `pytest tests/test_validation.py`
 
 ## Technology Stack
 
