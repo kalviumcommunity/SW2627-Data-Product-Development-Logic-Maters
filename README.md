@@ -18,7 +18,8 @@ The full design (architecture, data workflow, business logic, and development co
 Project foundation initialized.
 Data ingestion layer implemented (CSV/JSON loading from data/raw/).
 Data-quality validation layer implemented (profiling + quality reports, no cleaning).
-Cleaning, integration, analytics, and dashboard are not implemented yet.
+Data cleaning layer implemented (standardisation to data/processed/, raw files unchanged).
+Integration, analytics, and dashboard are not implemented yet.
 ```
 
 ## Data Ingestion
@@ -41,6 +42,17 @@ issues without modifying data (via `pipeline/validation.py`).
 - Dataset report: `validate_dataset()` → `{dataset, valid, status, checks, issues}` with `INFO/WARNING/ERROR` severity, plus `format_report()` for human-readable output
 - Raw files in `data/raw/` are never modified; cleaning is NOT part of this layer
 - Tests: `pytest tests/test_validation.py`
+
+## Data Cleaning
+
+The cleaning layer converts loaded DataFrames into consistently
+formatted outputs without touching raw files (via `pipeline/cleaning.py`).
+
+- Entry points: `clean_dataset(df, ...)`, `clean_file(raw_path, ...)`, `save_cleaned_dataset(df, output_path)`
+- Steps: `normalize_strings()`, `standardize_categoricals()`, `standardize_dates()` / `standardize_data_types()` / `standardize_numerics()`, `clean_missing_values()` (median/mean + `unknown` fill, missing IDs dropped), `handle_duplicates()` (exact only), `handle_invalid_records()` (missing IDs, caller-declared non-negative columns; outliers preserved)
+- Every run returns a summary: input/output rows, columns transformed, missing handled, duplicates/invalid removed, type conversions
+- Raw → `data/raw/` (read-only) → cleaned → `data/processed/<name>_cleaned.csv`; reproducible from raw input
+- Tests: `pytest tests/test_cleaning.py`
 
 ## Technology Stack
 
