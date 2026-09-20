@@ -16,8 +16,19 @@ The full design (architecture, data workflow, business logic, and development co
 
 ```text
 Project foundation initialized.
-Data ingestion and analytics are not implemented yet.
+Data ingestion layer implemented (CSV/JSON loading from data/raw/).
+Validation, cleaning, integration, analytics, and dashboard are not implemented yet.
 ```
+
+## Data Ingestion
+
+The ingestion layer loads supported CSV and JSON datasets from the
+raw data directory while preserving the original source files.
+
+- Supported formats: `.csv`, `.json` (via `pipeline/ingestion.py`)
+- Raw datasets live in `data/raw/` and are treated as immutable
+- Usage: `load_dataset(path)`, `discover_datasets()`, `get_dataset_metadata()`
+- Tests: `pytest tests/test_ingestion.py`
 
 ## Technology Stack
 
