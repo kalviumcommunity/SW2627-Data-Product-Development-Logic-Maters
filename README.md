@@ -21,7 +21,8 @@ Data-quality validation layer implemented (profiling + quality reports, no clean
 Data cleaning layer implemented (standardisation to data/processed/, raw files unchanged).
 Multi-source integration layer implemented (validated joins to data/processed/integrated_logistics_data.csv); no production datasets present yet, so no integrated output generated.
 Business analytics layer implemented (EDA, KPIs, route/warehouse/delay/time analysis over integrated data, UI-independent); production verification pending real datasets.
-Analytics and dashboard are not implemented yet.
+SQL analytics layer implemented (SQLite: schema, KPI/analytical queries, views, window functions, SQL/Pandas validation); verified on realistic fixtures, production verification pending real datasets.
+Dashboard is not implemented yet.
 ```
 
 ## Data Ingestion
@@ -82,6 +83,22 @@ creates no cascade flags, scores, or thresholds.
 - Column detection (`_schema.py`, internal): resolves `shipment_id`, `delay_duration`, `delay_reason`, `route_id`, warehouse/timestamp columns; delay flag from explicit flag → duration > 0 → status values (caller-overridable)
 - Verified end-to-end against real `build_integrated_dataset()` output; with the current empty `data/processed/`, production verification is pending real datasets
 - Tests: `pytest tests/test_kpis.py tests/test_route_analysis.py tests/test_warehouse_analysis.py tests/test_analytics.py` (synthetic frames only)
+
+## SQL Analytics
+
+SQLite (stdlib only, no server or credentials) stores the integrated
+dataset and answers the same business metrics as the Pandas engine
+for cross-validation. SQL stays in `sql/*.sql`; `pipeline/sql_database.py`
+only loads data, runs queries, and compares results.
+
+- Schema (`sql/schema.sql`): canonical `integrated_logistics` table from Design.md §8 fields + integration traceability columns, with indexes on `shipment_id`, `route_id`, `warehouse_id`, `timestamp`; the loader creates tables from actual DataFrame columns, so absent columns are never invented
+- Loading: `load_integrated_dataset(df)` (type mapping, ISO timestamps, row-count validation, source frame untouched)
+- KPIs (`sql/metrics.sql`): shipment/delay/operational rates with `NULLIF` zero-guards; median via window functions; record-level vs shipment-level (`MAX` per shipment) aggregation kept explicit — never `SUM(delay_duration)` across duplicated rows
+- Analysis (`sql/analysis.sql`): grouping/ranking (routes, warehouses, reasons, daily trends), `RANK`/`DENSE_RANK`/`ROW_NUMBER`/`LAG`/rolling 7-day average (full-window, like Pandas)
+- Views (`sql/views.sql`): `shipment_delay_summary` (one row per shipment), `route_delay_metrics`, `warehouse_delay_metrics`, `daily_delay_metrics`
+- Validation: `validate_sql_vs_pandas()` compares like-for-like values with tolerance and reports mismatches instead of forcing agreement
+- Production verification pending real integrated data; all checks pass on realistic fixtures
+- Tests: `pytest tests/test_sql_analytics.py` (temporary SQLite databases only)
 
 ## Technology Stack
 
