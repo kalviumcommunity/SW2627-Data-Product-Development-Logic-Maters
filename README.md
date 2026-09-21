@@ -124,12 +124,24 @@ Interactive presentation layer (`app/`). All calculations come from
 `analysis/` and SQL stays in `sql/` — the dashboard renders, filters, and
 charts only. Start with `streamlit run app/streamlit_app.py`.
 
-- Pages: Overview (KPI cards, delay trend, route summary), Dataset explorer (structure, samples, missingness), Delay analysis (distribution, reasons, trends, segments), Routes (factual metrics, detail, trends), Warehouses (metrics, transfer activity, trends), Cascades (candidates, depth, route/warehouse patterns, shipment journey inspector)
+- Pages: Overview (KPI cards, delay trend, route summary), Dataset explorer (structure, samples, missingness), Delay analysis (distribution, reasons, trends, segments), Routes (factual metrics, detail, trends), Warehouses (metrics, transfer activity, trends), Cascades (candidates, depth, route/warehouse patterns, shipment journey inspector), Alerts (threshold-breach summary, alert table, per-alert evidence)
 - Filters (sidebar, only for columns actually present): date range, route, warehouse, delay reason, delayed/on-time status — centralized in `apply_filters()`, never written back to disk
 - Charts: Plotly trend lines, bar comparisons, delay-status donut (numeric labels), cascade-depth bars, per-shipment journey timelines
 - Data: processed CSVs (integrated first) via cached loading, or a clearly badged synthetic demo dataset when no processed data exists; graceful empty states everywhere ("No records match the selected filters")
 - Known limitation: `data/processed/` is currently empty, so live views show demo data until the pipeline produces real integrated output
 - Tests: `pytest tests/test_dashboard.py` (filter logic, chart builders, KPI prep, demo data, loader, full-app render smoke test)
+
+## Alerts & Risk Detection
+
+Threshold-breach alerts over observed metrics — not predictions, not risk
+scores (`analysis/alerts.py`, thresholds in `config/alert_config.py`).
+
+- Categories: route/warehouse delay-rate breaches (from existing route/warehouse metrics), per-shipment excessive delay (worst duration vs threshold), cascade candidates (reused `detect_cascade_candidates` output, one alert per shipment)
+- Output per alert: id, type, severity (INFO near-miss watch / WARNING breach / CRITICAL escalation), entity, metric, observed value, threshold, factual message, detection time, JSON evidence
+- Configuration: centralized `DEFAULT_ALERT_CONFIG`, caller-overridable, `None` disables a type; documented as demonstration parameters, NOT learned from production data (none exists yet)
+- Summary: `summarize_alerts()` (counts by severity/type, affected entities, top exceedances)
+- Dashboard: Alerts page with summary cards, severity/type/entity filters, evidence expanders; verified on the demo dataset (31 alerts: 4 critical, 22 warning, 5 info)
+- Tests: `pytest tests/test_alerts.py` (15 spec cases: detection, silence, severity, overrides, empty/missing/dupes, immutability, determinism)
 
 ## Technology Stack
 
