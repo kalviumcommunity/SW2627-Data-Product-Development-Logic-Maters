@@ -16,7 +16,7 @@ from app.components.data_loader import (
     load_processed_csv,
 )
 from app.components.filters import apply_filters, render_sidebar_filters
-from app.pages import cascades, dataset, delays, overview, routes, warehouses
+from app.pages import alerts, cascades, dataset, delays, overview, routes, warehouses
 
 PROJECT_NAME = "Cascading Delay Intelligence"
 
@@ -27,6 +27,7 @@ PAGES = {
     "Routes": routes.render,
     "Warehouses": warehouses.render,
     "Cascades": cascades.render,
+    "Alerts": alerts.render,
 }
 
 
