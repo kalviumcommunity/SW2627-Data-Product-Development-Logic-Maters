@@ -20,6 +20,7 @@ Data ingestion layer implemented (CSV/JSON loading from data/raw/).
 Data-quality validation layer implemented (profiling + quality reports, no cleaning).
 Data cleaning layer implemented (standardisation to data/processed/, raw files unchanged).
 Multi-source integration layer implemented (validated joins to data/processed/integrated_logistics_data.csv); no production datasets present yet, so no integrated output generated.
+Business analytics layer implemented (EDA, KPIs, route/warehouse/delay/time analysis over integrated data, UI-independent); production verification pending real datasets.
 Analytics and dashboard are not implemented yet.
 ```
 
@@ -66,6 +67,21 @@ table without inventing keys or cascade logic (via `pipeline/integration.py`).
 - Traceability per row: `_record_source`, `_source_datasets`, `_delay_match`, `_transfer_match`, `_integration_key`; source columns preserved with suffixes only on collision
 - Output: `data/processed/integrated_logistics_data.csv` (only written when cleaned inputs exist; with the current empty `data/processed/`, no output is generated)
 - Tests: `pytest tests/test_integration.py` (synthetic frames only)
+
+## Analytics Engine
+
+The analytics layer turns the integrated dataset into reusable,
+UI-independent facts (via `analysis/`). It never modifies source data and
+creates no cascade flags, scores, or thresholds.
+
+- EDA (`eda.py`): `get_dataset_summary()`, distributions for delays / reasons / routes / warehouses / events / time, `get_missingness_summary()` — metrics only for columns actually present
+- KPIs (`kpis.py`): `compute_kpis()` → `{shipment, delay, operational}`; `delay_rate = delayed_shipments / total_shipments × 100`, `on_time_rate = 100 − delay_rate`; duration stats over delayed records with non-null duration; match rates from integration traceability columns; unresolvable KPIs return `None` with a reason
+- Routes (`route_analysis.py`): `route_metrics()` (shipments, delay rate, avg/median/total delay per route), `top_delayed_routes()`, `route_trends()` — factual metrics only, no scores
+- Warehouses (`warehouse_analysis.py`): `warehouse_metrics()`, `top_delayed_warehouses()`, `warehouse_trends()`, `transfer_activity()` — associations for investigation, never causal claims
+- Delays & time (`delay_analysis.py`): `delay_reason_breakdown()`, `delay_by_segment()`, `derive_time_features()`, `delay_over_time()`, `rolling_delay_rate()` (full-window averages; `sparse_warning` on thin data)
+- Column detection (`_schema.py`, internal): resolves `shipment_id`, `delay_duration`, `delay_reason`, `route_id`, warehouse/timestamp columns; delay flag from explicit flag → duration > 0 → status values (caller-overridable)
+- Verified end-to-end against real `build_integrated_dataset()` output; with the current empty `data/processed/`, production verification is pending real datasets
+- Tests: `pytest tests/test_kpis.py tests/test_route_analysis.py tests/test_warehouse_analysis.py tests/test_analytics.py` (synthetic frames only)
 
 ## Technology Stack
 
