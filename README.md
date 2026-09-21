@@ -22,6 +22,7 @@ Data cleaning layer implemented (standardisation to data/processed/, raw files u
 Multi-source integration layer implemented (validated joins to data/processed/integrated_logistics_data.csv); no production datasets present yet, so no integrated output generated.
 Business analytics layer implemented (EDA, KPIs, route/warehouse/delay/time analysis over integrated data, UI-independent); production verification pending real datasets.
 SQL analytics layer implemented (SQLite: schema, KPI/analytical queries, views, window functions, SQL/Pandas validation); verified on realistic fixtures, production verification pending real datasets.
+Cascading-delay analysis implemented (journey reconstruction, cascade candidates, propagation metrics by route/warehouse, stage signals; association only, no causal claims); verified on synthetic journeys and real integration output, production verification pending real datasets.
 Dashboard is not implemented yet.
 ```
 
@@ -99,6 +100,22 @@ only loads data, runs queries, and compares results.
 - Validation: `validate_sql_vs_pandas()` compares like-for-like values with tolerance and reports mismatches instead of forcing agreement
 - Production verification pending real integrated data; all checks pass on realistic fixtures
 - Tests: `pytest tests/test_sql_analytics.py` (temporary SQLite databases only)
+
+## Cascading-Delay Analysis
+
+Deterministic journey reconstruction and cascade-candidate detection
+(via `analysis/cascade_analysis.py`). A candidate is an initial delay
+followed by later downstream delay(s) in one shipment's ordered journey;
+a single delay is never a cascade. Language is associational
+("downstream delay observed"), never causal.
+
+- Journeys: `reconstruct_shipment_journey()` (timestamp ordering, tie-break by extra timestamps then stable input order, exact-duplicate removal, explicit skip counts), `get_shipment_events()`, `sort_shipment_events()`
+- Rule: `detect_cascade_candidates()` with no hidden thresholds — `min_delay_duration` and `max_downstream_gap` default to `None` (any later delay qualifies) and are echoed in every output
+- Stages: `initial_delay`, `transfer_disruption`, `warehouse_delay`, `downstream_route_delay`, `final_delivery_delay` (last event + delivery status, caller-overridable), `downstream_delay` fallback — assigned by documented precedence from available columns only
+- Metrics: `cascade_summary_metrics()` (counts, rate, depth, downstream delay), `cascade_by_route()` / `cascade_by_warehouse()` (factual, no scores), `root_cause_signals()` (presence share per stage, never over 100%)
+- Levels: event rows preserved; shipment-level output via `save_cascade_candidates()` → `data/processed/cascade_candidates.csv` (stages serialized `>`-joined); durations compared per event, never blindly summed
+- Known grain effect: one-to-many integration rows repeat delay values, so cascade depth counts delayed integrated rows — interpret alongside `event_count`/`delayed_event_count`
+- Tests: `pytest tests/test_cascade_analysis.py` (no-cascade, simple/multi-stage propagation, isolation, ties, gaps, duplicates, edge cases, immutability)
 
 ## Technology Stack
 
