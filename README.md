@@ -23,6 +23,7 @@ Multi-source integration layer implemented (validated joins to data/processed/in
 Business analytics layer implemented (EDA, KPIs, route/warehouse/delay/time analysis over integrated data, UI-independent); production verification pending real datasets.
 SQL analytics layer implemented (SQLite: schema, KPI/analytical queries, views, window functions, SQL/Pandas validation); verified on realistic fixtures, production verification pending real datasets.
 Cascading-delay analysis implemented (journey reconstruction, cascade candidates, propagation metrics by route/warehouse, stage signals; association only, no causal claims); verified on synthetic journeys and real integration output, production verification pending real datasets.
+Streamlit dashboard implemented (overview, dataset, delays, routes, warehouses, cascades; Plotly charts, centralized filters, demo fallback); all pages render-verified, production data pending.
 Dashboard is not implemented yet.
 ```
 
@@ -116,6 +117,19 @@ a single delay is never a cascade. Language is associational
 - Levels: event rows preserved; shipment-level output via `save_cascade_candidates()` → `data/processed/cascade_candidates.csv` (stages serialized `>`-joined); durations compared per event, never blindly summed
 - Known grain effect: one-to-many integration rows repeat delay values, so cascade depth counts delayed integrated rows — interpret alongside `event_count`/`delayed_event_count`
 - Tests: `pytest tests/test_cascade_analysis.py` (no-cascade, simple/multi-stage propagation, isolation, ties, gaps, duplicates, edge cases, immutability)
+
+## Streamlit Dashboard
+
+Interactive presentation layer (`app/`). All calculations come from
+`analysis/` and SQL stays in `sql/` — the dashboard renders, filters, and
+charts only. Start with `streamlit run app/streamlit_app.py`.
+
+- Pages: Overview (KPI cards, delay trend, route summary), Dataset explorer (structure, samples, missingness), Delay analysis (distribution, reasons, trends, segments), Routes (factual metrics, detail, trends), Warehouses (metrics, transfer activity, trends), Cascades (candidates, depth, route/warehouse patterns, shipment journey inspector)
+- Filters (sidebar, only for columns actually present): date range, route, warehouse, delay reason, delayed/on-time status — centralized in `apply_filters()`, never written back to disk
+- Charts: Plotly trend lines, bar comparisons, delay-status donut (numeric labels), cascade-depth bars, per-shipment journey timelines
+- Data: processed CSVs (integrated first) via cached loading, or a clearly badged synthetic demo dataset when no processed data exists; graceful empty states everywhere ("No records match the selected filters")
+- Known limitation: `data/processed/` is currently empty, so live views show demo data until the pipeline produces real integrated output
+- Tests: `pytest tests/test_dashboard.py` (filter logic, chart builders, KPI prep, demo data, loader, full-app render smoke test)
 
 ## Technology Stack
 
