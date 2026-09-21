@@ -19,7 +19,8 @@ Project foundation initialized.
 Data ingestion layer implemented (CSV/JSON loading from data/raw/).
 Data-quality validation layer implemented (profiling + quality reports, no cleaning).
 Data cleaning layer implemented (standardisation to data/processed/, raw files unchanged).
-Integration, analytics, and dashboard are not implemented yet.
+Multi-source integration layer implemented (validated joins to data/processed/integrated_logistics_data.csv); no production datasets present yet, so no integrated output generated.
+Analytics and dashboard are not implemented yet.
 ```
 
 ## Data Ingestion
@@ -53,6 +54,18 @@ formatted outputs without touching raw files (via `pipeline/cleaning.py`).
 - Every run returns a summary: input/output rows, columns transformed, missing handled, duplicates/invalid removed, type conversions
 - Raw → `data/raw/` (read-only) → cleaned → `data/processed/<name>_cleaned.csv`; reproducible from raw input
 - Tests: `pytest tests/test_cleaning.py`
+
+## Data Integration
+
+The integration layer connects cleaned datasets into one analytical
+table without inventing keys or cascade logic (via `pipeline/integration.py`).
+
+- Entry points: `load_processed_datasets()`, `inspect_join_keys()`, `validate_join_keys()`, `merge_datasets()`, `validate_join_result()`, `check_temporal_consistency()`, `build_integrated_dataset()`, `save_integrated_dataset()`, `format_integration_report()`
+- Default primary key `shipment_id` (Design.md §13 candidate) is verified in every dataset before joining; missing keys skip the join with a documented reason
+- Strategy: scans (base, or first dataset as deterministic fallback) `LEFT JOIN` delays, then `LEFT JOIN` transfers on `shipment_id`; unmatched rows preserved and counted; many-to-many output flagged, never silently resolved; timestamps checked read-only
+- Traceability per row: `_record_source`, `_source_datasets`, `_delay_match`, `_transfer_match`, `_integration_key`; source columns preserved with suffixes only on collision
+- Output: `data/processed/integrated_logistics_data.csv` (only written when cleaned inputs exist; with the current empty `data/processed/`, no output is generated)
+- Tests: `pytest tests/test_integration.py` (synthetic frames only)
 
 ## Technology Stack
 
