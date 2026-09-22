@@ -347,6 +347,19 @@ Each stage should have a clear responsibility.
 
 Avoid putting the entire pipeline inside one large Python file.
 
+## 10.1 Orchestration (`pipeline/run_pipeline.py`)
+
+Stage logic stays in its own module; `run_pipeline` only coordinates:
+source build → ingestion → validation → **gate** → cleaning →
+integration → analytics → SQL cross-check → cascade → route risk →
+alerts → run manifest (`data/processed/runs/run_<timestamp>.json`,
+gitignored). The gate interprets the validation verdict: ERROR stops the
+run (downstream SKIPPED, overall FAILED, non-zero exit); WARNING
+continues with overall SUCCESS_WITH_WARNINGS. CLI:
+`python -m pipeline.run_pipeline --dataset showcase`
+(`--dataset lade --input <pickup.csv>` when the LaDe source is available;
+nothing is ever downloaded automatically).
+
 ---
 
 # 11. Data Validation
