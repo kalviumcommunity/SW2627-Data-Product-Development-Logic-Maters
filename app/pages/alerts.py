@@ -18,6 +18,12 @@ from analysis.alerts import generate_alerts, summarize_alerts
 from config.alert_config import DEFAULT_ALERT_CONFIG
 
 
+@st.cache_data(show_spinner=False)
+def _cached_alerts(filtered: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """Alerts for the current filter selection (cached)."""
+    return generate_alerts(filtered)
+
+
 def _summary_cards(summary: dict[str, Any]) -> None:
     total = summary["total_alerts"]
     by_sev = summary["by_severity"]
@@ -38,7 +44,7 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
     if filtered.empty:
         st.info("No records match the selected filters.")
         return
-    alerts, report = generate_alerts(filtered)
+    alerts, report = _cached_alerts(filtered)
     if alerts.empty:
         st.success(
             "No alerts in the current selection. "

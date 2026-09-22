@@ -80,36 +80,46 @@ def apply_filters(
     """
     if delay_status not in DELAY_STATUS_OPTIONS:
         raise ValueError(f"delay_status must be one of {DELAY_STATUS_OPTIONS}.")
-    result = dataset.copy(deep=True)
-    if result.empty:
-        return result
+    if dataset.empty:
+        return dataset.copy(deep=True)
 
-    resolved_route = route_column or find_route_column(result)
-    if routes and resolved_route in result.columns:
-        result = result[result[resolved_route].astype("string").isin(set(routes))]
+    # Build one boolean mask so the frame is copied a single time below.
+    # (Previously the whole frame was deep-copied up front and timestamps
+    # were re-parsed per bound.)
+    mask = pd.Series(True, index=dataset.index)
 
-    resolved_wh = warehouse_columns or find_warehouse_columns(result)
+    resolved_route = route_column or find_route_column(dataset)
+    if routes and resolved_route in dataset.columns:
+        mask = mask & dataset[resolved_route].astype("string").isin(set(routes))
+
+    resolved_wh = warehouse_columns or find_warehouse_columns(dataset)
     if warehouses and resolved_wh:
-        present = [c for c in resolved_wh if c in result.columns]
+        present = [c for c in resolved_wh if c in dataset.columns]
         if present:
-            mask = pd.Series(False, index=result.index)
+            wh_mask = pd.Series(False, index=dataset.index)
             for column in present:
-                mask = mask | result[column].astype("string").isin(set(warehouses))
-            result = result[mask]
+                wh_mask = wh_mask | dataset[column].astype("string").isin(set(warehouses))
+            mask = mask & wh_mask
 
-    resolved_reason = reason_column or find_delay_reason_column(result)
-    if reasons and resolved_reason in result.columns:
-        result = result[result[resolved_reason].astype("string").isin(set(reasons))]
+    resolved_reason = reason_column or find_delay_reason_column(dataset)
+    if reasons and resolved_reason in dataset.columns:
+        mask = mask & dataset[resolved_reason].astype("string").isin(set(reasons))
 
-    ts_columns = find_timestamp_columns(result)
+    ts_columns = find_timestamp_columns(dataset)
     resolved_ts = timestamp_column or (ts_columns[0] if ts_columns else None)
-    if (start_date or end_date) and resolved_ts in result.columns:
-        stamps = pd.to_datetime(result[resolved_ts], errors="coerce", utc=True)
+    if (start_date or end_date) and resolved_ts in dataset.columns:
+        stamps = pd.to_datetime(dataset[resolved_ts], errors="coerce", utc=True)
         if start_date:
-            result = result[stamps >= pd.Timestamp(start_date, tz="UTC")]
-            stamps = pd.to_datetime(result[resolved_ts], errors="coerce", utc=True)
+            mask = mask & (stamps >= pd.Timestamp(start_date, tz="UTC"))
         if end_date:
-            result = result[stamps <= pd.Timestamp(end_date, tz="UTC") + pd.Timedelta(days=1) - pd.Timedelta(seconds=1)]
+            mask = mask & (
+                stamps
+                <= pd.Timestamp(end_date, tz="UTC")
+                + pd.Timedelta(days=1)
+                - pd.Timedelta(seconds=1)
+            )
+
+    result = dataset[mask]
 
     if delay_status != "All":
         flag, _ = resolve_delay_flag(result)
