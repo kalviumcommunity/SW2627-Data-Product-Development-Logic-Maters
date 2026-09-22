@@ -18,6 +18,19 @@ from analysis.kpis import compute_shipment_kpis
 from app.components.charts import depth_chart, journey_timeline
 
 
+@st.cache_data(show_spinner=False)
+def _cached_candidates(filtered: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """Cascade candidates for the current filter selection (cached)."""
+    return detect_cascade_candidates(filtered)
+
+
+@st.cache_data(show_spinner=False)
+def _cached_journeys(filtered: pd.DataFrame) -> pd.DataFrame:
+    """Reconstructed journeys for the current filter selection (cached)."""
+    events, _ = reconstruct_shipment_journey(filtered)
+    return events
+
+
 def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
     st.header("Cascade analysis")
     st.caption(
@@ -28,7 +41,7 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
         st.info("No records match the selected filters.")
         return
     try:
-        candidates, info = detect_cascade_candidates(filtered)
+        candidates, info = _cached_candidates(filtered)
     except ValueError as exc:
         st.info(f"Cascade analysis unavailable: {exc}")
         return
@@ -90,7 +103,7 @@ def _render_inspector(filtered: pd.DataFrame, candidates: pd.DataFrame) -> None:
     )
 
     try:
-        events, _ = reconstruct_shipment_journey(filtered)
+        events = _cached_journeys(filtered)
     except ValueError as exc:
         st.info(f"Journey unavailable: {exc}")
         return

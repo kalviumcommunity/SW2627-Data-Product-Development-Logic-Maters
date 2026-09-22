@@ -33,6 +33,8 @@ from typing import Any, Optional, Union
 
 import pandas as pd
 
+import numpy as np
+
 from analysis._schema import (
     DEFAULT_DELAYED_STATUS_VALUES,
     STATUS_CANDIDATES,
@@ -425,8 +427,13 @@ def detect_cascade_candidates(
         delayed_status_values=delayed_status_values,
     )
 
-    def duration_of(row: pd.Series) -> Optional[float]:
-        value = _event_value(row, resolved_duration)
+    def duration_of_pos(pos: int) -> Optional[float]:
+        # Same semantics as the old per-row duration_of(), but on a
+        # precomputed numeric array: NaN / unparseable -> None.
+        if durations_all is not None:
+            value = float(durations_all[pos])
+            return None if pd.isna(value) else value
+        value = _event_value(events.iloc[pos], resolved_duration)
         if value is None:
             return None
         try:
@@ -437,59 +444,79 @@ def detect_cascade_candidates(
             return None
         return number
 
-    def qualifies(row: pd.Series) -> bool:
-        if not bool(row["_is_delayed"]):
-            return False
-        if min_delay_duration is not None:
-            number = duration_of(row)
-            if number is None or number < float(min_delay_duration):
-                return False
-        return True
+    # Vectorized qualification: the old per-row ``qualifies(journey.iloc[i])``
+    # loop built one Series per event (minutes on 50k+ rows). Compute the
+    # boolean mask once for the whole frame instead. Semantics preserved:
+    # delayed flag required, plus duration >= threshold when set (NaN or
+    # unparseable durations fail the threshold, as before).
+    is_delayed = events["_is_delayed"].to_numpy(dtype=bool, copy=False)
+    if min_delay_duration is not None:
+        durations_all = pd.to_numeric(
+            events[f"src_{resolved_duration}"], errors="coerce"
+        ).to_numpy(dtype="float64", copy=False)
+        qual_mask = is_delayed & (durations_all >= float(min_delay_duration))
+    else:
+        durations_all = None
+        qual_mask = is_delayed
+    qual_mask = np.asarray(qual_mask, dtype=bool)
+
+    # Group positions without slicing one DataFrame per shipment (25k+
+    # slices on a wide frame). factorize(sort=True) reproduces the
+    # groupby(sort=True) shipment order of the previous implementation.
+    codes, uniques = pd.factorize(events["_shipment"], sort=True)
+    n_groups = len(uniques)
+    shipments_checked = int(n_groups)
+    qual_counts = np.bincount(
+        codes, weights=qual_mask.astype(np.int64), minlength=n_groups
+    ).astype(np.int64)
+    single_delay_skipped = int(np.sum(qual_counts == 1))
 
     rows: list[dict[str, Any]] = []
-    shipments_checked = 0
-    single_delay_skipped = 0
-    for shipment_id, journey in events.groupby("_shipment", sort=True):
-        shipments_checked += 1
-        journey = journey.reset_index(drop=True)
-        delayed_idx = [i for i in range(len(journey)) if qualifies(journey.iloc[i])]
-        if len(delayed_idx) < 2:
-            if len(delayed_idx) == 1:
-                single_delay_skipped += 1
-            continue
-        initial_pos = delayed_idx[0]
-        initial = journey.iloc[initial_pos]
-        initial_time = initial["_event_time"]
-        downstream_rows = []
-        for pos in delayed_idx[1:]:
-            row = journey.iloc[pos]
-            if gap is not None and (row["_event_time"] - initial_time) > gap:
-                continue
-            downstream_rows.append((pos, row))
-        if not downstream_rows:
+    candidate_codes = np.flatnonzero(qual_counts >= 2)
+    for code in candidate_codes:
+        shipment_id = uniques[code]
+        pos = np.flatnonzero(codes == code)
+        journey = events.iloc[pos]
+        qpos = np.flatnonzero(qual_mask[pos])
+        initial_rel = int(qpos[0])
+        times = journey["_event_time"].reset_index(drop=True)
+        initial_time = times.iloc[initial_rel]
+        if gap is not None:
+            # Same predicate as before: skip a downstream event iff
+            # (event_time - initial_time) > gap. Series-based so tz-aware
+            # timestamps behave identically to the old scalar comparison.
+            diffs = times.iloc[[int(r) for r in qpos[1:]]].reset_index(drop=True)
+            diffs = diffs - initial_time
+            downstream_rel = qpos[1:][~(diffs > gap).to_numpy(dtype=bool)]
+        else:
+            downstream_rel = qpos[1:]
+        if len(downstream_rel) == 0:
             single_delay_skipped += 1
             continue
-        first_down_pos, first_down = downstream_rows[0]
-        last_down_pos, last_down = downstream_rows[-1]
+        first_down_rel = int(downstream_rel[0])
+        last_down_rel = int(downstream_rel[-1])
+        initial = journey.iloc[initial_rel]
+        first_down = journey.iloc[first_down_rel]
+        last_down = journey.iloc[last_down_rel]
         stages = [
             classify_cascade_stage(
-                journey.iloc[pos],
-                is_first_delayed=(pos == initial_pos),
-                is_last_event=(pos == len(journey) - 1),
+                journey.iloc[rel],
+                is_first_delayed=(rel == initial_rel),
+                is_last_event=(rel == len(journey) - 1),
                 route_column=resolved_route,
                 warehouse_columns=warehouse_columns,
                 status_column=resolved_status,
                 delivery_status_values=delivery_status_values,
             )
-            for pos in [initial_pos] + [p for p, _ in downstream_rows]
+            for rel in [initial_rel] + [int(r) for r in downstream_rel]
         ]
-        initial_duration = duration_of(initial)
-        final_duration = duration_of(last_down)
+        initial_duration = duration_of_pos(int(pos[initial_rel]))
+        final_duration = duration_of_pos(int(pos[last_down_rel]))
         rows.append(
             {
                 "shipment_id": str(shipment_id),
                 "event_count": int(len(journey)),
-                "delayed_event_count": int(len(delayed_idx)),
+                "delayed_event_count": int(len(qpos)),
                 "cascade_stage_count": int(len(stages)),
                 "cascade_depth": int(len(stages) - 1),
                 "stages": stages,
@@ -503,7 +530,7 @@ def detect_cascade_candidates(
                 ),
                 "downstream_event_time": first_down["_event_time"],
                 "downstream_event_seq": int(first_down["_event_seq"]),
-                "downstream_delay_duration": duration_of(first_down),
+                "downstream_delay_duration": duration_of_pos(int(pos[first_down_rel])),
                 "downstream_route": _event_value(first_down, resolved_route),
                 "downstream_warehouse": (
                     _event_value(first_down, warehouse_columns[0])

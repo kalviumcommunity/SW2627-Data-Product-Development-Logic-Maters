@@ -200,11 +200,16 @@ def standardize_data_types(
     for col in (identifier_columns or []):
         if col not in result.columns:
             continue
-        result[col] = result[col].where(result[col].notna(), None)
-        mask = result[col].notna()
-        result.loc[mask, col] = result.loc[mask, col].astype(str).str.strip()
+        # Whole-column rebuild (not masked .loc setitem): numeric-looking
+        # IDs (e.g. int64) cannot receive string values in place under
+        # pandas 3 copy-on-write/Arrow-backed strings. Behaviour is
+        # unchanged: strip strings, keep nulls null, never coerce to numeric.
+        converted = result[col].where(result[col].notna(), None).astype(object)
+        mask = converted.notna()
+        converted.loc[mask] = converted.loc[mask].astype(str).str.strip()
         # Guard against stringified NaN sneaking back in.
-        result.loc[result[col].isin({"nan", "NaN", "None"}), col] = None
+        converted.loc[converted.isin({"nan", "NaN", "None"})] = None
+        result[col] = converted
         summary["identifier_converted"].append(col)
 
     return result, summary

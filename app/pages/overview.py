@@ -13,6 +13,16 @@ from app.components.charts import bar_chart, delay_status_donut, trend_line
 from app.components.metrics import prepare_kpi_cards
 
 
+@st.cache_data(show_spinner=False)
+def _cached_cascade_summary(filtered: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """Cascade candidates for the current filter selection.
+
+    Cached so switching pages (or any rerun that leaves the selection
+    unchanged) does not re-run journey reconstruction.
+    """
+    return detect_cascade_candidates(filtered)
+
+
 def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
     st.header("Overview")
     if filtered.empty:
@@ -20,7 +30,7 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
         return
     bundle = compute_kpis(filtered)
     try:
-        candidates, _ = detect_cascade_candidates(filtered)
+        candidates, _ = _cached_cascade_summary(filtered)
         cascade_summary = cascade_summary_metrics(
             candidates, total_shipments=bundle["shipment"]["total_shipments"]
         )

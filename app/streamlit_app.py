@@ -67,13 +67,15 @@ def _select_dataset() -> tuple[pd.DataFrame, str, bool]:
     options = [p.name for p in available] + ["Demo dataset (synthetic)"]
     choice = st.sidebar.selectbox("Dataset", options, key="dataset_choice", label_visibility="collapsed")
     if choice == "Demo dataset (synthetic)":
-        return _cached_demo().copy(deep=True), "demo", True
+        return _cached_demo(), "demo", True
     try:
         frame = _cached_load(str(next(p for p in available if p.name == choice)))
     except (StopIteration, FileNotFoundError, OSError) as exc:
         st.error(f"Could not load dataset: {exc}")
         return pd.DataFrame(), choice, False
-    return frame.copy(deep=True), choice, False
+    # No copy here: the cached frame is shared read-only. apply_filters()
+    # copies internally, and pages must treat `full` as immutable.
+    return frame, choice, False
 
 
 def main() -> None:

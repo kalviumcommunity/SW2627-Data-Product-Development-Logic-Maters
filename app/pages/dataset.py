@@ -12,6 +12,16 @@ from analysis.eda import (
 )
 
 
+@st.cache_data(show_spinner=False)
+def _cached_filtered_csv(filtered: pd.DataFrame) -> bytes:
+    """CSV export bytes for the current filter selection.
+
+    Cached so the (potentially large) export is not re-serialized on every
+    unrelated rerun while the selection is unchanged.
+    """
+    return filtered.to_csv(index=False).encode("utf-8")
+
+
 def render(filtered: pd.DataFrame, full: pd.DataFrame, dataset_name: str = "") -> None:
     st.header("Dataset explorer")
     if dataset_name:
@@ -33,10 +43,9 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame, dataset_name: str = "") -
         st.info("No records match the selected filters.")
     else:
         st.dataframe(filtered.head(100), width="stretch")
-        csv_data = filtered.to_csv(index=False).encode("utf-8")
         st.download_button(
             label="Export Filtered CSV",
-            data=csv_data,
+            data=_cached_filtered_csv(filtered),
             file_name="filtered_logistics_data.csv",
             mime="text/csv",
         )
