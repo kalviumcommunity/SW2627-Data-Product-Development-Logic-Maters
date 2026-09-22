@@ -155,6 +155,26 @@ def test_data_loader_discovers_orders_and_reads(tmp_path: Path) -> None:
         load_processed_csv(tmp_path / "missing.csv")
 
 
+def test_entrypoint_importable_with_only_app_dir_on_path() -> None:
+    """Regression: `streamlit run app/streamlit_app.py` puts only app/ on
+    sys.path (no repo root), which used to crash the browser with
+    ModuleNotFoundError while pytest/AppTest stayed green."""
+    import os
+    import subprocess
+    import sys
+
+    repo = Path(__file__).resolve().parent.parent
+    env = {k: v for k, v in os.environ.items() if k.upper() != "PYTHONPATH"}
+    proc = subprocess.run(
+        [sys.executable, "-c",
+         "import streamlit_app; print(sorted(streamlit_app.PAGES))"],
+        cwd=str(repo / "app"),
+        capture_output=True, text=True, env=env, timeout=180,
+    )
+    assert proc.returncode == 0, proc.stderr[-2000:]
+    assert "Alerts" in proc.stdout
+
+
 def test_app_renders_pages_without_exception() -> None:
     """Smoke test: boot the Streamlit app on demo data, visit key pages."""
     streamlit = pytest.importorskip("streamlit")
