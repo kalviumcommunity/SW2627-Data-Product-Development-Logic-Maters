@@ -28,7 +28,7 @@ def _summary_cards(summary: dict[str, Any]) -> None:
 
 
 def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
-    st.header("Alerts & risk")
+    st.header("Alerts & threshold breaches")
     st.caption(
         "Thresholds are configurable demonstration parameters "
         f"(delay rate {DEFAULT_ALERT_CONFIG['delay_rate_threshold']:.0f}%, "
@@ -56,11 +56,21 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
     if view.empty:
         st.info("No alerts match the selected severity/type filters.")
         return
-    st.subheader("Alert table")
+    st.subheader("Alert registry")
     st.dataframe(
         view[
-            ["alert_id", "alert_type", "severity", "entity_type", "entity_id",
-             "metric", "metric_value", "threshold", "detected_at", "message"]
+            [
+                "alert_id",
+                "alert_type",
+                "severity",
+                "entity_type",
+                "entity_id",
+                "metric",
+                "metric_value",
+                "threshold",
+                "detected_at",
+                "message",
+            ]
         ],
         width="stretch",
     )
@@ -75,7 +85,7 @@ def _apply_table_filters(alerts: pd.DataFrame) -> pd.DataFrame:
     pick_sev = col_a.multiselect("Severity", severities, default=severities)
     pick_type = col_b.multiselect("Alert type", types, default=types)
     entities = sorted(alerts["entity_id"].astype(str).unique().tolist())
-    pick_entity = st.multiselect("Entity (route/warehouse/shipment)", entities)
+    pick_entity = st.multiselect("Entity filter (route / warehouse / shipment)", entities)
     view = alerts[
         alerts["severity"].isin(pick_sev) & alerts["alert_type"].isin(pick_type)
     ]
@@ -87,17 +97,33 @@ def _apply_table_filters(alerts: pd.DataFrame) -> pd.DataFrame:
 def _render_evidence(view: pd.DataFrame) -> None:
     st.subheader("Alert evidence")
     choice = st.selectbox(
-        "Alert",
+        "Inspect alert evidence",
         view["alert_id"].tolist(),
         format_func=lambda aid: _alert_label(view, aid),
     )
     row = view[view["alert_id"] == choice].iloc[0]
-    st.write(f"**{row['severity']}** - {row['message']}")
-    st.write(
-        f"Metric `{row['metric']}` observed at {row['metric_value']} "
-        f"against the configured threshold {row['threshold']} "
-        f"(detected {row['detected_at']})."
+    badge_class = {
+        "CRITICAL": "critical",
+        "WARNING": "warning",
+        "INFO": "info",
+    }.get(str(row["severity"]), "info")
+
+    st.markdown(
+        f"""
+        <div class="detail-panel">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <span class="status-pill {badge_class}">{row['severity']}</span>
+                <span class="mono" style="font-size: 0.75rem; color: #7d8590;">Detected: {row['detected_at']}</span>
+            </div>
+            <div style="font-weight: 600; color: #f0f6fc; margin-bottom: 4px;">{row['message']}</div>
+            <div style="color: #8b949e; font-size: 0.8rem;">
+                Metric <code>{row['metric']}</code> observed at <b>{row['metric_value']}</b> against threshold <b>{row['threshold']}</b>.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
+
     try:
         st.json(json.loads(row["evidence"]))
     except (TypeError, ValueError):
@@ -107,3 +133,9 @@ def _render_evidence(view: pd.DataFrame) -> None:
 def _alert_label(view: pd.DataFrame, alert_id: str) -> str:
     row = view[view["alert_id"] == alert_id].iloc[0]
     return f"{alert_id} [{row['severity']}] {row['alert_type']} - {row['entity_id']}"
+
+
+if __name__ == "__main__":
+    from app.components.standalone import bootstrap_standalone_page
+
+    bootstrap_standalone_page("Alerts", render)

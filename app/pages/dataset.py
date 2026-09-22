@@ -21,35 +21,60 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame, dataset_name: str = "") -
         return
     summary = get_dataset_summary(full)
     col_a, col_b, col_c = st.columns(3)
-    col_a.metric("Rows", f"{summary['row_count']:,}")
-    col_b.metric("Columns", f"{summary['column_count']:,}")
+    col_a.metric("Total Rows", f"{summary['row_count']:,}")
+    col_b.metric("Total Columns", f"{summary['column_count']:,}")
     col_c.metric(
         "Total shipments",
         f"{summary['total_shipments']:,}" if summary["total_shipments"] is not None else "n/a",
     )
-    st.subheader("Columns and types")
-    st.dataframe(
-        pd.DataFrame(
-            {"column": summary["columns"],
-             "dtype": [summary["dtypes"][c] for c in summary["columns"]]}
-        ),
-        width="stretch",
-    )
+
     st.subheader("Sample records (current filters applied)")
     if filtered.empty:
         st.info("No records match the selected filters.")
     else:
         st.dataframe(filtered.head(100), width="stretch")
-    st.subheader("Missing values")
-    st.dataframe(get_missingness_summary(full), width="stretch")
-    st.subheader("Delay signal")
+        csv_data = filtered.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            label="Export Filtered CSV",
+            data=csv_data,
+            file_name="filtered_logistics_data.csv",
+            mime="text/csv",
+        )
+
+    col_cols, col_missing = st.columns(2)
+    with col_cols:
+        st.subheader("Schema definition")
+        st.dataframe(
+            pd.DataFrame(
+                {
+                    "column": summary["columns"],
+                    "dtype": [summary["dtypes"][c] for c in summary["columns"]],
+                }
+            ),
+            width="stretch",
+        )
+
+    with col_missing:
+        st.subheader("Missing values")
+        st.dataframe(get_missingness_summary(full), width="stretch")
+
+    st.subheader("Delay signal configuration")
     flag_summary = get_delay_flag_summary(full)
     if flag_summary["available"]:
-        st.write(
-            f"Method: `{flag_summary['info'].get('method')}` on "
-            f"`{flag_summary['info'].get('source_column')}` - "
-            f"{flag_summary['delayed_records']:,} delayed records "
-            f"({flag_summary['delayed_records_pct']:.1f}%)."
+        st.markdown(
+            f"""
+            <div class="detail-panel">
+                Resolution: <code>{flag_summary['info'].get('method')}</code> &bull; Column: <code>{flag_summary['info'].get('source_column')}</code> &bull; 
+                Delayed records: <span class="mono" style="color: #f0f6fc; font-weight: 600;">{flag_summary['delayed_records']:,}</span> (<span class="mono" style="color: #f85149;">{flag_summary['delayed_records_pct']:.1f}%</span>)
+            </div>
+            """,
+            unsafe_allow_html=True,
         )
     else:
         st.info("No delay signal column present in this dataset.")
+
+
+if __name__ == "__main__":
+    from app.components.standalone import bootstrap_standalone_page
+
+    bootstrap_standalone_page("Dataset explorer", render)
