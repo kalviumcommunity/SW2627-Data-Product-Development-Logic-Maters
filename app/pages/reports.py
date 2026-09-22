@@ -14,6 +14,8 @@ import streamlit as st
 from reports.report_generator import (
     build_report,
     discover_runs,
+    load_manifest,
+    prefer_reportable_run,
     render_html,
     render_markdown,
 )
@@ -39,10 +41,23 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
         )
         return
     labels = [
-        f"{r['run_id']} · {r['dataset']} · {r['overall_status']}" for r in runs
+        f"{r['run_id']} · {r['dataset']} · {r['overall_status']}"
+        + ("" if r.get("has_integrated") else " (no reportable output)")
+        for r in runs
     ]
-    choice = st.selectbox("Pipeline run", labels)
+    choice = st.selectbox(
+        "Pipeline run", labels, index=prefer_reportable_run(runs)
+    )
     manifest_path = next(r["path"] for r, label in zip(runs, labels) if label == choice)
+    selected = next(r for r in runs if r["path"] == manifest_path)
+    if not selected.get("has_integrated"):
+        st.info(
+            "This run did not reach integration, so there is no output to "
+            "report on. Pick a run without the “no reportable output” tag — "
+            "or re-run the pipeline successfully first."
+        )
+        _render_run_failure(manifest_path)
+        return
     try:
         report = _cached_report(manifest_path)
     except (FileNotFoundError, ValueError) as exc:
@@ -120,6 +135,33 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
             file_name=f"report_{report['run_id']}.html",
             mime="text/html",
         )
+
+
+def _render_run_failure(manifest_path: str) -> None:
+    """Show what a non-reportable run did record (stages + errors)."""
+    try:
+        manifest = load_manifest(manifest_path)
+    except (FileNotFoundError, ValueError) as exc:
+        st.error(f"Run manifest unreadable: {exc}")
+        return
+    st.subheader("What this run recorded")
+    stages = manifest.get("stages") or {}
+    if stages:
+        st.dataframe(
+            pd.DataFrame(
+                [
+                    {
+                        "Stage": name,
+                        "Status": s.get("status", "UNKNOWN"),
+                        "Errors": "; ".join(str(e) for e in s.get("errors", [])) or "—",
+                    }
+                    for name, s in stages.items()
+                ]
+            ),
+            width="stretch",
+        )
+    for error in manifest.get("errors", []):
+        st.markdown(f"- {error}")
 
 
 if __name__ == "__main__":

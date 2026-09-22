@@ -690,7 +690,12 @@ def render_html(report: dict[str, Any]) -> str:
 
 
 def discover_runs(runs_dir: PathLike = DEFAULT_RUNS_DIR) -> list[dict[str, Any]]:
-    """List available run manifests, newest first (read-only)."""
+    """List available run manifests, newest first (read-only).
+
+    Each entry carries ``has_integrated``: False for runs that never
+    reached integration (e.g. validation-gate stops), for which no
+    stakeholder report can be built.
+    """
     directory = Path(runs_dir)
     if not directory.is_dir():
         return []
@@ -700,14 +705,28 @@ def discover_runs(runs_dir: PathLike = DEFAULT_RUNS_DIR) -> list[dict[str, Any]]
             manifest = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             continue
+        integrated = (manifest.get("outputs") or {}).get("integrated") or {}
         runs.append({
             "run_id": manifest.get("run_id", path.stem),
             "dataset": manifest.get("dataset", "unknown"),
             "overall_status": manifest.get("overall_status", "UNKNOWN"),
             "finished_at": manifest.get("finished_at"),
+            "has_integrated": bool(integrated.get("path")),
             "path": str(path),
         })
     return runs
+
+
+def prefer_reportable_run(runs: list[dict[str, Any]]) -> int:
+    """Default selectbox index: newest run that has integrated output.
+
+    Falls back to 0 (newest overall) when no run is reportable, so the
+    caller can explain why instead of failing silently.
+    """
+    for index, run in enumerate(runs):
+        if run.get("has_integrated"):
+            return index
+    return 0
 
 
 def generate_report(

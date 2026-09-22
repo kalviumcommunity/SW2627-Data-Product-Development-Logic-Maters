@@ -248,12 +248,36 @@ def test_missing_integrated_output_fails_clearly(tmp_path: Path) -> None:
 
 
 def test_discover_runs_lists_manifests(showcase_run: dict) -> None:
-    from reports.report_generator import discover_runs
+    from reports.report_generator import discover_runs, prefer_reportable_run
 
     runs = discover_runs(showcase_run["tmp"] / "runs")
     assert len(runs) == 1
     assert runs[0]["run_id"] == showcase_run["manifest"]["run_id"]
+    assert runs[0]["has_integrated"] is True
     assert discover_runs(showcase_run["tmp"] / "nope") == []
+    assert prefer_reportable_run(runs) == 0
+    assert prefer_reportable_run([]) == 0
+
+
+def test_failed_runs_flagged_and_skipped_by_default(tmp_path: Path) -> None:
+    from reports.report_generator import discover_runs, prefer_reportable_run
+
+    good = lade_like_run(tmp_path)
+    failed_manifest = {
+        "run_id": "failed-1", "dataset": "lade", "overall_status": "FAILED",
+        "finished_at": "2024-03-01T00:00:00+00:00", "outputs": {},
+        "stages": {}, "warnings": [], "errors": ["boom"],
+    }
+    failed = tmp_path / "run_zzz_failed.json"
+    failed.write_text(json.dumps(failed_manifest), encoding="utf-8")
+    runs = discover_runs(tmp_path)
+    assert [r["run_id"] for r in runs] == ["failed-1", "lade-fixture-1"]
+    assert runs[0]["has_integrated"] is False
+    assert runs[1]["has_integrated"] is True
+    # Default selection skips the newer failed run.
+    assert prefer_reportable_run(runs) == 1
+    assert prefer_reportable_run([runs[0]]) == 0
+    _ = good
 
 
 def test_streamlit_reports_page_smoke() -> None:
@@ -268,6 +292,10 @@ def test_streamlit_reports_page_smoke() -> None:
     assert not at.exception
     at.sidebar.radio[0].set_value("Reports").run()
     assert not at.exception
+    # Default selection must be a reportable run even when newer failed
+    # runs exist (regression: reported "Manifest has no integrated output").
+    assert any("route cascade risk" in str(s.value).lower() for s in at.subheader)
+    assert len(at.download_button) == 2
     options = [str(o) for o in at.selectbox[0].options]
     showcase = next((o for o in options if "showcase" in o and "SUCCESS" in o), None)
     assert showcase is not None, f"no successful showcase run in {options}"
