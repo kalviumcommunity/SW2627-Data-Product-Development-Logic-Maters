@@ -145,11 +145,12 @@ creates no cascade flags, scores, or thresholds.
 - EDA (`eda.py`): `get_dataset_summary()`, distributions for delays / reasons / routes / warehouses / events / time, `get_missingness_summary()` — metrics only for columns actually present
 - KPIs (`kpis.py`): `compute_kpis()` → `{shipment, delay, operational}`; `delay_rate = delayed_shipments / total_shipments × 100`, `on_time_rate = 100 − delay_rate`; duration stats over delayed records with non-null duration; match rates from integration traceability columns; unresolvable KPIs return `None` with a reason
 - Routes (`route_analysis.py`): `route_metrics()` (shipments, delay rate, avg/median/total delay per route), `top_delayed_routes()`, `route_trends()` — factual metrics only, no scores
+- Route cascade risk (`route_risk.py`, thresholds in `config/route_risk_config.py`): historical empirical indicators per route — `cascade_rate` (cascade/delayed shipments × 100), `downstream_delay_rate`, `cascade_probability` (empirical P(downstream | initial delay), 0..1), `cascade_recurrence` (weeks with cascades / weeks with delays), depth avg/max/distribution, period-rate mean/std/CV consistency, observed stage-transition probabilities, and configurable LOW/MEDIUM/HIGH/INSUFFICIENT_DATA classes with metrics alongside. Descriptive only — **not an ML prediction** (see Design.md §18.1)
 - Warehouses (`warehouse_analysis.py`): `warehouse_metrics()`, `top_delayed_warehouses()`, `warehouse_trends()`, `transfer_activity()` — associations for investigation, never causal claims
 - Delays & time (`delay_analysis.py`): `delay_reason_breakdown()`, `delay_by_segment()`, `derive_time_features()`, `delay_over_time()`, `rolling_delay_rate()` (full-window averages; `sparse_warning` on thin data)
 - Column detection (`_schema.py`, internal): resolves `shipment_id`, `delay_duration`, `delay_reason`, `route_id`, warehouse/timestamp columns; delay flag from explicit flag → duration > 0 → status values (caller-overridable)
 - Verified end-to-end against real `build_integrated_dataset()` output, including the LaDe showcase subset (delay reasons and warehouses honestly report as unavailable)
-- Tests: `pytest tests/test_kpis.py tests/test_route_analysis.py tests/test_warehouse_analysis.py tests/test_analytics.py` (synthetic frames only)
+- Tests: `pytest tests/test_kpis.py tests/test_route_analysis.py tests/test_warehouse_analysis.py tests/test_analytics.py tests/test_route_risk.py` (synthetic frames only)
 
 ## SQL Analytics
 
@@ -189,7 +190,7 @@ Interactive presentation layer (`app/`). All calculations come from
 `analysis/` and SQL stays in `sql/` — the dashboard renders, filters, and
 charts only. Start with `streamlit run app/streamlit_app.py`.
 
-- Pages: Overview (KPI cards, delay trend, route summary), Dataset explorer (structure, samples, missingness), Delay analysis (distribution, reasons, trends, segments), Routes (factual metrics, detail, trends), Warehouses (metrics, transfer activity, trends), Cascades (candidates, depth, route/warehouse patterns, shipment journey inspector), Alerts (threshold-breach summary, alert table, per-alert evidence)
+- Pages: Overview (KPI cards, delay trend, route summary), Dataset explorer (structure, samples, missingness), Delay analysis (distribution, reasons, trends, segments), Routes (factual metrics, detail, trends, **route cascade risk with rate/recurrence charts, period trend, stage transitions**), Warehouses (metrics, transfer activity, trends), Cascades (candidates, depth, route/warehouse patterns, shipment journey inspector), Alerts (threshold-breach summary, alert table, per-alert evidence)
 - Filters (sidebar, only for columns actually present): date range, route, warehouse, delay reason, delayed/on-time status — centralized in `apply_filters()`, never written back to disk
 - Charts: Plotly trend lines, bar comparisons, delay-status donut (numeric labels), cascade-depth bars, per-shipment journey timelines
 - Data: processed CSVs (integrated first) via cached loading — currently the real LaDe showcase output — or a clearly badged synthetic demo dataset when no processed data exists

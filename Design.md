@@ -608,6 +608,53 @@ Avoid ranking routes using arbitrary scores unless the scoring methodology is ex
 
 ---
 
+# 18.1 Route Cascade Risk (Empirical Indicators)
+
+The cascade analysis (§15) is descriptive per shipment. This layer adds
+transparent, route-level **historical** risk indicators over observed
+journeys. It does not train a model and does not predict the future.
+
+Definitions (per route R, shipment grain — each shipment counts once):
+
+```text
+cascade_rate(R)           = cascade_shipments / delayed_shipments x 100
+downstream_delay_rate(R)  = same ratio (independently computed flag path;
+                            identical under the shared cascade definition)
+cascade_probability(R)    = cascade_shipments / delayed_shipments (0..1),
+                            the empirical conditional probability
+                            P(downstream delay | initial delay on R)
+cascade_recurrence(R)     = weeks_with_cascade / weeks_with_delays
+                            (weekly by default, configurable frequency)
+```
+
+Consistency: mean, population standard deviation (ddof=0), and
+coefficient of variation (std/mean) of the route's weekly cascade rates.
+Std/cv are null with fewer than two observed weeks; cv is null when the
+mean is zero.
+
+Depth: average/maximum/distribution of `cascade_depth` from §15 (no new
+stages). Transitions: observed consecutive stage pairs with empirical
+P(next | current); only transitions present in the data.
+
+Risk classes (LOW / MEDIUM / HIGH / INSUFFICIENT_DATA) come from
+caller-configurable thresholds (`config/route_risk_config.py`), never
+hardcoded business verdicts. Routes below the minimum delayed-shipment
+guard are INSUFFICIENT_DATA, never LOW. Metrics always ship beside any
+label.
+
+Empirical probability vs ML prediction: these ratios summarize what
+already happened (e.g. 32 downstream of 100 initial delays = 0.32).
+They carry no trained model, no features, no validation of future
+accuracy, and must never be presented as predictions.
+
+Minimum data: a route column, a timestamp column, and at least one
+delayed shipment. Routes without timestamped delays keep rates/depths
+but get null recurrence/consistency. Shipments without any delayed event
+are out of scope for every ratio; rows without usable timestamps are
+skipped with explicit counts.
+
+---
+
 # 19. Warehouse Analysis
 
 Warehouse analysis should examine:
