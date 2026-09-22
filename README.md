@@ -227,6 +227,23 @@ scores (`analysis/alerts.py`, thresholds in `config/alert_config.py`).
 - Dashboard: Alerts page with summary cards, severity/type/entity filters, evidence expanders; verified on the demo dataset (31 alerts: 4 critical, 22 warning, 5 info)
 - Tests: `pytest tests/test_alerts.py` (15 spec cases: detection, silence, severity, overrides, empty/missing/dupes, immutability, determinism)
 
+## Operational Reporting
+
+Stakeholder reports generated from recorded pipeline runs — presentation
+only, every figure reused from existing analytics over the run's own
+integrated output (`reports/report_generator.py`).
+
+```bash
+python -m pipeline.run_pipeline --dataset showcase
+python -m reports.report_generator --run data/processed/runs/run_<id>.json --format markdown
+python -m reports.report_generator --run data/processed/runs/run_<id>.json --format html
+```
+
+- Sections: executive summary, run/dataset info, data quality (warnings shown, never hidden), KPIs, delay analysis, route intelligence, cascade intelligence, warehouses, alerts with evidence, risk interpretation, investigation areas, limitations
+- Honest empty states: missing warehouses/reasons render as "Not available for this dataset"; synthetic runs are badged synthetic, LaDe runs labeled real; empirical risk is described as historical observation, never ML prediction
+- Outputs: `data/processed/runs/report_<run_id>.md|.html` beside the manifest (gitignored runtime artifacts); the dashboard Reports page lists runs with downloads
+- Tests: `pytest tests/test_reporting.py` (generation, sections, empty states, labeling, determinism, secrets, CLI-adjacent failures, Streamlit smoke test)
+
 ## Technology Stack
 
 - **Python** — core implementation language

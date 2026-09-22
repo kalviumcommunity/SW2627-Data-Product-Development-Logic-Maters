@@ -48,3 +48,4 @@ Thumbs.db
 # --- Reports generated at runtime ---
 reports/*
 !reports/.gitkeep
+!reports/report_generator.py

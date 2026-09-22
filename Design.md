@@ -896,6 +896,18 @@ Interpretation
 
 Do not present assumptions as facts.
 
+## 27.1 Implementation (`reports/report_generator.py`, Reports page)
+
+Reports consume recorded `pipeline/run_pipeline.py` manifests plus the
+run's own integrated CSV, reusing existing analytics functions (no
+duplicated KPIs, cascade, risk, or alert logic). Markdown + HTML via
+`python -m reports.report_generator --run <manifest> --format <fmt>`;
+artifacts land beside the manifest as `report_<run_id>.md|.html`
+(gitignored). Unavailable dimensions render as "Not available for this
+dataset"; synthetic runs are badged synthetic; empirical risk is worded
+as historical observation, never prediction. No email delivery (separate
+capability).
+
 ---
 
 # 28. Email Reporting
