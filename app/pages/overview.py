@@ -27,11 +27,15 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
     except ValueError as exc:
         cascade_summary = {"candidate_count": None}
         st.warning(f"Cascade candidates unavailable: {exc}")
-    for card in prepare_kpi_cards(bundle["shipment"], bundle["delay"], cascade_summary):
-        st.metric(card["label"], card["value"])
+
+    cards = prepare_kpi_cards(bundle["shipment"], bundle["delay"], cascade_summary)
+    cols = st.columns(len(cards))
+    for col, card in zip(cols, cards):
+        col.metric(card["label"], card["value"])
+
     st.caption("KPIs reflect the current filter selection.")
     _render_trend(filtered)
-    _render_routes(filtered)
+    _render_routes(filtered, bundle)
 
 
 def _render_trend(filtered: pd.DataFrame) -> None:
@@ -47,8 +51,8 @@ def _render_trend(filtered: pd.DataFrame) -> None:
     st.plotly_chart(trend_line(trend), width="stretch")
 
 
-def _render_routes(filtered: pd.DataFrame) -> None:
-    st.subheader("Routes by delayed shipments")
+def _render_routes(filtered: pd.DataFrame, bundle: dict | None = None) -> None:
+    st.subheader("Route & status breakdown")
     try:
         metrics = route_metrics(filtered)
     except ValueError as exc:
@@ -57,12 +61,31 @@ def _render_routes(filtered: pd.DataFrame) -> None:
     if metrics.empty:
         st.info("No route data available.")
         return
-    st.plotly_chart(
-        bar_chart(metrics, "route", "delayed_shipments",
-                  "Delayed shipments by route"),
-        width="stretch",
-    )
-    bundle = compute_kpis(filtered)
+
+    bundle = bundle or compute_kpis(filtered)
     delayed = bundle["shipment"]["delayed_shipments"] or 0
     on_time = bundle["shipment"]["on_time_shipments"] or 0
-    st.plotly_chart(delay_status_donut(delayed, on_time), width="stretch")
+
+    col_chart, col_donut = st.columns([3, 2])
+    with col_chart:
+        st.plotly_chart(
+            bar_chart(
+                metrics,
+                "route",
+                "delayed_shipments",
+                "Delayed shipments by route",
+                y_label="Delayed shipments",
+            ),
+            width="stretch",
+        )
+    with col_donut:
+        st.plotly_chart(
+            delay_status_donut(delayed, on_time, "Overall delay distribution"),
+            width="stretch",
+        )
+
+
+if __name__ == "__main__":
+    from app.components.standalone import bootstrap_standalone_page
+
+    bootstrap_standalone_page("Overview", render)

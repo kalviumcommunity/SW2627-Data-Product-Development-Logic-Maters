@@ -39,13 +39,18 @@ def _render_distribution(filtered: pd.DataFrame) -> None:
     stats = result["stats"]
     cols = st.columns(4)
     cols[0].metric("Delayed records", f"{result['delayed_records']:,}")
-    cols[1].metric("Mean", f"{stats['mean']:.1f}")
-    cols[2].metric("Median", f"{stats['median']:.1f}")
-    cols[3].metric("Max", f"{stats['max']:.1f}")
+    cols[1].metric("Mean duration", f"{stats['mean']:.1f}")
+    cols[2].metric("Median duration", f"{stats['median']:.1f}")
+    cols[3].metric("Max duration", f"{stats['max']:.1f}")
     st.plotly_chart(
-        bar_chart(result["histogram"], "bin_start", "count",
-                  "Delayed records by duration bin",
-                  x_label="Duration bin start", y_label="Records"),
+        bar_chart(
+            result["histogram"],
+            "bin_start",
+            "count",
+            "Delayed records by duration bin",
+            x_label="Duration bin start",
+            y_label="Records",
+        ),
         width="stretch",
     )
 
@@ -60,11 +65,15 @@ def _render_reasons(filtered: pd.DataFrame) -> None:
     if breakdown.empty:
         st.info("No delay reasons in the current selection.")
         return
-    st.plotly_chart(
-        bar_chart(breakdown, "delay_reason", "records", "Records by delay reason"),
-        width="stretch",
-    )
-    st.dataframe(breakdown, width="stretch")
+
+    col_chart, col_table = st.columns([3, 2])
+    with col_chart:
+        st.plotly_chart(
+            bar_chart(breakdown, "delay_reason", "records", "Records by delay reason"),
+            width="stretch",
+        )
+    with col_table:
+        st.dataframe(breakdown, width="stretch")
 
 
 def _render_trend(filtered: pd.DataFrame) -> None:
@@ -77,15 +86,22 @@ def _render_trend(filtered: pd.DataFrame) -> None:
     if trend.empty:
         st.info("No timestamped records in the current selection.")
         return
-    st.plotly_chart(trend_line(trend, y_column="delayed_shipments",
-                               title="Delayed shipments over time"),
-                    width="stretch")
+    st.plotly_chart(
+        trend_line(
+            trend,
+            y_column="delayed_shipments",
+            title="Delayed shipments over time",
+        ),
+        width="stretch",
+    )
     if len(trend) >= 2:
         rolled = rolling_delay_rate(trend, window=7)
         st.plotly_chart(
-            trend_line(rolled.dropna(subset=["rolling_avg_delay_rate_7"]),
-                       y_column="rolling_avg_delay_rate_7",
-                       title="7-day rolling average delay rate"),
+            trend_line(
+                rolled.dropna(subset=["rolling_avg_delay_rate_7"]),
+                y_column="rolling_avg_delay_rate_7",
+                title="7-day rolling average delay rate (%)",
+            ),
             width="stretch",
         )
         if bool(rolled.attrs.get("sparse_warning")):
@@ -101,3 +117,9 @@ def _render_segments(filtered: pd.DataFrame) -> None:
         return
     choice = st.selectbox("Segment dimension", options)
     st.dataframe(delay_by_segment(filtered, choice), width="stretch")
+
+
+if __name__ == "__main__":
+    from app.components.standalone import bootstrap_standalone_page
+
+    bootstrap_standalone_page("Delay analysis", render)

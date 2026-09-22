@@ -49,39 +49,61 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
     if candidates.empty:
         st.info("No cascade candidates in the current selection. A single delay is not a cascade.")
         return
+
     st.plotly_chart(depth_chart(candidates), width="stretch")
-    st.subheader("Candidates by route")
-    st.dataframe(cascade_by_route(candidates), width="stretch")
-    st.subheader("Candidates by warehouse")
-    st.dataframe(cascade_by_warehouse(candidates), width="stretch")
+
+    col_rt, col_wh = st.columns(2)
+    with col_rt:
+        st.subheader("Candidates by route")
+        st.dataframe(cascade_by_route(candidates), width="stretch")
+    with col_wh:
+        st.subheader("Candidates by warehouse")
+        st.dataframe(cascade_by_warehouse(candidates), width="stretch")
+
     st.subheader("Commonly observed stage signals")
     st.dataframe(root_cause_signals(candidates), width="stretch")
+
     _render_inspector(filtered, candidates)
 
 
 def _render_inspector(filtered: pd.DataFrame, candidates: pd.DataFrame) -> None:
-    st.subheader("Shipment inspector")
-    choice = st.selectbox("Candidate shipment", candidates["shipment_id"].tolist())
+    st.subheader("Shipment journey inspector")
+    choice = st.selectbox("Shipment ID", candidates["shipment_id"].tolist())
     detail = candidates[candidates["shipment_id"] == choice].iloc[0]
-    st.write(
-        f"Initial delay: {detail['initial_delay_time']} "
-        f"(duration {detail['initial_delay_duration']}, "
-        f"reason {detail['initial_delay_reason']}, "
-        f"route {detail['initial_route']}, "
-        f"warehouse {detail['initial_warehouse']})"
+
+    stages_str = " → ".join(str(s) for s in detail["stages"])
+    st.markdown(
+        f"""
+        <div class="detail-panel">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-weight: 600; color: #f0f6fc;">Shipment {choice}</span>
+                <span class="status-pill warning">Cascade Candidate</span>
+            </div>
+            <div style="color: #8b949e; font-size: 0.82rem; line-height: 1.6;">
+                <div><b>Initial Event:</b> <span class="mono" style="color: #c9d1d9;">{detail['initial_delay_time']}</span> (duration: <span class="mono">{detail['initial_delay_duration']}m</span>, reason: <i>{detail['initial_delay_reason']}</i>, route: <span class="mono">{detail['initial_route']}</span>, hub: <span class="mono">{detail['initial_warehouse']}</span>)</div>
+                <div><b>Downstream Event:</b> <span class="mono" style="color: #c9d1d9;">{detail['downstream_event_time']}</span> (duration: <span class="mono">{detail['downstream_delay_duration']}m</span>)</div>
+                <div style="margin-top: 4px;"><b>Observed Chain:</b> <code style="color: #58a6ff;">{stages_str}</code></div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
-    st.write(
-        f"Downstream delay observed: {detail['downstream_event_time']} "
-        f"(duration {detail['downstream_delay_duration']}) - "
-        f"stages: {' > '.join(str(s) for s in detail['stages'])}"
-    )
+
     try:
         events, _ = reconstruct_shipment_journey(filtered)
     except ValueError as exc:
         st.info(f"Journey unavailable: {exc}")
         return
     st.plotly_chart(
-        journey_timeline(get_shipment_events(events, str(choice)),
-                         title=f"Journey timeline - {choice}"),
+        journey_timeline(
+            get_shipment_events(events, str(choice)),
+            title=f"Journey timeline - {choice}",
+        ),
         width="stretch",
     )
+
+
+if __name__ == "__main__":
+    from app.components.standalone import bootstrap_standalone_page
+
+    bootstrap_standalone_page("Cascades", render)
