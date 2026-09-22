@@ -136,6 +136,24 @@ table without inventing keys or cascade logic (via `pipeline/integration.py`).
 - Output: `data/processed/integrated_logistics_data.csv` (currently the LaDe showcase output: 51,868 rows from `shipment_scans_cleaned LEFT JOIN delay_reports_cleaned`; no warehouse source exists in LaDe, so no transfer join is attempted)
 - Tests: `pytest tests/test_integration.py` (synthetic frames only)
 
+## Unified Pipeline Runner
+
+One command runs the whole product path with a validation gate and a
+machine-readable run record (via `pipeline/run_pipeline.py`; orchestration
+only — every calculation still lives in its own module).
+
+```bash
+python -m pipeline.run_pipeline --dataset showcase
+python -m pipeline.run_pipeline --dataset lade --input path/to/pickup_jl.csv
+```
+
+- Stages: source build → ingestion → validation → **gate** → cleaning → integration → analytics → SQL cross-check → cascade → route risk → alerts → manifest
+- Gate: validation `ERROR` stops the run (downstream `SKIPPED`, overall `FAILED`, exit 1, manifest still written); `WARNING` continues as `SUCCESS_WITH_WARNINGS`; clean pass is `SUCCESS`
+- Manifests: `data/processed/runs/run_<timestamp>.json` (gitignored) with run/dataset/timestamps, per-stage status + timings + row counts, validation summary, warnings/errors, and parameters — no secrets, no embedded datasets
+- LaDe needs its source file passed explicitly (`--input`); nothing is downloaded automatically, and warehouse transfers / delay reasons are never invented (honest-empty behavior preserved)
+- Raw inputs are never mutated; working dirs and the integrated destination are overridable (`--raw-dir`, `--processed-dir`, `--runs-dir`, `--output`)
+- Tests: `pytest tests/test_pipeline_runner.py` (tmp dirs only)
+
 ## Analytics Engine
 
 The analytics layer turns the integrated dataset into reusable,
