@@ -352,10 +352,12 @@ Avoid putting the entire pipeline inside one large Python file.
 Stage logic stays in its own module; `run_pipeline` only coordinates:
 source build → ingestion → validation → **gate** → cleaning →
 integration → analytics → SQL cross-check → cascade → route risk →
-alerts → run manifest (`data/processed/runs/run_<timestamp>.json`,
+prediction → alerts → run manifest (`data/processed/runs/run_<timestamp>.json`,
 gitignored). The gate interprets the validation verdict: ERROR stops the
 run (downstream SKIPPED, overall FAILED, non-zero exit); WARNING
-continues with overall SUCCESS_WITH_WARNINGS. CLI:
+continues with overall SUCCESS_WITH_WARNINGS. The prediction stage
+records PREDICTION_AVAILABLE or PREDICTION_UNAVAILABLE (see §18.2) and
+never fails the run on legitimately insufficient data. CLI:
 `python -m pipeline.run_pipeline --dataset showcase`
 (`--dataset lade --input <pickup.csv>` when the LaDe source is available;
 nothing is ever downloaded automatically).
@@ -665,6 +667,95 @@ delayed shipment. Routes without timestamped delays keep rates/depths
 but get null recurrence/consistency. Shipments without any delayed event
 are out of scope for every ratio; rows without usable timestamps are
 skipped with explicit counts.
+
+---
+
+# 18.2 Route Cascade Prediction Baseline (Validated ML)
+
+This layer adds a lightweight, explainable *prediction* baseline on top
+of the empirical indicators in §18.1. It exists only when the data
+supports it; otherwise the product keeps using §18.1 and reports why no
+model was trained. It never replaces historical risk, and the two are
+always labeled separately.
+
+Target (one precise definition, no new cascade meaning):
+
+```text
+cascade_flag ∈ {0,1} = 1 exactly when the shipment is a cascade
+candidate under §15 / analysis.cascade_analysis (initial delayed event
+followed by at least one later downstream delayed event).
+```
+
+Population and prediction point: one row per *delayed* shipment (shipments
+without any delay cannot cascade and are out of scope, counted
+explicitly). The prediction point is the moment the initial delay is
+observed, so the model estimates P(downstream delay | initial delay +
+context observed at that moment).
+
+Features (prediction-time information only):
+
+```text
+route of the initial event
+initial delay duration
+initial event sequence position (events observed so far)
+initial scan type and warehouse
+calendar parts of the initial-delay timestamp (hour, day of week, weekend)
+route historical cascade rate + delayed volume, fitted on TRAIN rows only
+```
+
+Never used as features: delay reasons / reported_at (written after the
+journey ends), any transfer_* column (ambiguous timing), downstream or
+final durations, total event counts, cascade_depth, stages, or any other
+field computed from post-initial events. A leakage guard
+(`assert_no_leakage_columns`) enforces this on every modelling matrix,
+and route history computed on the full dataset before splitting is
+treated as leakage — history is fitted on training rows only, with a
+global training-rate fallback for unseen routes.
+
+Split: chronological by initial-delay time (earlier observations train,
+later observations validate; no shuffling of temporal data). The split
+records train/test periods, row counts, and positive counts.
+
+Model: L2-regularized logistic regression (deterministic full-batch
+gradient descent, NumPy only — no new dependencies, no neural networks,
+no LLMs). `class_weight="balanced"` is applied only when the training
+minority share falls below the configured level, and the choice is
+recorded. Accuracy is never reported alone: evaluation always includes
+precision, recall, F1, ROC-AUC (None with a single test class), PR-AUC
+(None with no test positives), the confusion matrix, positive/negative
+counts, and the majority-class baseline accuracy.
+
+Artifact (`data/processed/models/`, gitignored runtime output): plain
+JSON with coefficients, intercept, scaler, feature names, vocabularies,
+training-only history, target definition, config, metrics, split info,
+dataset/run identifiers, timestamp, and model version. No pickle, no
+secrets. Inference (`analysis/predict.py`) needs only NumPy: validated
+single-record scoring plus batch scoring with per-route mean predicted
+probabilities.
+
+Minimum validation requirements (thresholds in
+`config/prediction_config.py`, justified by events-per-variable stability
+and split-size needs): minimum delayed shipments, minimum cascade
+positives overall and per split, and minimum distinct observed days for
+a meaningful chronological split. The showcase synthetic data meets them
+(~990 delayed, ~600 cascades over three weeks); the LaDe pickup window
+does not (94 delayed, 1 cascade) and correctly yields
+PREDICTION_UNAVAILABLE.
+
+Pipeline (`pipeline/run_pipeline.py`): the prediction stage runs after
+route-risk analysis and records PREDICTION_AVAILABLE (model version,
+artifact path, periods, test metrics, route predictions) or
+PREDICTION_UNAVAILABLE (explicit reason). Insufficient data warns but
+never fails the run. Dashboard (Prediction page) and reports show model
+status, version, periods, metrics, estimated probabilities, and
+limitations — or the sentence "Prediction model unavailable:
+insufficient validated training data." / "ML prediction was not
+generated because the available dataset did not meet the minimum
+validation requirements." No fake predictions are ever shown.
+
+Language discipline: "estimated probability", "historical pattern",
+"model prediction", "observed association". Never guarantees, never
+causal claims, never presenting historical rates as ML predictions.
 
 ---
 

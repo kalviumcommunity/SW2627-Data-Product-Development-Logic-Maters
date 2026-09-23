@@ -4,7 +4,7 @@ Executes the existing pipeline stages in one controlled path::
 
     source build -> ingestion -> validation -> [GATE] -> cleaning
         -> integration -> analytics -> sql -> cascade -> route_risk
-        -> alerts -> run manifest
+        -> prediction -> alerts -> run manifest
 
 Every calculation below delegates to the established modules; this file
 contains no business logic of its own (no cleaning rules, no KPIs, no
@@ -55,6 +55,17 @@ from analysis.kpis import (
     compute_kpis,
     compute_shipment_kpis,
 )
+from analysis.predict import (
+    predict_for_shipments,
+    route_prediction_summary,
+)
+from analysis.prediction_features import assess_prediction_readiness
+from analysis.prediction_model import (
+    PREDICTION_AVAILABLE,
+    PREDICTION_UNAVAILABLE,
+    save_model_artifact,
+    train_and_evaluate,
+)
 from analysis.route_analysis import route_metrics
 from analysis.route_risk import route_cascade_risk
 from analysis.warehouse_analysis import warehouse_metrics
@@ -86,6 +97,7 @@ STAGE_ORDER = [
     "sql",
     "cascade",
     "route_risk",
+    "prediction",
     "alerts",
 ]
 
@@ -265,6 +277,8 @@ def run_pipeline(
     skip_source_build: bool = False,
     alert_config: Optional[dict[str, Any]] = None,
     risk_config: Optional[dict[str, Any]] = None,
+    prediction_config: Optional[dict[str, Any]] = None,
+    models_dir: Optional[PathLike] = None,
 ) -> dict[str, Any]:
     """Run the full pipeline and return the run manifest (also written to disk).
 
@@ -284,6 +298,11 @@ def run_pipeline(
             of (re)building sources (role detection by filename).
         alert_config/risk_config: passthrough overrides for alerts and
             route-risk classification.
+        prediction_config: passthrough overrides for the prediction
+            baseline (minimum-data guards, split, fitting). Insufficient
+            data yields ``PREDICTION_UNAVAILABLE`` — never a failure.
+        models_dir: model artifact directory (default
+            ``data/processed/models/``).
 
     Raises:
         ValueError: On an unknown dataset or a missing LaDe input.
@@ -419,7 +438,7 @@ def run_pipeline(
             rec.status = "SUCCESS"
     except Exception as exc:
         fail("ingestion failed", rec, exc)
-    print("[1/9] Ingestion ........ SUCCESS")
+    print(f"[1/10] Ingestion ........ SUCCESS")
 
     # -- Validation + gate ----------------------------------------------------
     rec = stages["validation"]
@@ -451,7 +470,7 @@ def run_pipeline(
                 global_errors.extend(errors)
                 skip_remaining("validation")
                 manifest_out = write_manifest(FAILED)
-                print("[2/9] Validation ...... FAILED (gate stopped the pipeline)")
+                print("[2/10] Validation ...... FAILED (gate stopped the pipeline)")
                 print(f"Manifest: {manifest_out['manifest_path']}")
                 raise PipelineFailed(
                     f"Validation gate stopped the run with {len(errors)} ERROR(s)."
@@ -461,7 +480,7 @@ def run_pipeline(
         raise
     except Exception as exc:
         fail("validation failed", rec, exc)
-    print(f"[2/9] Validation ...... {rec.status}")
+    print(f"[2/10] Validation ...... {rec.status}")
 
     # -- Cleaning --------------------------------------------------------------
     rec = stages["cleaning"]
@@ -486,7 +505,7 @@ def run_pipeline(
             rec.status = "SUCCESS"
     except Exception as exc:
         fail("cleaning failed", rec, exc)
-    print("[3/9] Cleaning ........ SUCCESS")
+    print("[3/10] Cleaning ........ SUCCESS")
 
     # -- Integration ------------------------------------------------------------
     rec = stages["integration"]
@@ -533,7 +552,7 @@ def run_pipeline(
             rec.status = "WARNING" if rec.warnings else "SUCCESS"
     except Exception as exc:
         fail("integration failed", rec, exc)
-    print(f"[4/9] Integration ..... {rec.status}")
+    print(f"[4/10] Integration ..... {rec.status}")
     assert integrated is not None
 
     # -- Analytics ---------------------------------------------------------------
@@ -578,7 +597,7 @@ def run_pipeline(
             rec.status = "WARNING" if rec.warnings else "SUCCESS"
     except Exception as exc:
         fail("analytics failed", rec, exc)
-    print(f"[5/9] Analytics ....... {rec.status}")
+    print(f"[5/10] Analytics ....... {rec.status}")
 
     # -- SQL ----------------------------------------------------------------------
     rec = stages["sql"]
@@ -667,7 +686,7 @@ def run_pipeline(
             rec.status = "WARNING" if rec.warnings else "SUCCESS"
     except Exception as exc:
         fail("sql failed", rec, exc)
-    print(f"[6/9] SQL ............. {rec.status}")
+    print(f"[6/10] SQL ............. {rec.status}")
 
     # -- Cascade --------------------------------------------------------------------
     rec = stages["cascade"]
@@ -683,7 +702,7 @@ def run_pipeline(
             rec.status = "SUCCESS"
     except Exception as exc:
         fail("cascade failed", rec, exc)
-    print(f"[7/9] Cascade ......... {rec.status}")
+    print(f"[7/10] Cascade ......... {rec.status}")
 
     # -- Route risk --------------------------------------------------------------------
     rec = stages["route_risk"]
@@ -701,7 +720,74 @@ def run_pipeline(
             rec.status = "SUCCESS"
     except Exception as exc:
         fail("route_risk failed", rec, exc)
-    print(f"[8/9] Route Risk ...... {rec.status}")
+    print(f"[8/10] Route Risk ...... {rec.status}")
+
+    # -- Prediction (validated baseline; never fails the pipeline) ------------------
+    rec = stages["prediction"]
+    try:
+        with _Timer(rec):
+            from analysis.prediction_model import DEFAULT_MODELS_DIR
+
+            readiness = assess_prediction_readiness(
+                integrated, prediction_config
+            )
+            if not readiness["available"]:
+                rec.detail = {
+                    "status": PREDICTION_UNAVAILABLE,
+                    "reason": readiness["reason"],
+                    "delayed_shipments": readiness["delayed_shipments"],
+                    "cascade_shipments": readiness["cascade_shipments"],
+                }
+                rec.warnings.append(
+                    f"Prediction model unavailable: {readiness['reason']}"
+                )
+                global_warnings.extend(f"prediction: {w}" for w in rec.warnings)
+                manifest["outputs"]["prediction_model"] = None
+                rec.status = "WARNING"
+            else:
+                result = train_and_evaluate(
+                    integrated,
+                    config=prediction_config,
+                    dataset_label=dataset,
+                    run_id=run_id,
+                )
+                resolved_models = (
+                    Path(models_dir)
+                    if models_dir is not None
+                    else DEFAULT_MODELS_DIR
+                )
+                artifact_path = save_model_artifact(result, resolved_models)
+                test_metrics = result["metrics"]["test"]
+                route_table = route_prediction_summary(
+                    predict_for_shipments(integrated, result)[0]
+                )
+                rec.detail = {
+                    "status": PREDICTION_AVAILABLE,
+                    "model_version": result["model_version"],
+                    "artifact_path": str(artifact_path),
+                    "train_period": result["split"]["train_period"],
+                    "test_period": result["split"]["test_period"],
+                    "train_rows": result["split"]["train_rows"],
+                    "test_rows": result["split"]["test_rows"],
+                    "test_positives": result["split"]["test_positives"],
+                    "test_metrics": {
+                        key: test_metrics[key]
+                        for key in (
+                            "accuracy", "precision", "recall", "f1",
+                            "roc_auc", "pr_auc", "confusion_matrix",
+                            "majority_baseline_accuracy",
+                        )
+                    },
+                    "route_predictions": route_table.to_dict(orient="records"),
+                }
+                manifest["outputs"]["prediction_model"] = {
+                    "path": str(artifact_path),
+                    "model_version": result["model_version"],
+                }
+                rec.status = "SUCCESS"
+    except Exception as exc:
+        fail("prediction failed", rec, exc)
+    print(f"[9/10] Prediction ...... {rec.status}")
 
     # -- Alerts --------------------------------------------------------------------------
     rec = stages["alerts"]
@@ -721,7 +807,7 @@ def run_pipeline(
             rec.status = "WARNING" if rec.warnings else "SUCCESS"
     except Exception as exc:
         fail("alerts failed", rec, exc)
-    print(f"[9/9] Alerts .......... {rec.status}")
+    print(f"[10/10] Alerts .......... {rec.status}")
 
     overall = SUCCESS_WITH_WARNINGS if global_warnings else SUCCESS
     manifest_out = write_manifest(overall)
@@ -742,7 +828,8 @@ def build_parser() -> argparse.ArgumentParser:
             "Run the Cascading Delay Intelligence pipeline end to end: "
             "source build, ingestion, validation (gated), cleaning, "
             "integration, analytics, SQL cross-check, cascade analysis, "
-            "route-risk analysis, alerts, and a machine-readable run manifest."
+            "route-risk analysis, route-cascade prediction baseline, "
+            "alerts, and a machine-readable run manifest."
         ),
     )
     parser.add_argument(
