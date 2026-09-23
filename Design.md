@@ -900,23 +900,38 @@ Do not present assumptions as facts.
 
 Reports consume recorded `pipeline/run_pipeline.py` manifests plus the
 run's own integrated CSV, reusing existing analytics functions (no
-duplicated KPIs, cascade, risk, or alert logic). Markdown + HTML via
+duplicated KPIs, cascade, risk, or alert logic). The manifest records
+only summary context (status, timings, row counts, validation), so full
+tables are recomputed deterministically by calling the same functions the
+pipeline used — reuse, not duplication or a second implementation.
+Markdown + HTML via
 `python -m reports.report_generator --run <manifest> --format <fmt>`;
 artifacts land beside the manifest as `report_<run_id>.md|.html`
 (gitignored). Unavailable dimensions render as "Not available for this
 dataset"; synthetic runs are badged synthetic; empirical risk is worded
-as historical observation, never prediction. No email delivery (separate
-capability).
+as historical observation, never prediction. Delivery is a separate
+capability (§28).
 
 ---
 
 # 28. Email Reporting
 
-Email functionality should be modular.
+Email delivery (`reports/email_report.py`, stdlib `smtplib` only) is
+modular and optional.
 
 The core analytics system must work even if email configuration is unavailable.
 
-Use environment variables for credentials.
+Use environment variables for credentials (canonical `REPORT_*` names;
+legacy `EMAIL_*` accepted as fallbacks, see `.env.example`).
+
+`python -m reports.email_report --run <manifest> [--to a@b] [--dry-run]`:
+loads the run, builds the report via §27.1, validates configuration,
+and sends a summary body (dataset, status, shipments, delay rate,
+cascades, route-risk summary, alerts, validation warnings) with the full
+Markdown/HTML report attached. Subject:
+`Cascading Delay Intelligence Report — <dataset> — <run_id>`.
+Exit 0 sent/valid, 1 config/report error, 2 SMTP failure. Tests mock the
+SMTP transport; no real email is ever sent in tests.
 
 Never commit:
 
@@ -925,14 +940,13 @@ Never commit:
 * tokens
 * credentials
 
-Example:
-
 ```text
-EMAIL_HOST
-EMAIL_PORT
-EMAIL_USERNAME
-EMAIL_PASSWORD
-EMAIL_RECIPIENT
+REPORT_SMTP_HOST
+REPORT_SMTP_PORT
+REPORT_SMTP_USERNAME
+REPORT_SMTP_PASSWORD
+REPORT_EMAIL_FROM
+REPORT_EMAIL_TO
 ```
 
 ---
