@@ -51,6 +51,12 @@ from analysis.cascade_analysis import (
 from analysis.delay_analysis import delay_over_time, delay_reason_breakdown
 from analysis.eda import get_delay_distribution
 from analysis.kpis import compute_kpis
+from analysis.predict import predict_for_shipments, route_prediction_summary
+from analysis.prediction_model import (
+    PREDICTION_AVAILABLE,
+    PREDICTION_UNAVAILABLE,
+    load_model_artifact,
+)
 from analysis.route_analysis import route_metrics
 from analysis.route_risk import route_cascade_risk
 from analysis.warehouse_analysis import transfer_activity, warehouse_metrics
@@ -59,6 +65,10 @@ PathLike = Union[str, Path]
 
 DEFAULT_RUNS_DIR = Path("data/processed/runs")
 NOT_AVAILABLE = "Not available for this dataset"
+PREDICTION_NOT_GENERATED = (
+    "ML prediction was not generated because the available dataset did not "
+    "meet the minimum validation requirements."
+)
 
 DISCLAIMER_ML = (
     "Risk figures in this report are historical empirical indicators "
@@ -155,6 +165,90 @@ def source_label(dataset: Any) -> tuple[str, str]:
             "so those sections are honestly unavailable below.",
         )
     return (f"Dataset '{name}'", "Custom dataset supplied to the pipeline runner.")
+
+
+def _prediction_section(
+    manifest: dict[str, Any], frame: pd.DataFrame
+) -> dict[str, Any]:
+    """ML baseline block for the report (reuses the run's own output).
+
+    When the run trained a validated model, route probabilities are
+    recomputed deterministically over the run's integrated CSV via the
+    existing inference functions. Otherwise the section reports the
+    unavailability reason instead of inventing figures.
+    """
+    ref = ((manifest.get("outputs") or {}).get("prediction_model") or {})
+    path = ref.get("path")
+    if not path:
+        return {
+            "status": PREDICTION_UNAVAILABLE,
+            "reason": PREDICTION_NOT_GENERATED,
+            "model_version": None,
+            "trained_at": None,
+            "train_period": (None, None),
+            "test_period": (None, None),
+            "train_rows": None,
+            "test_rows": None,
+            "test_positives": None,
+            "test_metrics": {},
+            "route_predictions": [],
+        }
+    try:
+        artifact = load_model_artifact(path)
+    except (FileNotFoundError, ValueError) as exc:
+        return {
+            "status": PREDICTION_UNAVAILABLE,
+            "reason": f"{PREDICTION_NOT_GENERATED} ({exc})",
+            "model_version": None,
+            "trained_at": None,
+            "train_period": (None, None),
+            "test_period": (None, None),
+            "train_rows": None,
+            "test_rows": None,
+            "test_positives": None,
+            "test_metrics": {},
+            "route_predictions": [],
+        }
+    try:
+        predictions, _ = predict_for_shipments(frame, artifact)
+        summary = route_prediction_summary(predictions)
+    except ValueError as exc:
+        return {
+            "status": PREDICTION_UNAVAILABLE,
+            "reason": f"{PREDICTION_NOT_GENERATED} ({exc})",
+            "model_version": str(artifact.get("model_version")),
+            "trained_at": artifact.get("trained_at"),
+            "train_period": (None, None),
+            "test_period": (None, None),
+            "train_rows": None,
+            "test_rows": None,
+            "test_positives": None,
+            "test_metrics": {},
+            "route_predictions": [],
+        }
+    test_metrics = (artifact.get("metrics") or {}).get("test", {}) or {}
+    split = artifact.get("split", {}) or {}
+    return {
+        "status": PREDICTION_AVAILABLE,
+        "reason": "",
+        "model_version": str(artifact.get("model_version")),
+        "trained_at": artifact.get("trained_at"),
+        "train_period": tuple(split.get("train_period", (None, None))),
+        "test_period": tuple(split.get("test_period", (None, None))),
+        "train_rows": split.get("train_rows"),
+        "test_rows": split.get("test_rows"),
+        "test_positives": split.get("test_positives"),
+        "test_metrics": {
+            key: test_metrics.get(key)
+            for key in (
+                "accuracy", "precision", "recall", "f1",
+                "roc_auc", "pr_auc", "majority_baseline_accuracy",
+            )
+        },
+        "route_predictions": (
+            summary.to_dict(orient="records") if not summary.empty else []
+        ),
+    }
 
 
 def _stage_rows(manifest: dict[str, Any]) -> list[list[str]]:
@@ -311,6 +405,7 @@ def build_report(manifest_path: PathLike) -> dict[str, Any]:
                 )
             },
         },
+        "prediction": _prediction_section(manifest, frame),
     }
     report["interpretation"] = _interpretation(report)
     report["investigations"] = _investigations(report)
@@ -417,6 +512,14 @@ def _limitations(report: dict[str, Any]) -> list[str]:
             f"Small-sample caution: {len(small)} route(s) fall below the "
             "minimum-observation guard; their rates are unstable."
         )
+    pred = report.get("prediction") or {}
+    if pred.get("status") == PREDICTION_AVAILABLE:
+        items.append(
+            f"ML baseline {pred.get('model_version')}: estimated probabilities "
+            f"validated on the held-out test period ({pred['test_period'][0]} → "
+            f"{pred['test_period'][1]}); applies only to shipments with an "
+            "observed initial delay."
+        )
     return items
 
 
@@ -449,6 +552,17 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"- Strongest route-risk signal: route {top['route']} recorded a higher "
             f"historical cascade rate ({_pct(top['cascade_rate'])}) than other observed routes."
         )
+    pred = report.get("prediction") or {}
+    if pred.get("status") == PREDICTION_AVAILABLE:
+        tm = pred.get("test_metrics") or {}
+        lines.append(
+            f"- ML baseline `{pred.get('model_version')}`: estimated cascade "
+            f"probabilities validated on the held-out test period (accuracy "
+            f"{_fmt(tm.get('accuracy'), digits=3)}, ROC-AUC "
+            f"{_fmt(tm.get('roc_auc'), digits=3)})."
+        )
+    else:
+        lines.append(f"- {PREDICTION_NOT_GENERATED}")
     lines += [
         "",
         "## 2. Run & Dataset Information",
@@ -548,6 +662,47 @@ def render_markdown(report: dict[str, Any]) -> str:
         lines += ["", "Historical conditional probability = cascades ÷ initial delays (observed frequency, not a prediction).", ""]
     else:
         lines += ["No routes with observed delays in this run.", ""]
+    lines += ["### ML prediction baseline", ""]
+    pred = report.get("prediction") or {}
+    if pred.get("status") == PREDICTION_AVAILABLE:
+        tm = pred.get("test_metrics") or {}
+        lines.append(
+            f"Model `{pred.get('model_version')}` estimates P(cascade | initial "
+            f"delay) from prediction-time information only. Train "
+            f"{pred['train_period'][0]} → {pred['train_period'][1]} "
+            f"({_fmt(pred.get('train_rows'))} delayed shipments); test "
+            f"{pred['test_period'][0]} → {pred['test_period'][1]} "
+            f"({_fmt(pred.get('test_rows'))} delayed shipments, "
+            f"{_fmt(pred.get('test_positives'))} cascades)."
+        )
+        lines.append("")
+        lines.append(
+            f"Test metrics: accuracy {_fmt(tm.get('accuracy'), digits=3)} "
+            f"(majority baseline "
+            f"{_fmt(tm.get('majority_baseline_accuracy'), digits=3)}), precision "
+            f"{_fmt(tm.get('precision'), digits=3)}, recall "
+            f"{_fmt(tm.get('recall'), digits=3)}, F1 "
+            f"{_fmt(tm.get('f1'), digits=3)}, ROC-AUC "
+            f"{_fmt(tm.get('roc_auc'), digits=3)}, PR-AUC "
+            f"{_fmt(tm.get('pr_auc'), digits=3)}."
+        )
+        lines.append("")
+        if pred.get("route_predictions"):
+            lines.append(_md_table(
+                ["Route", "Mean estimated P(cascade)", "Share estimated cascade"],
+                [[str(r.get("route")),
+                  _fmt(r.get("mean_cascade_probability"), digits=3),
+                  _pct(float(r.get("share_predicted_cascade") or 0.0) * 100.0)]
+                 for r in pred["route_predictions"]],
+            ))
+            lines.append("")
+        lines.append(
+            "Estimated probabilities describe historical patterns; they are "
+            "not guaranteed outcomes and do not prove causation."
+        )
+        lines.append("")
+    else:
+        lines += [PREDICTION_NOT_GENERATED, ""]
     lines += ["## 7. Cascade Intelligence", ""]
     if c["candidate_count"]:
         lines.append(

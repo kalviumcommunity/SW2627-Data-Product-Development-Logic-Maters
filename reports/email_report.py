@@ -208,6 +208,22 @@ def _fmt(value: Any, digits: int = 1) -> str:
     return str(value)
 
 
+def _prediction_summary(report: Mapping[str, Any]) -> str:
+    pred = report.get("prediction") or {}
+    if pred.get("status") == "PREDICTION_AVAILABLE":
+        tm = pred.get("test_metrics") or {}
+        return (
+            f"Baseline {pred.get('model_version')}: estimated cascade "
+            f"probabilities, held-out test accuracy "
+            f"{_fmt(tm.get('accuracy'), digits=3)}, ROC-AUC "
+            f"{_fmt(tm.get('roc_auc'), digits=3)} (estimates, not guarantees)."
+        )
+    return (
+        "ML baseline not generated for this run (dataset below minimum "
+        "validation requirements)."
+    )
+
+
 def _route_risk_summary(report: Mapping[str, Any]) -> str:
     rows = report.get("risk_table") or []
     rated = [r for r in rows if r.get("cascade_probability") is not None]
@@ -245,6 +261,7 @@ def render_summary_text(report: Mapping[str, Any]) -> str:
         f"avg depth {_fmt(cascade.get('avg_depth'))}, "
         f"max depth {_fmt(cascade.get('max_depth'))})",
         f"Route risk: {_route_risk_summary(report)}",
+        f"ML baseline: {_prediction_summary(report)}",
         f"Alerts: {_fmt(alerts.get('total'))}",
     ]
     if validation:
@@ -301,6 +318,7 @@ def render_summary_html(report: Mapping[str, Any]) -> str:
             f"{_fmt(cascade.get('candidate_count'))} candidates "
             f"(rate {_fmt(cascade.get('candidate_rate'))}%)"),
         row("Route risk", _route_risk_summary(report)),
+        row("ML baseline", _prediction_summary(report)),
         row("Alerts", f"{_fmt(alerts.get('total'))}"),
         "</table>",
     ]

@@ -27,7 +27,7 @@ from app.components.data_loader import (
 )
 from app.components.filters import apply_filters, render_sidebar_filters
 from app.components.theme import apply_theme
-from app.pages import alerts, cascades, dataset, delays, overview, reports, routes, warehouses
+from app.pages import alerts, cascades, dataset, delays, overview, prediction, reports, routes, warehouses
 
 PROJECT_NAME = "Cascading Delay Intelligence"
 
@@ -38,6 +38,7 @@ PAGES = {
     "Routes": routes.render,
     "Warehouses": warehouses.render,
     "Cascades": cascades.render,
+    "Prediction": prediction.render,
     "Alerts": alerts.render,
     "Reports": reports.render,
 }
