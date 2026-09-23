@@ -87,7 +87,7 @@ genuine cascade chains, and full page/SQL/alert coverage. Run
 - Output: `data/processed/integrated_logistics_showcase.csv` (8,870 events,
   990 delayed shipments at 33.0%, 602 cascade candidates at 20.1% with
   depths 1–3, worst lane R2/W2, 1,277 alerts with zero unavailable checks,
-  20/20 SQL-vs-Pandas comparisons match).
+  15/15 SQL-vs-Pandas comparisons match).
 - Every row carries `source_file = synthetic_showcase`; raw/processed
   files are gitignored, the generator plus a 1,016-row sample
   (`data/sample/showcase_sample.csv`) are versioned.

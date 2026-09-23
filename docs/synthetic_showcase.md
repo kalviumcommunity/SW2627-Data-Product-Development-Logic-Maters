@@ -55,7 +55,7 @@ are versioned. Tests: `pytest tests/test_synthetic_showcase.py`.
 - **602 cascade candidates (20.1%)**, depths 1/2/3 = 390/167/45; stages observed: `initial_delay`, `transfer_disruption`, `warehouse_delay`, `final_delivery_delay`, `downstream_route_delay`
 - Worst lane confirmed by the data: R2 (46.6% delay rate), W2 (41.1%)
 - Alerts: 1,277 (412 critical, 757 warning, 108 info); **zero unavailable checks** — every alert type fires
-- SQL/Pandas: **20/20 like-for-like comparisons match**, including the route and warehouse sections that are unrunnable on LaDe
+- SQL/Pandas: **15/15 like-for-like comparisons match** (3 shipment KPIs + record-average delay + 6 routes + 5 warehouses), including the route and warehouse sections that are unrunnable on LaDe
 
 ## 5. Limitations (read before demoing)
 
