@@ -227,11 +227,17 @@ scores (`analysis/alerts.py`, thresholds in `config/alert_config.py`).
 - Dashboard: Alerts page with summary cards, severity/type/entity filters, evidence expanders; verified on the demo dataset (31 alerts: 4 critical, 22 warning, 5 info)
 - Tests: `pytest tests/test_alerts.py` (15 spec cases: detection, silence, severity, overrides, empty/missing/dupes, immutability, determinism)
 
-## Operational Reporting
+## Reporting
 
 Stakeholder reports generated from recorded pipeline runs — presentation
 only, every figure reused from existing analytics over the run's own
-integrated output (`reports/report_generator.py`).
+integrated output (`reports/report_generator.py`). The generator does not
+duplicate analytics logic: the manifest records only summary context
+(status, timings, row counts, validation), so full tables are recomputed
+deterministically by calling the existing analysis functions
+(`compute_kpis`, `route_metrics`, `detect_cascade_candidates`,
+`route_cascade_risk`, `generate_alerts`, …) over the run's own integrated
+CSV. Identical inputs always yield identical reports.
 
 ```bash
 python -m pipeline.run_pipeline --dataset showcase
@@ -243,6 +249,48 @@ python -m reports.report_generator --run data/processed/runs/run_<id>.json --for
 - Honest empty states: missing warehouses/reasons render as "Not available for this dataset"; synthetic runs are badged synthetic, LaDe runs labeled real; empirical risk is described as historical observation, never ML prediction
 - Outputs: `data/processed/runs/report_<run_id>.md|.html` beside the manifest (gitignored runtime artifacts); the dashboard Reports page lists runs with downloads
 - Tests: `pytest tests/test_reporting.py` (generation, sections, empty states, labeling, determinism, secrets, CLI-adjacent failures, Streamlit smoke test)
+
+## Email Reports
+
+Optional SMTP delivery of a generated report (`reports/email_report.py`,
+stdlib only). The analytics system works without email configuration; the
+email layer only presents figures already computed by the report generator.
+
+```bash
+copy .env.example .env   # then fill in real values locally; never commit .env
+python -m reports.email_report --run data/processed/runs/run_<id>.json --to ops@example.com
+python -m reports.email_report --run data/processed/runs/run_<id>.json --dry-run   # validate only, send nothing
+```
+
+- Required environment variables (`REPORT_*` canonical; legacy `EMAIL_*`
+  accepted as fallback): `REPORT_SMTP_HOST`, `REPORT_SMTP_PORT` (default
+  587), `REPORT_SMTP_USERNAME`, `REPORT_SMTP_PASSWORD`, `REPORT_EMAIL_FROM`,
+  `REPORT_EMAIL_TO` (comma-separated; `--to` overrides it). See
+  `.env.example` for safe placeholders.
+- Subject: `Cascading Delay Intelligence Report — <dataset> — <run_id>`.
+  Body: concise summary (dataset, run status, shipment count, delay rate,
+  cascade count/rate, route-risk summary, alert count, validation warnings)
+  plus the full Markdown/HTML report as attachments
+  (`--no-attachments` sends the summary only). No recommendations are
+  invented; risk is worded as historical observation, never prediction.
+- Missing configuration fails clearly (exit 1); SMTP delivery failure
+  exits 2. Credentials are never hardcoded, committed, or logged.
+- Tests (`pytest tests/test_email_report.py`) use a mocked SMTP transport
+  only — no real email is ever sent during testing.
+
+## CI
+
+GitHub Actions workflow (`.github/workflows/ci.yml`) triggers on `push`
+and `pull_request` with no secrets required:
+
+- supported Python (3.12) + `pip install -r requirements.txt` + `pytest`
+- module import checks (`pipeline.run_pipeline`, `reports.report_generator`,
+  `reports.email_report`, cascade/route-risk/alerts)
+- full `pytest -q` suite (fails the build on any failure)
+- showcase pipeline smoke test (`--dataset showcase --seed 42
+  --n-shipments 200`)
+- Tests: `pytest tests/test_ci.py` validates the workflow structure
+  (triggers, install/test steps, smoke test, no secret references).
 
 ## Technology Stack
 

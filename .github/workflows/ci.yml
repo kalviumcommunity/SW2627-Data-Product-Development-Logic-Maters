@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      # No secrets required: the suite uses tmp fixtures and mocked SMTP only.
+      REPORT_SMTP_HOST: ""
+      REPORT_EMAIL_TO: ""
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Import checks
+        run: |
+          python -c "import pipeline.run_pipeline, reports.report_generator, reports.email_report, analysis.route_risk, analysis.cascade_analysis, analysis.alerts; print('imports ok')"
+
+      - name: Run test suite
+        run: pytest -q
+
+      - name: Showcase pipeline smoke test
+        run: python -m pipeline.run_pipeline --dataset showcase --seed 42 --n-shipments 200
