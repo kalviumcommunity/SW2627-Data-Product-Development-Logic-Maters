@@ -1,0 +1,721 @@
+disruption_id,disruption_type,location_id,vehicle_id,start_time,end_time,severity,description,root_cause,affected_capacity_percentage
+DIS-0001,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-23 17:56:00,2026-08-23 20:45:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,50.0
+DIS-0002,Labor Shortage,LOC-IXC-01,,2026-08-21 10:00:00,2026-08-21 12:21:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,78.8
+DIS-0003,Vehicle Breakdown,LOC-HYD-01,VEH-1162,2026-08-19 16:24:00,2026-08-19 20:12:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,71.6
+DIS-0004,Severe Weather,LOC-DEL-01,,2026-08-17 09:33:00,2026-08-17 14:16:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,80.9
+DIS-0005,Road Closure,LOC-CCU-02,VEH-1269,2026-08-07 06:00:00,2026-08-07 09:45:00,Major,Emergency culvert repair diversion on highway,Road Closure,51.5
+DIS-0006,Warehouse Congestion,LOC-BLR-01,,2026-08-07 15:15:00,2026-08-07 18:33:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,39.0
+DIS-0007,Labor Shortage,LOC-JAI-01,,2026-08-16 22:15:00,2026-08-17 00:46:00,Moderate,Contract dock worker shift dispute,Labor Shortage,51.9
+DIS-0008,Labor Shortage,LOC-DEL-01,,2026-08-18 17:46:00,2026-08-18 19:47:00,Moderate,Contract dock worker shift dispute,Labor Shortage,55.1
+DIS-0009,Severe Weather,LOC-AMD-01,,2026-08-08 19:40:00,2026-08-09 00:35:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,52.7
+DIS-0010,Road Closure,LOC-JAI-01,VEH-1383,2026-08-20 12:21:00,2026-08-20 15:06:00,Major,Major accident-induced expressway roadblock,Road Closure,81.1
+DIS-0011,Vehicle Breakdown,LOC-DEL-01,VEH-1214,2026-08-21 05:18:00,2026-08-21 10:32:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,48.4
+DIS-0012,Vehicle Breakdown,LOC-BOM-01,VEH-1094,2026-08-06 07:32:00,2026-08-06 12:35:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,45.4
+DIS-0013,Road Closure,LOC-MAA-01,VEH-1233,2026-08-15 05:50:00,2026-08-15 09:41:00,Major,Emergency culvert repair diversion on highway,Road Closure,71.9
+DIS-0014,Labor Shortage,LOC-BLR-01,,2026-08-10 17:35:00,2026-08-10 19:46:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,84.4
+DIS-0015,Severe Weather,LOC-JAI-02,,2026-08-18 13:17:00,2026-08-18 17:13:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,42.6
+DIS-0016,Road Closure,LOC-JAI-01,VEH-1600,2026-08-09 05:59:00,2026-08-09 08:21:00,Moderate,Freight arterial corridor construction closure,Road Closure,40.0
+DIS-0017,Equipment Failure,LOC-JAI-01,,2026-08-24 06:30:00,2026-08-24 09:35:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,68.5
+DIS-0018,State Border Checkpoint Hold,LOC-NOI-01,,2026-08-08 19:19:00,2026-08-08 21:45:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,37.1
+DIS-0019,Severe Weather,LOC-BOM-01,,2026-08-10 11:35:00,2026-08-10 14:03:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,66.2
+DIS-0020,Labor Shortage,LOC-DEL-01,,2026-08-07 15:54:00,2026-08-07 18:20:00,Moderate,Unexpected night shift handler shortage,Labor Shortage,40.7
+DIS-0021,Labor Shortage,LOC-PNQ-01,,2026-08-07 06:10:00,2026-08-07 09:07:00,Major,Contract dock worker shift dispute,Labor Shortage,50.3
+DIS-0022,Labor Shortage,LOC-JAI-01,,2026-08-06 17:59:00,2026-08-06 20:45:00,Major,Contract dock worker shift dispute,Labor Shortage,64.0
+DIS-0023,Vehicle Breakdown,LOC-AMD-01,VEH-1076,2026-08-02 07:34:00,2026-08-02 11:52:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,35.3
+DIS-0024,State Border Checkpoint Hold,LOC-IXC-01,,2026-08-06 18:23:00,2026-08-06 20:03:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,71.9
+DIS-0025,Warehouse Congestion,LOC-BOM-02,,2026-08-07 13:35:00,2026-08-07 17:53:00,Critical,Severe cross-dock staging area overflow,Warehouse Congestion,79.8
+DIS-0026,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-02 08:09:00,2026-08-02 10:27:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,33.0
+DIS-0027,Vehicle Breakdown,LOC-BLR-02,VEH-1089,2026-08-03 08:03:00,2026-08-03 11:33:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,56.0
+DIS-0028,Severe Weather,LOC-BLR-02,,2026-08-21 11:55:00,2026-08-21 15:12:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,36.7
+DIS-0029,Severe Weather,LOC-IXC-01,,2026-08-24 19:36:00,2026-08-24 23:23:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,30.4
+DIS-0030,Vehicle Breakdown,LOC-AMD-01,VEH-1580,2026-08-25 11:36:00,2026-08-25 16:30:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,83.2
+DIS-0031,Vehicle Breakdown,LOC-JAI-02,VEH-1479,2026-08-03 11:22:00,2026-08-03 14:19:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,35.7
+DIS-0032,Severe Weather,LOC-JAI-01,,2026-08-13 11:23:00,2026-08-13 14:26:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,50.4
+DIS-0033,Warehouse Congestion,LOC-CCU-01,,2026-08-17 13:50:00,2026-08-17 16:33:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,72.6
+DIS-0034,State Border Checkpoint Hold,LOC-HYD-01,,2026-08-11 16:20:00,2026-08-11 18:25:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,79.8
+DIS-0035,Vehicle Breakdown,LOC-CCU-01,VEH-1525,2026-08-23 05:31:00,2026-08-23 10:27:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,38.3
+DIS-0036,Labor Shortage,LOC-HYD-01,,2026-08-12 20:20:00,2026-08-12 22:07:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,39.1
+DIS-0037,Labor Shortage,LOC-BOM-01,,2026-08-22 13:33:00,2026-08-22 15:54:00,Moderate,Unexpected night shift handler shortage,Labor Shortage,68.6
+DIS-0038,Road Closure,LOC-CCU-01,VEH-1271,2026-08-17 19:39:00,2026-08-17 22:43:00,Major,Freight arterial corridor construction closure,Road Closure,54.2
+DIS-0039,Road Closure,LOC-JAI-01,VEH-1509,2026-08-04 16:09:00,2026-08-04 19:34:00,Major,Major accident-induced expressway roadblock,Road Closure,41.2
+DIS-0040,Warehouse Congestion,LOC-BLR-01,,2026-08-06 16:00:00,2026-08-06 19:29:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,46.1
+DIS-0041,Road Closure,LOC-CCU-01,VEH-1375,2026-08-13 16:14:00,2026-08-13 19:41:00,Major,National Highway flyover repair detour,Road Closure,41.7
+DIS-0042,Road Closure,LOC-JAI-01,VEH-1011,2026-08-24 17:54:00,2026-08-24 21:33:00,Major,Emergency culvert repair diversion on highway,Road Closure,32.1
+DIS-0043,State Border Checkpoint Hold,LOC-HYD-01,,2026-08-20 12:23:00,2026-08-20 15:02:00,Major,Inter-state commercial tax portal outage,State Border Checkpoint Hold,69.5
+DIS-0044,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-24 09:53:00,2026-08-24 13:00:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,84.6
+DIS-0045,Severe Weather,LOC-HYD-01,,2026-08-13 06:04:00,2026-08-13 10:14:00,Critical,Dense winter morning smog reducing visibility < 50m,Severe Weather,81.4
+DIS-0046,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-25 05:16:00,2026-08-25 08:09:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,70.6
+DIS-0047,Labor Shortage,LOC-IXC-01,,2026-08-09 11:48:00,2026-08-09 15:04:00,Major,Unexpected night shift handler shortage,Labor Shortage,65.7
+DIS-0048,Vehicle Breakdown,LOC-PNQ-01,VEH-1050,2026-08-02 15:56:00,2026-08-02 20:26:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,30.3
+DIS-0049,Severe Weather,LOC-BLR-01,,2026-08-18 19:30:00,2026-08-18 22:47:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,68.7
+DIS-0050,Severe Weather,LOC-DEL-02,,2026-08-14 07:29:00,2026-08-14 11:16:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,45.5
+DIS-0051,Severe Weather,LOC-MAA-01,,2026-08-25 07:53:00,2026-08-25 12:57:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,32.3
+DIS-0052,Equipment Failure,LOC-BLR-01,,2026-08-09 05:48:00,2026-08-09 08:47:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,57.5
+DIS-0053,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-21 09:47:00,2026-08-21 11:55:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,51.3
+DIS-0054,Severe Weather,LOC-MAA-01,,2026-08-01 05:15:00,2026-08-01 10:12:00,Critical,Dense winter morning smog reducing visibility < 50m,Severe Weather,69.9
+DIS-0055,Equipment Failure,LOC-DEL-01,,2026-08-22 19:22:00,2026-08-22 21:04:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,31.2
+DIS-0056,Vehicle Breakdown,LOC-BLR-01,VEH-1530,2026-08-26 11:49:00,2026-08-26 15:48:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,49.1
+DIS-0057,Labor Shortage,LOC-PNQ-01,,2026-08-05 12:08:00,2026-08-05 15:44:00,Major,Unexpected night shift handler shortage,Labor Shortage,65.8
+DIS-0058,Equipment Failure,LOC-MAA-01,,2026-08-22 16:15:00,2026-08-22 18:39:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,76.3
+DIS-0059,Warehouse Congestion,LOC-PNQ-01,,2026-08-07 13:48:00,2026-08-07 17:34:00,Critical,Severe cross-dock staging area overflow,Warehouse Congestion,54.2
+DIS-0060,Warehouse Congestion,LOC-IXC-01,,2026-08-12 06:10:00,2026-08-12 09:51:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,73.8
+DIS-0061,Vehicle Breakdown,LOC-CCU-01,VEH-1144,2026-08-07 09:50:00,2026-08-07 13:29:00,Major,Severe brake caliper seizure,Vehicle Breakdown,54.9
+DIS-0062,Equipment Failure,LOC-MAA-01,,2026-08-04 11:46:00,2026-08-04 14:51:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,36.7
+DIS-0063,Road Closure,LOC-GUR-01,VEH-1060,2026-08-12 20:02:00,2026-08-12 23:22:00,Major,Major accident-induced expressway roadblock,Road Closure,69.9
+DIS-0064,Severe Weather,LOC-CCU-01,,2026-08-06 17:21:00,2026-08-06 19:54:00,Moderate,Torrential rainfall flooding industrial access bypass,Severe Weather,40.9
+DIS-0065,Labor Shortage,LOC-BLR-03,,2026-08-10 05:27:00,2026-08-10 07:55:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,31.7
+DIS-0066,Labor Shortage,LOC-JAI-01,,2026-08-20 17:34:00,2026-08-20 19:36:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,53.6
+DIS-0067,Equipment Failure,LOC-AMD-01,,2026-08-14 13:53:00,2026-08-14 17:22:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,69.7
+DIS-0068,Warehouse Congestion,LOC-JAI-01,,2026-08-25 13:48:00,2026-08-25 16:36:00,Moderate,Severe cross-dock staging area overflow,Warehouse Congestion,59.0
+DIS-0069,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-11 21:48:00,2026-08-12 00:01:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,33.8
+DIS-0070,Road Closure,LOC-PNQ-01,VEH-1152,2026-08-07 13:57:00,2026-08-07 17:33:00,Major,Major accident-induced expressway roadblock,Road Closure,44.4
+DIS-0071,Road Closure,LOC-AMD-02,VEH-1153,2026-08-22 05:37:00,2026-08-22 09:21:00,Major,National Highway flyover repair detour,Road Closure,38.1
+DIS-0072,Road Closure,LOC-BLR-01,VEH-1394,2026-08-04 18:09:00,2026-08-04 21:01:00,Major,National Highway flyover repair detour,Road Closure,74.1
+DIS-0073,Road Closure,LOC-JAI-01,VEH-1335,2026-08-15 20:28:00,2026-08-16 00:04:00,Major,Major accident-induced expressway roadblock,Road Closure,54.8
+DIS-0074,Road Closure,LOC-DEL-01,VEH-1049,2026-08-19 12:02:00,2026-08-19 16:10:00,Critical,Emergency culvert repair diversion on highway,Road Closure,63.1
+DIS-0075,Equipment Failure,LOC-PNQ-01,,2026-08-12 15:15:00,2026-08-12 18:38:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,31.6
+DIS-0076,Equipment Failure,LOC-MAA-01,,2026-08-16 05:59:00,2026-08-16 09:21:00,Major,Automated crane rail misalignment in staging hub,Equipment Failure,33.2
+DIS-0077,Vehicle Breakdown,LOC-HYD-01,VEH-1465,2026-08-24 05:21:00,2026-08-24 08:03:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,42.9
+DIS-0078,Severe Weather,LOC-HYD-01,,2026-08-24 05:35:00,2026-08-24 08:00:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,45.2
+DIS-0079,Equipment Failure,LOC-AMD-01,,2026-08-15 20:05:00,2026-08-15 22:28:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,42.6
+DIS-0080,Equipment Failure,LOC-HYD-01,,2026-08-10 20:22:00,2026-08-10 22:17:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,66.0
+DIS-0081,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-04 15:47:00,2026-08-04 17:37:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,59.5
+DIS-0082,Vehicle Breakdown,LOC-BLR-02,VEH-1336,2026-08-22 13:23:00,2026-08-22 17:52:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,53.1
+DIS-0083,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-24 22:16:00,2026-08-25 00:12:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,83.4
+DIS-0084,Road Closure,LOC-DEL-01,VEH-1546,2026-08-04 09:30:00,2026-08-04 12:10:00,Moderate,Major accident-induced expressway roadblock,Road Closure,74.1
+DIS-0085,Labor Shortage,LOC-BLR-01,,2026-08-19 19:34:00,2026-08-19 21:48:00,Moderate,Contract dock worker shift dispute,Labor Shortage,31.2
+DIS-0086,Equipment Failure,LOC-DEL-01,,2026-08-12 19:58:00,2026-08-12 23:49:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,54.0
+DIS-0087,Severe Weather,LOC-BLR-01,,2026-08-12 18:15:00,2026-08-12 21:42:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,48.1
+DIS-0088,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-03 12:17:00,2026-08-03 14:29:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,61.9
+DIS-0089,Labor Shortage,LOC-JAI-01,,2026-08-02 16:26:00,2026-08-02 18:17:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,73.4
+DIS-0090,Warehouse Congestion,LOC-DEL-01,,2026-08-09 05:51:00,2026-08-09 09:38:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,69.7
+DIS-0091,Warehouse Congestion,LOC-HYD-01,,2026-08-12 18:22:00,2026-08-12 21:33:00,Major,Sorting facility buffer saturation,Warehouse Congestion,57.2
+DIS-0092,Equipment Failure,LOC-NOI-01,,2026-08-20 22:01:00,2026-08-21 00:32:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,57.9
+DIS-0093,Labor Shortage,LOC-JAI-01,,2026-08-10 19:39:00,2026-08-10 22:30:00,Major,Unexpected night shift handler shortage,Labor Shortage,37.9
+DIS-0094,Warehouse Congestion,LOC-BOM-01,,2026-08-07 12:25:00,2026-08-07 14:56:00,Moderate,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,30.6
+DIS-0095,Warehouse Congestion,LOC-BOM-01,,2026-08-17 09:34:00,2026-08-17 11:37:00,Moderate,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,49.4
+DIS-0096,Warehouse Congestion,LOC-AMD-01,,2026-08-17 16:00:00,2026-08-17 20:02:00,Critical,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,61.0
+DIS-0097,Labor Shortage,LOC-BLR-03,,2026-08-01 06:00:00,2026-08-01 09:18:00,Major,Contract dock worker shift dispute,Labor Shortage,82.5
+DIS-0098,Vehicle Breakdown,LOC-MAA-01,VEH-1067,2026-08-12 22:15:00,2026-08-13 03:05:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,83.6
+DIS-0099,Severe Weather,LOC-DEL-01,,2026-08-23 22:05:00,2026-08-24 02:47:00,Critical,Monsoon flash waterlogging on transit highway,Severe Weather,60.7
+DIS-0100,Vehicle Breakdown,LOC-BOM-02,VEH-1143,2026-08-25 13:42:00,2026-08-25 18:10:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,39.6
+DIS-0101,Warehouse Congestion,LOC-HYD-01,,2026-08-16 06:15:00,2026-08-16 09:15:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,40.7
+DIS-0102,Equipment Failure,LOC-HYD-01,,2026-08-11 05:27:00,2026-08-11 08:56:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,56.9
+DIS-0103,Road Closure,LOC-BOM-02,VEH-1230,2026-08-12 06:14:00,2026-08-12 08:47:00,Moderate,Emergency culvert repair diversion on highway,Road Closure,40.3
+DIS-0104,State Border Checkpoint Hold,LOC-PNQ-01,,2026-08-10 17:25:00,2026-08-10 19:29:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,77.4
+DIS-0105,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-08 11:29:00,2026-08-08 14:37:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,45.9
+DIS-0106,Equipment Failure,LOC-JAI-01,,2026-08-17 18:21:00,2026-08-17 21:01:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,42.8
+DIS-0107,Road Closure,LOC-HYD-01,VEH-1434,2026-08-18 07:39:00,2026-08-18 11:42:00,Critical,Major accident-induced expressway roadblock,Road Closure,84.7
+DIS-0108,Labor Shortage,LOC-MAA-02,,2026-08-25 17:36:00,2026-08-25 20:46:00,Major,Unexpected night shift handler shortage,Labor Shortage,37.2
+DIS-0109,Equipment Failure,LOC-HYD-02,,2026-08-09 12:26:00,2026-08-09 14:22:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,58.3
+DIS-0110,Labor Shortage,LOC-AMD-01,,2026-08-13 09:58:00,2026-08-13 11:44:00,Moderate,Contract dock worker shift dispute,Labor Shortage,58.4
+DIS-0111,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-11 11:31:00,2026-08-11 14:25:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,82.7
+DIS-0112,Road Closure,LOC-BLR-01,VEH-1626,2026-08-20 13:19:00,2026-08-20 15:07:00,Moderate,National Highway flyover repair detour,Road Closure,78.8
+DIS-0113,Road Closure,LOC-HYD-01,VEH-1411,2026-08-01 12:15:00,2026-08-01 16:45:00,Critical,Freight arterial corridor construction closure,Road Closure,54.0
+DIS-0114,Labor Shortage,LOC-MAA-01,,2026-08-11 18:03:00,2026-08-11 21:10:00,Major,Peak volume unloader staffing deficit,Labor Shortage,62.4
+DIS-0115,Vehicle Breakdown,LOC-HYD-01,VEH-1589,2026-08-06 09:54:00,2026-08-06 13:46:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,33.8
+DIS-0116,Vehicle Breakdown,LOC-AMD-01,VEH-1273,2026-08-23 15:58:00,2026-08-23 19:25:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,49.3
+DIS-0117,Road Closure,LOC-CCU-01,VEH-1498,2026-08-21 06:06:00,2026-08-21 09:15:00,Major,Major accident-induced expressway roadblock,Road Closure,39.2
+DIS-0118,Equipment Failure,LOC-AMD-01,,2026-08-19 19:59:00,2026-08-19 21:40:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,37.8
+DIS-0119,Vehicle Breakdown,LOC-HYD-01,VEH-1002,2026-08-24 19:53:00,2026-08-24 23:28:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,61.3
+DIS-0120,Vehicle Breakdown,LOC-JAI-01,VEH-1066,2026-08-06 06:01:00,2026-08-06 10:09:00,Major,Severe brake caliper seizure,Vehicle Breakdown,73.1
+DIS-0121,Vehicle Breakdown,LOC-PNQ-01,VEH-1061,2026-08-17 14:27:00,2026-08-17 17:49:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,82.0
+DIS-0122,Equipment Failure,LOC-JAI-01,,2026-08-18 14:14:00,2026-08-18 15:57:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,69.2
+DIS-0123,Severe Weather,LOC-AMD-01,,2026-08-25 11:51:00,2026-08-25 15:36:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,50.1
+DIS-0124,Road Closure,LOC-CCU-01,VEH-1101,2026-08-09 15:58:00,2026-08-09 19:20:00,Major,Emergency culvert repair diversion on highway,Road Closure,76.4
+DIS-0125,Vehicle Breakdown,LOC-PNQ-01,VEH-1354,2026-08-18 11:35:00,2026-08-18 16:02:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,35.5
+DIS-0126,State Border Checkpoint Hold,LOC-BLR-03,,2026-08-19 09:49:00,2026-08-19 11:42:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,37.2
+DIS-0127,Vehicle Breakdown,LOC-MAA-01,VEH-1471,2026-08-16 18:14:00,2026-08-16 23:05:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,73.5
+DIS-0128,Labor Shortage,LOC-HYD-01,,2026-08-03 17:43:00,2026-08-03 21:06:00,Major,Festival eve seasonal unloading crew absenteeism,Labor Shortage,59.1
+DIS-0129,Vehicle Breakdown,LOC-AMD-01,VEH-1535,2026-08-05 15:32:00,2026-08-05 20:19:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,46.2
+DIS-0130,Equipment Failure,LOC-AMD-01,,2026-08-14 19:41:00,2026-08-14 23:02:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,60.1
+DIS-0131,Labor Shortage,LOC-JAI-01,,2026-08-23 19:41:00,2026-08-23 23:09:00,Major,Contract dock worker shift dispute,Labor Shortage,74.9
+DIS-0132,Equipment Failure,LOC-DEL-01,,2026-08-02 05:23:00,2026-08-02 08:52:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,46.0
+DIS-0133,Severe Weather,LOC-JAI-01,,2026-08-11 14:05:00,2026-08-11 16:52:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,32.3
+DIS-0134,Equipment Failure,LOC-PNQ-01,,2026-08-03 20:29:00,2026-08-03 23:08:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,76.4
+DIS-0135,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-14 20:28:00,2026-08-14 23:40:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,30.9
+DIS-0136,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-01 19:19:00,2026-08-01 22:05:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,44.8
+DIS-0137,Severe Weather,LOC-AMD-01,,2026-08-21 20:22:00,2026-08-22 00:07:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,62.0
+DIS-0138,Road Closure,LOC-AMD-01,VEH-1583,2026-08-16 12:01:00,2026-08-16 14:34:00,Moderate,National Highway flyover repair detour,Road Closure,69.9
+DIS-0139,Equipment Failure,LOC-NAG-01,,2026-08-24 06:22:00,2026-08-24 09:27:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,42.5
+DIS-0140,Road Closure,LOC-MAA-01,VEH-1334,2026-08-01 09:16:00,2026-08-01 12:56:00,Major,National Highway flyover repair detour,Road Closure,55.3
+DIS-0141,Equipment Failure,LOC-MAA-01,,2026-08-20 08:19:00,2026-08-20 10:49:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,33.9
+DIS-0142,Warehouse Congestion,LOC-IDR-01,,2026-08-07 18:30:00,2026-08-07 21:14:00,Moderate,Severe cross-dock staging area overflow,Warehouse Congestion,46.2
+DIS-0143,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-15 07:44:00,2026-08-15 10:33:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,33.1
+DIS-0144,Vehicle Breakdown,LOC-HYD-01,VEH-1637,2026-08-04 10:16:00,2026-08-04 13:07:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,51.0
+DIS-0145,Equipment Failure,LOC-JAI-01,,2026-08-05 06:02:00,2026-08-05 08:45:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,56.9
+DIS-0146,Equipment Failure,LOC-BLR-01,,2026-08-04 15:57:00,2026-08-04 18:15:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,34.0
+DIS-0147,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-16 14:02:00,2026-08-16 17:26:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,69.0
+DIS-0148,Warehouse Congestion,LOC-JAI-01,,2026-08-02 16:03:00,2026-08-02 19:23:00,Major,Sorting facility buffer saturation,Warehouse Congestion,52.5
+DIS-0149,Equipment Failure,LOC-PNQ-01,,2026-08-22 12:05:00,2026-08-22 14:48:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,43.1
+DIS-0150,Warehouse Congestion,LOC-JAI-01,,2026-08-22 19:45:00,2026-08-23 00:24:00,Critical,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,51.5
+DIS-0151,Severe Weather,LOC-BOM-01,,2026-08-10 18:22:00,2026-08-10 22:26:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,47.3
+DIS-0152,Labor Shortage,LOC-MAA-01,,2026-08-23 21:49:00,2026-08-24 00:45:00,Major,Festival eve seasonal unloading crew absenteeism,Labor Shortage,84.6
+DIS-0153,Vehicle Breakdown,LOC-DEL-01,VEH-1120,2026-08-11 22:01:00,2026-08-12 02:59:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,81.7
+DIS-0154,Warehouse Congestion,LOC-PNQ-01,,2026-08-01 22:08:00,2026-08-02 02:31:00,Critical,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,74.5
+DIS-0155,Warehouse Congestion,LOC-PNQ-01,,2026-08-21 12:23:00,2026-08-21 15:29:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,30.2
+DIS-0156,Road Closure,LOC-NOI-01,VEH-1081,2026-08-13 21:36:00,2026-08-14 01:50:00,Major,Freight arterial corridor construction closure,Road Closure,70.2
+DIS-0157,Equipment Failure,LOC-BLR-01,,2026-08-23 07:49:00,2026-08-23 10:52:00,Major,Automated crane rail misalignment in staging hub,Equipment Failure,40.3
+DIS-0158,Severe Weather,LOC-DEL-01,,2026-08-23 21:32:00,2026-08-24 01:54:00,Critical,Torrential rainfall flooding industrial access bypass,Severe Weather,34.9
+DIS-0159,Vehicle Breakdown,LOC-BOM-01,VEH-1397,2026-08-12 10:19:00,2026-08-12 13:41:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,72.5
+DIS-0160,Road Closure,LOC-BOM-01,VEH-1195,2026-08-14 08:00:00,2026-08-14 11:10:00,Major,Emergency culvert repair diversion on highway,Road Closure,54.9
+DIS-0161,Severe Weather,LOC-BLR-01,,2026-08-15 11:18:00,2026-08-15 16:23:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,65.0
+DIS-0162,Vehicle Breakdown,LOC-CCU-01,VEH-1001,2026-08-10 06:19:00,2026-08-10 10:00:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,31.2
+DIS-0163,Vehicle Breakdown,LOC-BDQ-01,VEH-1077,2026-08-21 19:34:00,2026-08-21 22:36:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,68.7
+DIS-0164,State Border Checkpoint Hold,LOC-AMD-02,,2026-08-02 20:29:00,2026-08-02 22:38:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,83.2
+DIS-0165,Equipment Failure,LOC-CCU-01,,2026-08-07 11:32:00,2026-08-07 14:45:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,61.0
+DIS-0166,Vehicle Breakdown,LOC-AMD-01,VEH-1147,2026-08-18 13:59:00,2026-08-18 17:48:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,82.9
+DIS-0167,Severe Weather,LOC-CCU-01,,2026-08-24 07:59:00,2026-08-24 11:08:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,44.1
+DIS-0168,Equipment Failure,LOC-CJB-01,,2026-08-01 22:07:00,2026-08-02 00:04:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,77.7
+DIS-0169,Warehouse Congestion,LOC-CCU-01,,2026-08-17 10:13:00,2026-08-17 14:21:00,Critical,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,84.1
+DIS-0170,Labor Shortage,LOC-CCU-01,,2026-08-18 20:19:00,2026-08-18 22:33:00,Moderate,Contract dock worker shift dispute,Labor Shortage,55.7
+DIS-0171,Road Closure,LOC-HYD-01,VEH-1411,2026-08-22 20:03:00,2026-08-22 22:06:00,Moderate,Freight arterial corridor construction closure,Road Closure,76.4
+DIS-0172,Equipment Failure,LOC-CCU-02,,2026-08-08 12:08:00,2026-08-08 14:45:00,Major,Automated crane rail misalignment in staging hub,Equipment Failure,49.4
+DIS-0173,Vehicle Breakdown,LOC-PNQ-01,VEH-1324,2026-08-20 19:49:00,2026-08-21 00:31:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,33.4
+DIS-0174,Road Closure,LOC-AMD-01,VEH-1337,2026-08-12 19:25:00,2026-08-12 21:54:00,Major,Freight arterial corridor construction closure,Road Closure,65.1
+DIS-0175,Road Closure,LOC-HYD-01,VEH-1037,2026-08-08 13:32:00,2026-08-08 15:33:00,Moderate,National Highway flyover repair detour,Road Closure,74.0
+DIS-0176,Labor Shortage,LOC-MAA-01,,2026-08-23 22:17:00,2026-08-24 01:20:00,Major,Peak volume unloader staffing deficit,Labor Shortage,77.1
+DIS-0177,Severe Weather,LOC-CCU-01,,2026-08-15 21:38:00,2026-08-16 00:51:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,56.6
+DIS-0178,State Border Checkpoint Hold,LOC-PNQ-01,,2026-08-25 11:40:00,2026-08-25 13:39:00,Moderate,State boundary regulatory transit audit queue,State Border Checkpoint Hold,56.7
+DIS-0179,Road Closure,LOC-JAI-01,VEH-1364,2026-08-01 09:36:00,2026-08-01 11:51:00,Moderate,National Highway flyover repair detour,Road Closure,62.9
+DIS-0180,Labor Shortage,LOC-BOM-01,,2026-08-17 11:17:00,2026-08-17 13:07:00,Moderate,Contract dock worker shift dispute,Labor Shortage,80.1
+DIS-0181,Severe Weather,LOC-PNQ-01,,2026-08-19 08:20:00,2026-08-19 13:01:00,Critical,Monsoon flash waterlogging on transit highway,Severe Weather,71.7
+DIS-0182,Warehouse Congestion,LOC-CCU-01,,2026-08-06 14:17:00,2026-08-06 16:58:00,Moderate,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,38.9
+DIS-0183,Road Closure,LOC-IDR-01,VEH-1313,2026-08-26 15:49:00,2026-08-26 19:19:00,Major,Freight arterial corridor construction closure,Road Closure,32.0
+DIS-0184,Warehouse Congestion,LOC-JAI-01,,2026-08-23 09:39:00,2026-08-23 11:39:00,Moderate,Sorting facility buffer saturation,Warehouse Congestion,68.0
+DIS-0185,Labor Shortage,LOC-AMD-01,,2026-08-22 14:00:00,2026-08-22 16:46:00,Major,Unexpected night shift handler shortage,Labor Shortage,70.0
+DIS-0186,State Border Checkpoint Hold,LOC-AMD-01,,2026-08-19 05:53:00,2026-08-19 09:06:00,Major,Inter-state commercial tax portal outage,State Border Checkpoint Hold,64.2
+DIS-0187,Road Closure,LOC-JAI-01,VEH-1005,2026-08-18 09:42:00,2026-08-18 12:08:00,Moderate,Emergency culvert repair diversion on highway,Road Closure,48.9
+DIS-0188,Vehicle Breakdown,LOC-DEL-01,VEH-1408,2026-08-19 10:00:00,2026-08-19 12:43:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,57.5
+DIS-0189,Severe Weather,LOC-AMD-01,,2026-08-10 08:10:00,2026-08-10 11:12:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,77.9
+DIS-0190,Warehouse Congestion,LOC-DEL-01,,2026-08-22 05:27:00,2026-08-22 07:40:00,Moderate,Sorting facility buffer saturation,Warehouse Congestion,62.4
+DIS-0191,Warehouse Congestion,LOC-BDQ-01,,2026-08-01 12:00:00,2026-08-01 15:25:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,59.6
+DIS-0192,Vehicle Breakdown,LOC-CCU-01,VEH-1360,2026-08-03 16:10:00,2026-08-03 20:53:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,40.2
+DIS-0193,Labor Shortage,LOC-LKO-01,,2026-08-22 15:17:00,2026-08-22 18:31:00,Major,Unexpected night shift handler shortage,Labor Shortage,79.4
+DIS-0194,Road Closure,LOC-MAA-01,VEH-1223,2026-08-25 20:02:00,2026-08-25 23:30:00,Major,Emergency culvert repair diversion on highway,Road Closure,56.0
+DIS-0195,Road Closure,LOC-PNQ-01,VEH-1218,2026-08-19 11:29:00,2026-08-19 14:53:00,Major,National Highway flyover repair detour,Road Closure,62.7
+DIS-0196,Road Closure,LOC-GUR-01,VEH-1200,2026-08-01 09:36:00,2026-08-01 13:19:00,Major,Major accident-induced expressway roadblock,Road Closure,46.7
+DIS-0197,State Border Checkpoint Hold,LOC-AMD-01,,2026-08-10 07:38:00,2026-08-10 09:51:00,Moderate,State boundary regulatory transit audit queue,State Border Checkpoint Hold,43.5
+DIS-0198,Equipment Failure,LOC-DEL-01,,2026-08-24 07:31:00,2026-08-24 10:09:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,44.6
+DIS-0199,Warehouse Congestion,LOC-BLR-01,,2026-08-13 20:13:00,2026-08-14 00:45:00,Critical,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,43.5
+DIS-0200,Warehouse Congestion,LOC-BOM-01,,2026-08-07 16:22:00,2026-08-07 19:46:00,Major,Sorting facility buffer saturation,Warehouse Congestion,31.1
+DIS-0201,Warehouse Congestion,LOC-NOI-01,,2026-08-11 07:43:00,2026-08-11 10:49:00,Major,Sorting facility buffer saturation,Warehouse Congestion,79.6
+DIS-0202,Equipment Failure,LOC-BLR-01,,2026-08-06 07:41:00,2026-08-06 11:05:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,46.8
+DIS-0203,Equipment Failure,LOC-PNQ-01,,2026-08-05 22:13:00,2026-08-06 00:31:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,52.2
+DIS-0204,Labor Shortage,LOC-AMD-01,,2026-08-13 06:15:00,2026-08-13 09:11:00,Major,Contract dock worker shift dispute,Labor Shortage,33.6
+DIS-0205,Vehicle Breakdown,LOC-NAG-01,VEH-1388,2026-08-07 21:53:00,2026-08-08 02:07:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,35.2
+DIS-0206,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-16 19:49:00,2026-08-16 21:58:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,84.6
+DIS-0207,Equipment Failure,LOC-BLR-01,,2026-08-03 20:08:00,2026-08-03 21:58:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,72.3
+DIS-0208,Vehicle Breakdown,LOC-JAI-01,VEH-1446,2026-08-23 17:32:00,2026-08-23 20:30:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,74.1
+DIS-0209,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-15 21:33:00,2026-08-15 23:50:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,34.5
+DIS-0210,State Border Checkpoint Hold,LOC-IDR-01,,2026-08-07 17:45:00,2026-08-07 20:10:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,53.2
+DIS-0211,Labor Shortage,LOC-AMD-01,,2026-08-05 17:38:00,2026-08-05 21:16:00,Major,Contract dock worker shift dispute,Labor Shortage,80.3
+DIS-0212,Equipment Failure,LOC-CCU-01,,2026-08-07 19:38:00,2026-08-07 23:12:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,35.4
+DIS-0213,Vehicle Breakdown,LOC-MAA-01,VEH-1266,2026-08-14 10:06:00,2026-08-14 12:58:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,52.0
+DIS-0214,Road Closure,LOC-CCU-01,VEH-1055,2026-08-03 05:28:00,2026-08-03 09:26:00,Major,Freight arterial corridor construction closure,Road Closure,48.3
+DIS-0215,Warehouse Congestion,LOC-DEL-02,,2026-08-13 15:57:00,2026-08-13 19:39:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,53.6
+DIS-0216,Road Closure,LOC-DEL-01,VEH-1236,2026-08-08 09:45:00,2026-08-08 11:58:00,Moderate,Major accident-induced expressway roadblock,Road Closure,30.3
+DIS-0217,Equipment Failure,LOC-DEL-01,,2026-08-24 19:48:00,2026-08-24 22:12:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,37.3
+DIS-0218,Equipment Failure,LOC-JAI-01,,2026-08-22 22:01:00,2026-08-23 00:04:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,74.8
+DIS-0219,State Border Checkpoint Hold,LOC-HYD-01,,2026-08-20 17:46:00,2026-08-20 20:20:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,49.0
+DIS-0220,Warehouse Congestion,LOC-BLR-01,,2026-08-02 14:04:00,2026-08-02 17:38:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,32.6
+DIS-0221,Severe Weather,LOC-DEL-01,,2026-08-03 20:12:00,2026-08-04 01:01:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,74.9
+DIS-0222,Labor Shortage,LOC-BLR-03,,2026-08-20 05:49:00,2026-08-20 08:48:00,Major,Contract dock worker shift dispute,Labor Shortage,38.8
+DIS-0223,Road Closure,LOC-BLR-01,VEH-1306,2026-08-18 07:16:00,2026-08-18 09:55:00,Major,Major accident-induced expressway roadblock,Road Closure,74.2
+DIS-0224,Vehicle Breakdown,LOC-BLR-01,VEH-1523,2026-08-25 13:46:00,2026-08-25 17:39:00,Major,Severe brake caliper seizure,Vehicle Breakdown,81.3
+DIS-0225,Vehicle Breakdown,LOC-MAA-01,VEH-1044,2026-08-24 15:46:00,2026-08-24 20:21:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,80.4
+DIS-0226,State Border Checkpoint Hold,LOC-STV-01,,2026-08-09 13:40:00,2026-08-09 16:15:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,58.3
+DIS-0227,Severe Weather,LOC-DEL-01,,2026-08-17 22:20:00,2026-08-18 03:17:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,60.3
+DIS-0228,Equipment Failure,LOC-MAA-01,,2026-08-06 20:16:00,2026-08-06 23:42:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,39.6
+DIS-0229,Labor Shortage,LOC-BLR-01,,2026-08-09 07:44:00,2026-08-09 09:46:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,79.4
+DIS-0230,Equipment Failure,LOC-HYD-01,,2026-08-21 18:25:00,2026-08-21 21:41:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,78.6
+DIS-0231,Severe Weather,LOC-AMD-01,,2026-08-08 05:57:00,2026-08-08 09:24:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,67.2
+DIS-0232,Equipment Failure,LOC-HYD-01,,2026-08-15 15:18:00,2026-08-15 18:59:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,51.6
+DIS-0233,Warehouse Congestion,LOC-BOM-02,,2026-08-01 05:41:00,2026-08-01 08:50:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,77.3
+DIS-0234,State Border Checkpoint Hold,LOC-HYD-01,,2026-08-22 18:03:00,2026-08-22 20:52:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,33.0
+DIS-0235,Warehouse Congestion,LOC-BLR-01,,2026-08-20 16:01:00,2026-08-20 18:27:00,Moderate,Severe cross-dock staging area overflow,Warehouse Congestion,49.5
+DIS-0236,Severe Weather,LOC-HYD-01,,2026-08-21 08:10:00,2026-08-21 12:18:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,82.8
+DIS-0237,Vehicle Breakdown,LOC-HYD-01,VEH-1096,2026-08-19 18:14:00,2026-08-19 22:25:00,Critical,Mechanical engine failure on highway,Vehicle Breakdown,67.5
+DIS-0238,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-06 06:21:00,2026-08-06 08:40:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,74.9
+DIS-0239,Severe Weather,LOC-JAI-02,,2026-08-01 08:08:00,2026-08-01 12:46:00,Critical,Torrential rainfall flooding industrial access bypass,Severe Weather,74.4
+DIS-0240,State Border Checkpoint Hold,LOC-HYD-01,,2026-08-23 18:15:00,2026-08-23 21:07:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,83.0
+DIS-0241,Vehicle Breakdown,LOC-BOM-01,VEH-1541,2026-08-14 09:35:00,2026-08-14 14:15:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,77.6
+DIS-0242,Labor Shortage,LOC-CCU-02,,2026-08-03 21:52:00,2026-08-04 01:20:00,Major,Unexpected night shift handler shortage,Labor Shortage,39.3
+DIS-0243,Equipment Failure,LOC-BOM-01,,2026-08-06 17:32:00,2026-08-06 19:33:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,35.6
+DIS-0244,Warehouse Congestion,LOC-PNQ-01,,2026-08-22 19:39:00,2026-08-23 00:08:00,Critical,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,72.8
+DIS-0245,Vehicle Breakdown,LOC-BOM-01,VEH-1268,2026-08-13 06:02:00,2026-08-13 08:49:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,34.4
+DIS-0246,Severe Weather,LOC-BLR-01,,2026-08-07 08:16:00,2026-08-07 11:45:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,76.2
+DIS-0247,Severe Weather,LOC-JAI-01,,2026-08-26 21:17:00,2026-08-27 02:13:00,Critical,Dense winter morning smog reducing visibility < 50m,Severe Weather,40.5
+DIS-0248,Warehouse Congestion,LOC-CCU-01,,2026-08-06 21:52:00,2026-08-07 01:38:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,60.8
+DIS-0249,Warehouse Congestion,LOC-BLR-01,,2026-08-20 17:52:00,2026-08-20 21:33:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,43.5
+DIS-0250,State Border Checkpoint Hold,LOC-HYD-01,,2026-08-22 06:10:00,2026-08-22 08:54:00,Moderate,State boundary regulatory transit audit queue,State Border Checkpoint Hold,32.0
+DIS-0251,Warehouse Congestion,LOC-DEL-01,,2026-08-11 17:30:00,2026-08-11 20:52:00,Major,Sorting facility buffer saturation,Warehouse Congestion,66.0
+DIS-0252,Severe Weather,LOC-DEL-01,,2026-08-05 20:27:00,2026-08-05 23:43:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,52.1
+DIS-0253,Road Closure,LOC-MAA-02,VEH-1058,2026-08-15 13:52:00,2026-08-15 16:42:00,Major,National Highway flyover repair detour,Road Closure,78.4
+DIS-0254,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-13 10:26:00,2026-08-13 12:33:00,Moderate,State boundary regulatory transit audit queue,State Border Checkpoint Hold,40.3
+DIS-0255,Road Closure,LOC-JAI-01,VEH-1491,2026-08-20 10:21:00,2026-08-20 14:01:00,Major,Freight arterial corridor construction closure,Road Closure,64.2
+DIS-0256,Vehicle Breakdown,LOC-HYD-01,VEH-1462,2026-08-21 13:45:00,2026-08-21 17:06:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,71.9
+DIS-0257,Equipment Failure,LOC-JAI-01,,2026-08-10 11:55:00,2026-08-10 14:57:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,65.9
+DIS-0258,Severe Weather,LOC-BLR-01,,2026-08-10 14:29:00,2026-08-10 17:11:00,Moderate,Torrential rainfall flooding industrial access bypass,Severe Weather,31.3
+DIS-0259,Equipment Failure,LOC-MAA-01,,2026-08-23 19:37:00,2026-08-23 22:30:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,53.4
+DIS-0260,Labor Shortage,LOC-HYD-01,,2026-08-25 14:09:00,2026-08-25 15:58:00,Moderate,Contract dock worker shift dispute,Labor Shortage,80.4
+DIS-0261,Labor Shortage,LOC-AMD-01,,2026-08-08 22:10:00,2026-08-09 01:35:00,Major,Unexpected night shift handler shortage,Labor Shortage,71.1
+DIS-0262,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-20 07:39:00,2026-08-20 09:44:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,66.4
+DIS-0263,Severe Weather,LOC-BOM-01,,2026-08-19 17:38:00,2026-08-19 20:22:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,46.2
+DIS-0264,Warehouse Congestion,LOC-DEL-01,,2026-08-19 09:32:00,2026-08-19 11:45:00,Moderate,Sorting facility buffer saturation,Warehouse Congestion,39.8
+DIS-0265,Road Closure,LOC-BOM-01,VEH-1116,2026-08-12 09:33:00,2026-08-12 12:13:00,Major,Freight arterial corridor construction closure,Road Closure,62.5
+DIS-0266,Road Closure,LOC-CCU-01,VEH-1232,2026-08-04 09:58:00,2026-08-04 12:15:00,Moderate,National Highway flyover repair detour,Road Closure,74.6
+DIS-0267,Severe Weather,LOC-BOM-01,,2026-08-15 19:39:00,2026-08-15 21:54:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,31.3
+DIS-0268,Road Closure,LOC-MAA-01,VEH-1051,2026-08-04 07:45:00,2026-08-04 10:25:00,Moderate,Freight arterial corridor construction closure,Road Closure,33.2
+DIS-0269,Road Closure,LOC-AMD-01,VEH-1175,2026-08-26 12:07:00,2026-08-26 14:34:00,Moderate,Emergency culvert repair diversion on highway,Road Closure,56.6
+DIS-0270,Warehouse Congestion,LOC-MAA-01,,2026-08-13 15:41:00,2026-08-13 18:14:00,Moderate,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,36.7
+DIS-0271,Warehouse Congestion,LOC-DEL-01,,2026-08-14 07:52:00,2026-08-14 12:21:00,Critical,Sorting facility buffer saturation,Warehouse Congestion,45.1
+DIS-0272,Vehicle Breakdown,LOC-BOM-01,VEH-1290,2026-08-16 09:39:00,2026-08-16 12:33:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,52.7
+DIS-0273,State Border Checkpoint Hold,LOC-NOI-01,,2026-08-15 08:14:00,2026-08-15 11:03:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,84.0
+DIS-0274,Vehicle Breakdown,LOC-CCU-01,VEH-1048,2026-08-16 05:35:00,2026-08-16 09:59:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,69.5
+DIS-0275,Equipment Failure,LOC-CCU-01,,2026-08-11 21:23:00,2026-08-12 00:11:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,37.9
+DIS-0276,Equipment Failure,LOC-BLR-01,,2026-08-26 21:28:00,2026-08-26 23:17:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,79.5
+DIS-0277,Warehouse Congestion,LOC-PNQ-01,,2026-08-18 15:58:00,2026-08-18 18:15:00,Moderate,Sorting facility buffer saturation,Warehouse Congestion,31.1
+DIS-0278,Warehouse Congestion,LOC-DEL-01,,2026-08-09 12:06:00,2026-08-09 14:42:00,Moderate,Severe cross-dock staging area overflow,Warehouse Congestion,38.7
+DIS-0279,Vehicle Breakdown,LOC-MAA-02,VEH-1620,2026-08-05 21:27:00,2026-08-06 01:00:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,47.9
+DIS-0280,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-06 06:11:00,2026-08-06 09:14:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,43.7
+DIS-0281,Severe Weather,LOC-BLR-01,,2026-08-24 18:16:00,2026-08-24 22:43:00,Critical,Torrential rainfall flooding industrial access bypass,Severe Weather,39.1
+DIS-0282,Equipment Failure,LOC-MAA-01,,2026-08-04 18:23:00,2026-08-04 21:11:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,55.4
+DIS-0283,Labor Shortage,LOC-CCU-01,,2026-08-13 18:25:00,2026-08-13 20:46:00,Major,Contract dock worker shift dispute,Labor Shortage,49.5
+DIS-0284,Equipment Failure,LOC-BOM-01,,2026-08-20 19:59:00,2026-08-20 21:59:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,32.1
+DIS-0285,Vehicle Breakdown,LOC-PNQ-01,VEH-1143,2026-08-04 05:55:00,2026-08-04 09:56:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,82.1
+DIS-0286,State Border Checkpoint Hold,LOC-DEL-01,,2026-08-13 06:00:00,2026-08-13 08:05:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,58.9
+DIS-0287,Equipment Failure,LOC-MAA-01,,2026-08-22 20:30:00,2026-08-22 23:18:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,55.2
+DIS-0288,Equipment Failure,LOC-CCU-01,,2026-08-04 07:29:00,2026-08-04 10:00:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,39.3
+DIS-0289,Equipment Failure,LOC-CCU-01,,2026-08-13 06:00:00,2026-08-13 07:48:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,84.6
+DIS-0290,Vehicle Breakdown,LOC-BLR-01,VEH-1574,2026-08-26 16:05:00,2026-08-26 20:13:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,46.9
+DIS-0291,Equipment Failure,LOC-AMD-01,,2026-08-11 13:25:00,2026-08-11 16:22:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,75.9
+DIS-0292,Warehouse Congestion,LOC-PNQ-01,,2026-08-02 17:47:00,2026-08-02 21:49:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,57.6
+DIS-0293,Warehouse Congestion,LOC-AMD-01,,2026-08-18 12:11:00,2026-08-18 16:43:00,Critical,Severe cross-dock staging area overflow,Warehouse Congestion,38.9
+DIS-0294,Road Closure,LOC-MAA-01,VEH-1361,2026-08-04 15:19:00,2026-08-04 18:20:00,Major,Emergency culvert repair diversion on highway,Road Closure,59.9
+DIS-0295,Warehouse Congestion,LOC-AMD-01,,2026-08-10 17:34:00,2026-08-10 19:49:00,Moderate,Sorting facility buffer saturation,Warehouse Congestion,72.2
+DIS-0296,Warehouse Congestion,LOC-CCU-01,,2026-08-09 12:08:00,2026-08-09 16:20:00,Critical,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,77.6
+DIS-0297,Labor Shortage,LOC-PNQ-01,,2026-08-03 14:29:00,2026-08-03 16:32:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,46.2
+DIS-0298,State Border Checkpoint Hold,LOC-BLR-03,,2026-08-08 18:04:00,2026-08-08 20:53:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,77.6
+DIS-0299,Vehicle Breakdown,LOC-CCU-01,VEH-1090,2026-08-05 17:41:00,2026-08-05 21:20:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,52.8
+DIS-0300,Road Closure,LOC-PNQ-01,VEH-1465,2026-08-24 08:28:00,2026-08-24 11:49:00,Major,National Highway flyover repair detour,Road Closure,69.7
+DIS-0301,Severe Weather,LOC-CCU-01,,2026-08-05 07:34:00,2026-08-05 10:45:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,35.1
+DIS-0302,Severe Weather,LOC-CJB-01,,2026-08-24 19:17:00,2026-08-24 21:53:00,Moderate,Monsoon flash waterlogging on transit highway,Severe Weather,74.5
+DIS-0303,Labor Shortage,LOC-DEL-01,,2026-08-24 21:53:00,2026-08-25 00:24:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,63.5
+DIS-0304,Labor Shortage,LOC-NOI-01,,2026-08-12 13:17:00,2026-08-12 15:14:00,Moderate,Contract dock worker shift dispute,Labor Shortage,58.8
+DIS-0305,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-22 14:02:00,2026-08-22 17:08:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,63.0
+DIS-0306,Road Closure,LOC-BLR-01,VEH-1516,2026-08-17 17:16:00,2026-08-17 21:34:00,Critical,Emergency culvert repair diversion on highway,Road Closure,76.4
+DIS-0307,Equipment Failure,LOC-AMD-01,,2026-08-01 17:52:00,2026-08-01 20:26:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,41.1
+DIS-0308,Road Closure,LOC-PNQ-01,VEH-1372,2026-08-20 07:53:00,2026-08-20 11:40:00,Major,National Highway flyover repair detour,Road Closure,56.2
+DIS-0309,Labor Shortage,LOC-PNQ-01,,2026-08-25 07:28:00,2026-08-25 10:49:00,Major,Contract dock worker shift dispute,Labor Shortage,84.1
+DIS-0310,Labor Shortage,LOC-BOM-01,,2026-08-23 22:15:00,2026-08-24 00:57:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,47.4
+DIS-0311,Road Closure,LOC-JAI-01,VEH-1156,2026-08-07 19:29:00,2026-08-07 23:57:00,Critical,Freight arterial corridor construction closure,Road Closure,33.4
+DIS-0312,Equipment Failure,LOC-DEL-02,,2026-08-17 17:41:00,2026-08-17 20:39:00,Major,Automated crane rail misalignment in staging hub,Equipment Failure,63.5
+DIS-0313,State Border Checkpoint Hold,LOC-HYD-01,,2026-08-05 21:37:00,2026-08-05 23:33:00,Moderate,State boundary regulatory transit audit queue,State Border Checkpoint Hold,68.5
+DIS-0314,Equipment Failure,LOC-PNQ-01,,2026-08-26 22:07:00,2026-08-27 01:02:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,42.1
+DIS-0315,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-02 13:21:00,2026-08-02 16:37:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,44.2
+DIS-0316,Warehouse Congestion,LOC-CCU-01,,2026-08-14 09:36:00,2026-08-14 12:30:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,70.8
+DIS-0317,State Border Checkpoint Hold,LOC-BOM-01,,2026-08-26 17:39:00,2026-08-26 19:52:00,Moderate,State boundary regulatory transit audit queue,State Border Checkpoint Hold,48.8
+DIS-0318,Road Closure,LOC-AMD-02,VEH-1315,2026-08-01 19:49:00,2026-08-01 23:45:00,Major,Major accident-induced expressway roadblock,Road Closure,31.9
+DIS-0319,Severe Weather,LOC-AMD-01,,2026-08-01 05:27:00,2026-08-01 08:56:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,43.1
+DIS-0320,Equipment Failure,LOC-BOM-01,,2026-08-06 15:55:00,2026-08-06 19:01:00,Major,Automated crane rail misalignment in staging hub,Equipment Failure,32.6
+DIS-0321,Vehicle Breakdown,LOC-CCU-01,VEH-1579,2026-08-22 14:01:00,2026-08-22 19:26:00,Critical,Mechanical engine failure on highway,Vehicle Breakdown,51.2
+DIS-0322,Equipment Failure,LOC-MAA-01,,2026-08-11 11:25:00,2026-08-11 13:29:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,33.8
+DIS-0323,Warehouse Congestion,LOC-HYD-01,,2026-08-21 22:02:00,2026-08-22 00:35:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,74.7
+DIS-0324,Warehouse Congestion,LOC-MAA-01,,2026-08-04 18:01:00,2026-08-04 22:22:00,Critical,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,77.0
+DIS-0325,Warehouse Congestion,LOC-HYD-01,,2026-08-20 13:24:00,2026-08-20 16:59:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,32.2
+DIS-0326,Labor Shortage,LOC-DEL-01,,2026-08-10 14:26:00,2026-08-10 16:46:00,Moderate,Unexpected night shift handler shortage,Labor Shortage,82.9
+DIS-0327,Labor Shortage,LOC-PNQ-01,,2026-08-25 13:25:00,2026-08-25 16:09:00,Moderate,Contract dock worker shift dispute,Labor Shortage,57.1
+DIS-0328,Warehouse Congestion,LOC-AMD-01,,2026-08-01 16:12:00,2026-08-01 19:20:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,42.4
+DIS-0329,Severe Weather,LOC-BOM-02,,2026-08-26 16:26:00,2026-08-26 19:55:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,47.4
+DIS-0330,Warehouse Congestion,LOC-CCU-01,,2026-08-25 10:05:00,2026-08-25 13:29:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,81.7
+DIS-0331,Vehicle Breakdown,LOC-GUR-01,VEH-1234,2026-08-10 14:25:00,2026-08-10 18:46:00,Critical,Mechanical engine failure on highway,Vehicle Breakdown,58.2
+DIS-0332,Vehicle Breakdown,LOC-DEL-01,VEH-1458,2026-08-25 17:42:00,2026-08-25 23:19:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,75.7
+DIS-0333,Equipment Failure,LOC-DEL-01,,2026-08-16 09:51:00,2026-08-16 11:50:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,64.8
+DIS-0334,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-25 11:37:00,2026-08-25 13:56:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,42.5
+DIS-0335,Road Closure,LOC-CCU-01,VEH-1562,2026-08-05 07:30:00,2026-08-05 11:07:00,Major,Major accident-induced expressway roadblock,Road Closure,33.7
+DIS-0336,Equipment Failure,LOC-AMD-01,,2026-08-24 21:21:00,2026-08-24 23:21:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,31.1
+DIS-0337,Road Closure,LOC-JAI-01,VEH-1548,2026-08-03 19:40:00,2026-08-03 22:15:00,Major,Emergency culvert repair diversion on highway,Road Closure,74.0
+DIS-0338,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-03 19:42:00,2026-08-03 22:30:00,Major,Inter-state commercial tax portal outage,State Border Checkpoint Hold,83.5
+DIS-0339,Warehouse Congestion,LOC-AMD-01,,2026-08-15 12:06:00,2026-08-15 16:16:00,Critical,Sorting facility buffer saturation,Warehouse Congestion,35.8
+DIS-0340,Warehouse Congestion,LOC-MAA-01,,2026-08-25 21:44:00,2026-08-26 02:10:00,Critical,Severe cross-dock staging area overflow,Warehouse Congestion,71.8
+DIS-0341,State Border Checkpoint Hold,LOC-DEL-01,,2026-08-15 10:18:00,2026-08-15 12:36:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,70.9
+DIS-0342,Road Closure,LOC-JAI-01,VEH-1087,2026-08-24 19:57:00,2026-08-24 22:21:00,Moderate,Freight arterial corridor construction closure,Road Closure,40.2
+DIS-0343,Labor Shortage,LOC-PNQ-01,,2026-08-25 16:14:00,2026-08-25 19:00:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,48.3
+DIS-0344,Road Closure,LOC-PNQ-01,VEH-1173,2026-08-04 09:52:00,2026-08-04 12:05:00,Moderate,Freight arterial corridor construction closure,Road Closure,41.5
+DIS-0345,Warehouse Congestion,LOC-LKO-01,,2026-08-01 16:09:00,2026-08-01 20:26:00,Critical,Severe cross-dock staging area overflow,Warehouse Congestion,30.5
+DIS-0346,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-15 13:35:00,2026-08-15 16:31:00,Major,Inter-state commercial tax portal outage,State Border Checkpoint Hold,69.7
+DIS-0347,Vehicle Breakdown,LOC-HYD-01,VEH-1027,2026-08-25 09:29:00,2026-08-25 12:14:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,42.7
+DIS-0348,Severe Weather,LOC-BLR-01,,2026-08-03 12:00:00,2026-08-03 15:39:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,59.7
+DIS-0349,Vehicle Breakdown,LOC-AMD-01,VEH-1623,2026-08-15 12:14:00,2026-08-15 17:14:00,Critical,Mechanical engine failure on highway,Vehicle Breakdown,56.7
+DIS-0350,State Border Checkpoint Hold,LOC-IXC-01,,2026-08-09 21:53:00,2026-08-09 23:57:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,30.3
+DIS-0351,Warehouse Congestion,LOC-HYD-01,,2026-08-01 21:48:00,2026-08-02 00:39:00,Moderate,Severe cross-dock staging area overflow,Warehouse Congestion,35.2
+DIS-0352,State Border Checkpoint Hold,LOC-PNQ-01,,2026-08-26 14:04:00,2026-08-26 15:59:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,47.4
+DIS-0353,Equipment Failure,LOC-MAA-01,,2026-08-03 17:53:00,2026-08-03 20:18:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,84.2
+DIS-0354,Warehouse Congestion,LOC-MAA-01,,2026-08-04 21:49:00,2026-08-05 02:23:00,Critical,Sorting facility buffer saturation,Warehouse Congestion,47.7
+DIS-0355,Warehouse Congestion,LOC-BOM-01,,2026-08-20 18:01:00,2026-08-20 20:22:00,Moderate,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,43.0
+DIS-0356,Vehicle Breakdown,LOC-JAI-01,VEH-1088,2026-08-01 18:18:00,2026-08-01 21:26:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,48.0
+DIS-0357,Equipment Failure,LOC-IDR-01,,2026-08-20 05:19:00,2026-08-20 07:29:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,73.2
+DIS-0358,Road Closure,LOC-JAI-01,VEH-1225,2026-08-02 09:33:00,2026-08-02 14:00:00,Critical,Freight arterial corridor construction closure,Road Closure,70.6
+DIS-0359,Severe Weather,LOC-CCU-01,,2026-08-07 14:06:00,2026-08-07 16:52:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,57.8
+DIS-0360,Vehicle Breakdown,LOC-HYD-01,VEH-1223,2026-08-15 17:51:00,2026-08-15 22:05:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,32.4
+DIS-0361,Severe Weather,LOC-JAI-01,,2026-08-23 19:36:00,2026-08-23 23:03:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,37.6
+DIS-0362,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-24 21:44:00,2026-08-24 23:40:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,35.6
+DIS-0363,Road Closure,LOC-CCU-01,VEH-1590,2026-08-02 14:17:00,2026-08-02 17:38:00,Major,Emergency culvert repair diversion on highway,Road Closure,54.4
+DIS-0364,Warehouse Congestion,LOC-HYD-01,,2026-08-12 19:41:00,2026-08-12 22:31:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,50.5
+DIS-0365,Equipment Failure,LOC-MAA-01,,2026-08-08 22:06:00,2026-08-09 00:16:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,33.8
+DIS-0366,Equipment Failure,LOC-DEL-02,,2026-08-08 09:54:00,2026-08-08 12:09:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,37.3
+DIS-0367,Vehicle Breakdown,LOC-BLR-01,VEH-1125,2026-08-05 17:30:00,2026-08-05 22:11:00,Critical,Mechanical engine failure on highway,Vehicle Breakdown,68.0
+DIS-0368,Labor Shortage,LOC-PNQ-01,,2026-08-11 15:41:00,2026-08-11 19:05:00,Major,Peak volume unloader staffing deficit,Labor Shortage,33.1
+DIS-0369,State Border Checkpoint Hold,LOC-DEL-01,,2026-08-20 06:08:00,2026-08-20 08:11:00,Moderate,State boundary regulatory transit audit queue,State Border Checkpoint Hold,32.5
+DIS-0370,Severe Weather,LOC-LKO-01,,2026-08-05 13:52:00,2026-08-05 16:31:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,53.1
+DIS-0371,Severe Weather,LOC-CCU-01,,2026-08-22 21:26:00,2026-08-23 00:20:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,82.4
+DIS-0372,Labor Shortage,LOC-CCU-01,,2026-08-25 13:51:00,2026-08-25 16:09:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,44.3
+DIS-0373,Warehouse Congestion,LOC-BDQ-01,,2026-08-09 17:34:00,2026-08-09 20:34:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,82.1
+DIS-0374,Warehouse Congestion,LOC-HYD-01,,2026-08-13 05:46:00,2026-08-13 09:36:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,49.8
+DIS-0375,Vehicle Breakdown,LOC-PNQ-01,VEH-1206,2026-08-16 13:46:00,2026-08-16 17:08:00,Major,Severe brake caliper seizure,Vehicle Breakdown,77.0
+DIS-0376,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-01 20:13:00,2026-08-01 23:04:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,46.2
+DIS-0377,State Border Checkpoint Hold,LOC-BOM-01,,2026-08-24 17:58:00,2026-08-24 19:38:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,72.0
+DIS-0378,Equipment Failure,LOC-LKO-01,,2026-08-02 11:33:00,2026-08-02 13:42:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,57.7
+DIS-0379,State Border Checkpoint Hold,LOC-BOM-01,,2026-08-22 17:41:00,2026-08-22 20:40:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,32.8
+DIS-0380,Warehouse Congestion,LOC-DEL-01,,2026-08-17 09:48:00,2026-08-17 14:07:00,Critical,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,52.3
+DIS-0381,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-06 17:44:00,2026-08-06 20:49:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,42.0
+DIS-0382,Equipment Failure,LOC-JAI-02,,2026-08-18 09:43:00,2026-08-18 13:06:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,74.7
+DIS-0383,Vehicle Breakdown,LOC-BLR-01,VEH-1371,2026-08-24 17:43:00,2026-08-24 22:37:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,62.3
+DIS-0384,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-11 05:53:00,2026-08-11 08:05:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,63.5
+DIS-0385,Vehicle Breakdown,LOC-CCU-01,VEH-1409,2026-08-20 16:12:00,2026-08-20 20:11:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,73.8
+DIS-0386,Warehouse Congestion,LOC-CCU-01,,2026-08-09 16:02:00,2026-08-09 19:13:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,50.5
+DIS-0387,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-03 20:04:00,2026-08-03 21:37:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,78.9
+DIS-0388,Vehicle Breakdown,LOC-JAI-01,VEH-1453,2026-08-04 20:12:00,2026-08-05 00:56:00,Critical,Mechanical engine failure on highway,Vehicle Breakdown,36.2
+DIS-0389,Vehicle Breakdown,LOC-DEL-01,VEH-1223,2026-08-10 21:52:00,2026-08-11 02:33:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,49.9
+DIS-0390,Severe Weather,LOC-JAI-01,,2026-08-26 07:42:00,2026-08-26 11:34:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,71.8
+DIS-0391,Severe Weather,LOC-BLR-03,,2026-08-21 16:15:00,2026-08-21 20:24:00,Critical,Dense winter morning smog reducing visibility < 50m,Severe Weather,72.6
+DIS-0392,State Border Checkpoint Hold,LOC-AMD-01,,2026-08-01 21:50:00,2026-08-01 23:10:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,66.9
+DIS-0393,Road Closure,LOC-JAI-01,VEH-1460,2026-08-13 15:42:00,2026-08-13 18:44:00,Major,Freight arterial corridor construction closure,Road Closure,68.2
+DIS-0394,Equipment Failure,LOC-HYD-01,,2026-08-01 16:16:00,2026-08-01 19:24:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,83.3
+DIS-0395,Road Closure,LOC-AMD-01,VEH-1186,2026-08-26 17:57:00,2026-08-26 21:07:00,Major,National Highway flyover repair detour,Road Closure,53.7
+DIS-0396,Equipment Failure,LOC-DEL-01,,2026-08-11 05:59:00,2026-08-11 08:44:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,70.4
+DIS-0397,Equipment Failure,LOC-JAI-02,,2026-08-21 11:38:00,2026-08-21 13:16:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,74.0
+DIS-0398,Equipment Failure,LOC-DEL-01,,2026-08-09 11:16:00,2026-08-09 13:19:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,45.8
+DIS-0399,Vehicle Breakdown,LOC-BLR-01,VEH-1595,2026-08-19 20:11:00,2026-08-19 22:58:00,Major,Severe brake caliper seizure,Vehicle Breakdown,74.4
+DIS-0400,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-26 07:52:00,2026-08-26 09:59:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,34.0
+DIS-0401,Warehouse Congestion,LOC-CCU-01,,2026-08-24 18:27:00,2026-08-24 23:11:00,Critical,Sorting facility buffer saturation,Warehouse Congestion,45.3
+DIS-0402,Warehouse Congestion,LOC-BLR-02,,2026-08-05 11:17:00,2026-08-05 14:21:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,55.8
+DIS-0403,Warehouse Congestion,LOC-BLR-01,,2026-08-26 07:20:00,2026-08-26 09:35:00,Moderate,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,64.6
+DIS-0404,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-23 15:34:00,2026-08-23 17:27:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,80.6
+DIS-0405,Vehicle Breakdown,LOC-GUR-01,VEH-1185,2026-08-21 09:48:00,2026-08-21 15:10:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,64.2
+DIS-0406,Road Closure,LOC-CJB-01,VEH-1245,2026-08-21 13:29:00,2026-08-21 17:40:00,Major,Major accident-induced expressway roadblock,Road Closure,47.5
+DIS-0407,Vehicle Breakdown,LOC-CCU-01,VEH-1218,2026-08-17 10:07:00,2026-08-17 14:37:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,30.4
+DIS-0408,Road Closure,LOC-AMD-01,VEH-1160,2026-08-25 08:01:00,2026-08-25 12:09:00,Major,Major accident-induced expressway roadblock,Road Closure,52.2
+DIS-0409,Vehicle Breakdown,LOC-BLR-01,VEH-1635,2026-08-10 10:18:00,2026-08-10 13:15:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,84.7
+DIS-0410,Equipment Failure,LOC-BLR-02,,2026-08-03 11:57:00,2026-08-03 14:22:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,60.4
+DIS-0411,Road Closure,LOC-MAA-01,VEH-1356,2026-08-19 10:29:00,2026-08-19 12:24:00,Moderate,Emergency culvert repair diversion on highway,Road Closure,33.4
+DIS-0412,Road Closure,LOC-HYD-01,VEH-1233,2026-08-03 15:35:00,2026-08-03 19:20:00,Major,Major accident-induced expressway roadblock,Road Closure,33.7
+DIS-0413,Labor Shortage,LOC-PNQ-01,,2026-08-23 13:58:00,2026-08-23 17:41:00,Major,Unexpected night shift handler shortage,Labor Shortage,77.8
+DIS-0414,Severe Weather,LOC-DEL-01,,2026-08-02 08:22:00,2026-08-02 12:07:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,54.5
+DIS-0415,Equipment Failure,LOC-PNQ-01,,2026-08-23 10:12:00,2026-08-23 12:34:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,41.8
+DIS-0416,Road Closure,LOC-IDR-01,VEH-1606,2026-08-07 19:17:00,2026-08-07 23:42:00,Critical,Emergency culvert repair diversion on highway,Road Closure,35.7
+DIS-0417,Road Closure,LOC-DEL-01,VEH-1080,2026-08-05 12:15:00,2026-08-05 15:57:00,Major,Freight arterial corridor construction closure,Road Closure,81.7
+DIS-0418,State Border Checkpoint Hold,LOC-DEL-01,,2026-08-04 05:34:00,2026-08-04 08:35:00,Major,Inter-state commercial tax portal outage,State Border Checkpoint Hold,43.0
+DIS-0419,Warehouse Congestion,LOC-AMD-01,,2026-08-13 15:35:00,2026-08-13 20:14:00,Critical,Severe cross-dock staging area overflow,Warehouse Congestion,54.4
+DIS-0420,Warehouse Congestion,LOC-BLR-01,,2026-08-21 08:01:00,2026-08-21 11:13:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,79.4
+DIS-0421,State Border Checkpoint Hold,LOC-CCU-02,,2026-08-03 11:53:00,2026-08-03 15:09:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,79.2
+DIS-0422,Severe Weather,LOC-BLR-01,,2026-08-13 13:42:00,2026-08-13 16:59:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,72.2
+DIS-0423,Road Closure,LOC-AMD-01,VEH-1484,2026-08-03 13:36:00,2026-08-03 17:40:00,Critical,Emergency culvert repair diversion on highway,Road Closure,77.5
+DIS-0424,Labor Shortage,LOC-BOM-01,,2026-08-12 15:30:00,2026-08-12 18:02:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,80.5
+DIS-0425,Vehicle Breakdown,LOC-CCU-01,VEH-1280,2026-08-08 15:49:00,2026-08-08 20:23:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,74.4
+DIS-0426,Vehicle Breakdown,LOC-BOM-01,VEH-1132,2026-08-18 13:56:00,2026-08-18 18:41:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,31.2
+DIS-0427,Road Closure,LOC-JAI-01,VEH-1525,2026-08-04 21:55:00,2026-08-05 00:33:00,Major,Emergency culvert repair diversion on highway,Road Closure,80.8
+DIS-0428,Warehouse Congestion,LOC-HYD-01,,2026-08-04 15:43:00,2026-08-04 18:46:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,67.6
+DIS-0429,Road Closure,LOC-CCU-01,VEH-1584,2026-08-12 21:40:00,2026-08-13 00:12:00,Moderate,Freight arterial corridor construction closure,Road Closure,48.5
+DIS-0430,Severe Weather,LOC-CCU-01,,2026-08-13 05:52:00,2026-08-13 09:32:00,Major,Cyclonic gale winds halting intercity freight transit,Severe Weather,82.9
+DIS-0431,Road Closure,LOC-BOM-01,VEH-1203,2026-08-10 15:34:00,2026-08-10 17:54:00,Moderate,Emergency culvert repair diversion on highway,Road Closure,65.4
+DIS-0432,Equipment Failure,LOC-IDR-01,,2026-08-15 10:04:00,2026-08-15 13:17:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,46.5
+DIS-0433,Warehouse Congestion,LOC-IDR-01,,2026-08-07 16:04:00,2026-08-07 18:23:00,Moderate,Severe cross-dock staging area overflow,Warehouse Congestion,71.8
+DIS-0434,Equipment Failure,LOC-AMD-01,,2026-08-26 19:48:00,2026-08-26 23:30:00,Major,Automated crane rail misalignment in staging hub,Equipment Failure,40.2
+DIS-0435,Labor Shortage,LOC-PNQ-01,,2026-08-09 20:11:00,2026-08-09 21:41:00,Moderate,Unexpected night shift handler shortage,Labor Shortage,39.4
+DIS-0436,Vehicle Breakdown,LOC-LKO-01,VEH-1299,2026-08-23 07:22:00,2026-08-23 10:32:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,55.3
+DIS-0437,Severe Weather,LOC-DEL-01,,2026-08-19 15:36:00,2026-08-19 20:18:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,35.0
+DIS-0438,Labor Shortage,LOC-JAI-01,,2026-08-04 07:51:00,2026-08-04 11:29:00,Major,Peak volume unloader staffing deficit,Labor Shortage,45.5
+DIS-0439,Equipment Failure,LOC-PNQ-01,,2026-08-10 12:15:00,2026-08-10 15:37:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,77.9
+DIS-0440,Road Closure,LOC-CCU-01,VEH-1196,2026-08-14 07:31:00,2026-08-14 11:12:00,Major,National Highway flyover repair detour,Road Closure,36.3
+DIS-0441,Labor Shortage,LOC-JAI-01,,2026-08-19 05:19:00,2026-08-19 07:51:00,Major,Peak volume unloader staffing deficit,Labor Shortage,60.3
+DIS-0442,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-19 13:30:00,2026-08-19 16:05:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,40.1
+DIS-0443,Labor Shortage,LOC-AMD-01,,2026-08-07 12:06:00,2026-08-07 14:30:00,Moderate,Contract dock worker shift dispute,Labor Shortage,40.2
+DIS-0444,Warehouse Congestion,LOC-MAA-01,,2026-08-02 21:44:00,2026-08-03 01:09:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,38.0
+DIS-0445,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-20 12:01:00,2026-08-20 15:12:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,70.3
+DIS-0446,Labor Shortage,LOC-BLR-03,,2026-08-25 17:32:00,2026-08-25 19:39:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,42.2
+DIS-0447,State Border Checkpoint Hold,LOC-DEL-01,,2026-08-16 11:43:00,2026-08-16 14:42:00,Major,Inter-state commercial tax portal outage,State Border Checkpoint Hold,52.0
+DIS-0448,Labor Shortage,LOC-HYD-01,,2026-08-05 16:03:00,2026-08-05 18:11:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,33.8
+DIS-0449,Road Closure,LOC-CJB-01,VEH-1457,2026-08-05 18:10:00,2026-08-05 20:16:00,Moderate,Major accident-induced expressway roadblock,Road Closure,41.4
+DIS-0450,Vehicle Breakdown,LOC-PNQ-01,VEH-1415,2026-08-15 05:52:00,2026-08-15 08:37:00,Major,Severe brake caliper seizure,Vehicle Breakdown,33.0
+DIS-0451,State Border Checkpoint Hold,LOC-DEL-01,,2026-08-07 09:51:00,2026-08-07 12:01:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,31.0
+DIS-0452,State Border Checkpoint Hold,LOC-DEL-01,,2026-08-12 11:51:00,2026-08-12 14:33:00,Major,Inter-state commercial tax portal outage,State Border Checkpoint Hold,55.5
+DIS-0453,Warehouse Congestion,LOC-BLR-02,,2026-08-26 09:51:00,2026-08-26 14:03:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,57.5
+DIS-0454,Road Closure,LOC-PNQ-01,VEH-1368,2026-08-12 18:14:00,2026-08-12 21:56:00,Major,Emergency culvert repair diversion on highway,Road Closure,41.2
+DIS-0455,Labor Shortage,LOC-BLR-01,,2026-08-14 05:39:00,2026-08-14 08:50:00,Major,Peak volume unloader staffing deficit,Labor Shortage,67.6
+DIS-0456,Equipment Failure,LOC-PNQ-01,,2026-08-05 10:24:00,2026-08-05 12:38:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,57.7
+DIS-0457,Equipment Failure,LOC-DEL-01,,2026-08-26 06:00:00,2026-08-26 09:05:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,64.3
+DIS-0458,Road Closure,LOC-AMD-01,VEH-1374,2026-08-20 11:41:00,2026-08-20 13:58:00,Moderate,Emergency culvert repair diversion on highway,Road Closure,39.1
+DIS-0459,Equipment Failure,LOC-HYD-01,,2026-08-24 07:42:00,2026-08-24 11:20:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,52.2
+DIS-0460,Equipment Failure,LOC-HYD-02,,2026-08-18 16:07:00,2026-08-18 19:53:00,Major,Automated crane rail misalignment in staging hub,Equipment Failure,69.3
+DIS-0461,Road Closure,LOC-JAI-01,VEH-1064,2026-08-02 13:30:00,2026-08-02 16:51:00,Major,Major accident-induced expressway roadblock,Road Closure,80.2
+DIS-0462,Labor Shortage,LOC-BOM-01,,2026-08-05 17:23:00,2026-08-05 19:36:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,32.6
+DIS-0463,Warehouse Congestion,LOC-BLR-03,,2026-08-17 14:29:00,2026-08-17 18:08:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,74.6
+DIS-0464,Vehicle Breakdown,LOC-CCU-01,VEH-1267,2026-08-16 16:03:00,2026-08-16 20:03:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,46.9
+DIS-0465,Road Closure,LOC-JAI-01,VEH-1171,2026-08-04 05:46:00,2026-08-04 09:38:00,Critical,Freight arterial corridor construction closure,Road Closure,74.0
+DIS-0466,Equipment Failure,LOC-JAI-01,,2026-08-16 15:40:00,2026-08-16 17:16:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,30.4
+DIS-0467,Labor Shortage,LOC-MAA-01,,2026-08-04 05:50:00,2026-08-04 09:14:00,Major,Peak volume unloader staffing deficit,Labor Shortage,83.9
+DIS-0468,Warehouse Congestion,LOC-HYD-01,,2026-08-11 21:20:00,2026-08-12 01:39:00,Critical,Sorting facility buffer saturation,Warehouse Congestion,36.8
+DIS-0469,Vehicle Breakdown,LOC-BDQ-01,VEH-1637,2026-08-04 17:27:00,2026-08-04 21:45:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,58.2
+DIS-0470,Road Closure,LOC-CCU-01,VEH-1647,2026-08-01 15:35:00,2026-08-01 19:30:00,Critical,National Highway flyover repair detour,Road Closure,44.8
+DIS-0471,Vehicle Breakdown,LOC-AMD-01,VEH-1419,2026-08-12 14:08:00,2026-08-12 17:29:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,77.7
+DIS-0472,Severe Weather,LOC-LKO-01,,2026-08-06 18:28:00,2026-08-06 20:43:00,Moderate,Dense winter morning smog reducing visibility < 50m,Severe Weather,84.4
+DIS-0473,Severe Weather,LOC-MAA-01,,2026-08-16 19:51:00,2026-08-16 22:52:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,74.4
+DIS-0474,Labor Shortage,LOC-HYD-02,,2026-08-14 09:15:00,2026-08-14 10:52:00,Moderate,Unexpected night shift handler shortage,Labor Shortage,59.1
+DIS-0475,Severe Weather,LOC-HYD-01,,2026-08-25 17:30:00,2026-08-25 20:07:00,Moderate,Dense winter morning smog reducing visibility < 50m,Severe Weather,62.5
+DIS-0476,Labor Shortage,LOC-CCU-02,,2026-08-07 11:34:00,2026-08-07 14:24:00,Moderate,Contract dock worker shift dispute,Labor Shortage,56.3
+DIS-0477,Severe Weather,LOC-HYD-01,,2026-08-26 19:53:00,2026-08-26 23:50:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,47.3
+DIS-0478,Vehicle Breakdown,LOC-BOM-01,VEH-1474,2026-08-21 07:38:00,2026-08-21 11:18:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,65.9
+DIS-0479,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-15 17:30:00,2026-08-15 20:28:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,37.5
+DIS-0480,Equipment Failure,LOC-BOM-02,,2026-08-15 21:48:00,2026-08-15 23:50:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,62.1
+DIS-0481,Vehicle Breakdown,LOC-HYD-01,VEH-1154,2026-08-20 21:29:00,2026-08-21 00:19:00,Major,Severe brake caliper seizure,Vehicle Breakdown,50.9
+DIS-0482,Warehouse Congestion,LOC-JAI-01,,2026-08-07 13:55:00,2026-08-07 17:36:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,59.9
+DIS-0483,Road Closure,LOC-DEL-01,VEH-1135,2026-08-14 18:08:00,2026-08-14 20:43:00,Major,Emergency culvert repair diversion on highway,Road Closure,43.2
+DIS-0484,Severe Weather,LOC-AMD-01,,2026-08-03 13:59:00,2026-08-03 16:35:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,52.9
+DIS-0485,Warehouse Congestion,LOC-BLR-01,,2026-08-18 05:50:00,2026-08-18 10:28:00,Critical,Sorting facility buffer saturation,Warehouse Congestion,50.7
+DIS-0486,Equipment Failure,LOC-DEL-01,,2026-08-14 16:14:00,2026-08-14 18:01:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,75.7
+DIS-0487,Equipment Failure,LOC-PNQ-01,,2026-08-07 05:24:00,2026-08-07 09:19:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,60.7
+DIS-0488,Road Closure,LOC-CCU-01,VEH-1273,2026-08-21 14:21:00,2026-08-21 17:29:00,Major,Freight arterial corridor construction closure,Road Closure,44.3
+DIS-0489,Warehouse Congestion,LOC-BLR-01,,2026-08-12 19:51:00,2026-08-13 00:05:00,Critical,Severe cross-dock staging area overflow,Warehouse Congestion,57.1
+DIS-0490,Severe Weather,LOC-HYD-01,,2026-08-25 05:18:00,2026-08-25 08:08:00,Major,Cyclonic gale winds halting intercity freight transit,Severe Weather,35.4
+DIS-0491,Equipment Failure,LOC-AMD-01,,2026-08-17 22:14:00,2026-08-18 00:44:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,38.9
+DIS-0492,Vehicle Breakdown,LOC-MAA-01,VEH-1303,2026-08-18 15:35:00,2026-08-18 18:32:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,38.6
+DIS-0493,Warehouse Congestion,LOC-BDQ-01,,2026-08-25 06:10:00,2026-08-25 08:53:00,Moderate,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,31.5
+DIS-0494,Severe Weather,LOC-CCU-01,,2026-08-05 12:02:00,2026-08-05 16:21:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,41.1
+DIS-0495,Severe Weather,LOC-HYD-01,,2026-08-18 17:21:00,2026-08-18 21:48:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,56.4
+DIS-0496,Warehouse Congestion,LOC-BOM-02,,2026-08-02 21:21:00,2026-08-03 00:08:00,Moderate,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,61.4
+DIS-0497,Severe Weather,LOC-BOM-01,,2026-08-20 22:00:00,2026-08-21 01:12:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,53.4
+DIS-0498,State Border Checkpoint Hold,LOC-DEL-01,,2026-08-01 09:44:00,2026-08-01 11:22:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,68.8
+DIS-0499,Labor Shortage,LOC-BOM-01,,2026-08-08 19:41:00,2026-08-08 21:18:00,Moderate,Unexpected night shift handler shortage,Labor Shortage,47.2
+DIS-0500,Equipment Failure,LOC-MAA-01,,2026-08-13 15:34:00,2026-08-13 17:28:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,47.3
+DIS-0501,Vehicle Breakdown,LOC-BOM-01,VEH-1600,2026-08-09 07:43:00,2026-08-09 11:46:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,47.0
+DIS-0502,Labor Shortage,LOC-HYD-01,,2026-08-20 17:33:00,2026-08-20 19:44:00,Moderate,Unexpected night shift handler shortage,Labor Shortage,70.4
+DIS-0503,Warehouse Congestion,LOC-CCU-01,,2026-08-13 05:32:00,2026-08-13 08:46:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,77.1
+DIS-0504,Warehouse Congestion,LOC-BOM-01,,2026-08-02 18:08:00,2026-08-02 21:01:00,Major,Sorting facility buffer saturation,Warehouse Congestion,39.0
+DIS-0505,Vehicle Breakdown,LOC-IXC-01,VEH-1503,2026-08-03 19:27:00,2026-08-04 00:49:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,44.5
+DIS-0506,State Border Checkpoint Hold,LOC-BOM-01,,2026-08-08 18:08:00,2026-08-08 20:51:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,31.4
+DIS-0507,Road Closure,LOC-AMD-01,VEH-1001,2026-08-02 19:33:00,2026-08-02 22:02:00,Moderate,Major accident-induced expressway roadblock,Road Closure,73.1
+DIS-0508,Road Closure,LOC-MAA-01,VEH-1518,2026-08-10 17:31:00,2026-08-10 21:15:00,Major,National Highway flyover repair detour,Road Closure,31.7
+DIS-0509,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-01 10:10:00,2026-08-01 12:16:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,78.4
+DIS-0510,Warehouse Congestion,LOC-BOM-01,,2026-08-19 21:52:00,2026-08-20 00:33:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,59.6
+DIS-0511,Road Closure,LOC-DEL-01,VEH-1512,2026-08-17 22:13:00,2026-08-18 02:13:00,Major,Freight arterial corridor construction closure,Road Closure,55.8
+DIS-0512,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-21 13:41:00,2026-08-21 15:43:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,65.1
+DIS-0513,Equipment Failure,LOC-CCU-01,,2026-08-21 17:22:00,2026-08-21 21:01:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,57.8
+DIS-0514,Vehicle Breakdown,LOC-AMD-01,VEH-1320,2026-08-12 18:29:00,2026-08-12 22:11:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,32.1
+DIS-0515,Equipment Failure,LOC-JAI-01,,2026-08-04 06:02:00,2026-08-04 09:14:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,70.8
+DIS-0516,Road Closure,LOC-AMD-01,VEH-1440,2026-08-17 13:33:00,2026-08-17 16:46:00,Major,Major accident-induced expressway roadblock,Road Closure,40.3
+DIS-0517,Labor Shortage,LOC-JAI-01,,2026-08-09 11:27:00,2026-08-09 13:39:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,54.3
+DIS-0518,Warehouse Congestion,LOC-AMD-01,,2026-08-18 11:58:00,2026-08-18 15:39:00,Major,Sorting facility buffer saturation,Warehouse Congestion,76.6
+DIS-0519,State Border Checkpoint Hold,LOC-BOM-01,,2026-08-10 22:28:00,2026-08-11 01:26:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,77.8
+DIS-0520,Road Closure,LOC-DEL-01,VEH-1039,2026-08-01 14:15:00,2026-08-01 17:48:00,Major,Emergency culvert repair diversion on highway,Road Closure,84.8
+DIS-0521,Severe Weather,LOC-CCU-01,,2026-08-20 16:03:00,2026-08-20 19:06:00,Major,Cyclonic gale winds halting intercity freight transit,Severe Weather,58.2
+DIS-0522,Equipment Failure,LOC-STV-01,,2026-08-25 09:33:00,2026-08-25 12:35:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,44.4
+DIS-0523,Severe Weather,LOC-JAI-01,,2026-08-02 09:56:00,2026-08-02 14:24:00,Critical,Monsoon flash waterlogging on transit highway,Severe Weather,58.1
+DIS-0524,Equipment Failure,LOC-BOM-01,,2026-08-18 15:29:00,2026-08-18 18:18:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,80.7
+DIS-0525,Road Closure,LOC-BLR-01,VEH-1206,2026-08-09 06:02:00,2026-08-09 09:19:00,Major,Freight arterial corridor construction closure,Road Closure,65.8
+DIS-0526,Severe Weather,LOC-BLR-01,,2026-08-01 07:48:00,2026-08-01 10:03:00,Moderate,Torrential rainfall flooding industrial access bypass,Severe Weather,82.3
+DIS-0527,Warehouse Congestion,LOC-BDQ-01,,2026-08-11 09:30:00,2026-08-11 12:51:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,68.4
+DIS-0528,Severe Weather,LOC-IDR-01,,2026-08-19 10:09:00,2026-08-19 13:21:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,43.3
+DIS-0529,Warehouse Congestion,LOC-BOM-02,,2026-08-14 12:07:00,2026-08-14 16:51:00,Critical,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,65.7
+DIS-0530,Labor Shortage,LOC-BOM-01,,2026-08-07 20:16:00,2026-08-07 21:57:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,47.5
+DIS-0531,Vehicle Breakdown,LOC-PNQ-01,VEH-1552,2026-08-08 16:05:00,2026-08-08 21:23:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,43.8
+DIS-0532,Equipment Failure,LOC-CCU-01,,2026-08-26 19:30:00,2026-08-26 22:01:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,33.2
+DIS-0533,State Border Checkpoint Hold,LOC-LKO-01,,2026-08-26 11:29:00,2026-08-26 13:41:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,58.1
+DIS-0534,Vehicle Breakdown,LOC-JAI-01,VEH-1106,2026-08-09 20:25:00,2026-08-10 00:08:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,58.5
+DIS-0535,Severe Weather,LOC-BOM-01,,2026-08-02 06:17:00,2026-08-02 10:46:00,Critical,Torrential rainfall flooding industrial access bypass,Severe Weather,72.8
+DIS-0536,Labor Shortage,LOC-IDR-01,,2026-08-19 17:37:00,2026-08-19 19:29:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,37.6
+DIS-0537,Vehicle Breakdown,LOC-AMD-01,VEH-1326,2026-08-07 22:19:00,2026-08-08 02:07:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,36.2
+DIS-0538,Road Closure,LOC-HYD-01,VEH-1428,2026-08-04 13:32:00,2026-08-04 17:10:00,Major,National Highway flyover repair detour,Road Closure,35.3
+DIS-0539,State Border Checkpoint Hold,LOC-IXC-01,,2026-08-03 19:37:00,2026-08-03 21:37:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,47.4
+DIS-0540,Severe Weather,LOC-CCU-01,,2026-08-01 06:08:00,2026-08-01 09:43:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,60.3
+DIS-0541,Warehouse Congestion,LOC-MAA-01,,2026-08-25 08:03:00,2026-08-25 11:16:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,35.4
+DIS-0542,Equipment Failure,LOC-MAA-01,,2026-08-26 22:04:00,2026-08-27 00:56:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,69.8
+DIS-0543,Vehicle Breakdown,LOC-DEL-01,VEH-1045,2026-08-21 15:22:00,2026-08-21 18:50:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,72.6
+DIS-0544,Equipment Failure,LOC-BOM-01,,2026-08-06 09:53:00,2026-08-06 12:10:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,74.3
+DIS-0545,Severe Weather,LOC-MAA-01,,2026-08-25 07:43:00,2026-08-25 11:05:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,30.8
+DIS-0546,State Border Checkpoint Hold,LOC-NAG-01,,2026-08-22 09:58:00,2026-08-22 12:45:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,31.8
+DIS-0547,Road Closure,LOC-PNQ-01,VEH-1401,2026-08-21 13:26:00,2026-08-21 17:32:00,Major,Emergency culvert repair diversion on highway,Road Closure,47.1
+DIS-0548,Labor Shortage,LOC-BLR-01,,2026-08-10 09:52:00,2026-08-10 12:38:00,Major,Peak volume unloader staffing deficit,Labor Shortage,58.2
+DIS-0549,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-22 12:06:00,2026-08-22 14:39:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,66.6
+DIS-0550,Equipment Failure,LOC-MAA-01,,2026-08-20 19:18:00,2026-08-20 21:15:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,32.3
+DIS-0551,Equipment Failure,LOC-HYD-01,,2026-08-17 15:29:00,2026-08-17 17:53:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,47.0
+DIS-0552,Warehouse Congestion,LOC-JAI-01,,2026-08-15 09:53:00,2026-08-15 12:29:00,Moderate,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,52.3
+DIS-0553,Vehicle Breakdown,LOC-IDR-01,VEH-1446,2026-08-23 21:50:00,2026-08-24 02:26:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,50.8
+DIS-0554,Equipment Failure,LOC-DEL-01,,2026-08-15 07:16:00,2026-08-15 10:44:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,37.8
+DIS-0555,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-18 15:36:00,2026-08-18 18:04:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,42.2
+DIS-0556,Warehouse Congestion,LOC-LKO-02,,2026-08-03 17:54:00,2026-08-03 20:58:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,75.7
+DIS-0557,Severe Weather,LOC-CCU-02,,2026-08-26 08:01:00,2026-08-26 13:10:00,Critical,Dense winter morning smog reducing visibility < 50m,Severe Weather,84.5
+DIS-0558,Severe Weather,LOC-MAA-02,,2026-08-17 21:22:00,2026-08-18 00:58:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,53.5
+DIS-0559,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-05 07:48:00,2026-08-05 10:06:00,Moderate,State boundary regulatory transit audit queue,State Border Checkpoint Hold,72.6
+DIS-0560,Severe Weather,LOC-BLR-01,,2026-08-18 08:14:00,2026-08-18 11:52:00,Major,Cyclonic gale winds halting intercity freight transit,Severe Weather,80.4
+DIS-0561,State Border Checkpoint Hold,LOC-DEL-02,,2026-08-03 08:10:00,2026-08-03 11:21:00,Major,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,63.8
+DIS-0562,Labor Shortage,LOC-DEL-01,,2026-08-11 11:21:00,2026-08-11 14:39:00,Major,Contract dock worker shift dispute,Labor Shortage,51.9
+DIS-0563,Severe Weather,LOC-JAI-01,,2026-08-07 18:15:00,2026-08-07 21:44:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,65.9
+DIS-0564,Severe Weather,LOC-CCU-01,,2026-08-19 08:24:00,2026-08-19 12:13:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,76.2
+DIS-0565,Road Closure,LOC-DEL-01,VEH-1314,2026-08-14 10:07:00,2026-08-14 12:35:00,Moderate,National Highway flyover repair detour,Road Closure,39.0
+DIS-0566,Vehicle Breakdown,LOC-AMD-01,VEH-1476,2026-08-02 15:27:00,2026-08-02 19:27:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,63.4
+DIS-0567,Severe Weather,LOC-AMD-01,,2026-08-04 15:19:00,2026-08-04 19:45:00,Critical,Monsoon flash waterlogging on transit highway,Severe Weather,66.1
+DIS-0568,Equipment Failure,LOC-AMD-01,,2026-08-06 06:22:00,2026-08-06 09:43:00,Major,Automated crane rail misalignment in staging hub,Equipment Failure,84.4
+DIS-0569,State Border Checkpoint Hold,LOC-LKO-02,,2026-08-23 07:40:00,2026-08-23 09:37:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,71.8
+DIS-0570,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-11 17:53:00,2026-08-11 19:34:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,44.7
+DIS-0571,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-06 13:19:00,2026-08-06 16:14:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,33.9
+DIS-0572,Vehicle Breakdown,LOC-BLR-01,VEH-1140,2026-08-23 17:38:00,2026-08-23 20:26:00,Major,Transmission clutch assembly failure,Vehicle Breakdown,33.8
+DIS-0573,Labor Shortage,LOC-CCU-01,,2026-08-19 07:22:00,2026-08-19 09:14:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,74.3
+DIS-0574,Equipment Failure,LOC-CCU-01,,2026-08-19 07:31:00,2026-08-19 09:36:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,52.0
+DIS-0575,State Border Checkpoint Hold,LOC-DEL-01,,2026-08-01 16:15:00,2026-08-01 19:42:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,57.4
+DIS-0576,Vehicle Breakdown,LOC-NAG-01,VEH-1140,2026-08-04 08:10:00,2026-08-04 12:14:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,81.9
+DIS-0577,Severe Weather,LOC-BOM-01,,2026-08-19 07:40:00,2026-08-19 10:42:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,43.1
+DIS-0578,Vehicle Breakdown,LOC-BLR-01,VEH-1493,2026-08-02 20:10:00,2026-08-02 23:01:00,Moderate,Severe brake caliper seizure,Vehicle Breakdown,39.3
+DIS-0579,State Border Checkpoint Hold,LOC-GUR-01,,2026-08-02 22:27:00,2026-08-03 01:19:00,Major,Inter-state commercial tax portal outage,State Border Checkpoint Hold,48.9
+DIS-0580,Severe Weather,LOC-BOM-01,,2026-08-23 08:25:00,2026-08-23 11:24:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,58.5
+DIS-0581,Equipment Failure,LOC-BLR-01,,2026-08-06 11:48:00,2026-08-06 14:36:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,56.5
+DIS-0582,Vehicle Breakdown,LOC-HYD-02,VEH-1369,2026-08-20 11:52:00,2026-08-20 16:54:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,81.9
+DIS-0583,State Border Checkpoint Hold,LOC-BOM-01,,2026-08-22 17:56:00,2026-08-22 20:43:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,76.6
+DIS-0584,Labor Shortage,LOC-JAI-01,,2026-08-14 16:06:00,2026-08-14 17:52:00,Moderate,Unexpected night shift handler shortage,Labor Shortage,52.2
+DIS-0585,Vehicle Breakdown,LOC-AMD-01,VEH-1568,2026-08-04 21:35:00,2026-08-05 02:12:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,71.1
+DIS-0586,Warehouse Congestion,LOC-DEL-01,,2026-08-19 07:47:00,2026-08-19 11:06:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,53.6
+DIS-0587,Severe Weather,LOC-BLR-02,,2026-08-01 06:27:00,2026-08-01 09:12:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,68.1
+DIS-0588,Warehouse Congestion,LOC-CCU-02,,2026-08-20 21:37:00,2026-08-21 01:09:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,74.8
+DIS-0589,Warehouse Congestion,LOC-JAI-01,,2026-08-09 14:00:00,2026-08-09 18:23:00,Critical,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,59.8
+DIS-0590,Severe Weather,LOC-PNQ-01,,2026-08-13 17:37:00,2026-08-13 21:26:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,72.9
+DIS-0591,State Border Checkpoint Hold,LOC-CCU-01,,2026-08-01 08:06:00,2026-08-01 10:00:00,Moderate,State boundary regulatory transit audit queue,State Border Checkpoint Hold,55.4
+DIS-0592,Vehicle Breakdown,LOC-CCU-01,VEH-1364,2026-08-11 15:48:00,2026-08-11 19:15:00,Major,Severe brake caliper seizure,Vehicle Breakdown,49.8
+DIS-0593,Road Closure,LOC-CCU-01,VEH-1266,2026-08-21 06:07:00,2026-08-21 09:16:00,Major,National Highway flyover repair detour,Road Closure,50.5
+DIS-0594,Vehicle Breakdown,LOC-MAA-01,VEH-1158,2026-08-20 19:40:00,2026-08-20 23:25:00,Major,Severe brake caliper seizure,Vehicle Breakdown,58.4
+DIS-0595,Equipment Failure,LOC-NAG-01,,2026-08-20 19:42:00,2026-08-20 22:20:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,83.6
+DIS-0596,Warehouse Congestion,LOC-PNQ-01,,2026-08-04 16:16:00,2026-08-04 20:17:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,52.0
+DIS-0597,Labor Shortage,LOC-DEL-01,,2026-08-12 07:52:00,2026-08-12 10:44:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,46.5
+DIS-0598,Equipment Failure,LOC-DEL-01,,2026-08-09 19:38:00,2026-08-09 22:44:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,80.7
+DIS-0599,Vehicle Breakdown,LOC-JAI-02,VEH-1218,2026-08-25 07:32:00,2026-08-25 11:51:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,30.0
+DIS-0600,Equipment Failure,LOC-CCU-01,,2026-08-20 17:44:00,2026-08-20 19:53:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,53.7
+DIS-0601,Warehouse Congestion,LOC-AMD-01,,2026-08-05 12:00:00,2026-08-05 16:57:00,Critical,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,51.0
+DIS-0602,Vehicle Breakdown,LOC-HYD-01,VEH-1368,2026-08-09 21:57:00,2026-08-10 00:59:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,62.9
+DIS-0603,Severe Weather,LOC-DEL-01,,2026-08-15 11:59:00,2026-08-15 14:56:00,Major,Cyclonic gale winds halting intercity freight transit,Severe Weather,79.0
+DIS-0604,Equipment Failure,LOC-DEL-01,,2026-08-22 05:54:00,2026-08-22 08:21:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,70.5
+DIS-0605,State Border Checkpoint Hold,LOC-IDR-01,,2026-08-08 18:00:00,2026-08-08 19:55:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,52.3
+DIS-0606,Warehouse Congestion,LOC-CCU-02,,2026-08-15 13:25:00,2026-08-15 16:31:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,40.3
+DIS-0607,Warehouse Congestion,LOC-DEL-01,,2026-08-22 10:26:00,2026-08-22 12:49:00,Moderate,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,78.8
+DIS-0608,Labor Shortage,LOC-CCU-01,,2026-08-03 21:49:00,2026-08-03 23:51:00,Moderate,Contract dock worker shift dispute,Labor Shortage,73.8
+DIS-0609,Equipment Failure,LOC-HYD-02,,2026-08-21 09:59:00,2026-08-21 13:06:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,44.4
+DIS-0610,Labor Shortage,LOC-BLR-01,,2026-08-02 10:11:00,2026-08-02 14:01:00,Major,Unexpected night shift handler shortage,Labor Shortage,52.9
+DIS-0611,Vehicle Breakdown,LOC-DEL-01,VEH-1237,2026-08-12 10:27:00,2026-08-12 14:24:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,66.9
+DIS-0612,Severe Weather,LOC-JAI-01,,2026-08-26 06:10:00,2026-08-26 10:08:00,Major,Cyclonic gale winds halting intercity freight transit,Severe Weather,43.0
+DIS-0613,Labor Shortage,LOC-BOM-01,,2026-08-02 08:09:00,2026-08-02 11:55:00,Major,Contract dock worker shift dispute,Labor Shortage,68.2
+DIS-0614,Vehicle Breakdown,LOC-JAI-01,VEH-1135,2026-08-19 21:44:00,2026-08-20 01:01:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,65.6
+DIS-0615,Warehouse Congestion,LOC-DEL-01,,2026-08-25 21:17:00,2026-08-26 01:30:00,Critical,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,71.2
+DIS-0616,Severe Weather,LOC-AMD-01,,2026-08-24 16:24:00,2026-08-24 19:19:00,Major,Torrential rainfall flooding industrial access bypass,Severe Weather,84.2
+DIS-0617,Equipment Failure,LOC-CCU-01,,2026-08-02 09:35:00,2026-08-02 11:25:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,84.5
+DIS-0618,Labor Shortage,LOC-STV-01,,2026-08-15 06:00:00,2026-08-15 08:43:00,Major,Peak volume unloader staffing deficit,Labor Shortage,62.4
+DIS-0619,Labor Shortage,LOC-DEL-01,,2026-08-10 19:55:00,2026-08-10 23:21:00,Major,Festival eve seasonal unloading crew absenteeism,Labor Shortage,77.8
+DIS-0620,Road Closure,LOC-CCU-01,VEH-1182,2026-08-04 05:52:00,2026-08-04 09:40:00,Major,Emergency culvert repair diversion on highway,Road Closure,64.4
+DIS-0621,Severe Weather,LOC-CCU-01,,2026-08-12 21:34:00,2026-08-13 00:14:00,Moderate,Dense winter morning smog reducing visibility < 50m,Severe Weather,67.4
+DIS-0622,Labor Shortage,LOC-MAA-01,,2026-08-18 06:13:00,2026-08-18 09:56:00,Major,Contract dock worker shift dispute,Labor Shortage,83.7
+DIS-0623,Warehouse Congestion,LOC-JAI-01,,2026-08-22 17:45:00,2026-08-22 22:08:00,Critical,Sorting facility buffer saturation,Warehouse Congestion,55.7
+DIS-0624,Equipment Failure,LOC-BOM-01,,2026-08-04 15:43:00,2026-08-04 19:16:00,Major,Main pallet conveyor belt motor burnout,Equipment Failure,75.5
+DIS-0625,Warehouse Congestion,LOC-BOM-01,,2026-08-09 15:59:00,2026-08-09 19:45:00,Critical,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,69.7
+DIS-0626,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-10 07:15:00,2026-08-10 10:03:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,69.5
+DIS-0627,Severe Weather,LOC-BOM-01,,2026-08-23 07:35:00,2026-08-23 12:25:00,Critical,Monsoon flash waterlogging on transit highway,Severe Weather,59.2
+DIS-0628,Labor Shortage,LOC-IDR-01,,2026-08-06 19:34:00,2026-08-06 21:25:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,63.9
+DIS-0629,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-16 21:28:00,2026-08-16 23:27:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,67.9
+DIS-0630,Road Closure,LOC-CCU-01,VEH-1649,2026-08-16 17:45:00,2026-08-16 21:19:00,Major,Freight arterial corridor construction closure,Road Closure,40.8
+DIS-0631,Vehicle Breakdown,LOC-BOM-01,VEH-1234,2026-08-02 17:39:00,2026-08-02 21:27:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,50.8
+DIS-0632,Severe Weather,LOC-HYD-01,,2026-08-06 22:21:00,2026-08-07 00:13:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,43.1
+DIS-0633,Labor Shortage,LOC-BLR-02,,2026-08-08 17:43:00,2026-08-08 20:54:00,Major,Contract dock worker shift dispute,Labor Shortage,64.5
+DIS-0634,Warehouse Congestion,LOC-CCU-01,,2026-08-21 07:58:00,2026-08-21 12:01:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,61.1
+DIS-0635,Severe Weather,LOC-MAA-02,,2026-08-03 08:10:00,2026-08-03 11:12:00,Major,Monsoon flash waterlogging on transit highway,Severe Weather,30.2
+DIS-0636,Warehouse Congestion,LOC-AMD-01,,2026-08-18 19:24:00,2026-08-18 22:34:00,Major,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,49.7
+DIS-0637,Labor Shortage,LOC-DEL-02,,2026-08-04 10:08:00,2026-08-04 13:01:00,Major,Contract dock worker shift dispute,Labor Shortage,75.6
+DIS-0638,Warehouse Congestion,LOC-HYD-01,,2026-08-03 17:49:00,2026-08-03 21:12:00,Major,Sorting facility buffer saturation,Warehouse Congestion,39.0
+DIS-0639,Severe Weather,LOC-BLR-01,,2026-08-09 19:25:00,2026-08-09 22:07:00,Moderate,Dense winter morning smog reducing visibility < 50m,Severe Weather,81.7
+DIS-0640,Severe Weather,LOC-CCU-01,,2026-08-09 05:35:00,2026-08-09 08:10:00,Moderate,Torrential rainfall flooding industrial access bypass,Severe Weather,83.3
+DIS-0641,State Border Checkpoint Hold,LOC-BOM-01,,2026-08-08 20:25:00,2026-08-08 23:10:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,33.1
+DIS-0642,Vehicle Breakdown,LOC-IXC-01,VEH-1158,2026-08-25 05:55:00,2026-08-25 09:51:00,Critical,Mechanical engine failure on highway,Vehicle Breakdown,69.6
+DIS-0643,Vehicle Breakdown,LOC-NOI-01,VEH-1530,2026-08-07 07:58:00,2026-08-07 10:50:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,69.0
+DIS-0644,Labor Shortage,LOC-JAI-01,,2026-08-10 10:08:00,2026-08-10 13:38:00,Major,Contract dock worker shift dispute,Labor Shortage,73.5
+DIS-0645,Vehicle Breakdown,LOC-CCU-01,VEH-1241,2026-08-11 16:12:00,2026-08-11 18:55:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,83.0
+DIS-0646,Road Closure,LOC-BOM-01,VEH-1313,2026-08-20 11:46:00,2026-08-20 16:22:00,Critical,Major accident-induced expressway roadblock,Road Closure,59.9
+DIS-0647,Equipment Failure,LOC-PNQ-01,,2026-08-21 21:48:00,2026-08-21 23:35:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,79.3
+DIS-0648,Severe Weather,LOC-JAI-01,,2026-08-02 21:34:00,2026-08-02 23:49:00,Moderate,Torrential rainfall flooding industrial access bypass,Severe Weather,35.4
+DIS-0649,Vehicle Breakdown,LOC-AMD-01,VEH-1443,2026-08-10 07:31:00,2026-08-10 12:39:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,69.2
+DIS-0650,Road Closure,LOC-IDR-01,VEH-1362,2026-08-08 13:51:00,2026-08-08 16:31:00,Major,Freight arterial corridor construction closure,Road Closure,46.0
+DIS-0651,Vehicle Breakdown,LOC-PNQ-01,VEH-1166,2026-08-12 20:06:00,2026-08-13 00:51:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,71.5
+DIS-0652,Severe Weather,LOC-BOM-01,,2026-08-04 13:29:00,2026-08-04 15:38:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,30.4
+DIS-0653,State Border Checkpoint Hold,LOC-PNQ-01,,2026-08-04 07:42:00,2026-08-04 10:34:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,83.0
+DIS-0654,Vehicle Breakdown,LOC-MAA-01,VEH-1331,2026-08-19 07:24:00,2026-08-19 12:37:00,Critical,Mechanical engine failure on highway,Vehicle Breakdown,76.8
+DIS-0655,Labor Shortage,LOC-JAI-01,,2026-08-20 09:52:00,2026-08-20 12:08:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,45.0
+DIS-0656,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-18 09:16:00,2026-08-18 12:04:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,63.3
+DIS-0657,Vehicle Breakdown,LOC-BLR-01,VEH-1607,2026-08-16 17:54:00,2026-08-16 21:57:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,55.3
+DIS-0658,Vehicle Breakdown,LOC-HYD-01,VEH-1060,2026-08-20 19:58:00,2026-08-20 23:49:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,40.7
+DIS-0659,Vehicle Breakdown,LOC-AMD-01,VEH-1639,2026-08-16 22:16:00,2026-08-17 02:50:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,44.0
+DIS-0660,Warehouse Congestion,LOC-HYD-02,,2026-08-11 14:19:00,2026-08-11 17:38:00,Major,Sorting facility buffer saturation,Warehouse Congestion,74.4
+DIS-0661,Severe Weather,LOC-BOM-01,,2026-08-17 15:56:00,2026-08-17 18:46:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,76.1
+DIS-0662,Road Closure,LOC-NOI-01,VEH-1493,2026-08-20 10:19:00,2026-08-20 14:07:00,Critical,Freight arterial corridor construction closure,Road Closure,45.6
+DIS-0663,Vehicle Breakdown,LOC-DEL-01,VEH-1530,2026-08-05 08:04:00,2026-08-05 12:46:00,Critical,Mechanical engine failure on highway,Vehicle Breakdown,34.9
+DIS-0664,Severe Weather,LOC-CCU-02,,2026-08-15 05:38:00,2026-08-15 08:22:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,32.9
+DIS-0665,Labor Shortage,LOC-PNQ-01,,2026-08-05 11:53:00,2026-08-05 14:10:00,Moderate,Contract dock worker shift dispute,Labor Shortage,60.3
+DIS-0666,State Border Checkpoint Hold,LOC-BOM-01,,2026-08-20 19:31:00,2026-08-20 22:31:00,Major,E-way bill verification server downtime,State Border Checkpoint Hold,42.3
+DIS-0667,Equipment Failure,LOC-JAI-01,,2026-08-22 10:00:00,2026-08-22 12:14:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,72.8
+DIS-0668,Warehouse Congestion,LOC-AMD-01,,2026-08-26 13:49:00,2026-08-26 18:10:00,Critical,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,62.0
+DIS-0669,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-08 11:57:00,2026-08-08 15:17:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,57.2
+DIS-0670,Warehouse Congestion,LOC-BLR-01,,2026-08-03 19:29:00,2026-08-03 22:43:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,75.9
+DIS-0671,State Border Checkpoint Hold,LOC-PNQ-01,,2026-08-01 09:55:00,2026-08-01 12:19:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,30.8
+DIS-0672,Severe Weather,LOC-JAI-01,,2026-08-09 08:29:00,2026-08-09 11:01:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,52.0
+DIS-0673,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-05 19:59:00,2026-08-05 22:10:00,Moderate,E-way bill verification server downtime,State Border Checkpoint Hold,55.4
+DIS-0674,Labor Shortage,LOC-AMD-01,,2026-08-10 17:31:00,2026-08-10 21:15:00,Major,Peak volume unloader staffing deficit,Labor Shortage,70.0
+DIS-0675,Labor Shortage,LOC-BOM-01,,2026-08-26 10:13:00,2026-08-26 13:20:00,Major,Festival eve seasonal unloading crew absenteeism,Labor Shortage,52.6
+DIS-0676,Road Closure,LOC-JAI-01,VEH-1037,2026-08-18 07:29:00,2026-08-18 10:32:00,Major,National Highway flyover repair detour,Road Closure,53.6
+DIS-0677,Vehicle Breakdown,LOC-MAA-01,VEH-1366,2026-08-02 10:22:00,2026-08-02 15:38:00,Critical,Severe brake caliper seizure,Vehicle Breakdown,40.2
+DIS-0678,Labor Shortage,LOC-BLR-01,,2026-08-15 19:57:00,2026-08-15 23:19:00,Major,Contract dock worker shift dispute,Labor Shortage,68.7
+DIS-0679,Road Closure,LOC-MAA-01,VEH-1084,2026-08-15 20:14:00,2026-08-15 23:14:00,Major,National Highway flyover repair detour,Road Closure,73.2
+DIS-0680,Vehicle Breakdown,LOC-DEL-01,VEH-1241,2026-08-17 05:57:00,2026-08-17 10:56:00,Critical,Radiator burst and cooling system leak,Vehicle Breakdown,48.1
+DIS-0681,Vehicle Breakdown,LOC-JAI-01,VEH-1533,2026-08-10 09:15:00,2026-08-10 13:10:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,74.9
+DIS-0682,Warehouse Congestion,LOC-AMD-01,,2026-08-15 15:58:00,2026-08-15 20:13:00,Critical,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,69.1
+DIS-0683,Vehicle Breakdown,LOC-CCU-01,VEH-1551,2026-08-15 21:48:00,2026-08-16 01:12:00,Major,Mechanical engine failure on highway,Vehicle Breakdown,60.8
+DIS-0684,Vehicle Breakdown,LOC-PNQ-01,VEH-1271,2026-08-05 22:30:00,2026-08-06 02:16:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,57.8
+DIS-0685,Severe Weather,LOC-DEL-01,,2026-08-26 05:46:00,2026-08-26 09:32:00,Major,Cyclonic gale winds halting intercity freight transit,Severe Weather,55.4
+DIS-0686,Warehouse Congestion,LOC-MAA-01,,2026-08-19 05:34:00,2026-08-19 10:23:00,Critical,Severe cross-dock staging area overflow,Warehouse Congestion,30.4
+DIS-0687,State Border Checkpoint Hold,LOC-JAI-01,,2026-08-04 11:39:00,2026-08-04 14:47:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,63.8
+DIS-0688,Labor Shortage,LOC-BLR-01,,2026-08-12 10:14:00,2026-08-12 12:53:00,Moderate,Contract dock worker shift dispute,Labor Shortage,61.1
+DIS-0689,Road Closure,LOC-MAA-01,VEH-1626,2026-08-17 12:14:00,2026-08-17 15:39:00,Major,National Highway flyover repair detour,Road Closure,64.3
+DIS-0690,State Border Checkpoint Hold,LOC-BLR-03,,2026-08-07 17:41:00,2026-08-07 20:11:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,57.0
+DIS-0691,Warehouse Congestion,LOC-DEL-01,,2026-08-08 22:07:00,2026-08-09 01:15:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,49.3
+DIS-0692,Warehouse Congestion,LOC-MAA-01,,2026-08-03 20:23:00,2026-08-03 23:23:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,32.8
+DIS-0693,Equipment Failure,LOC-MAA-01,,2026-08-05 08:01:00,2026-08-05 09:39:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,49.7
+DIS-0694,Equipment Failure,LOC-PNQ-01,,2026-08-12 17:25:00,2026-08-12 19:36:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,33.1
+DIS-0695,Warehouse Congestion,LOC-PNQ-01,,2026-08-15 11:48:00,2026-08-15 16:27:00,Critical,Inbound vehicle backlog exceeding bay capacity,Warehouse Congestion,67.3
+DIS-0696,Warehouse Congestion,LOC-DEL-01,,2026-08-25 19:52:00,2026-08-25 23:49:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,51.8
+DIS-0697,Road Closure,LOC-CCU-01,VEH-1133,2026-08-02 14:01:00,2026-08-02 16:45:00,Major,National Highway flyover repair detour,Road Closure,31.6
+DIS-0698,Equipment Failure,LOC-BLR-01,,2026-08-14 09:32:00,2026-08-14 12:01:00,Moderate,Dock leveler hydraulic cylinder failure,Equipment Failure,56.5
+DIS-0699,Labor Shortage,LOC-CCU-01,,2026-08-21 13:24:00,2026-08-21 16:37:00,Major,Contract dock worker shift dispute,Labor Shortage,30.5
+DIS-0700,Vehicle Breakdown,LOC-DEL-01,VEH-1209,2026-08-17 09:27:00,2026-08-17 13:48:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,53.3
+DIS-0701,Road Closure,LOC-NAG-01,VEH-1327,2026-08-25 22:07:00,2026-08-26 00:26:00,Moderate,Freight arterial corridor construction closure,Road Closure,83.2
+DIS-0702,Severe Weather,LOC-BLR-01,,2026-08-06 13:31:00,2026-08-06 17:28:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,60.6
+DIS-0703,Warehouse Congestion,LOC-LKO-02,,2026-08-21 10:15:00,2026-08-21 13:27:00,Major,Severe cross-dock staging area overflow,Warehouse Congestion,72.3
+DIS-0704,Road Closure,LOC-PNQ-01,VEH-1529,2026-08-02 13:43:00,2026-08-02 16:44:00,Major,Emergency culvert repair diversion on highway,Road Closure,32.0
+DIS-0705,State Border Checkpoint Hold,LOC-GUR-01,,2026-08-22 17:55:00,2026-08-22 20:31:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,46.7
+DIS-0706,Vehicle Breakdown,LOC-CCU-02,VEH-1308,2026-08-23 08:14:00,2026-08-23 13:31:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,60.9
+DIS-0707,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-14 09:37:00,2026-08-14 11:35:00,Moderate,Mandatory excise physical inspection checkpoint,State Border Checkpoint Hold,57.5
+DIS-0708,Equipment Failure,LOC-BOM-01,,2026-08-19 07:52:00,2026-08-19 09:56:00,Moderate,Automated high-bay sorter hydraulic failure,Equipment Failure,40.0
+DIS-0709,Labor Shortage,LOC-HYD-01,,2026-08-23 13:57:00,2026-08-23 16:08:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,73.3
+DIS-0710,State Border Checkpoint Hold,LOC-BLR-01,,2026-08-08 08:10:00,2026-08-08 10:10:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,48.6
+DIS-0711,Road Closure,LOC-MAA-02,VEH-1051,2026-08-18 11:56:00,2026-08-18 14:29:00,Major,Freight arterial corridor construction closure,Road Closure,81.5
+DIS-0712,Severe Weather,LOC-GUR-01,,2026-08-04 11:47:00,2026-08-04 14:59:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,71.7
+DIS-0713,Labor Shortage,LOC-HYD-01,,2026-08-10 20:26:00,2026-08-10 23:08:00,Major,Peak volume unloader staffing deficit,Labor Shortage,47.2
+DIS-0714,Equipment Failure,LOC-BOM-02,,2026-08-03 20:00:00,2026-08-03 21:54:00,Moderate,Automated crane rail misalignment in staging hub,Equipment Failure,72.9
+DIS-0715,Warehouse Congestion,LOC-DEL-01,,2026-08-20 07:44:00,2026-08-20 09:35:00,Moderate,Severe cross-dock staging area overflow,Warehouse Congestion,60.3
+DIS-0716,Equipment Failure,LOC-JAI-01,,2026-08-24 11:45:00,2026-08-24 13:45:00,Moderate,Main pallet conveyor belt motor burnout,Equipment Failure,42.8
+DIS-0717,Labor Shortage,LOC-IDR-01,,2026-08-03 21:34:00,2026-08-04 00:49:00,Major,Peak volume unloader staffing deficit,Labor Shortage,42.3
+DIS-0718,Equipment Failure,LOC-JAI-01,,2026-08-15 09:57:00,2026-08-15 13:24:00,Major,Dock leveler hydraulic cylinder failure,Equipment Failure,45.1
+DIS-0719,Severe Weather,LOC-GUR-01,,2026-08-11 18:23:00,2026-08-11 22:29:00,Critical,Dense winter morning smog reducing visibility < 50m,Severe Weather,32.6
+DIS-0720,Warehouse Congestion,LOC-PNQ-01,,2026-08-24 12:06:00,2026-08-24 15:03:00,Major,Sorting facility buffer saturation,Warehouse Congestion,33.2

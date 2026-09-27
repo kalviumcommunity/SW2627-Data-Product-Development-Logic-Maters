@@ -1,0 +1,21 @@
+delay_reason_id,reason_category,reason_name,description,severity
+RSN-01,Transportation,Vehicle Breakdown,"Mechanical engine failure, tire blowout, or electrical failure during transit",Major
+RSN-02,Transportation,Traffic Congestion,"Highway gridlock, peak city traffic, or construction diversions",Minor
+RSN-03,External,Severe Weather,"Heavy monsoon flooding, cyclone, dense winter fog, or landslides",Major
+RSN-04,Warehouse,Warehouse Congestion,Inbound vehicle queue exceeding yard capacity and staging space,Major
+RSN-05,Operational,Loading Delay,"Shortage of staging space, incorrect pallet labeling, or delayed manifest sign-off",Minor
+RSN-06,Operational,Unloading Delay,"Inbound dock doors unavailable, slow de-palletization, or bay blockage",Minor
+RSN-07,Operational,Labor Shortage,"Absenteeism in warehouse shifts, dock loaders, or handler shortages",Moderate
+RSN-08,Warehouse,Equipment Failure,"Forklift breakdown, conveyor stoppage, or automated sorter fault",Moderate
+RSN-09,Transportation,Route Disruption,"Highway lane closure, national highway detour, or bridge maintenance",Major
+RSN-10,Documentation,Documentation Issue,"E-way bill mismatch, invoice discrepancies, or missing gate pass",Minor
+RSN-11,Documentation,Customs Delay,"Special Economic Zone audit, customs bonded warehouse clearance inspection",Moderate
+RSN-12,Operational,Late Inbound Shipment,"Predecessor connecting feeder shipment arrived late, stalling outbound consolidation",Major
+RSN-13,Operational,Driver Availability,"Driver rest hours compliance, duty-hour expiration, or shift handover delay",Minor
+RSN-14,Warehouse,Capacity Overflow,Warehouse storage exceeding 95% capacity requiring manual floor re-stacking,Critical
+RSN-15,External,Fog / Low Visibility,Dense northern fog reducing vehicle transit speeds below 20 km/h on expressways,Moderate
+RSN-16,Transportation,Toll Plaza Gridlock,FASTag scanner downtime or extreme toll plaza queuing at state borders,Minor
+RSN-17,Warehouse,Conveyor Belt Malfunction,Automated sortation conveyor belt mechanical failure or sensor misalignment,Moderate
+RSN-18,Documentation,State Border Checkpoint Hold,Commercial tax department verification check at inter-state border post,Moderate
+RSN-19,Transportation,Unscheduled Vehicle Maintenance,Pre-departure preventive inspection revealed brake fluid leak or tire wear,Moderate
+RSN-20,Warehouse,Dock Door Congestion,Simultaneous arrival of multiple 32-foot trailers exceeding available bay doors,Minor
