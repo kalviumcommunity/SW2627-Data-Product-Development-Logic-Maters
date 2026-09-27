@@ -471,72 +471,154 @@ def detect_cascade_candidates(
     ).astype(np.int64)
     single_delay_skipped = int(np.sum(qual_counts == 1))
 
+    # Fast contiguous range lookup since events are sorted by shipment
+    is_sorted = bool(np.all(codes[:-1] <= codes[1:])) if len(codes) > 1 else True
+    if is_sorted:
+        starts = np.searchsorted(codes, np.arange(n_groups), side="left")
+        ends = np.searchsorted(codes, np.arange(n_groups), side="right")
+    else:
+        pos_by_group: dict[int, list[int]] = {}
+        for idx, c in enumerate(codes):
+            pos_by_group.setdefault(c, []).append(idx)
+
+    # Pre-extract vector column references for ultra-fast candidate generation
+    times_series = events["_event_time"]
+    event_seqs = events["_event_seq"].to_numpy()
+    if resolved_duration is not None and durations_all is None:
+        durations_all = pd.to_numeric(
+            events[f"src_{resolved_duration}"], errors="coerce"
+        ).to_numpy(dtype="float64", copy=False)
+
+    reason_arr = (
+        events[f"src_{resolved_reason}"].to_numpy()
+        if resolved_reason and f"src_{resolved_reason}" in events.columns
+        else None
+    )
+    route_arr = (
+        events[f"src_{resolved_route}"].to_numpy()
+        if resolved_route and f"src_{resolved_route}" in events.columns
+        else None
+    )
+    primary_wh_col = warehouse_columns[0] if warehouse_columns else None
+    wh_arr = (
+        events[f"src_{primary_wh_col}"].to_numpy()
+        if primary_wh_col and f"src_{primary_wh_col}" in events.columns
+        else None
+    )
+
+    # Precompute stage signals across all events (vectorized)
+    transfer_sig = np.zeros(len(events), dtype=bool)
+    for col in TRANSFER_SIGNAL_COLUMNS:
+        key = f"src_{col}"
+        if key in events.columns:
+            s = events[key]
+            if col == TRANSFER_MATCH_COLUMN:
+                transfer_sig |= (s.astype(str).str.strip().str.lower() == "both").to_numpy(dtype=bool)
+            else:
+                transfer_sig |= (s.notna() & ~s.astype(str).str.strip().str.lower().isin(["", "unknown", "none"])).to_numpy(dtype=bool)
+
+    route_sig = np.zeros(len(events), dtype=bool)
+    if resolved_route and f"src_{resolved_route}" in events.columns:
+        s = events[f"src_{resolved_route}"]
+        route_sig = (s.notna() & ~s.astype(str).str.strip().str.lower().isin(["", "unknown", "none"])).to_numpy(dtype=bool)
+
+    wh_sig = np.zeros(len(events), dtype=bool)
+    for col in (warehouse_columns or []):
+        key = f"src_{col}"
+        if key in events.columns:
+            s = events[key]
+            wh_sig |= (s.notna() & ~s.astype(str).str.strip().str.lower().isin(["", "unknown", "none"])).to_numpy(dtype=bool)
+
+    deliv_set = {str(v).strip().lower() for v in delivery_status_values}
+    status_sig = np.zeros(len(events), dtype=bool)
+    if resolved_status and f"src_{resolved_status}" in events.columns:
+        s = events[f"src_{resolved_status}"]
+        status_sig = (s.astype(str).str.strip().str.lower().isin(deliv_set)).to_numpy(dtype=bool)
+
+    def _fast_stage(idx: int, is_first: bool, is_last: bool) -> str:
+        if is_first:
+            return STAGE_INITIAL
+        if transfer_sig[idx]:
+            return STAGE_TRANSFER
+        if is_last and status_sig[idx]:
+            return STAGE_FINAL
+        if wh_sig[idx]:
+            return STAGE_WAREHOUSE
+        if route_sig[idx]:
+            return STAGE_ROUTE
+        return STAGE_GENERIC
+
+    def _safe_val(arr: Optional[np.ndarray], idx: int) -> Any:
+        if arr is None:
+            return None
+        v = arr[idx]
+        if v is None:
+            return None
+        try:
+            if pd.isna(v):
+                return None
+        except (TypeError, ValueError):
+            pass
+        return v
+
     rows: list[dict[str, Any]] = []
     candidate_codes = np.flatnonzero(qual_counts >= 2)
     for code in candidate_codes:
         shipment_id = uniques[code]
-        pos = np.flatnonzero(codes == code)
-        journey = events.iloc[pos]
-        qpos = np.flatnonzero(qual_mask[pos])
-        initial_rel = int(qpos[0])
-        times = journey["_event_time"].reset_index(drop=True)
-        initial_time = times.iloc[initial_rel]
-        if gap is not None:
-            # Same predicate as before: skip a downstream event iff
-            # (event_time - initial_time) > gap. Series-based so tz-aware
-            # timestamps behave identically to the old scalar comparison.
-            diffs = times.iloc[[int(r) for r in qpos[1:]]].reset_index(drop=True)
-            diffs = diffs - initial_time
-            downstream_rel = qpos[1:][~(diffs > gap).to_numpy(dtype=bool)]
+        if is_sorted:
+            s = starts[code]
+            e = ends[code]
+            journey_len = e - s
+            q_rel = np.flatnonzero(qual_mask[s:e])
+            qpos = s + q_rel
         else:
-            downstream_rel = qpos[1:]
-        if len(downstream_rel) == 0:
+            p_list = np.asarray(pos_by_group[code], dtype=np.int64)
+            journey_len = len(p_list)
+            qpos = p_list[qual_mask[p_list]]
+
+        initial_idx = int(qpos[0])
+        initial_time = times_series.iloc[initial_idx]
+        if gap is not None:
+            diffs = times_series.iloc[qpos[1:]].reset_index(drop=True) - initial_time
+            downstream_idxs = qpos[1:][~(diffs > gap).to_numpy(dtype=bool)]
+        else:
+            downstream_idxs = qpos[1:]
+        if len(downstream_idxs) == 0:
             single_delay_skipped += 1
             continue
-        first_down_rel = int(downstream_rel[0])
-        last_down_rel = int(downstream_rel[-1])
-        initial = journey.iloc[initial_rel]
-        first_down = journey.iloc[first_down_rel]
-        last_down = journey.iloc[last_down_rel]
+
+        first_down_idx = int(downstream_idxs[0])
+        last_down_idx = int(downstream_idxs[-1])
+        journey_last_idx = (s + journey_len - 1) if is_sorted else int(p_list[-1])
+
+        all_stage_idxs = [initial_idx] + [int(r) for r in downstream_idxs]
         stages = [
-            classify_cascade_stage(
-                journey.iloc[rel],
-                is_first_delayed=(rel == initial_rel),
-                is_last_event=(rel == len(journey) - 1),
-                route_column=resolved_route,
-                warehouse_columns=warehouse_columns,
-                status_column=resolved_status,
-                delivery_status_values=delivery_status_values,
-            )
-            for rel in [initial_rel] + [int(r) for r in downstream_rel]
+            _fast_stage(idx, idx == initial_idx, idx == journey_last_idx)
+            for idx in all_stage_idxs
         ]
-        initial_duration = duration_of_pos(int(pos[initial_rel]))
-        final_duration = duration_of_pos(int(pos[last_down_rel]))
+        initial_duration = duration_of_pos(initial_idx)
+        final_duration = duration_of_pos(last_down_idx)
+        down_duration = duration_of_pos(first_down_idx)
+
         rows.append(
             {
                 "shipment_id": str(shipment_id),
-                "event_count": int(len(journey)),
+                "event_count": int(journey_len),
                 "delayed_event_count": int(len(qpos)),
                 "cascade_stage_count": int(len(stages)),
                 "cascade_depth": int(len(stages) - 1),
                 "stages": stages,
                 "initial_delay_time": initial_time,
                 "initial_delay_duration": initial_duration,
-                "initial_delay_reason": _event_value(initial, resolved_reason),
-                "initial_route": _event_value(initial, resolved_route),
-                "initial_warehouse": (
-                    _event_value(initial, warehouse_columns[0])
-                    if warehouse_columns else None
-                ),
-                "downstream_event_time": first_down["_event_time"],
-                "downstream_event_seq": int(first_down["_event_seq"]),
-                "downstream_delay_duration": duration_of_pos(int(pos[first_down_rel])),
-                "downstream_route": _event_value(first_down, resolved_route),
-                "downstream_warehouse": (
-                    _event_value(first_down, warehouse_columns[0])
-                    if warehouse_columns else None
-                ),
-                "final_event_time": last_down["_event_time"],
+                "initial_delay_reason": _safe_val(reason_arr, initial_idx),
+                "initial_route": _safe_val(route_arr, initial_idx),
+                "initial_warehouse": _safe_val(wh_arr, initial_idx),
+                "downstream_event_time": times_series.iloc[first_down_idx],
+                "downstream_event_seq": int(event_seqs[first_down_idx]),
+                "downstream_delay_duration": down_duration,
+                "downstream_route": _safe_val(route_arr, first_down_idx),
+                "downstream_warehouse": _safe_val(wh_arr, first_down_idx),
+                "final_event_time": times_series.iloc[last_down_idx],
                 "final_delay_duration": final_duration,
                 "downstream_delay_observed": (
                     (final_duration - initial_duration)
