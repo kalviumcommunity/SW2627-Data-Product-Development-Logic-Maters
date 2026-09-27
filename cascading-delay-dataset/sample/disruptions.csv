@@ -1,0 +1,21 @@
+disruption_id,disruption_type,location_id,vehicle_id,start_time,end_time,severity,description,root_cause,affected_capacity_percentage
+DIS-0001,State Border Checkpoint Hold,LOC-MAA-01,,2026-08-23 17:56:00,2026-08-23 20:45:00,Major,State boundary regulatory transit audit queue,State Border Checkpoint Hold,50.0
+DIS-0002,Labor Shortage,LOC-IXC-01,,2026-08-21 10:00:00,2026-08-21 12:21:00,Moderate,Peak volume unloader staffing deficit,Labor Shortage,78.8
+DIS-0003,Vehicle Breakdown,LOC-HYD-01,VEH-1162,2026-08-19 16:24:00,2026-08-19 20:12:00,Major,Radiator burst and cooling system leak,Vehicle Breakdown,71.6
+DIS-0004,Severe Weather,LOC-DEL-01,,2026-08-17 09:33:00,2026-08-17 14:16:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,80.9
+DIS-0005,Road Closure,LOC-CCU-02,VEH-1269,2026-08-07 06:00:00,2026-08-07 09:45:00,Major,Emergency culvert repair diversion on highway,Road Closure,51.5
+DIS-0006,Warehouse Congestion,LOC-BLR-01,,2026-08-07 15:15:00,2026-08-07 18:33:00,Major,Inbound dock queue gridlock and yard congestion,Warehouse Congestion,39.0
+DIS-0007,Labor Shortage,LOC-JAI-01,,2026-08-16 22:15:00,2026-08-17 00:46:00,Moderate,Contract dock worker shift dispute,Labor Shortage,51.9
+DIS-0008,Labor Shortage,LOC-DEL-01,,2026-08-18 17:46:00,2026-08-18 19:47:00,Moderate,Contract dock worker shift dispute,Labor Shortage,55.1
+DIS-0009,Severe Weather,LOC-AMD-01,,2026-08-08 19:40:00,2026-08-09 00:35:00,Critical,Cyclonic gale winds halting intercity freight transit,Severe Weather,52.7
+DIS-0010,Road Closure,LOC-JAI-01,VEH-1383,2026-08-20 12:21:00,2026-08-20 15:06:00,Major,Major accident-induced expressway roadblock,Road Closure,81.1
+DIS-0011,Vehicle Breakdown,LOC-DEL-01,VEH-1214,2026-08-21 05:18:00,2026-08-21 10:32:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,48.4
+DIS-0012,Vehicle Breakdown,LOC-BOM-01,VEH-1094,2026-08-06 07:32:00,2026-08-06 12:35:00,Critical,Transmission clutch assembly failure,Vehicle Breakdown,45.4
+DIS-0013,Road Closure,LOC-MAA-01,VEH-1233,2026-08-15 05:50:00,2026-08-15 09:41:00,Major,Emergency culvert repair diversion on highway,Road Closure,71.9
+DIS-0014,Labor Shortage,LOC-BLR-01,,2026-08-10 17:35:00,2026-08-10 19:46:00,Moderate,Festival eve seasonal unloading crew absenteeism,Labor Shortage,84.4
+DIS-0015,Severe Weather,LOC-JAI-02,,2026-08-18 13:17:00,2026-08-18 17:13:00,Major,Dense winter morning smog reducing visibility < 50m,Severe Weather,42.6
+DIS-0016,Road Closure,LOC-JAI-01,VEH-1600,2026-08-09 05:59:00,2026-08-09 08:21:00,Moderate,Freight arterial corridor construction closure,Road Closure,40.0
+DIS-0017,Equipment Failure,LOC-JAI-01,,2026-08-24 06:30:00,2026-08-24 09:35:00,Major,Automated high-bay sorter hydraulic failure,Equipment Failure,68.5
+DIS-0018,State Border Checkpoint Hold,LOC-NOI-01,,2026-08-08 19:19:00,2026-08-08 21:45:00,Moderate,Inter-state commercial tax portal outage,State Border Checkpoint Hold,37.1
+DIS-0019,Severe Weather,LOC-BOM-01,,2026-08-10 11:35:00,2026-08-10 14:03:00,Moderate,Cyclonic gale winds halting intercity freight transit,Severe Weather,66.2
+DIS-0020,Labor Shortage,LOC-DEL-01,,2026-08-07 15:54:00,2026-08-07 18:20:00,Moderate,Unexpected night shift handler shortage,Labor Shortage,40.7

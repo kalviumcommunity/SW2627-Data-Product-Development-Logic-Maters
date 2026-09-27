@@ -1,0 +1,181 @@
+cascade_id,disruption_id,root_shipment_id,affected_shipment_id,parent_shipment_id,cascade_level,propagation_type,direct_delay_minutes,propagated_delay_minutes,total_delay_minutes,root_cause,is_root_cause,is_propagated,impact_status
+CAS-0001,DIS-0001,SHP-11910,SHP-11910,,0,Root Disruption,135,0,145,State Border Checkpoint Hold,True,False,Active Cascade
+CAS-0001,DIS-0001,SHP-11910,SHP-11910,,0,Dispatch Delay,0,135,145,State Border Checkpoint Hold,True,False,Active Cascade
+CAS-0001,DIS-0001,SHP-11910,SHP-11910,,0,Customer Delivery Risk,0,135,145,State Border Checkpoint Hold,True,False,Severe Delay Breached
+CAS-0001,DIS-0001,SHP-11910,SHP-06422,SHP-11910,1,Cross-Dock Transfer,0,16,11,State Border Checkpoint Hold,False,True,Active Cascade
+CAS-0001,DIS-0001,SHP-11910,SHP-06422,SHP-11910,1,Departure Delay,0,16,11,State Border Checkpoint Hold,False,True,Active Cascade
+CAS-0001,DIS-0001,SHP-11910,SHP-06422,SHP-11910,1,Customer Delivery Risk,0,16,11,State Border Checkpoint Hold,False,True,Partially Absorbed
+CAS-0002,DIS-0002,SHP-00292,SHP-00292,,0,Root Disruption,113,0,114,Labor Shortage,True,False,Active Cascade
+CAS-0002,DIS-0002,SHP-00292,SHP-00292,,0,Dispatch Delay,0,113,114,Labor Shortage,True,False,Active Cascade
+CAS-0002,DIS-0002,SHP-00292,SHP-00292,,0,Customer Delivery Risk,0,113,114,Labor Shortage,True,False,Partially Absorbed
+CAS-0002,DIS-0002,SHP-00292,SHP-01663,SHP-00292,1,Cross-Dock Transfer,0,16,17,Labor Shortage,False,True,Active Cascade
+CAS-0002,DIS-0002,SHP-00292,SHP-01663,SHP-00292,1,Departure Delay,0,16,17,Labor Shortage,False,True,Active Cascade
+CAS-0002,DIS-0002,SHP-00292,SHP-01663,SHP-00292,1,Customer Delivery Risk,0,16,17,Labor Shortage,False,True,Partially Absorbed
+CAS-0003,DIS-0003,SHP-04724,SHP-04724,,0,Root Disruption,196,0,203,Vehicle Breakdown,True,False,Active Cascade
+CAS-0003,DIS-0003,SHP-04724,SHP-04724,,0,Dispatch Delay,0,196,203,Vehicle Breakdown,True,False,Active Cascade
+CAS-0003,DIS-0003,SHP-04724,SHP-04724,,0,Customer Delivery Risk,0,196,203,Vehicle Breakdown,True,False,Severe Delay Breached
+CAS-0003,DIS-0003,SHP-04724,SHP-12985,SHP-04724,1,Waiting for Inbound Shipment,0,162,157,Vehicle Breakdown,False,True,Active Cascade
+CAS-0003,DIS-0003,SHP-04724,SHP-12985,SHP-04724,1,Departure Delay,0,162,157,Vehicle Breakdown,False,True,Active Cascade
+CAS-0003,DIS-0003,SHP-04724,SHP-12985,SHP-04724,1,Customer Delivery Risk,0,162,157,Vehicle Breakdown,False,True,Severe Delay Breached
+CAS-0003,DIS-0003,SHP-04724,SHP-04330,SHP-12985,2,Warehouse Transfer,0,96,98,Vehicle Breakdown,False,True,Active Cascade
+CAS-0003,DIS-0003,SHP-04724,SHP-04330,SHP-12985,2,Departure Delay,0,96,98,Vehicle Breakdown,False,True,Active Cascade
+CAS-0003,DIS-0003,SHP-04724,SHP-04330,SHP-12985,2,Customer Delivery Risk,0,96,98,Vehicle Breakdown,False,True,Partially Absorbed
+CAS-0004,DIS-0004,SHP-06805,SHP-06805,,0,Root Disruption,237,0,246,Severe Weather,True,False,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-06805,,0,Dispatch Delay,0,237,246,Severe Weather,True,False,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-06805,,0,Customer Delivery Risk,0,237,246,Severe Weather,True,False,Severe Delay Breached
+CAS-0004,DIS-0004,SHP-06805,SHP-03399,SHP-06805,1,Warehouse Congestion Transfer,130,0,140,Warehouse Congestion,False,True,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-03399,SHP-06805,1,Departure Delay,0,0,140,Warehouse Congestion,False,True,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-03399,SHP-06805,1,Customer Delivery Risk,0,0,140,Warehouse Congestion,False,True,Severe Delay Breached
+CAS-0004,DIS-0004,SHP-06805,SHP-11530,SHP-06805,1,Warehouse Congestion Transfer,127,0,122,Warehouse Congestion,False,True,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-11530,SHP-06805,1,Departure Delay,0,0,122,Warehouse Congestion,False,True,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-11530,SHP-06805,1,Customer Delivery Risk,0,0,122,Warehouse Congestion,False,True,Severe Delay Breached
+CAS-0004,DIS-0004,SHP-06805,SHP-12693,SHP-06805,1,Warehouse Congestion Transfer,89,0,94,Warehouse Congestion,False,True,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-12693,SHP-06805,1,Departure Delay,0,0,94,Warehouse Congestion,False,True,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-12693,SHP-06805,1,Customer Delivery Risk,0,0,94,Warehouse Congestion,False,True,Partially Absorbed
+CAS-0004,DIS-0004,SHP-06805,SHP-08402,SHP-06805,1,Warehouse Congestion Transfer,109,0,107,Warehouse Congestion,False,True,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-08402,SHP-06805,1,Departure Delay,0,0,107,Warehouse Congestion,False,True,Active Cascade
+CAS-0004,DIS-0004,SHP-06805,SHP-08402,SHP-06805,1,Customer Delivery Risk,0,0,107,Warehouse Congestion,False,True,Partially Absorbed
+CAS-0005,DIS-0005,SHP-00799,SHP-00799,,0,Root Disruption,195,0,200,Road Closure,True,False,Active Cascade
+CAS-0005,DIS-0005,SHP-00799,SHP-00799,,0,Dispatch Delay,0,195,200,Road Closure,True,False,Active Cascade
+CAS-0005,DIS-0005,SHP-00799,SHP-00799,,0,Customer Delivery Risk,0,195,200,Road Closure,True,False,Severe Delay Breached
+CAS-0005,DIS-0005,SHP-00799,SHP-08425,SHP-00799,1,Route Connection,0,20,28,Road Closure,False,True,Active Cascade
+CAS-0005,DIS-0005,SHP-00799,SHP-08425,SHP-00799,1,Departure Delay,0,20,28,Road Closure,False,True,Active Cascade
+CAS-0005,DIS-0005,SHP-00799,SHP-08425,SHP-00799,1,Customer Delivery Risk,0,20,28,Road Closure,False,True,Partially Absorbed
+CAS-0006,DIS-0006,SHP-03377,SHP-03377,,0,Root Disruption,175,0,176,Warehouse Congestion,True,False,Active Cascade
+CAS-0006,DIS-0006,SHP-03377,SHP-03377,,0,Dispatch Delay,0,175,176,Warehouse Congestion,True,False,Active Cascade
+CAS-0006,DIS-0006,SHP-03377,SHP-03377,,0,Customer Delivery Risk,0,175,176,Warehouse Congestion,True,False,Severe Delay Breached
+CAS-0006,DIS-0006,SHP-03377,SHP-09999,SHP-03377,1,Shared Vehicle Turnaround,0,79,76,Vehicle Breakdown,False,True,Active Cascade
+CAS-0006,DIS-0006,SHP-03377,SHP-09999,SHP-03377,1,Departure Delay,0,79,76,Vehicle Breakdown,False,True,Active Cascade
+CAS-0006,DIS-0006,SHP-03377,SHP-09999,SHP-03377,1,Customer Delivery Risk,0,79,76,Vehicle Breakdown,False,True,Partially Absorbed
+CAS-0007,DIS-0007,SHP-06393,SHP-06393,,0,Root Disruption,114,0,118,Labor Shortage,True,False,Active Cascade
+CAS-0007,DIS-0007,SHP-06393,SHP-06393,,0,Dispatch Delay,0,114,118,Labor Shortage,True,False,Active Cascade
+CAS-0007,DIS-0007,SHP-06393,SHP-06393,,0,Customer Delivery Risk,0,114,118,Labor Shortage,True,False,Partially Absorbed
+CAS-0007,DIS-0007,SHP-06393,SHP-10360,SHP-06393,1,Waiting for Inbound Shipment,0,91,87,Labor Shortage,False,True,Active Cascade
+CAS-0007,DIS-0007,SHP-06393,SHP-10360,SHP-06393,1,Departure Delay,0,91,87,Labor Shortage,False,True,Active Cascade
+CAS-0007,DIS-0007,SHP-06393,SHP-10360,SHP-06393,1,Customer Delivery Risk,0,91,87,Labor Shortage,False,True,Partially Absorbed
+CAS-0007,DIS-0007,SHP-06393,SHP-02997,SHP-10360,2,Warehouse Transfer,0,46,43,Labor Shortage,False,True,Active Cascade
+CAS-0007,DIS-0007,SHP-06393,SHP-02997,SHP-10360,2,Departure Delay,0,46,43,Labor Shortage,False,True,Active Cascade
+CAS-0007,DIS-0007,SHP-06393,SHP-02997,SHP-10360,2,Customer Delivery Risk,0,46,43,Labor Shortage,False,True,Partially Absorbed
+CAS-0008,DIS-0008,SHP-02686,SHP-02686,,0,Root Disruption,84,0,88,Labor Shortage,True,False,Active Cascade
+CAS-0008,DIS-0008,SHP-02686,SHP-02686,,0,Dispatch Delay,0,84,88,Labor Shortage,True,False,Active Cascade
+CAS-0008,DIS-0008,SHP-02686,SHP-02686,,0,Customer Delivery Risk,0,84,88,Labor Shortage,True,False,Partially Absorbed
+CAS-0008,DIS-0008,SHP-02686,SHP-12169,SHP-02686,1,Route Connection,0,30,34,Labor Shortage,False,True,Active Cascade
+CAS-0008,DIS-0008,SHP-02686,SHP-12169,SHP-02686,1,Departure Delay,0,30,34,Labor Shortage,False,True,Active Cascade
+CAS-0008,DIS-0008,SHP-02686,SHP-12169,SHP-02686,1,Customer Delivery Risk,0,30,34,Labor Shortage,False,True,Partially Absorbed
+CAS-0009,DIS-0009,SHP-09674,SHP-09674,,0,Root Disruption,259,0,261,Severe Weather,True,False,Active Cascade
+CAS-0009,DIS-0009,SHP-09674,SHP-09674,,0,Dispatch Delay,0,259,261,Severe Weather,True,False,Active Cascade
+CAS-0009,DIS-0009,SHP-09674,SHP-09674,,0,Customer Delivery Risk,0,259,261,Severe Weather,True,False,Severe Delay Breached
+CAS-0009,DIS-0009,SHP-09674,SHP-11939,SHP-09674,1,Warehouse Congestion Transfer,159,0,156,Warehouse Congestion,False,True,Active Cascade
+CAS-0009,DIS-0009,SHP-09674,SHP-11939,SHP-09674,1,Departure Delay,0,0,156,Warehouse Congestion,False,True,Active Cascade
+CAS-0009,DIS-0009,SHP-09674,SHP-11939,SHP-09674,1,Customer Delivery Risk,0,0,156,Warehouse Congestion,False,True,Severe Delay Breached
+CAS-0009,DIS-0009,SHP-09674,SHP-09913,SHP-09674,1,Warehouse Congestion Transfer,192,0,198,Warehouse Congestion,False,True,Active Cascade
+CAS-0009,DIS-0009,SHP-09674,SHP-09913,SHP-09674,1,Departure Delay,0,0,198,Warehouse Congestion,False,True,Active Cascade
+CAS-0009,DIS-0009,SHP-09674,SHP-09913,SHP-09674,1,Customer Delivery Risk,0,0,198,Warehouse Congestion,False,True,Severe Delay Breached
+CAS-0009,DIS-0009,SHP-09674,SHP-10559,SHP-09674,1,Warehouse Congestion Transfer,100,0,98,Warehouse Congestion,False,True,Active Cascade
+CAS-0009,DIS-0009,SHP-09674,SHP-10559,SHP-09674,1,Departure Delay,0,0,98,Warehouse Congestion,False,True,Active Cascade
+CAS-0009,DIS-0009,SHP-09674,SHP-10559,SHP-09674,1,Customer Delivery Risk,0,0,98,Warehouse Congestion,False,True,Partially Absorbed
+CAS-0010,DIS-0010,SHP-08660,SHP-08660,,0,Root Disruption,125,0,126,Road Closure,True,False,Active Cascade
+CAS-0010,DIS-0010,SHP-08660,SHP-08660,,0,Dispatch Delay,0,125,126,Road Closure,True,False,Active Cascade
+CAS-0010,DIS-0010,SHP-08660,SHP-08660,,0,Customer Delivery Risk,0,125,126,Road Closure,True,False,Severe Delay Breached
+CAS-0010,DIS-0010,SHP-08660,SHP-06573,SHP-08660,1,Waiting for Inbound Shipment,0,20,19,Road Closure,False,True,Active Cascade
+CAS-0010,DIS-0010,SHP-08660,SHP-06573,SHP-08660,1,Departure Delay,0,20,19,Road Closure,False,True,Active Cascade
+CAS-0010,DIS-0010,SHP-08660,SHP-06573,SHP-08660,1,Customer Delivery Risk,0,20,19,Road Closure,False,True,Partially Absorbed
+CAS-0010,DIS-0010,SHP-08660,SHP-12102,SHP-06573,2,Warehouse Transfer,0,16,16,Road Closure,False,True,Active Cascade
+CAS-0010,DIS-0010,SHP-08660,SHP-12102,SHP-06573,2,Departure Delay,0,16,16,Road Closure,False,True,Active Cascade
+CAS-0010,DIS-0010,SHP-08660,SHP-12102,SHP-06573,2,Customer Delivery Risk,0,16,16,Road Closure,False,True,Partially Absorbed
+CAS-0011,DIS-0011,SHP-06857,SHP-06857,,0,Root Disruption,279,0,282,Vehicle Breakdown,True,False,Active Cascade
+CAS-0011,DIS-0011,SHP-06857,SHP-06857,,0,Dispatch Delay,0,279,282,Vehicle Breakdown,True,False,Active Cascade
+CAS-0011,DIS-0011,SHP-06857,SHP-06857,,0,Customer Delivery Risk,0,279,282,Vehicle Breakdown,True,False,Severe Delay Breached
+CAS-0011,DIS-0011,SHP-06857,SHP-08184,SHP-06857,1,Waiting for Inbound Shipment,0,216,222,Vehicle Breakdown,False,True,Active Cascade
+CAS-0011,DIS-0011,SHP-06857,SHP-08184,SHP-06857,1,Departure Delay,0,216,222,Vehicle Breakdown,False,True,Active Cascade
+CAS-0011,DIS-0011,SHP-06857,SHP-08184,SHP-06857,1,Customer Delivery Risk,0,216,222,Vehicle Breakdown,False,True,Severe Delay Breached
+CAS-0011,DIS-0011,SHP-06857,SHP-00558,SHP-08184,2,Warehouse Transfer,0,16,19,Vehicle Breakdown,False,True,Active Cascade
+CAS-0011,DIS-0011,SHP-06857,SHP-00558,SHP-08184,2,Departure Delay,0,16,19,Vehicle Breakdown,False,True,Active Cascade
+CAS-0011,DIS-0011,SHP-06857,SHP-00558,SHP-08184,2,Customer Delivery Risk,0,16,19,Vehicle Breakdown,False,True,Partially Absorbed
+CAS-0012,DIS-0012,SHP-00871,SHP-00871,,0,Root Disruption,261,0,270,Vehicle Breakdown,True,False,Active Cascade
+CAS-0012,DIS-0012,SHP-00871,SHP-00871,,0,Dispatch Delay,0,261,270,Vehicle Breakdown,True,False,Active Cascade
+CAS-0012,DIS-0012,SHP-00871,SHP-00871,,0,Customer Delivery Risk,0,261,270,Vehicle Breakdown,True,False,Severe Delay Breached
+CAS-0012,DIS-0012,SHP-00871,SHP-03354,SHP-00871,1,Waiting for Inbound Shipment,0,255,257,Vehicle Breakdown,False,True,Active Cascade
+CAS-0012,DIS-0012,SHP-00871,SHP-03354,SHP-00871,1,Departure Delay,0,255,257,Vehicle Breakdown,False,True,Active Cascade
+CAS-0012,DIS-0012,SHP-00871,SHP-03354,SHP-00871,1,Customer Delivery Risk,0,255,257,Vehicle Breakdown,False,True,Severe Delay Breached
+CAS-0012,DIS-0012,SHP-00871,SHP-04927,SHP-03354,2,Warehouse Transfer,0,16,11,Vehicle Breakdown,False,True,Active Cascade
+CAS-0012,DIS-0012,SHP-00871,SHP-04927,SHP-03354,2,Departure Delay,0,16,11,Vehicle Breakdown,False,True,Active Cascade
+CAS-0012,DIS-0012,SHP-00871,SHP-04927,SHP-03354,2,Customer Delivery Risk,0,16,11,Vehicle Breakdown,False,True,Partially Absorbed
+CAS-0013,DIS-0013,SHP-02434,SHP-02434,,0,Root Disruption,176,0,174,Road Closure,True,False,Active Cascade
+CAS-0013,DIS-0013,SHP-02434,SHP-02434,,0,Dispatch Delay,0,176,174,Road Closure,True,False,Active Cascade
+CAS-0013,DIS-0013,SHP-02434,SHP-02434,,0,Customer Delivery Risk,0,176,174,Road Closure,True,False,Severe Delay Breached
+CAS-0013,DIS-0013,SHP-02434,SHP-13151,SHP-02434,1,Shared Vehicle Turnaround,0,169,176,Vehicle Breakdown,False,True,Active Cascade
+CAS-0013,DIS-0013,SHP-02434,SHP-13151,SHP-02434,1,Departure Delay,0,169,176,Vehicle Breakdown,False,True,Active Cascade
+CAS-0013,DIS-0013,SHP-02434,SHP-13151,SHP-02434,1,Customer Delivery Risk,0,169,176,Vehicle Breakdown,False,True,Severe Delay Breached
+CAS-0014,DIS-0014,SHP-01973,SHP-01973,,0,Root Disruption,89,0,88,Labor Shortage,True,False,Active Cascade
+CAS-0014,DIS-0014,SHP-01973,SHP-01973,,0,Dispatch Delay,0,89,88,Labor Shortage,True,False,Active Cascade
+CAS-0014,DIS-0014,SHP-01973,SHP-01973,,0,Customer Delivery Risk,0,89,88,Labor Shortage,True,False,Partially Absorbed
+CAS-0014,DIS-0014,SHP-01973,SHP-00491,SHP-01973,1,Waiting for Inbound Shipment,0,32,30,Labor Shortage,False,True,Active Cascade
+CAS-0014,DIS-0014,SHP-01973,SHP-00491,SHP-01973,1,Departure Delay,0,32,30,Labor Shortage,False,True,Active Cascade
+CAS-0014,DIS-0014,SHP-01973,SHP-00491,SHP-01973,1,Customer Delivery Risk,0,32,30,Labor Shortage,False,True,Partially Absorbed
+CAS-0014,DIS-0014,SHP-01973,SHP-08230,SHP-00491,2,Warehouse Transfer,0,16,18,Labor Shortage,False,True,Active Cascade
+CAS-0014,DIS-0014,SHP-01973,SHP-08230,SHP-00491,2,Departure Delay,0,16,18,Labor Shortage,False,True,Active Cascade
+CAS-0014,DIS-0014,SHP-01973,SHP-08230,SHP-00491,2,Customer Delivery Risk,0,16,18,Labor Shortage,False,True,Partially Absorbed
+CAS-0015,DIS-0015,SHP-06674,SHP-06674,,0,Root Disruption,185,0,187,Severe Weather,True,False,Active Cascade
+CAS-0015,DIS-0015,SHP-06674,SHP-06674,,0,Dispatch Delay,0,185,187,Severe Weather,True,False,Active Cascade
+CAS-0015,DIS-0015,SHP-06674,SHP-06674,,0,Customer Delivery Risk,0,185,187,Severe Weather,True,False,Severe Delay Breached
+CAS-0015,DIS-0015,SHP-06674,SHP-00112,SHP-06674,1,Cross-Dock Transfer,0,112,108,Severe Weather,False,True,Active Cascade
+CAS-0015,DIS-0015,SHP-06674,SHP-00112,SHP-06674,1,Departure Delay,0,112,108,Severe Weather,False,True,Active Cascade
+CAS-0015,DIS-0015,SHP-06674,SHP-00112,SHP-06674,1,Customer Delivery Risk,0,112,108,Severe Weather,False,True,Partially Absorbed
+CAS-0015,DIS-0015,SHP-06674,SHP-09961,SHP-06674,1,Cross-Dock Transfer,0,89,97,Severe Weather,False,True,Active Cascade
+CAS-0015,DIS-0015,SHP-06674,SHP-09961,SHP-06674,1,Departure Delay,0,89,97,Severe Weather,False,True,Active Cascade
+CAS-0015,DIS-0015,SHP-06674,SHP-09961,SHP-06674,1,Customer Delivery Risk,0,89,97,Severe Weather,False,True,Partially Absorbed
+CAS-0015,DIS-0015,SHP-06674,SHP-04986,SHP-06674,1,Cross-Dock Transfer,0,84,88,Severe Weather,False,True,Active Cascade
+CAS-0015,DIS-0015,SHP-06674,SHP-04986,SHP-06674,1,Departure Delay,0,84,88,Severe Weather,False,True,Active Cascade
+CAS-0015,DIS-0015,SHP-06674,SHP-04986,SHP-06674,1,Customer Delivery Risk,0,84,88,Severe Weather,False,True,Partially Absorbed
+CAS-0016,DIS-0016,SHP-05712,SHP-05712,,0,Root Disruption,90,0,90,Road Closure,True,False,Active Cascade
+CAS-0016,DIS-0016,SHP-05712,SHP-05712,,0,Dispatch Delay,0,90,90,Road Closure,True,False,Active Cascade
+CAS-0016,DIS-0016,SHP-05712,SHP-05712,,0,Customer Delivery Risk,0,90,90,Road Closure,True,False,Partially Absorbed
+CAS-0016,DIS-0016,SHP-05712,SHP-10078,SHP-05712,1,Warehouse Congestion Transfer,54,0,64,Warehouse Congestion,False,True,Active Cascade
+CAS-0016,DIS-0016,SHP-05712,SHP-10078,SHP-05712,1,Departure Delay,0,0,64,Warehouse Congestion,False,True,Active Cascade
+CAS-0016,DIS-0016,SHP-05712,SHP-10078,SHP-05712,1,Customer Delivery Risk,0,0,64,Warehouse Congestion,False,True,Partially Absorbed
+CAS-0016,DIS-0016,SHP-05712,SHP-04120,SHP-05712,1,Warehouse Congestion Transfer,48,0,48,Warehouse Congestion,False,True,Active Cascade
+CAS-0016,DIS-0016,SHP-05712,SHP-04120,SHP-05712,1,Departure Delay,0,0,48,Warehouse Congestion,False,True,Active Cascade
+CAS-0016,DIS-0016,SHP-05712,SHP-04120,SHP-05712,1,Customer Delivery Risk,0,0,48,Warehouse Congestion,False,True,Partially Absorbed
+CAS-0016,DIS-0016,SHP-05712,SHP-03945,SHP-05712,1,Warehouse Congestion Transfer,61,0,63,Warehouse Congestion,False,True,Active Cascade
+CAS-0016,DIS-0016,SHP-05712,SHP-03945,SHP-05712,1,Departure Delay,0,0,63,Warehouse Congestion,False,True,Active Cascade
+CAS-0016,DIS-0016,SHP-05712,SHP-03945,SHP-05712,1,Customer Delivery Risk,0,0,63,Warehouse Congestion,False,True,Partially Absorbed
+CAS-0017,DIS-0017,SHP-11913,SHP-11913,,0,Root Disruption,126,0,127,Equipment Failure,True,False,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-11913,,0,Dispatch Delay,0,126,127,Equipment Failure,True,False,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-11913,,0,Customer Delivery Risk,0,126,127,Equipment Failure,True,False,Severe Delay Breached
+CAS-0017,DIS-0017,SHP-11913,SHP-08260,SHP-11913,1,Route Connection,0,80,84,Equipment Failure,False,True,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-08260,SHP-11913,1,Departure Delay,0,80,84,Equipment Failure,False,True,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-08260,SHP-11913,1,Customer Delivery Risk,0,80,84,Equipment Failure,False,True,Partially Absorbed
+CAS-0017,DIS-0017,SHP-11913,SHP-05881,SHP-08260,2,Warehouse Transfer,0,36,34,Equipment Failure,False,True,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-05881,SHP-08260,2,Departure Delay,0,36,34,Equipment Failure,False,True,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-05881,SHP-08260,2,Customer Delivery Risk,0,36,34,Equipment Failure,False,True,Partially Absorbed
+CAS-0017,DIS-0017,SHP-11913,SHP-09829,SHP-05881,3,Route Connection,0,16,11,Equipment Failure,False,True,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-09829,SHP-05881,3,Departure Delay,0,16,11,Equipment Failure,False,True,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-09829,SHP-05881,3,Customer Delivery Risk,0,16,11,Equipment Failure,False,True,Partially Absorbed
+CAS-0017,DIS-0017,SHP-11913,SHP-10024,SHP-08260,2,Warehouse Transfer,0,16,15,Equipment Failure,False,True,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-10024,SHP-08260,2,Departure Delay,0,16,15,Equipment Failure,False,True,Active Cascade
+CAS-0017,DIS-0017,SHP-11913,SHP-10024,SHP-08260,2,Customer Delivery Risk,0,16,15,Equipment Failure,False,True,Partially Absorbed
+CAS-0018,DIS-0018,SHP-03490,SHP-03490,,0,Root Disruption,101,0,105,State Border Checkpoint Hold,True,False,Active Cascade
+CAS-0018,DIS-0018,SHP-03490,SHP-03490,,0,Dispatch Delay,0,101,105,State Border Checkpoint Hold,True,False,Active Cascade
+CAS-0018,DIS-0018,SHP-03490,SHP-03490,,0,Customer Delivery Risk,0,101,105,State Border Checkpoint Hold,True,False,Partially Absorbed
+CAS-0018,DIS-0018,SHP-03490,SHP-08623,SHP-03490,1,Shared Vehicle Turnaround,0,33,32,Vehicle Breakdown,False,True,Active Cascade
+CAS-0018,DIS-0018,SHP-03490,SHP-08623,SHP-03490,1,Departure Delay,0,33,32,Vehicle Breakdown,False,True,Active Cascade
+CAS-0018,DIS-0018,SHP-03490,SHP-08623,SHP-03490,1,Customer Delivery Risk,0,33,32,Vehicle Breakdown,False,True,Partially Absorbed
+CAS-0019,DIS-0019,SHP-05562,SHP-05562,,0,Root Disruption,106,0,110,Severe Weather,True,False,Active Cascade
+CAS-0019,DIS-0019,SHP-05562,SHP-05562,,0,Dispatch Delay,0,106,110,Severe Weather,True,False,Active Cascade
+CAS-0019,DIS-0019,SHP-05562,SHP-05562,,0,Customer Delivery Risk,0,106,110,Severe Weather,True,False,Partially Absorbed
+CAS-0019,DIS-0019,SHP-05562,SHP-10126,SHP-05562,1,Warehouse Congestion Transfer,53,0,55,Warehouse Congestion,False,True,Active Cascade
+CAS-0019,DIS-0019,SHP-05562,SHP-10126,SHP-05562,1,Departure Delay,0,0,55,Warehouse Congestion,False,True,Active Cascade
+CAS-0019,DIS-0019,SHP-05562,SHP-10126,SHP-05562,1,Customer Delivery Risk,0,0,55,Warehouse Congestion,False,True,Partially Absorbed
+CAS-0019,DIS-0019,SHP-05562,SHP-11359,SHP-05562,1,Warehouse Congestion Transfer,80,0,76,Warehouse Congestion,False,True,Active Cascade
+CAS-0019,DIS-0019,SHP-05562,SHP-11359,SHP-05562,1,Departure Delay,0,0,76,Warehouse Congestion,False,True,Active Cascade
+CAS-0019,DIS-0019,SHP-05562,SHP-11359,SHP-05562,1,Customer Delivery Risk,0,0,76,Warehouse Congestion,False,True,Partially Absorbed
+CAS-0020,DIS-0020,SHP-02667,SHP-02667,,0,Root Disruption,107,0,107,Labor Shortage,True,False,Active Cascade
+CAS-0020,DIS-0020,SHP-02667,SHP-02667,,0,Dispatch Delay,0,107,107,Labor Shortage,True,False,Active Cascade
+CAS-0020,DIS-0020,SHP-02667,SHP-02667,,0,Customer Delivery Risk,0,107,107,Labor Shortage,True,False,Partially Absorbed
+CAS-0020,DIS-0020,SHP-02667,SHP-02658,SHP-02667,1,Waiting for Inbound Shipment,0,20,18,Labor Shortage,False,True,Active Cascade
+CAS-0020,DIS-0020,SHP-02667,SHP-02658,SHP-02667,1,Departure Delay,0,20,18,Labor Shortage,False,True,Active Cascade
+CAS-0020,DIS-0020,SHP-02667,SHP-02658,SHP-02667,1,Customer Delivery Risk,0,20,18,Labor Shortage,False,True,Partially Absorbed
+CAS-0020,DIS-0020,SHP-02667,SHP-03566,SHP-02658,2,Warehouse Transfer,0,16,11,Labor Shortage,False,True,Active Cascade
+CAS-0020,DIS-0020,SHP-02667,SHP-03566,SHP-02658,2,Departure Delay,0,16,11,Labor Shortage,False,True,Active Cascade
+CAS-0020,DIS-0020,SHP-02667,SHP-03566,SHP-02658,2,Customer Delivery Risk,0,16,11,Labor Shortage,False,True,Partially Absorbed

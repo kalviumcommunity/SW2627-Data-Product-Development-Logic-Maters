@@ -1,0 +1,29 @@
+location_id,location_name,location_type,city,state,region,latitude,longitude,capacity,operating_hours,average_processing_time_minutes
+LOC-DEL-01,Delhi Central Fulfillment Center,Fulfillment Centers,Delhi,Delhi,North,28.6139,77.209,45000,24/7,60
+LOC-DEL-02,Okhla Transshipment Hub,Transport Hubs,Delhi,Delhi,North,28.5355,77.2732,35000,24/7,45
+LOC-GUR-01,Gurugram Express Logistics Park,Distribution Centers,Gurugram,Haryana,North,28.4595,77.0266,40000,24/7,50
+LOC-NOI-01,Noida Sector-62 Distribution Hub,Cross-Docking Hubs,Noida,Uttar Pradesh,North,28.5355,77.391,30000,06:00-23:00,45
+LOC-JAI-01,Jaipur Sitapura Regional Warehouse,Regional Warehouses,Jaipur,Rajasthan,North,26.9124,75.7873,30000,24/7,60
+LOC-JAI-02,Jaipur VKI Cross-Dock Hub,Cross-Docking Hubs,Jaipur,Rajasthan,North,26.9855,75.7725,25000,06:00-22:00,40
+LOC-IXC-01,Chandigarh Industrial Distribution Center,Distribution Centers,Chandigarh,Punjab,North,30.7333,76.7794,25000,06:00-22:00,50
+LOC-LKO-01,Lucknow Transport Nagar Hub,Transport Hubs,Lucknow,Uttar Pradesh,North,26.8467,80.9462,35000,24/7,55
+LOC-LKO-02,Lucknow Sarojini Nagar Fulfillment Center,Fulfillment Centers,Lucknow,Uttar Pradesh,North,26.7588,80.8654,28000,24/7,60
+LOC-BOM-01,Mumbai Bhiwandi Mega Fulfillment Center,Fulfillment Centers,Mumbai,Maharashtra,West,19.2967,73.0631,55000,24/7,75
+LOC-BOM-02,Navi Mumbai JNPT Cross-Docking Terminal,Cross-Docking Hubs,Mumbai,Maharashtra,West,18.95,72.95,45000,24/7,45
+LOC-PNQ-01,Pune Chakan Automotive Logistics Hub,Distribution Centers,Pune,Maharashtra,West,18.7606,73.8636,32000,24/7,60
+LOC-AMD-01,Ahmedabad Changodar Regional Warehouse,Regional Warehouses,Ahmedabad,Gujarat,West,22.9238,72.4419,36000,24/7,55
+LOC-AMD-02,Ahmedabad Sanand Distribution Center,Distribution Centers,Ahmedabad,Gujarat,West,22.9868,72.3815,28000,06:00-23:00,50
+LOC-STV-01,Surat Sachin Industrial Logistics Hub,Transport Hubs,Surat,Gujarat,West,21.0872,72.8837,24000,06:00-22:00,45
+LOC-BDQ-01,Vadodara Makarpura Transport Center,Transport Hubs,Vadodara,Gujarat,West,22.253,73.197,22000,06:00-22:00,45
+LOC-IDR-01,Indore Pithampur Logistics Park,Regional Warehouses,Indore,Madhya Pradesh,Central,22.6142,75.6822,28000,24/7,50
+LOC-NAG-01,Nagpur MIHAN Multi-Modal Logistics Hub,Cross-Docking Hubs,Nagpur,Maharashtra,Central,21.0588,79.0558,48000,24/7,45
+LOC-CCU-01,Kolkata Dankuni Mega Logistics Hub,Distribution Centers,Kolkata,West Bengal,East,22.68,88.29,42000,24/7,65
+LOC-CCU-02,Howrah Freight Consolidation Center,Transport Hubs,Kolkata,West Bengal,East,22.5958,88.2636,30000,24/7,55
+LOC-BLR-01,Bengaluru Nelamangala Mega Fulfillment Center,Fulfillment Centers,Bengaluru,Karnataka,South,13.0995,77.3926,50000,24/7,65
+LOC-BLR-02,Bengaluru Hoskote Cross-Dock Terminal,Cross-Docking Hubs,Bengaluru,Karnataka,South,13.0712,77.7981,35000,24/7,45
+LOC-BLR-03,Bengaluru Electronic City Regional Warehouse,Regional Warehouses,Bengaluru,Karnataka,South,12.8452,77.6602,28000,06:00-23:00,50
+LOC-MAA-01,Chennai Sriperumbudur Distribution Center,Distribution Centers,Chennai,Tamil Nadu,South,12.9675,79.9419,40000,24/7,60
+LOC-MAA-02,Chennai Madhavaram Transshipment Hub,Transport Hubs,Chennai,Tamil Nadu,South,13.1489,80.2306,32000,24/7,50
+LOC-HYD-01,Hyderabad Shamshabad Cargo Logistics Hub,Transport Hubs,Hyderabad,Telangana,South,17.2403,78.4294,38000,24/7,55
+LOC-HYD-02,Hyderabad Medchal Regional Warehouse,Regional Warehouses,Hyderabad,Telangana,South,17.6297,78.4814,30000,24/7,50
+LOC-CJB-01,Coimbatore Peelamedu Distribution Center,Distribution Centers,Coimbatore,Tamil Nadu,South,11.0298,77.0274,20000,06:00-22:00,45

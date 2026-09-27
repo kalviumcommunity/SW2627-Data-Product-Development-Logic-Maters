@@ -1,0 +1,651 @@
+vehicle_id,vehicle_type,capacity_kg,carrier,home_location_id,reliability_score,average_speed_kmph,status
+VEH-1001,Mini Truck,3500,TCI Freight,LOC-NOI-01,0.85,46.7,Assigned
+VEH-1002,Refrigerated Truck,12000,BlueDart Logistics,LOC-JAI-01,0.95,45.1,In Transit
+VEH-1003,Van,1500,V-Trans Express,LOC-GUR-01,0.93,49.2,Available
+VEH-1004,Van,1500,Delhivery Express,LOC-IXC-01,0.88,52.6,Assigned
+VEH-1005,Truck,10000,V-Trans Express,LOC-IXC-01,0.95,45.2,In Transit
+VEH-1006,Van,1500,Gati KWE,LOC-LKO-01,0.91,50.7,Assigned
+VEH-1007,Refrigerated Truck,12000,Delhivery Express,LOC-MAA-02,0.96,45.2,Available
+VEH-1008,Mini Truck,3500,Safexpress,LOC-LKO-02,0.87,50.7,Available
+VEH-1009,Mini Truck,3500,Safexpress,LOC-NOI-01,0.86,45.6,In Transit
+VEH-1010,Truck,10000,Safexpress,LOC-CCU-02,0.89,41.3,In Transit
+VEH-1011,Truck,10000,Gati KWE,LOC-NAG-01,0.87,46.5,Available
+VEH-1012,Mini Truck,3500,Delhivery Express,LOC-NAG-01,0.89,48.8,In Transit
+VEH-1013,Truck,10000,Safexpress,LOC-CCU-01,0.88,41.4,In Transit
+VEH-1014,Mini Truck,3500,TCI Freight,LOC-LKO-01,0.96,50.9,In Transit
+VEH-1015,Truck,10000,BlueDart Logistics,LOC-CJB-01,0.86,42.7,Available
+VEH-1016,Truck,10000,TCI Freight,LOC-HYD-02,0.9,43.2,Available
+VEH-1017,Van,1500,BlueDart Logistics,LOC-BLR-02,0.89,54.6,Assigned
+VEH-1018,Container Truck,25000,TCI Freight,LOC-GUR-01,0.94,38.0,Assigned
+VEH-1019,Mini Truck,3500,TCI Freight,LOC-LKO-01,0.87,47.3,Available
+VEH-1020,Truck,10000,TCI Freight,LOC-BLR-03,0.93,45.1,In Transit
+VEH-1021,Van,1500,Delhivery Express,LOC-LKO-01,0.97,53.8,In Transit
+VEH-1022,Van,1500,Gati KWE,LOC-LKO-02,0.86,54.5,Assigned
+VEH-1023,Mini Truck,3500,V-Trans Express,LOC-BLR-03,0.89,48.9,In Transit
+VEH-1024,Mini Truck,3500,Gati KWE,LOC-BLR-01,0.91,46.6,In Transit
+VEH-1025,Truck,10000,BlueDart Logistics,LOC-MAA-01,0.93,42.6,Available
+VEH-1026,Container Truck,25000,V-Trans Express,LOC-AMD-02,0.98,39.4,In Transit
+VEH-1027,Container Truck,25000,BlueDart Logistics,LOC-JAI-01,0.92,37.5,Assigned
+VEH-1028,Truck,10000,Delhivery Express,LOC-CJB-01,0.87,44.8,Assigned
+VEH-1029,Van,1500,TCI Freight,LOC-AMD-02,0.93,51.3,Available
+VEH-1030,Van,1500,V-Trans Express,LOC-STV-01,0.92,54.8,In Transit
+VEH-1031,Mini Truck,3500,Delhivery Express,LOC-BLR-02,0.95,49.1,In Transit
+VEH-1032,Refrigerated Truck,12000,V-Trans Express,LOC-MAA-02,0.89,44.8,In Transit
+VEH-1033,Mini Truck,3500,Delhivery Express,LOC-BOM-01,0.91,47.7,In Transit
+VEH-1034,Van,1500,TCI Freight,LOC-MAA-01,0.89,52.0,Assigned
+VEH-1035,Van,1500,BlueDart Logistics,LOC-IDR-01,0.98,54.2,Maintenance
+VEH-1036,Refrigerated Truck,12000,Safexpress,LOC-HYD-02,0.94,44.7,Available
+VEH-1037,Van,1500,BlueDart Logistics,LOC-PNQ-01,0.96,52.2,Assigned
+VEH-1038,Truck,10000,V-Trans Express,LOC-DEL-01,0.93,43.9,In Transit
+VEH-1039,Refrigerated Truck,12000,Delhivery Express,LOC-PNQ-01,0.97,46.0,Available
+VEH-1040,Mini Truck,3500,Safexpress,LOC-LKO-01,0.86,50.3,Available
+VEH-1041,Container Truck,25000,Delhivery Express,LOC-GUR-01,0.95,41.9,In Transit
+VEH-1042,Mini Truck,3500,V-Trans Express,LOC-MAA-02,0.87,49.0,Available
+VEH-1043,Mini Truck,3500,V-Trans Express,LOC-JAI-02,0.89,50.2,In Transit
+VEH-1044,Refrigerated Truck,12000,Gati KWE,LOC-IXC-01,0.98,45.5,In Transit
+VEH-1045,Container Truck,25000,TCI Freight,LOC-IXC-01,0.95,39.4,In Transit
+VEH-1046,Van,1500,TCI Freight,LOC-BLR-01,0.9,54.4,In Transit
+VEH-1047,Refrigerated Truck,12000,Gati KWE,LOC-NOI-01,0.88,41.4,In Transit
+VEH-1048,Refrigerated Truck,12000,Delhivery Express,LOC-CCU-01,0.93,44.5,In Transit
+VEH-1049,Truck,10000,Delhivery Express,LOC-GUR-01,0.95,41.4,In Transit
+VEH-1050,Van,1500,Delhivery Express,LOC-DEL-02,0.97,49.4,Available
+VEH-1051,Van,1500,BlueDart Logistics,LOC-LKO-02,0.94,50.3,In Transit
+VEH-1052,Mini Truck,3500,BlueDart Logistics,LOC-MAA-01,0.98,48.4,In Transit
+VEH-1053,Container Truck,25000,Gati KWE,LOC-LKO-01,0.96,41.8,Available
+VEH-1054,Truck,10000,BlueDart Logistics,LOC-NOI-01,0.86,43.6,In Transit
+VEH-1055,Mini Truck,3500,Gati KWE,LOC-AMD-02,0.92,49.4,Available
+VEH-1056,Mini Truck,3500,TCI Freight,LOC-BLR-01,0.99,45.6,Available
+VEH-1057,Container Truck,25000,Gati KWE,LOC-MAA-01,0.9,42.2,Assigned
+VEH-1058,Truck,10000,BlueDart Logistics,LOC-IXC-01,0.88,43.7,Assigned
+VEH-1059,Refrigerated Truck,12000,Gati KWE,LOC-JAI-02,0.89,42.5,Available
+VEH-1060,Container Truck,25000,Delhivery Express,LOC-STV-01,0.96,42.1,In Transit
+VEH-1061,Refrigerated Truck,12000,Delhivery Express,LOC-DEL-02,0.94,44.2,Assigned
+VEH-1062,Mini Truck,3500,Delhivery Express,LOC-GUR-01,0.98,50.1,Available
+VEH-1063,Mini Truck,3500,BlueDart Logistics,LOC-AMD-02,0.92,46.3,In Transit
+VEH-1064,Refrigerated Truck,12000,Gati KWE,LOC-DEL-02,0.87,41.0,Assigned
+VEH-1065,Van,1500,Gati KWE,LOC-LKO-02,0.98,53.7,In Transit
+VEH-1066,Truck,10000,Safexpress,LOC-AMD-02,0.95,45.4,Available
+VEH-1067,Van,1500,V-Trans Express,LOC-BLR-02,0.95,49.9,In Transit
+VEH-1068,Container Truck,25000,Safexpress,LOC-IXC-01,0.99,40.5,In Transit
+VEH-1069,Truck,10000,V-Trans Express,LOC-DEL-02,0.95,41.3,In Transit
+VEH-1070,Mini Truck,3500,V-Trans Express,LOC-BDQ-01,0.92,50.1,Assigned
+VEH-1071,Container Truck,25000,BlueDart Logistics,LOC-DEL-02,0.98,37.5,In Transit
+VEH-1072,Truck,10000,BlueDart Logistics,LOC-GUR-01,0.93,45.1,In Transit
+VEH-1073,Mini Truck,3500,BlueDart Logistics,LOC-AMD-01,0.87,50.3,Available
+VEH-1074,Truck,10000,BlueDart Logistics,LOC-CCU-01,0.93,44.7,In Transit
+VEH-1075,Van,1500,Gati KWE,LOC-BLR-02,0.93,52.1,In Transit
+VEH-1076,Container Truck,25000,Safexpress,LOC-IXC-01,0.94,38.9,Available
+VEH-1077,Van,1500,Safexpress,LOC-AMD-01,0.87,52.9,In Transit
+VEH-1078,Container Truck,25000,Gati KWE,LOC-BOM-02,0.98,42.6,Available
+VEH-1079,Truck,10000,Delhivery Express,LOC-STV-01,0.94,44.4,In Transit
+VEH-1080,Mini Truck,3500,Delhivery Express,LOC-GUR-01,0.93,48.0,In Transit
+VEH-1081,Mini Truck,3500,BlueDart Logistics,LOC-PNQ-01,0.97,50.3,In Transit
+VEH-1082,Truck,10000,Safexpress,LOC-BOM-01,0.87,46.0,In Transit
+VEH-1083,Van,1500,TCI Freight,LOC-BOM-01,0.94,54.9,Assigned
+VEH-1084,Mini Truck,3500,TCI Freight,LOC-IDR-01,0.85,49.9,Available
+VEH-1085,Van,1500,Safexpress,LOC-BLR-02,0.86,54.3,In Transit
+VEH-1086,Truck,10000,Safexpress,LOC-NOI-01,0.97,45.5,Available
+VEH-1087,Truck,10000,BlueDart Logistics,LOC-LKO-02,0.89,42.3,Available
+VEH-1088,Truck,10000,Safexpress,LOC-IXC-01,0.95,46.1,Available
+VEH-1089,Truck,10000,V-Trans Express,LOC-BDQ-01,0.89,46.4,In Transit
+VEH-1090,Container Truck,25000,Delhivery Express,LOC-GUR-01,0.94,42.0,Available
+VEH-1091,Mini Truck,3500,Delhivery Express,LOC-DEL-01,0.9,45.8,Available
+VEH-1092,Container Truck,25000,Safexpress,LOC-JAI-02,0.95,40.3,Assigned
+VEH-1093,Mini Truck,3500,Gati KWE,LOC-NAG-01,0.85,45.5,In Transit
+VEH-1094,Refrigerated Truck,12000,TCI Freight,LOC-JAI-01,0.93,46.0,In Transit
+VEH-1095,Truck,10000,V-Trans Express,LOC-NAG-01,0.87,41.8,Available
+VEH-1096,Van,1500,Safexpress,LOC-PNQ-01,0.98,53.8,Assigned
+VEH-1097,Container Truck,25000,Delhivery Express,LOC-PNQ-01,0.88,38.5,In Transit
+VEH-1098,Mini Truck,3500,Delhivery Express,LOC-PNQ-01,0.96,50.3,In Transit
+VEH-1099,Refrigerated Truck,12000,Gati KWE,LOC-CCU-02,0.95,46.6,Assigned
+VEH-1100,Container Truck,25000,BlueDart Logistics,LOC-CJB-01,0.87,41.8,In Transit
+VEH-1101,Truck,10000,BlueDart Logistics,LOC-AMD-02,0.85,45.4,Available
+VEH-1102,Van,1500,Safexpress,LOC-HYD-01,0.98,53.8,Assigned
+VEH-1103,Truck,10000,TCI Freight,LOC-HYD-01,0.88,42.0,Available
+VEH-1104,Van,1500,TCI Freight,LOC-NOI-01,0.9,49.2,In Transit
+VEH-1105,Van,1500,Gati KWE,LOC-LKO-01,0.88,54.5,Available
+VEH-1106,Truck,10000,Safexpress,LOC-BOM-01,0.96,46.2,In Transit
+VEH-1107,Truck,10000,BlueDart Logistics,LOC-DEL-01,0.94,43.4,Available
+VEH-1108,Truck,10000,Safexpress,LOC-CJB-01,0.86,45.6,Available
+VEH-1109,Mini Truck,3500,Safexpress,LOC-BLR-01,0.92,49.1,In Transit
+VEH-1110,Truck,10000,V-Trans Express,LOC-BOM-02,0.98,41.7,Assigned
+VEH-1111,Truck,10000,Safexpress,LOC-JAI-02,0.93,46.9,In Transit
+VEH-1112,Van,1500,Delhivery Express,LOC-NOI-01,0.93,51.1,In Transit
+VEH-1113,Mini Truck,3500,Safexpress,LOC-AMD-02,0.93,48.1,Available
+VEH-1114,Container Truck,25000,Gati KWE,LOC-CCU-01,0.88,37.3,In Transit
+VEH-1115,Container Truck,25000,Gati KWE,LOC-DEL-01,0.92,41.8,In Transit
+VEH-1116,Refrigerated Truck,12000,TCI Freight,LOC-MAA-01,0.98,45.4,In Transit
+VEH-1117,Truck,10000,BlueDart Logistics,LOC-PNQ-01,0.91,46.7,In Transit
+VEH-1118,Mini Truck,3500,Safexpress,LOC-CCU-02,0.89,50.1,In Transit
+VEH-1119,Mini Truck,3500,TCI Freight,LOC-BOM-01,0.92,49.0,Available
+VEH-1120,Truck,10000,Safexpress,LOC-AMD-01,0.95,44.3,Available
+VEH-1121,Container Truck,25000,BlueDart Logistics,LOC-AMD-02,0.94,39.3,Assigned
+VEH-1122,Container Truck,25000,TCI Freight,LOC-JAI-02,0.94,38.8,In Transit
+VEH-1123,Van,1500,V-Trans Express,LOC-HYD-02,0.85,50.7,Assigned
+VEH-1124,Truck,10000,Gati KWE,LOC-HYD-01,0.93,44.9,Assigned
+VEH-1125,Container Truck,25000,Gati KWE,LOC-STV-01,0.91,38.3,Assigned
+VEH-1126,Mini Truck,3500,Gati KWE,LOC-HYD-01,0.98,49.8,In Transit
+VEH-1127,Container Truck,25000,BlueDart Logistics,LOC-BLR-02,0.86,40.1,In Transit
+VEH-1128,Van,1500,TCI Freight,LOC-CCU-02,0.9,53.9,In Transit
+VEH-1129,Container Truck,25000,BlueDart Logistics,LOC-BLR-02,0.89,41.8,In Transit
+VEH-1130,Truck,10000,BlueDart Logistics,LOC-DEL-01,0.86,46.9,Available
+VEH-1131,Truck,10000,V-Trans Express,LOC-CJB-01,0.96,43.7,Maintenance
+VEH-1132,Van,1500,TCI Freight,LOC-CCU-01,0.88,53.2,In Transit
+VEH-1133,Container Truck,25000,Gati KWE,LOC-AMD-01,0.88,40.9,In Transit
+VEH-1134,Truck,10000,Delhivery Express,LOC-MAA-02,0.97,46.3,In Transit
+VEH-1135,Mini Truck,3500,Gati KWE,LOC-LKO-01,0.87,50.7,In Transit
+VEH-1136,Refrigerated Truck,12000,V-Trans Express,LOC-STV-01,0.86,42.5,Assigned
+VEH-1137,Container Truck,25000,Delhivery Express,LOC-STV-01,0.87,39.8,Assigned
+VEH-1138,Truck,10000,V-Trans Express,LOC-NAG-01,0.93,46.7,In Transit
+VEH-1139,Refrigerated Truck,12000,Gati KWE,LOC-CCU-02,0.96,46.4,In Transit
+VEH-1140,Truck,10000,Gati KWE,LOC-HYD-02,0.98,43.7,In Transit
+VEH-1141,Container Truck,25000,BlueDart Logistics,LOC-MAA-01,0.97,39.7,In Transit
+VEH-1142,Mini Truck,3500,BlueDart Logistics,LOC-HYD-02,0.94,49.6,Available
+VEH-1143,Truck,10000,V-Trans Express,LOC-BDQ-01,0.94,42.6,Available
+VEH-1144,Truck,10000,Delhivery Express,LOC-BLR-03,0.89,42.6,In Transit
+VEH-1145,Mini Truck,3500,Safexpress,LOC-NAG-01,0.86,45.9,In Transit
+VEH-1146,Van,1500,Gati KWE,LOC-BLR-03,0.87,50.3,Available
+VEH-1147,Refrigerated Truck,12000,Gati KWE,LOC-AMD-02,0.9,43.8,In Transit
+VEH-1148,Van,1500,Delhivery Express,LOC-IXC-01,0.97,51.3,In Transit
+VEH-1149,Refrigerated Truck,12000,V-Trans Express,LOC-BLR-03,0.85,46.3,Available
+VEH-1150,Truck,10000,V-Trans Express,LOC-AMD-01,0.92,46.7,Available
+VEH-1151,Van,1500,Safexpress,LOC-MAA-02,0.9,54.3,In Transit
+VEH-1152,Truck,10000,Gati KWE,LOC-NAG-01,0.95,44.3,In Transit
+VEH-1153,Refrigerated Truck,12000,V-Trans Express,LOC-LKO-01,0.92,42.6,Assigned
+VEH-1154,Truck,10000,Gati KWE,LOC-DEL-01,0.9,45.0,In Transit
+VEH-1155,Refrigerated Truck,12000,Gati KWE,LOC-MAA-01,0.87,43.8,In Transit
+VEH-1156,Truck,10000,BlueDart Logistics,LOC-CCU-02,0.92,46.4,Available
+VEH-1157,Van,1500,V-Trans Express,LOC-CCU-01,0.94,49.5,Assigned
+VEH-1158,Refrigerated Truck,12000,Gati KWE,LOC-JAI-01,0.97,42.1,In Transit
+VEH-1159,Truck,10000,Safexpress,LOC-AMD-01,0.9,43.7,Available
+VEH-1160,Van,1500,Safexpress,LOC-MAA-02,0.97,50.7,In Transit
+VEH-1161,Truck,10000,Gati KWE,LOC-LKO-02,0.97,43.8,In Transit
+VEH-1162,Truck,10000,TCI Freight,LOC-NAG-01,0.86,46.7,In Transit
+VEH-1163,Container Truck,25000,BlueDart Logistics,LOC-BLR-01,0.86,42.7,In Transit
+VEH-1164,Truck,10000,Delhivery Express,LOC-MAA-02,0.85,42.5,In Transit
+VEH-1165,Truck,10000,Delhivery Express,LOC-CCU-02,0.87,41.8,Available
+VEH-1166,Mini Truck,3500,TCI Freight,LOC-NOI-01,0.93,46.3,In Transit
+VEH-1167,Van,1500,TCI Freight,LOC-LKO-02,0.96,50.0,Available
+VEH-1168,Van,1500,V-Trans Express,LOC-MAA-01,0.95,53.7,Available
+VEH-1169,Container Truck,25000,BlueDart Logistics,LOC-BOM-01,0.87,37.2,In Transit
+VEH-1170,Truck,10000,Safexpress,LOC-CCU-01,0.94,46.7,Available
+VEH-1171,Truck,10000,Gati KWE,LOC-BLR-03,0.88,44.6,In Transit
+VEH-1172,Van,1500,TCI Freight,LOC-LKO-01,0.86,53.6,In Transit
+VEH-1173,Mini Truck,3500,TCI Freight,LOC-CCU-02,0.96,49.8,In Transit
+VEH-1174,Truck,10000,V-Trans Express,LOC-HYD-01,0.86,44.2,Available
+VEH-1175,Mini Truck,3500,TCI Freight,LOC-PNQ-01,0.86,48.9,In Transit
+VEH-1176,Truck,10000,Delhivery Express,LOC-CJB-01,0.91,43.9,Assigned
+VEH-1177,Truck,10000,Gati KWE,LOC-PNQ-01,0.94,46.0,Available
+VEH-1178,Van,1500,TCI Freight,LOC-JAI-01,0.91,53.4,In Transit
+VEH-1179,Van,1500,TCI Freight,LOC-LKO-02,0.94,54.5,In Transit
+VEH-1180,Container Truck,25000,Gati KWE,LOC-STV-01,0.91,41.4,In Transit
+VEH-1181,Mini Truck,3500,Safexpress,LOC-BOM-02,0.97,50.0,In Transit
+VEH-1182,Truck,10000,Delhivery Express,LOC-LKO-02,0.97,42.5,In Transit
+VEH-1183,Container Truck,25000,Gati KWE,LOC-CCU-01,0.94,39.3,In Transit
+VEH-1184,Container Truck,25000,Delhivery Express,LOC-BDQ-01,0.97,38.1,Assigned
+VEH-1185,Mini Truck,3500,BlueDart Logistics,LOC-PNQ-01,0.96,47.0,Available
+VEH-1186,Van,1500,V-Trans Express,LOC-BLR-03,0.97,52.3,Available
+VEH-1187,Van,1500,V-Trans Express,LOC-IXC-01,0.86,53.3,In Transit
+VEH-1188,Van,1500,Gati KWE,LOC-NAG-01,0.96,53.1,In Transit
+VEH-1189,Container Truck,25000,TCI Freight,LOC-BLR-03,0.92,41.8,Available
+VEH-1190,Refrigerated Truck,12000,Delhivery Express,LOC-BOM-01,0.88,45.2,In Transit
+VEH-1191,Van,1500,Safexpress,LOC-BLR-02,0.93,51.8,In Transit
+VEH-1192,Truck,10000,V-Trans Express,LOC-PNQ-01,0.91,45.5,Assigned
+VEH-1193,Refrigerated Truck,12000,Safexpress,LOC-PNQ-01,0.95,42.6,Assigned
+VEH-1194,Mini Truck,3500,Safexpress,LOC-LKO-01,0.87,46.2,Available
+VEH-1195,Refrigerated Truck,12000,Delhivery Express,LOC-MAA-01,0.93,45.6,Assigned
+VEH-1196,Container Truck,25000,BlueDart Logistics,LOC-IXC-01,0.88,39.9,In Transit
+VEH-1197,Mini Truck,3500,TCI Freight,LOC-CCU-01,0.99,48.1,In Transit
+VEH-1198,Mini Truck,3500,Safexpress,LOC-NOI-01,0.97,46.8,Assigned
+VEH-1199,Container Truck,25000,Safexpress,LOC-JAI-02,0.89,41.2,In Transit
+VEH-1200,Refrigerated Truck,12000,BlueDart Logistics,LOC-LKO-02,0.86,41.3,In Transit
+VEH-1201,Van,1500,Safexpress,LOC-BLR-03,0.98,52.8,Assigned
+VEH-1202,Truck,10000,Gati KWE,LOC-NOI-01,0.97,44.4,Assigned
+VEH-1203,Mini Truck,3500,Gati KWE,LOC-BDQ-01,0.91,46.1,Assigned
+VEH-1204,Mini Truck,3500,Delhivery Express,LOC-LKO-02,0.98,47.9,Available
+VEH-1205,Container Truck,25000,Delhivery Express,LOC-AMD-01,0.92,40.5,Available
+VEH-1206,Mini Truck,3500,TCI Freight,LOC-DEL-02,0.87,49.9,Assigned
+VEH-1207,Container Truck,25000,Safexpress,LOC-GUR-01,0.99,37.7,In Transit
+VEH-1208,Truck,10000,Gati KWE,LOC-CCU-02,0.93,44.7,In Transit
+VEH-1209,Mini Truck,3500,V-Trans Express,LOC-AMD-01,0.91,47.7,In Transit
+VEH-1210,Truck,10000,V-Trans Express,LOC-AMD-02,0.89,44.7,In Transit
+VEH-1211,Refrigerated Truck,12000,V-Trans Express,LOC-MAA-01,0.86,45.6,In Transit
+VEH-1212,Van,1500,TCI Freight,LOC-IXC-01,0.89,49.5,In Transit
+VEH-1213,Van,1500,BlueDart Logistics,LOC-JAI-02,0.93,49.9,In Transit
+VEH-1214,Truck,10000,Gati KWE,LOC-STV-01,0.95,43.8,Assigned
+VEH-1215,Mini Truck,3500,Delhivery Express,LOC-LKO-01,0.89,46.7,Available
+VEH-1216,Van,1500,Gati KWE,LOC-GUR-01,0.95,54.5,In Transit
+VEH-1217,Truck,10000,TCI Freight,LOC-CCU-01,0.94,46.6,Available
+VEH-1218,Van,1500,Gati KWE,LOC-NOI-01,0.93,52.9,In Transit
+VEH-1219,Van,1500,Safexpress,LOC-HYD-02,0.87,49.4,Assigned
+VEH-1220,Truck,10000,Safexpress,LOC-CCU-02,0.95,44.4,Available
+VEH-1221,Van,1500,Safexpress,LOC-STV-01,0.87,53.1,Maintenance
+VEH-1222,Mini Truck,3500,TCI Freight,LOC-AMD-01,0.98,48.0,In Transit
+VEH-1223,Refrigerated Truck,12000,Gati KWE,LOC-STV-01,0.86,41.2,Assigned
+VEH-1224,Container Truck,25000,Gati KWE,LOC-MAA-01,0.9,38.5,In Transit
+VEH-1225,Mini Truck,3500,Delhivery Express,LOC-LKO-01,0.98,50.0,Available
+VEH-1226,Refrigerated Truck,12000,V-Trans Express,LOC-CCU-01,0.98,47.0,In Transit
+VEH-1227,Truck,10000,TCI Freight,LOC-HYD-02,0.89,41.2,Assigned
+VEH-1228,Van,1500,BlueDart Logistics,LOC-BDQ-01,0.92,51.7,In Transit
+VEH-1229,Van,1500,Safexpress,LOC-JAI-02,0.99,51.6,In Transit
+VEH-1230,Van,1500,Gati KWE,LOC-GUR-01,0.92,51.5,Available
+VEH-1231,Van,1500,Safexpress,LOC-BLR-02,0.86,50.0,In Transit
+VEH-1232,Refrigerated Truck,12000,Gati KWE,LOC-BLR-03,0.92,45.0,In Transit
+VEH-1233,Container Truck,25000,Gati KWE,LOC-HYD-02,0.96,37.2,In Transit
+VEH-1234,Mini Truck,3500,Delhivery Express,LOC-BOM-02,0.89,45.7,Assigned
+VEH-1235,Mini Truck,3500,Gati KWE,LOC-CJB-01,0.92,50.9,Assigned
+VEH-1236,Van,1500,TCI Freight,LOC-CJB-01,0.93,51.5,Assigned
+VEH-1237,Van,1500,BlueDart Logistics,LOC-IDR-01,0.9,53.5,Assigned
+VEH-1238,Truck,10000,TCI Freight,LOC-STV-01,0.96,42.2,Maintenance
+VEH-1239,Van,1500,V-Trans Express,LOC-JAI-01,0.98,51.6,In Transit
+VEH-1240,Container Truck,25000,TCI Freight,LOC-BDQ-01,0.87,42.8,In Transit
+VEH-1241,Truck,10000,V-Trans Express,LOC-HYD-01,0.88,42.0,In Transit
+VEH-1242,Truck,10000,V-Trans Express,LOC-DEL-01,0.93,41.6,In Transit
+VEH-1243,Truck,10000,Delhivery Express,LOC-STV-01,0.98,44.9,Assigned
+VEH-1244,Van,1500,BlueDart Logistics,LOC-BDQ-01,0.98,50.8,In Transit
+VEH-1245,Container Truck,25000,TCI Freight,LOC-LKO-02,0.91,39.9,Assigned
+VEH-1246,Truck,10000,Gati KWE,LOC-LKO-01,0.91,41.9,In Transit
+VEH-1247,Mini Truck,3500,BlueDart Logistics,LOC-CCU-02,0.92,50.3,Available
+VEH-1248,Truck,10000,Delhivery Express,LOC-LKO-02,0.96,46.1,In Transit
+VEH-1249,Truck,10000,Safexpress,LOC-HYD-01,0.92,45.9,Available
+VEH-1250,Container Truck,25000,Safexpress,LOC-MAA-01,0.89,40.5,Maintenance
+VEH-1251,Truck,10000,TCI Freight,LOC-BDQ-01,0.97,43.7,In Transit
+VEH-1252,Mini Truck,3500,Gati KWE,LOC-PNQ-01,0.9,49.6,Assigned
+VEH-1253,Truck,10000,Gati KWE,LOC-STV-01,0.98,46.2,Available
+VEH-1254,Container Truck,25000,TCI Freight,LOC-LKO-01,0.93,38.4,Assigned
+VEH-1255,Container Truck,25000,Gati KWE,LOC-DEL-02,0.89,39.8,In Transit
+VEH-1256,Truck,10000,Gati KWE,LOC-AMD-01,0.99,45.8,In Transit
+VEH-1257,Container Truck,25000,TCI Freight,LOC-JAI-01,0.92,37.2,Assigned
+VEH-1258,Van,1500,V-Trans Express,LOC-CCU-01,0.9,49.6,Available
+VEH-1259,Mini Truck,3500,Gati KWE,LOC-NOI-01,0.92,47.7,Assigned
+VEH-1260,Container Truck,25000,TCI Freight,LOC-JAI-01,0.91,40.9,Available
+VEH-1261,Truck,10000,BlueDart Logistics,LOC-GUR-01,0.92,46.8,In Transit
+VEH-1262,Container Truck,25000,Safexpress,LOC-CCU-02,0.95,40.9,Assigned
+VEH-1263,Refrigerated Truck,12000,Safexpress,LOC-CJB-01,0.94,44.2,In Transit
+VEH-1264,Truck,10000,Safexpress,LOC-BLR-01,0.95,45.6,In Transit
+VEH-1265,Van,1500,V-Trans Express,LOC-DEL-02,0.94,50.4,Assigned
+VEH-1266,Refrigerated Truck,12000,TCI Freight,LOC-BOM-01,0.99,45.5,Maintenance
+VEH-1267,Container Truck,25000,Gati KWE,LOC-NOI-01,0.96,41.2,In Transit
+VEH-1268,Refrigerated Truck,12000,Delhivery Express,LOC-STV-01,0.87,42.8,Assigned
+VEH-1269,Container Truck,25000,Delhivery Express,LOC-DEL-02,0.9,37.3,Available
+VEH-1270,Truck,10000,Safexpress,LOC-PNQ-01,0.91,42.5,Available
+VEH-1271,Container Truck,25000,Gati KWE,LOC-CCU-01,0.95,38.1,In Transit
+VEH-1272,Mini Truck,3500,BlueDart Logistics,LOC-GUR-01,0.94,47.3,In Transit
+VEH-1273,Truck,10000,TCI Freight,LOC-LKO-01,0.92,44.5,In Transit
+VEH-1274,Van,1500,BlueDart Logistics,LOC-STV-01,0.94,51.8,In Transit
+VEH-1275,Truck,10000,TCI Freight,LOC-DEL-01,0.98,43.8,In Transit
+VEH-1276,Truck,10000,Safexpress,LOC-BLR-02,0.93,41.4,Assigned
+VEH-1277,Truck,10000,Safexpress,LOC-CCU-01,0.89,46.8,In Transit
+VEH-1278,Container Truck,25000,TCI Freight,LOC-LKO-02,0.91,38.8,In Transit
+VEH-1279,Van,1500,Gati KWE,LOC-CJB-01,0.92,50.4,Available
+VEH-1280,Refrigerated Truck,12000,V-Trans Express,LOC-PNQ-01,0.93,47.0,In Transit
+VEH-1281,Truck,10000,Safexpress,LOC-DEL-01,0.99,44.9,Available
+VEH-1282,Van,1500,Safexpress,LOC-DEL-01,0.93,53.1,Available
+VEH-1283,Mini Truck,3500,TCI Freight,LOC-DEL-02,0.98,49.5,In Transit
+VEH-1284,Mini Truck,3500,Safexpress,LOC-MAA-02,0.96,48.6,In Transit
+VEH-1285,Container Truck,25000,Safexpress,LOC-LKO-01,0.94,40.7,In Transit
+VEH-1286,Truck,10000,TCI Freight,LOC-MAA-02,0.95,45.0,In Transit
+VEH-1287,Mini Truck,3500,BlueDart Logistics,LOC-BLR-01,0.86,48.8,In Transit
+VEH-1288,Container Truck,25000,Delhivery Express,LOC-BOM-01,0.96,37.2,Assigned
+VEH-1289,Van,1500,Safexpress,LOC-MAA-01,0.87,54.5,Assigned
+VEH-1290,Truck,10000,Safexpress,LOC-MAA-01,0.91,42.2,In Transit
+VEH-1291,Truck,10000,V-Trans Express,LOC-PNQ-01,0.92,46.5,Maintenance
+VEH-1292,Truck,10000,BlueDart Logistics,LOC-LKO-02,0.98,46.7,In Transit
+VEH-1293,Truck,10000,Safexpress,LOC-MAA-01,0.97,45.8,Available
+VEH-1294,Van,1500,Gati KWE,LOC-GUR-01,0.87,54.8,Available
+VEH-1295,Van,1500,TCI Freight,LOC-MAA-01,0.94,51.4,Available
+VEH-1296,Van,1500,V-Trans Express,LOC-PNQ-01,0.86,51.4,In Transit
+VEH-1297,Mini Truck,3500,Safexpress,LOC-NAG-01,0.87,47.2,In Transit
+VEH-1298,Container Truck,25000,TCI Freight,LOC-BLR-02,0.89,39.3,In Transit
+VEH-1299,Truck,10000,TCI Freight,LOC-PNQ-01,0.87,42.4,Available
+VEH-1300,Mini Truck,3500,Delhivery Express,LOC-CCU-02,0.97,48.4,Available
+VEH-1301,Van,1500,V-Trans Express,LOC-LKO-01,0.94,52.8,In Transit
+VEH-1302,Van,1500,Gati KWE,LOC-BLR-03,0.89,51.4,Available
+VEH-1303,Van,1500,BlueDart Logistics,LOC-DEL-02,0.98,50.8,In Transit
+VEH-1304,Mini Truck,3500,Gati KWE,LOC-NOI-01,0.86,50.3,In Transit
+VEH-1305,Truck,10000,BlueDart Logistics,LOC-AMD-01,0.91,45.0,In Transit
+VEH-1306,Van,1500,TCI Freight,LOC-BLR-03,0.98,51.5,In Transit
+VEH-1307,Truck,10000,TCI Freight,LOC-MAA-01,0.87,43.5,Available
+VEH-1308,Container Truck,25000,Delhivery Express,LOC-HYD-02,0.92,39.4,Assigned
+VEH-1309,Van,1500,Safexpress,LOC-DEL-02,0.95,50.3,In Transit
+VEH-1310,Refrigerated Truck,12000,Gati KWE,LOC-LKO-01,0.97,41.6,In Transit
+VEH-1311,Mini Truck,3500,TCI Freight,LOC-PNQ-01,0.93,50.9,Available
+VEH-1312,Mini Truck,3500,Safexpress,LOC-DEL-02,0.91,46.1,In Transit
+VEH-1313,Truck,10000,Delhivery Express,LOC-CJB-01,0.97,41.6,In Transit
+VEH-1314,Truck,10000,BlueDart Logistics,LOC-BLR-01,0.94,46.8,In Transit
+VEH-1315,Van,1500,Delhivery Express,LOC-HYD-01,0.9,54.9,In Transit
+VEH-1316,Truck,10000,V-Trans Express,LOC-IXC-01,0.86,45.6,Assigned
+VEH-1317,Truck,10000,BlueDart Logistics,LOC-CCU-01,0.88,46.2,In Transit
+VEH-1318,Van,1500,Safexpress,LOC-MAA-02,0.87,54.4,In Transit
+VEH-1319,Truck,10000,Delhivery Express,LOC-LKO-02,0.97,41.9,Available
+VEH-1320,Mini Truck,3500,BlueDart Logistics,LOC-NAG-01,0.89,46.0,In Transit
+VEH-1321,Van,1500,TCI Freight,LOC-CJB-01,0.85,49.1,In Transit
+VEH-1322,Mini Truck,3500,BlueDart Logistics,LOC-CCU-01,0.9,46.0,In Transit
+VEH-1323,Van,1500,Delhivery Express,LOC-JAI-01,0.95,52.2,Assigned
+VEH-1324,Truck,10000,TCI Freight,LOC-GUR-01,0.92,45.7,In Transit
+VEH-1325,Refrigerated Truck,12000,V-Trans Express,LOC-CCU-01,0.87,44.0,In Transit
+VEH-1326,Van,1500,V-Trans Express,LOC-DEL-02,0.95,54.5,In Transit
+VEH-1327,Truck,10000,TCI Freight,LOC-IDR-01,0.89,44.9,In Transit
+VEH-1328,Truck,10000,Delhivery Express,LOC-DEL-02,0.99,46.1,Available
+VEH-1329,Mini Truck,3500,Gati KWE,LOC-BLR-02,0.87,49.3,In Transit
+VEH-1330,Truck,10000,Gati KWE,LOC-GUR-01,0.98,42.9,In Transit
+VEH-1331,Mini Truck,3500,BlueDart Logistics,LOC-GUR-01,0.87,48.7,Maintenance
+VEH-1332,Truck,10000,V-Trans Express,LOC-NAG-01,0.95,43.3,Available
+VEH-1333,Van,1500,V-Trans Express,LOC-IDR-01,0.89,52.0,Available
+VEH-1334,Mini Truck,3500,Gati KWE,LOC-NOI-01,0.96,45.7,Available
+VEH-1335,Mini Truck,3500,TCI Freight,LOC-BLR-01,0.97,48.3,In Transit
+VEH-1336,Van,1500,BlueDart Logistics,LOC-AMD-02,0.91,50.4,Assigned
+VEH-1337,Van,1500,Safexpress,LOC-HYD-02,0.91,51.5,In Transit
+VEH-1338,Truck,10000,Delhivery Express,LOC-BOM-02,0.91,45.0,Maintenance
+VEH-1339,Van,1500,Safexpress,LOC-JAI-01,0.95,51.8,In Transit
+VEH-1340,Container Truck,25000,Delhivery Express,LOC-HYD-02,0.86,39.6,Assigned
+VEH-1341,Refrigerated Truck,12000,TCI Freight,LOC-MAA-01,0.9,41.8,In Transit
+VEH-1342,Van,1500,Delhivery Express,LOC-CCU-01,0.98,52.4,In Transit
+VEH-1343,Container Truck,25000,TCI Freight,LOC-NOI-01,0.91,42.2,In Transit
+VEH-1344,Truck,10000,Gati KWE,LOC-CJB-01,0.98,41.3,In Transit
+VEH-1345,Refrigerated Truck,12000,Safexpress,LOC-CCU-02,0.89,41.6,Available
+VEH-1346,Mini Truck,3500,V-Trans Express,LOC-IXC-01,0.87,47.9,In Transit
+VEH-1347,Truck,10000,Delhivery Express,LOC-PNQ-01,0.97,43.2,Available
+VEH-1348,Van,1500,Safexpress,LOC-CCU-01,0.88,51.6,In Transit
+VEH-1349,Mini Truck,3500,V-Trans Express,LOC-MAA-02,0.96,48.7,In Transit
+VEH-1350,Van,1500,TCI Freight,LOC-NAG-01,0.85,54.6,In Transit
+VEH-1351,Truck,10000,TCI Freight,LOC-LKO-02,0.85,42.6,Available
+VEH-1352,Mini Truck,3500,Safexpress,LOC-BOM-02,0.9,46.1,Available
+VEH-1353,Van,1500,BlueDart Logistics,LOC-CCU-01,0.94,49.4,Maintenance
+VEH-1354,Mini Truck,3500,TCI Freight,LOC-BLR-01,0.99,45.6,Assigned
+VEH-1355,Mini Truck,3500,V-Trans Express,LOC-IXC-01,0.9,47.7,In Transit
+VEH-1356,Refrigerated Truck,12000,BlueDart Logistics,LOC-PNQ-01,0.89,42.9,In Transit
+VEH-1357,Truck,10000,V-Trans Express,LOC-CCU-02,0.86,41.3,In Transit
+VEH-1358,Mini Truck,3500,BlueDart Logistics,LOC-MAA-02,0.94,49.0,Assigned
+VEH-1359,Refrigerated Truck,12000,Safexpress,LOC-STV-01,0.94,43.9,Assigned
+VEH-1360,Van,1500,Gati KWE,LOC-AMD-02,0.89,53.5,In Transit
+VEH-1361,Container Truck,25000,Delhivery Express,LOC-PNQ-01,0.91,38.7,Available
+VEH-1362,Van,1500,TCI Freight,LOC-CCU-01,0.92,53.0,In Transit
+VEH-1363,Truck,10000,Delhivery Express,LOC-LKO-01,0.91,44.6,Assigned
+VEH-1364,Van,1500,Delhivery Express,LOC-IXC-01,0.89,50.3,In Transit
+VEH-1365,Mini Truck,3500,BlueDart Logistics,LOC-MAA-02,0.89,47.0,Available
+VEH-1366,Van,1500,Delhivery Express,LOC-BDQ-01,0.95,50.1,Assigned
+VEH-1367,Truck,10000,Gati KWE,LOC-NAG-01,0.95,44.0,In Transit
+VEH-1368,Mini Truck,3500,TCI Freight,LOC-HYD-01,0.9,47.4,Assigned
+VEH-1369,Mini Truck,3500,TCI Freight,LOC-DEL-02,0.91,47.8,Assigned
+VEH-1370,Truck,10000,Delhivery Express,LOC-CJB-01,0.89,43.6,In Transit
+VEH-1371,Truck,10000,Gati KWE,LOC-BLR-03,0.94,42.7,In Transit
+VEH-1372,Refrigerated Truck,12000,Gati KWE,LOC-DEL-01,0.99,42.0,In Transit
+VEH-1373,Mini Truck,3500,V-Trans Express,LOC-STV-01,0.97,50.5,Assigned
+VEH-1374,Mini Truck,3500,Delhivery Express,LOC-AMD-02,0.97,46.5,In Transit
+VEH-1375,Container Truck,25000,V-Trans Express,LOC-AMD-01,0.92,39.4,In Transit
+VEH-1376,Van,1500,Safexpress,LOC-MAA-01,0.9,51.0,Assigned
+VEH-1377,Truck,10000,BlueDart Logistics,LOC-GUR-01,0.92,41.7,In Transit
+VEH-1378,Van,1500,V-Trans Express,LOC-IXC-01,0.98,51.1,In Transit
+VEH-1379,Truck,10000,TCI Freight,LOC-HYD-02,0.94,41.9,In Transit
+VEH-1380,Container Truck,25000,Delhivery Express,LOC-JAI-01,0.89,38.0,In Transit
+VEH-1381,Van,1500,BlueDart Logistics,LOC-MAA-02,0.96,49.5,In Transit
+VEH-1382,Mini Truck,3500,TCI Freight,LOC-BDQ-01,0.91,48.4,In Transit
+VEH-1383,Van,1500,V-Trans Express,LOC-STV-01,0.95,54.3,In Transit
+VEH-1384,Refrigerated Truck,12000,TCI Freight,LOC-BLR-01,0.99,42.9,Assigned
+VEH-1385,Mini Truck,3500,TCI Freight,LOC-BOM-02,0.87,45.4,Assigned
+VEH-1386,Van,1500,Gati KWE,LOC-BLR-01,0.89,50.6,Assigned
+VEH-1387,Van,1500,Delhivery Express,LOC-PNQ-01,0.92,50.9,In Transit
+VEH-1388,Refrigerated Truck,12000,Gati KWE,LOC-DEL-02,0.86,46.0,Available
+VEH-1389,Mini Truck,3500,Delhivery Express,LOC-BLR-01,0.97,50.1,In Transit
+VEH-1390,Refrigerated Truck,12000,V-Trans Express,LOC-CCU-02,0.92,43.8,In Transit
+VEH-1391,Truck,10000,V-Trans Express,LOC-HYD-01,0.95,41.2,In Transit
+VEH-1392,Mini Truck,3500,V-Trans Express,LOC-BLR-01,0.88,48.6,In Transit
+VEH-1393,Mini Truck,3500,V-Trans Express,LOC-JAI-01,0.98,47.7,Assigned
+VEH-1394,Truck,10000,Safexpress,LOC-BLR-03,0.86,44.9,In Transit
+VEH-1395,Truck,10000,Delhivery Express,LOC-LKO-01,0.95,46.9,Assigned
+VEH-1396,Van,1500,V-Trans Express,LOC-IDR-01,0.94,51.2,In Transit
+VEH-1397,Truck,10000,Safexpress,LOC-AMD-01,0.91,43.0,In Transit
+VEH-1398,Van,1500,V-Trans Express,LOC-DEL-02,0.96,52.9,Assigned
+VEH-1399,Container Truck,25000,Delhivery Express,LOC-BOM-02,0.86,41.1,In Transit
+VEH-1400,Truck,10000,Safexpress,LOC-LKO-02,0.95,44.9,Assigned
+VEH-1401,Truck,10000,V-Trans Express,LOC-CJB-01,0.87,41.5,Available
+VEH-1402,Truck,10000,TCI Freight,LOC-JAI-01,0.98,42.9,In Transit
+VEH-1403,Truck,10000,TCI Freight,LOC-BLR-03,0.94,41.8,In Transit
+VEH-1404,Container Truck,25000,TCI Freight,LOC-GUR-01,0.89,39.3,Assigned
+VEH-1405,Truck,10000,Safexpress,LOC-HYD-02,0.87,45.2,Available
+VEH-1406,Container Truck,25000,TCI Freight,LOC-BLR-02,0.98,37.6,Assigned
+VEH-1407,Van,1500,TCI Freight,LOC-AMD-02,0.92,49.1,Assigned
+VEH-1408,Container Truck,25000,Safexpress,LOC-JAI-02,0.98,39.1,In Transit
+VEH-1409,Truck,10000,Gati KWE,LOC-IXC-01,0.88,41.8,In Transit
+VEH-1410,Van,1500,Delhivery Express,LOC-BOM-01,0.97,49.6,In Transit
+VEH-1411,Refrigerated Truck,12000,V-Trans Express,LOC-HYD-02,0.95,44.2,Available
+VEH-1412,Mini Truck,3500,TCI Freight,LOC-BOM-02,0.97,48.7,In Transit
+VEH-1413,Truck,10000,V-Trans Express,LOC-AMD-01,0.87,42.1,Assigned
+VEH-1414,Mini Truck,3500,TCI Freight,LOC-MAA-02,0.94,50.4,In Transit
+VEH-1415,Refrigerated Truck,12000,TCI Freight,LOC-STV-01,0.86,43.2,In Transit
+VEH-1416,Mini Truck,3500,TCI Freight,LOC-LKO-01,0.99,48.7,In Transit
+VEH-1417,Van,1500,TCI Freight,LOC-HYD-01,0.91,52.2,Available
+VEH-1418,Truck,10000,Safexpress,LOC-HYD-01,0.96,46.4,In Transit
+VEH-1419,Container Truck,25000,BlueDart Logistics,LOC-PNQ-01,0.94,40.4,In Transit
+VEH-1420,Truck,10000,Gati KWE,LOC-STV-01,0.96,45.7,In Transit
+VEH-1421,Van,1500,V-Trans Express,LOC-IDR-01,0.91,50.0,In Transit
+VEH-1422,Van,1500,BlueDart Logistics,LOC-HYD-01,0.93,54.2,Assigned
+VEH-1423,Van,1500,Delhivery Express,LOC-BLR-01,0.92,51.2,In Transit
+VEH-1424,Van,1500,Delhivery Express,LOC-BLR-03,0.97,54.1,Maintenance
+VEH-1425,Truck,10000,Safexpress,LOC-GUR-01,0.96,42.6,In Transit
+VEH-1426,Van,1500,V-Trans Express,LOC-JAI-01,0.97,49.6,In Transit
+VEH-1427,Mini Truck,3500,BlueDart Logistics,LOC-HYD-02,0.91,47.1,Assigned
+VEH-1428,Mini Truck,3500,Delhivery Express,LOC-AMD-02,0.86,48.0,Available
+VEH-1429,Van,1500,BlueDart Logistics,LOC-AMD-01,0.99,51.2,In Transit
+VEH-1430,Truck,10000,Delhivery Express,LOC-BOM-02,0.98,46.0,Available
+VEH-1431,Refrigerated Truck,12000,TCI Freight,LOC-BOM-02,0.96,41.8,In Transit
+VEH-1432,Truck,10000,Safexpress,LOC-HYD-02,0.92,46.0,In Transit
+VEH-1433,Truck,10000,TCI Freight,LOC-BDQ-01,0.91,41.0,In Transit
+VEH-1434,Van,1500,Delhivery Express,LOC-DEL-01,0.89,54.0,Available
+VEH-1435,Container Truck,25000,V-Trans Express,LOC-MAA-01,0.94,39.5,Assigned
+VEH-1436,Mini Truck,3500,Safexpress,LOC-LKO-01,0.89,45.3,In Transit
+VEH-1437,Truck,10000,Gati KWE,LOC-BLR-01,0.96,43.7,In Transit
+VEH-1438,Van,1500,Delhivery Express,LOC-HYD-02,0.98,52.6,Available
+VEH-1439,Truck,10000,Delhivery Express,LOC-BLR-01,0.92,42.5,In Transit
+VEH-1440,Van,1500,BlueDart Logistics,LOC-BOM-01,0.91,52.7,Available
+VEH-1441,Mini Truck,3500,BlueDart Logistics,LOC-CCU-01,0.91,49.0,In Transit
+VEH-1442,Van,1500,Delhivery Express,LOC-IDR-01,0.99,49.4,Available
+VEH-1443,Refrigerated Truck,12000,V-Trans Express,LOC-NAG-01,0.92,46.9,Available
+VEH-1444,Truck,10000,V-Trans Express,LOC-DEL-01,0.9,43.8,Available
+VEH-1445,Van,1500,TCI Freight,LOC-AMD-01,0.99,50.5,Available
+VEH-1446,Refrigerated Truck,12000,Delhivery Express,LOC-PNQ-01,0.96,43.1,Assigned
+VEH-1447,Refrigerated Truck,12000,TCI Freight,LOC-BLR-02,0.94,45.6,In Transit
+VEH-1448,Truck,10000,TCI Freight,LOC-MAA-02,0.9,41.3,Available
+VEH-1449,Mini Truck,3500,V-Trans Express,LOC-BOM-02,0.96,46.1,Assigned
+VEH-1450,Van,1500,TCI Freight,LOC-STV-01,0.99,51.9,Available
+VEH-1451,Mini Truck,3500,BlueDart Logistics,LOC-HYD-01,0.87,49.3,Available
+VEH-1452,Mini Truck,3500,Gati KWE,LOC-DEL-02,0.89,45.3,In Transit
+VEH-1453,Truck,10000,BlueDart Logistics,LOC-DEL-02,0.89,42.9,Assigned
+VEH-1454,Refrigerated Truck,12000,Gati KWE,LOC-HYD-02,0.93,42.5,In Transit
+VEH-1455,Mini Truck,3500,TCI Freight,LOC-IXC-01,0.89,50.2,In Transit
+VEH-1456,Truck,10000,Delhivery Express,LOC-CJB-01,0.94,42.6,In Transit
+VEH-1457,Truck,10000,Safexpress,LOC-AMD-02,0.97,45.5,In Transit
+VEH-1458,Truck,10000,Gati KWE,LOC-BOM-02,0.99,44.0,In Transit
+VEH-1459,Mini Truck,3500,Gati KWE,LOC-PNQ-01,0.98,48.1,Assigned
+VEH-1460,Refrigerated Truck,12000,Delhivery Express,LOC-MAA-01,0.91,43.6,Available
+VEH-1461,Container Truck,25000,BlueDart Logistics,LOC-NAG-01,0.89,37.6,In Transit
+VEH-1462,Container Truck,25000,Safexpress,LOC-BLR-02,0.89,39.7,In Transit
+VEH-1463,Truck,10000,TCI Freight,LOC-AMD-02,0.87,43.7,Available
+VEH-1464,Mini Truck,3500,Gati KWE,LOC-DEL-02,0.95,50.5,In Transit
+VEH-1465,Truck,10000,V-Trans Express,LOC-AMD-02,0.89,46.9,In Transit
+VEH-1466,Van,1500,Delhivery Express,LOC-GUR-01,0.94,51.4,Assigned
+VEH-1467,Container Truck,25000,V-Trans Express,LOC-HYD-01,0.95,38.0,In Transit
+VEH-1468,Van,1500,Delhivery Express,LOC-JAI-01,0.97,53.1,In Transit
+VEH-1469,Van,1500,Gati KWE,LOC-DEL-02,0.87,50.4,Assigned
+VEH-1470,Van,1500,TCI Freight,LOC-PNQ-01,0.9,54.7,In Transit
+VEH-1471,Mini Truck,3500,Delhivery Express,LOC-CCU-02,0.87,47.7,In Transit
+VEH-1472,Truck,10000,Safexpress,LOC-PNQ-01,0.91,41.5,Assigned
+VEH-1473,Mini Truck,3500,BlueDart Logistics,LOC-IDR-01,0.9,46.9,Available
+VEH-1474,Van,1500,Safexpress,LOC-LKO-01,0.98,49.2,Assigned
+VEH-1475,Container Truck,25000,BlueDart Logistics,LOC-BDQ-01,0.92,42.5,In Transit
+VEH-1476,Truck,10000,Delhivery Express,LOC-LKO-02,0.96,45.2,In Transit
+VEH-1477,Van,1500,BlueDart Logistics,LOC-CCU-02,0.89,54.5,Assigned
+VEH-1478,Truck,10000,Gati KWE,LOC-IXC-01,0.87,46.1,In Transit
+VEH-1479,Truck,10000,Gati KWE,LOC-JAI-02,0.98,43.7,Available
+VEH-1480,Van,1500,Delhivery Express,LOC-HYD-01,0.95,54.1,In Transit
+VEH-1481,Van,1500,Safexpress,LOC-BLR-02,0.9,49.4,In Transit
+VEH-1482,Mini Truck,3500,V-Trans Express,LOC-BOM-01,0.97,50.1,In Transit
+VEH-1483,Mini Truck,3500,TCI Freight,LOC-BLR-03,0.98,48.8,In Transit
+VEH-1484,Truck,10000,Safexpress,LOC-IDR-01,0.88,46.9,In Transit
+VEH-1485,Truck,10000,BlueDart Logistics,LOC-LKO-01,0.96,41.2,In Transit
+VEH-1486,Truck,10000,V-Trans Express,LOC-CCU-01,0.9,45.8,Assigned
+VEH-1487,Refrigerated Truck,12000,V-Trans Express,LOC-JAI-01,0.94,41.5,Available
+VEH-1488,Van,1500,Safexpress,LOC-AMD-01,0.99,53.3,In Transit
+VEH-1489,Truck,10000,V-Trans Express,LOC-AMD-02,0.96,45.9,Available
+VEH-1490,Truck,10000,Delhivery Express,LOC-JAI-01,0.99,44.9,In Transit
+VEH-1491,Mini Truck,3500,Gati KWE,LOC-STV-01,0.95,47.1,In Transit
+VEH-1492,Van,1500,V-Trans Express,LOC-BLR-01,0.93,53.6,Available
+VEH-1493,Refrigerated Truck,12000,BlueDart Logistics,LOC-AMD-02,0.92,46.2,In Transit
+VEH-1494,Truck,10000,Delhivery Express,LOC-IDR-01,0.87,42.0,In Transit
+VEH-1495,Mini Truck,3500,Safexpress,LOC-BLR-03,0.88,50.7,Assigned
+VEH-1496,Refrigerated Truck,12000,V-Trans Express,LOC-BOM-01,0.97,42.5,In Transit
+VEH-1497,Mini Truck,3500,TCI Freight,LOC-NAG-01,0.89,48.8,In Transit
+VEH-1498,Mini Truck,3500,V-Trans Express,LOC-NAG-01,0.86,48.8,Available
+VEH-1499,Container Truck,25000,V-Trans Express,LOC-CCU-01,0.87,41.0,Available
+VEH-1500,Container Truck,25000,TCI Freight,LOC-CCU-02,0.9,42.5,In Transit
+VEH-1501,Mini Truck,3500,Delhivery Express,LOC-HYD-02,0.97,45.5,In Transit
+VEH-1502,Container Truck,25000,TCI Freight,LOC-MAA-02,0.93,40.9,In Transit
+VEH-1503,Refrigerated Truck,12000,V-Trans Express,LOC-AMD-02,0.94,41.2,In Transit
+VEH-1504,Truck,10000,TCI Freight,LOC-NAG-01,0.89,46.7,Assigned
+VEH-1505,Mini Truck,3500,Gati KWE,LOC-LKO-01,0.96,49.1,In Transit
+VEH-1506,Mini Truck,3500,Safexpress,LOC-STV-01,0.86,45.4,Maintenance
+VEH-1507,Container Truck,25000,Gati KWE,LOC-AMD-02,0.92,38.2,Available
+VEH-1508,Truck,10000,V-Trans Express,LOC-JAI-01,0.89,45.3,Assigned
+VEH-1509,Mini Truck,3500,TCI Freight,LOC-CJB-01,0.9,47.4,In Transit
+VEH-1510,Container Truck,25000,Safexpress,LOC-IDR-01,0.93,38.9,Available
+VEH-1511,Truck,10000,Gati KWE,LOC-NOI-01,0.89,42.5,In Transit
+VEH-1512,Container Truck,25000,Delhivery Express,LOC-DEL-02,0.89,39.3,Assigned
+VEH-1513,Container Truck,25000,V-Trans Express,LOC-AMD-02,0.88,42.2,In Transit
+VEH-1514,Container Truck,25000,BlueDart Logistics,LOC-HYD-02,0.9,40.5,Assigned
+VEH-1515,Mini Truck,3500,Safexpress,LOC-IXC-01,0.96,48.0,Assigned
+VEH-1516,Van,1500,V-Trans Express,LOC-STV-01,0.92,50.9,In Transit
+VEH-1517,Mini Truck,3500,Delhivery Express,LOC-GUR-01,0.98,48.0,Available
+VEH-1518,Van,1500,BlueDart Logistics,LOC-IXC-01,0.93,49.3,In Transit
+VEH-1519,Mini Truck,3500,Safexpress,LOC-BDQ-01,0.93,50.1,In Transit
+VEH-1520,Van,1500,TCI Freight,LOC-BDQ-01,0.89,49.0,In Transit
+VEH-1521,Truck,10000,Delhivery Express,LOC-AMD-02,0.87,42.6,In Transit
+VEH-1522,Mini Truck,3500,Safexpress,LOC-MAA-02,0.91,45.3,In Transit
+VEH-1523,Container Truck,25000,Delhivery Express,LOC-CCU-01,0.93,39.2,In Transit
+VEH-1524,Mini Truck,3500,Safexpress,LOC-GUR-01,0.9,47.7,Available
+VEH-1525,Container Truck,25000,V-Trans Express,LOC-LKO-02,0.97,40.7,Available
+VEH-1526,Container Truck,25000,V-Trans Express,LOC-NOI-01,0.87,37.6,In Transit
+VEH-1527,Container Truck,25000,Safexpress,LOC-HYD-01,0.99,40.3,In Transit
+VEH-1528,Container Truck,25000,Safexpress,LOC-MAA-02,0.87,40.6,In Transit
+VEH-1529,Refrigerated Truck,12000,Gati KWE,LOC-IDR-01,0.86,41.2,In Transit
+VEH-1530,Truck,10000,TCI Freight,LOC-BOM-02,0.96,44.1,In Transit
+VEH-1531,Container Truck,25000,BlueDart Logistics,LOC-CCU-02,0.98,37.8,Maintenance
+VEH-1532,Refrigerated Truck,12000,V-Trans Express,LOC-BOM-02,0.87,46.9,In Transit
+VEH-1533,Truck,10000,TCI Freight,LOC-HYD-02,0.89,43.0,In Transit
+VEH-1534,Mini Truck,3500,V-Trans Express,LOC-NAG-01,0.92,48.4,Available
+VEH-1535,Mini Truck,3500,Gati KWE,LOC-HYD-02,0.85,47.0,In Transit
+VEH-1536,Mini Truck,3500,Delhivery Express,LOC-AMD-02,0.93,49.8,Available
+VEH-1537,Van,1500,TCI Freight,LOC-CJB-01,0.95,49.2,Available
+VEH-1538,Container Truck,25000,Gati KWE,LOC-LKO-02,0.99,41.7,In Transit
+VEH-1539,Mini Truck,3500,V-Trans Express,LOC-CCU-01,0.88,45.3,In Transit
+VEH-1540,Mini Truck,3500,Gati KWE,LOC-JAI-02,0.92,49.3,Assigned
+VEH-1541,Refrigerated Truck,12000,Gati KWE,LOC-JAI-01,0.97,42.5,Available
+VEH-1542,Truck,10000,V-Trans Express,LOC-BLR-03,0.87,41.1,Assigned
+VEH-1543,Container Truck,25000,Safexpress,LOC-AMD-02,0.87,41.1,In Transit
+VEH-1544,Truck,10000,Gati KWE,LOC-IDR-01,0.96,46.5,Available
+VEH-1545,Container Truck,25000,TCI Freight,LOC-MAA-01,0.86,37.8,Available
+VEH-1546,Container Truck,25000,BlueDart Logistics,LOC-NAG-01,0.9,41.0,In Transit
+VEH-1547,Truck,10000,V-Trans Express,LOC-AMD-01,0.89,42.0,In Transit
+VEH-1548,Mini Truck,3500,V-Trans Express,LOC-BOM-02,0.93,49.1,Available
+VEH-1549,Mini Truck,3500,TCI Freight,LOC-BLR-02,0.94,49.2,Available
+VEH-1550,Refrigerated Truck,12000,V-Trans Express,LOC-BDQ-01,0.88,42.5,In Transit
+VEH-1551,Van,1500,V-Trans Express,LOC-BOM-01,0.88,54.8,Assigned
+VEH-1552,Container Truck,25000,Safexpress,LOC-MAA-02,0.89,38.2,Assigned
+VEH-1553,Container Truck,25000,TCI Freight,LOC-BDQ-01,0.89,39.1,Available
+VEH-1554,Mini Truck,3500,TCI Freight,LOC-LKO-02,0.89,48.4,In Transit
+VEH-1555,Truck,10000,V-Trans Express,LOC-AMD-01,0.98,43.4,Available
+VEH-1556,Refrigerated Truck,12000,Safexpress,LOC-MAA-02,0.96,42.7,Available
+VEH-1557,Mini Truck,3500,Safexpress,LOC-BLR-03,0.86,50.5,In Transit
+VEH-1558,Truck,10000,TCI Freight,LOC-LKO-02,0.95,42.3,In Transit
+VEH-1559,Van,1500,V-Trans Express,LOC-LKO-02,0.98,53.2,Assigned
+VEH-1560,Mini Truck,3500,BlueDart Logistics,LOC-NOI-01,0.94,48.5,Available
+VEH-1561,Container Truck,25000,BlueDart Logistics,LOC-DEL-02,0.94,40.2,Assigned
+VEH-1562,Container Truck,25000,TCI Freight,LOC-LKO-01,0.86,39.5,Assigned
+VEH-1563,Truck,10000,TCI Freight,LOC-BDQ-01,0.86,45.6,In Transit
+VEH-1564,Van,1500,Delhivery Express,LOC-NAG-01,0.99,49.9,In Transit
+VEH-1565,Mini Truck,3500,TCI Freight,LOC-BDQ-01,0.92,46.2,In Transit
+VEH-1566,Refrigerated Truck,12000,Safexpress,LOC-BOM-02,0.89,41.4,In Transit
+VEH-1567,Van,1500,Delhivery Express,LOC-BLR-01,0.93,52.2,Available
+VEH-1568,Truck,10000,TCI Freight,LOC-CJB-01,0.98,46.5,Available
+VEH-1569,Container Truck,25000,BlueDart Logistics,LOC-AMD-02,0.97,38.1,In Transit
+VEH-1570,Truck,10000,Delhivery Express,LOC-HYD-02,0.91,44.0,In Transit
+VEH-1571,Refrigerated Truck,12000,TCI Freight,LOC-CJB-01,0.98,46.3,In Transit
+VEH-1572,Truck,10000,Delhivery Express,LOC-BOM-01,0.93,41.6,In Transit
+VEH-1573,Mini Truck,3500,Safexpress,LOC-BOM-01,0.91,48.8,Assigned
+VEH-1574,Refrigerated Truck,12000,V-Trans Express,LOC-BDQ-01,0.97,41.8,In Transit
+VEH-1575,Container Truck,25000,V-Trans Express,LOC-STV-01,0.89,41.9,Assigned
+VEH-1576,Truck,10000,Safexpress,LOC-JAI-02,0.95,44.9,Assigned
+VEH-1577,Truck,10000,TCI Freight,LOC-JAI-02,0.85,43.0,In Transit
+VEH-1578,Truck,10000,Safexpress,LOC-CCU-01,0.94,42.2,In Transit
+VEH-1579,Van,1500,V-Trans Express,LOC-CJB-01,0.94,51.4,Assigned
+VEH-1580,Container Truck,25000,Gati KWE,LOC-IDR-01,0.9,39.4,Available
+VEH-1581,Refrigerated Truck,12000,Delhivery Express,LOC-JAI-02,0.99,43.9,Available
+VEH-1582,Mini Truck,3500,BlueDart Logistics,LOC-DEL-01,0.89,46.4,In Transit
+VEH-1583,Van,1500,Safexpress,LOC-BOM-02,0.89,53.3,Assigned
+VEH-1584,Refrigerated Truck,12000,Delhivery Express,LOC-LKO-02,0.94,45.2,In Transit
+VEH-1585,Van,1500,Delhivery Express,LOC-BLR-02,0.87,50.8,In Transit
+VEH-1586,Truck,10000,Gati KWE,LOC-BLR-02,0.92,46.4,Maintenance
+VEH-1587,Truck,10000,TCI Freight,LOC-MAA-02,0.89,41.7,In Transit
+VEH-1588,Truck,10000,Safexpress,LOC-PNQ-01,0.94,42.3,In Transit
+VEH-1589,Refrigerated Truck,12000,BlueDart Logistics,LOC-BDQ-01,0.87,45.5,Available
+VEH-1590,Refrigerated Truck,12000,V-Trans Express,LOC-PNQ-01,0.91,44.3,In Transit
+VEH-1591,Container Truck,25000,Gati KWE,LOC-MAA-02,0.93,41.0,In Transit
+VEH-1592,Truck,10000,BlueDart Logistics,LOC-MAA-02,0.88,45.5,Assigned
+VEH-1593,Van,1500,Delhivery Express,LOC-IDR-01,0.91,53.2,Assigned
+VEH-1594,Truck,10000,Delhivery Express,LOC-CCU-01,0.87,46.0,Available
+VEH-1595,Mini Truck,3500,V-Trans Express,LOC-IXC-01,0.93,45.9,In Transit
+VEH-1596,Van,1500,Safexpress,LOC-CJB-01,0.92,49.7,In Transit
+VEH-1597,Mini Truck,3500,BlueDart Logistics,LOC-BLR-03,0.93,45.5,In Transit
+VEH-1598,Van,1500,V-Trans Express,LOC-STV-01,0.96,51.7,Assigned
+VEH-1599,Container Truck,25000,V-Trans Express,LOC-AMD-02,0.91,37.3,Assigned
+VEH-1600,Refrigerated Truck,12000,Gati KWE,LOC-BLR-02,0.96,45.3,Available
+VEH-1601,Refrigerated Truck,12000,Gati KWE,LOC-LKO-02,0.96,45.5,Available
+VEH-1602,Van,1500,V-Trans Express,LOC-GUR-01,0.86,51.1,In Transit
+VEH-1603,Truck,10000,Delhivery Express,LOC-NAG-01,0.99,46.6,In Transit
+VEH-1604,Truck,10000,Delhivery Express,LOC-BDQ-01,0.85,43.5,In Transit
+VEH-1605,Mini Truck,3500,BlueDart Logistics,LOC-MAA-02,0.94,49.4,Maintenance
+VEH-1606,Truck,10000,Gati KWE,LOC-PNQ-01,0.99,43.3,In Transit
+VEH-1607,Van,1500,Gati KWE,LOC-AMD-01,0.86,54.8,In Transit
+VEH-1608,Truck,10000,V-Trans Express,LOC-JAI-01,0.94,43.1,Available
+VEH-1609,Van,1500,BlueDart Logistics,LOC-NAG-01,0.91,49.8,In Transit
+VEH-1610,Truck,10000,BlueDart Logistics,LOC-HYD-02,0.85,41.1,In Transit
+VEH-1611,Container Truck,25000,Safexpress,LOC-STV-01,0.94,40.3,Available
+VEH-1612,Truck,10000,V-Trans Express,LOC-AMD-01,0.97,42.5,Assigned
+VEH-1613,Truck,10000,Safexpress,LOC-JAI-01,0.89,46.6,In Transit
+VEH-1614,Mini Truck,3500,TCI Freight,LOC-MAA-02,0.87,49.9,In Transit
+VEH-1615,Container Truck,25000,Gati KWE,LOC-CCU-02,0.96,42.3,In Transit
+VEH-1616,Container Truck,25000,Delhivery Express,LOC-LKO-01,0.88,37.6,Available
+VEH-1617,Mini Truck,3500,Delhivery Express,LOC-STV-01,0.93,49.2,Available
+VEH-1618,Truck,10000,Delhivery Express,LOC-LKO-01,0.95,43.4,In Transit
+VEH-1619,Container Truck,25000,BlueDart Logistics,LOC-NAG-01,0.88,42.2,In Transit
+VEH-1620,Container Truck,25000,Delhivery Express,LOC-JAI-01,0.92,38.7,Available
+VEH-1621,Container Truck,25000,TCI Freight,LOC-CCU-01,0.89,40.6,In Transit
+VEH-1622,Refrigerated Truck,12000,TCI Freight,LOC-HYD-02,0.89,42.8,Assigned
+VEH-1623,Refrigerated Truck,12000,BlueDart Logistics,LOC-BLR-02,0.92,43.5,In Transit
+VEH-1624,Van,1500,Safexpress,LOC-DEL-02,0.93,52.6,Available
+VEH-1625,Container Truck,25000,TCI Freight,LOC-JAI-02,0.94,39.6,In Transit
+VEH-1626,Refrigerated Truck,12000,Gati KWE,LOC-DEL-02,0.99,46.6,In Transit
+VEH-1627,Van,1500,TCI Freight,LOC-AMD-01,0.96,50.9,Available
+VEH-1628,Truck,10000,Gati KWE,LOC-AMD-02,0.87,43.3,In Transit
+VEH-1629,Mini Truck,3500,V-Trans Express,LOC-BDQ-01,0.88,46.4,In Transit
+VEH-1630,Van,1500,TCI Freight,LOC-JAI-01,0.96,54.5,In Transit
+VEH-1631,Mini Truck,3500,V-Trans Express,LOC-AMD-02,0.99,48.3,In Transit
+VEH-1632,Mini Truck,3500,BlueDart Logistics,LOC-AMD-01,0.88,46.2,In Transit
+VEH-1633,Van,1500,TCI Freight,LOC-GUR-01,0.98,54.1,Available
+VEH-1634,Mini Truck,3500,Delhivery Express,LOC-NAG-01,0.95,46.1,In Transit
+VEH-1635,Truck,10000,Safexpress,LOC-AMD-01,0.94,44.6,In Transit
+VEH-1636,Truck,10000,Delhivery Express,LOC-IXC-01,0.96,44.5,Assigned
+VEH-1637,Refrigerated Truck,12000,TCI Freight,LOC-NAG-01,0.88,42.3,Available
+VEH-1638,Truck,10000,Safexpress,LOC-BOM-01,0.98,41.1,Available
+VEH-1639,Mini Truck,3500,BlueDart Logistics,LOC-MAA-01,0.87,51.0,Maintenance
+VEH-1640,Van,1500,Gati KWE,LOC-LKO-01,0.95,53.2,In Transit
+VEH-1641,Truck,10000,Gati KWE,LOC-LKO-01,0.93,45.7,In Transit
+VEH-1642,Truck,10000,Gati KWE,LOC-STV-01,0.92,43.2,Available
+VEH-1643,Mini Truck,3500,Safexpress,LOC-PNQ-01,0.92,48.0,In Transit
+VEH-1644,Van,1500,Delhivery Express,LOC-HYD-01,0.99,51.8,In Transit
+VEH-1645,Van,1500,Safexpress,LOC-IXC-01,0.9,51.5,Available
+VEH-1646,Mini Truck,3500,V-Trans Express,LOC-CJB-01,0.88,45.9,Available
+VEH-1647,Truck,10000,Safexpress,LOC-NAG-01,0.98,44.5,In Transit
+VEH-1648,Refrigerated Truck,12000,Gati KWE,LOC-BOM-01,0.87,43.0,Available
+VEH-1649,Van,1500,Gati KWE,LOC-CCU-01,0.97,52.0,Available
+VEH-1650,Truck,10000,TCI Freight,LOC-BLR-02,0.9,45.6,In Transit

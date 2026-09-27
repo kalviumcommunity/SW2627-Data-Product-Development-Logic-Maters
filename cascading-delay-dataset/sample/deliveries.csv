@@ -1,0 +1,251 @@
+delivery_id,order_id,shipment_id,destination_location_id,promised_delivery_time,actual_delivery_time,delivery_status,delay_minutes,at_risk,risk_reason
+DEL-00001,ORD-00001,SHP-00001,LOC-STV-01,2026-08-16 22:32:00,2026-08-16 21:39:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00002,ORD-00002,SHP-00002,LOC-DEL-02,2026-08-05 04:20:00,2026-08-05 04:34:00,Delivered Late,14,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00003,ORD-00003,SHP-00003,LOC-BLR-02,2026-08-15 05:44:00,2026-08-15 05:41:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00004,ORD-00004,SHP-00004,LOC-DEL-01,2026-08-05 20:25:00,2026-08-05 19:12:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00005,ORD-00005,SHP-00005,LOC-LKO-02,2026-08-17 06:41:00,2026-08-17 05:16:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00006,ORD-00006,SHP-00006,LOC-GUR-01,2026-08-02 09:06:00,2026-08-02 08:45:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00007,ORD-00007,SHP-00007,LOC-CCU-01,2026-08-10 01:41:00,2026-08-10 02:46:00,Delivered Late,65,True,Late delivery: Isolated transit delay of 52 min.
+DEL-00008,ORD-00008,SHP-00008,LOC-NAG-01,2026-08-02 14:51:00,2026-08-02 14:11:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00009,ORD-00009,SHP-00009,LOC-JAI-02,2026-08-23 23:13:00,2026-08-23 23:01:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00010,ORD-00010,SHP-00010,LOC-MAA-01,2026-08-02 18:49:00,2026-08-02 18:57:00,Delivered Late,8,True,Late delivery: Isolated transit delay of 48 min.
+DEL-00011,ORD-00011,SHP-00011,LOC-MAA-02,2026-08-17 03:40:00,2026-08-17 03:53:00,Delivered Late,13,False,Late delivery: Isolated transit delay of 0 min.
+DEL-00012,ORD-00012,SHP-00012,LOC-GUR-01,2026-08-24 20:19:00,2026-08-24 20:04:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00013,ORD-00013,SHP-00013,LOC-JAI-01,2026-08-05 08:57:00,2026-08-05 07:54:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00014,ORD-00014,SHP-00014,LOC-JAI-02,2026-08-15 13:00:00,2026-08-15 12:34:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00015,ORD-00015,SHP-00015,LOC-CJB-01,2026-08-25 21:56:00,2026-08-26 01:32:00,Delivered Late,216,True,Late delivery: Root disruption delay of 260 min at origin hub.
+DEL-00016,ORD-00016,SHP-00016,LOC-JAI-01,2026-08-05 03:25:00,2026-08-05 03:48:00,Delivered Late,23,True,Late delivery: Isolated transit delay of 34 min.
+DEL-00017,ORD-00017,SHP-00017,LOC-PNQ-01,2026-08-20 18:38:00,2026-08-20 17:48:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00018,ORD-00018,SHP-00018,LOC-BOM-02,2026-08-16 13:44:00,2026-08-16 12:32:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00019,ORD-00019,SHP-00019,LOC-BDQ-01,2026-08-11 02:14:00,2026-08-11 02:25:00,Delivered Late,11,False,Late delivery: Isolated transit delay of 52 min.
+DEL-00020,ORD-00020,SHP-00020,LOC-PNQ-01,2026-08-07 15:23:00,2026-08-07 15:29:00,Delivered Late,6,False,Late delivery: Isolated transit delay of 0 min.
+DEL-00021,ORD-00021,SHP-00021,LOC-STV-01,2026-08-29 07:31:00,2026-08-29 06:34:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00022,ORD-00022,SHP-00022,LOC-BLR-03,2026-08-16 22:55:00,2026-08-16 22:05:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00023,ORD-00023,SHP-00023,LOC-NAG-01,2026-08-23 07:05:00,2026-08-23 06:39:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00024,ORD-00024,SHP-00024,LOC-MAA-02,2026-08-10 03:19:00,2026-08-10 03:02:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00025,ORD-00025,SHP-00025,LOC-PNQ-01,2026-08-05 11:23:00,2026-08-05 13:17:00,Delivered Late,114,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-00026,ORD-00026,SHP-00026,LOC-BDQ-01,2026-08-16 01:22:00,2026-08-16 00:40:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00027,ORD-00027,SHP-00027,LOC-BLR-01,2026-08-17 21:53:00,2026-08-17 22:19:00,Delivered Late,26,False,Late delivery: Isolated transit delay of 44 min.
+DEL-00028,ORD-00028,SHP-00028,LOC-HYD-01,2026-08-16 03:54:00,2026-08-16 02:59:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00029,ORD-00029,SHP-00029,LOC-AMD-01,2026-08-27 11:52:00,2026-08-27 12:39:00,Delivered Late,47,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00030,ORD-00030,SHP-00030,LOC-STV-01,2026-08-18 03:24:00,2026-08-18 02:34:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00031,ORD-00031,SHP-00031,LOC-CCU-02,2026-08-05 08:21:00,2026-08-05 07:57:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00032,ORD-00032,SHP-00032,LOC-BLR-03,2026-08-06 03:25:00,2026-08-06 03:16:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00033,ORD-00033,SHP-00033,LOC-NAG-01,2026-08-13 03:29:00,2026-08-13 02:28:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00034,ORD-00034,SHP-00034,LOC-HYD-02,2026-08-15 22:37:00,2026-08-15 22:49:00,Delivered Late,12,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00035,ORD-00035,SHP-00035,LOC-HYD-01,2026-08-11 21:12:00,2026-08-11 21:37:00,Delivered Late,25,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00036,ORD-00036,SHP-00036,LOC-CCU-01,2026-08-20 08:09:00,2026-08-20 07:48:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00037,ORD-00037,SHP-00037,LOC-BOM-01,2026-08-28 21:59:00,2026-08-28 21:55:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00038,ORD-00038,SHP-00038,LOC-CJB-01,2026-08-21 01:42:00,2026-08-21 01:17:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00039,ORD-00039,SHP-00039,LOC-LKO-02,2026-08-11 10:59:00,2026-08-11 09:53:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00040,ORD-00040,SHP-00040,LOC-DEL-02,2026-08-09 23:00:00,2026-08-09 23:44:00,Delivered Late,44,False,Late delivery: Isolated transit delay of 47 min.
+DEL-00041,ORD-00041,SHP-00041,LOC-BLR-01,2026-08-28 06:16:00,2026-08-28 06:39:00,Delivered Late,23,False,Late delivery: Isolated transit delay of 38 min.
+DEL-00042,ORD-00042,SHP-00042,LOC-STV-01,2026-08-26 08:17:00,2026-08-26 07:29:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00043,ORD-00043,SHP-00043,LOC-HYD-02,2026-08-12 02:46:00,2026-08-12 03:15:00,Delivered Late,29,True,Late delivery: Isolated transit delay of 46 min.
+DEL-00044,ORD-00044,SHP-00044,LOC-DEL-02,2026-08-03 03:35:00,2026-08-03 02:57:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00045,ORD-00045,SHP-00045,LOC-IXC-01,2026-08-07 21:34:00,2026-08-07 20:57:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00046,ORD-00046,SHP-00046,LOC-DEL-02,2026-08-16 13:35:00,2026-08-16 13:15:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00047,ORD-00047,SHP-00047,LOC-IDR-01,2026-08-11 22:17:00,2026-08-11 21:32:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00048,ORD-00048,SHP-00048,LOC-GUR-01,2026-08-30 22:27:00,2026-08-30 21:33:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00049,ORD-00049,SHP-00049,LOC-CCU-02,2026-08-25 20:59:00,2026-08-25 21:32:00,Delivered Late,33,True,Late delivery: Isolated transit delay of 26 min.
+DEL-00050,ORD-00050,SHP-00050,LOC-NOI-01,2026-08-12 22:28:00,2026-08-12 22:50:00,Delivered Late,22,False,Late delivery: Isolated transit delay of 43 min.
+DEL-00051,ORD-00051,SHP-00051,LOC-LKO-01,2026-08-12 00:23:00,2026-08-11 23:13:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00052,ORD-00052,SHP-00052,LOC-BOM-01,2026-08-17 12:59:00,2026-08-17 13:38:00,Delivered Late,39,False,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00053,ORD-00053,SHP-00053,LOC-PNQ-01,2026-08-16 05:47:00,2026-08-16 04:19:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00054,ORD-00054,SHP-00054,LOC-DEL-01,2026-09-01 23:29:00,2026-09-01 23:31:00,Delivered Late,2,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00055,ORD-00055,SHP-00055,LOC-BLR-03,2026-08-22 02:56:00,2026-08-22 02:46:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00056,ORD-00056,SHP-00056,LOC-HYD-01,2026-08-22 14:22:00,2026-08-22 14:51:00,Delivered Late,29,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00057,ORD-00057,SHP-00057,LOC-AMD-02,2026-08-24 21:23:00,2026-08-24 21:42:00,Delivered Late,19,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00058,ORD-00058,SHP-00058,LOC-BDQ-01,2026-08-07 10:16:00,2026-08-07 09:27:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00059,ORD-00059,SHP-00059,LOC-BOM-02,2026-08-10 15:42:00,2026-08-10 15:31:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00060,ORD-00060,SHP-00060,LOC-PNQ-01,2026-08-23 09:57:00,2026-08-23 10:56:00,Delivered Late,59,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00061,ORD-00061,SHP-00061,LOC-LKO-01,2026-08-30 19:39:00,2026-08-30 20:06:00,Delivered Late,27,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00062,ORD-00062,SHP-00062,LOC-LKO-02,2026-08-19 00:29:00,2026-08-19 00:50:00,Delivered Late,21,False,Late delivery: Isolated transit delay of 50 min.
+DEL-00063,ORD-00063,SHP-00063,LOC-STV-01,2026-08-12 14:00:00,2026-08-12 14:36:00,Delivered Late,36,True,Late delivery: Propagated cascading delay from upstream disruption (Documentation).
+DEL-00064,ORD-00064,SHP-00064,LOC-MAA-01,2026-08-18 04:22:00,2026-08-18 04:07:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00065,ORD-00065,SHP-00065,LOC-PNQ-01,2026-08-27 01:40:00,2026-08-27 00:52:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00066,ORD-00066,SHP-00066,LOC-BDQ-01,2026-08-02 18:53:00,2026-08-02 18:26:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00067,ORD-00067,SHP-00067,LOC-CCU-01,2026-08-04 18:52:00,2026-08-04 19:00:00,Delivered Late,8,True,Late delivery: Isolated transit delay of 56 min.
+DEL-00068,ORD-00068,SHP-00068,LOC-HYD-01,2026-08-08 23:31:00,2026-08-09 00:46:00,Delivered Late,75,True,Late delivery: Isolated transit delay of 51 min.
+DEL-00069,ORD-00069,SHP-00069,LOC-STV-01,2026-08-13 21:27:00,2026-08-13 20:13:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00070,ORD-00070,SHP-00070,LOC-JAI-02,2026-08-20 14:41:00,2026-08-20 14:53:00,Delivered Late,12,False,Late delivery: Isolated transit delay of 0 min.
+DEL-00071,ORD-00071,SHP-00071,LOC-PNQ-01,2026-08-10 02:05:00,2026-08-10 02:10:00,Delivered Late,5,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00072,ORD-00072,SHP-00072,LOC-LKO-01,2026-08-04 22:53:00,2026-08-04 21:31:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00073,ORD-00073,SHP-00073,LOC-PNQ-01,2026-08-20 06:26:00,2026-08-20 06:49:00,Delivered Late,23,True,Late delivery: Isolated transit delay of 41 min.
+DEL-00074,ORD-00074,SHP-00074,LOC-HYD-01,2026-08-05 07:24:00,2026-08-05 05:58:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00075,ORD-00075,SHP-00075,LOC-BDQ-01,2026-08-12 17:18:00,2026-08-12 17:24:00,Delivered Late,6,False,Late delivery: Isolated transit delay of 0 min.
+DEL-00076,ORD-00076,SHP-00076,LOC-CCU-02,2026-08-18 08:32:00,2026-08-18 07:26:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00077,ORD-00077,SHP-00077,LOC-IXC-01,2026-08-28 03:44:00,2026-08-28 03:07:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00078,ORD-00078,SHP-00078,LOC-CCU-01,2026-08-03 16:45:00,2026-08-03 15:35:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00079,ORD-00079,SHP-00079,LOC-IDR-01,2026-08-05 00:11:00,2026-08-04 23:15:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00080,ORD-00080,SHP-00080,LOC-CCU-01,2026-08-07 12:00:00,2026-08-07 11:54:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00081,ORD-00081,SHP-00081,LOC-BLR-03,2026-08-07 23:58:00,2026-08-08 00:38:00,Delivered Late,40,False,Late delivery: Isolated transit delay of 47 min.
+DEL-00082,ORD-00082,SHP-00082,LOC-DEL-02,2026-08-17 14:44:00,2026-08-17 13:40:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00083,ORD-00083,SHP-00083,LOC-BLR-03,2026-08-20 12:47:00,2026-08-20 13:22:00,Delivered Late,35,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00084,ORD-00084,SHP-00084,LOC-BLR-03,2026-08-11 20:06:00,2026-08-11 20:24:00,Delivered Late,18,False,Late delivery: Isolated transit delay of 40 min.
+DEL-00085,ORD-00085,SHP-00085,LOC-BLR-01,2026-08-24 21:25:00,2026-08-24 20:23:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00086,ORD-00086,SHP-00086,LOC-JAI-01,2026-08-14 23:11:00,2026-08-15 01:18:00,Delivered Late,127,True,Late delivery: Root disruption delay of 172 min at origin hub.
+DEL-00087,ORD-00087,SHP-00087,LOC-BDQ-01,2026-08-13 06:18:00,2026-08-13 05:19:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00088,ORD-00088,SHP-00088,LOC-IXC-01,2026-08-25 20:35:00,2026-08-25 20:26:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00089,ORD-00089,SHP-00089,LOC-BDQ-01,2026-08-28 01:32:00,2026-08-28 01:34:00,Delivered Late,2,True,Late delivery: Isolated transit delay of 12 min.
+DEL-00090,ORD-00090,SHP-00090,LOC-BOM-01,2026-08-05 03:09:00,2026-08-05 02:05:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00091,ORD-00091,SHP-00091,LOC-GUR-01,2026-08-24 07:02:00,2026-08-24 07:56:00,Delivered Late,54,True,Late delivery: Isolated transit delay of 50 min.
+DEL-00092,ORD-00092,SHP-00092,LOC-JAI-02,2026-08-16 06:05:00,2026-08-16 05:32:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00093,ORD-00093,SHP-00093,LOC-AMD-01,2026-08-03 16:40:00,2026-08-03 15:42:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00094,ORD-00094,SHP-00094,LOC-CCU-02,2026-08-08 12:16:00,2026-08-08 10:59:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00095,ORD-00095,SHP-00095,LOC-BLR-02,2026-08-08 02:22:00,2026-08-08 02:13:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00096,ORD-00096,SHP-00096,LOC-STV-01,2026-08-02 20:18:00,2026-08-02 19:59:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00097,ORD-00097,SHP-00097,LOC-MAA-02,2026-08-30 00:25:00,2026-08-29 23:14:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00098,ORD-00098,SHP-00098,LOC-BDQ-01,2026-08-03 03:02:00,2026-08-03 02:42:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00099,ORD-00099,SHP-00099,LOC-IXC-01,2026-08-04 08:33:00,2026-08-04 08:22:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00100,ORD-00100,SHP-00100,LOC-BOM-02,2026-08-15 13:50:00,2026-08-15 13:31:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00101,ORD-00101,SHP-00101,LOC-HYD-01,2026-08-06 04:32:00,2026-08-06 04:39:00,Delivered Late,7,False,Late delivery: Isolated transit delay of 58 min.
+DEL-00102,ORD-00102,SHP-00102,LOC-MAA-02,2026-08-31 10:00:00,2026-08-31 10:48:00,Delivered Late,48,True,Late delivery: Isolated transit delay of 49 min.
+DEL-00103,ORD-00103,SHP-00103,LOC-DEL-02,2026-08-22 02:13:00,2026-08-22 01:22:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00104,ORD-00104,SHP-00104,LOC-LKO-02,2026-08-11 20:41:00,2026-08-11 20:22:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00105,ORD-00105,SHP-00105,LOC-JAI-01,2026-08-10 12:14:00,2026-08-10 11:58:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00106,ORD-00106,SHP-00106,LOC-MAA-01,2026-08-19 03:59:00,2026-08-19 02:33:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00107,ORD-00107,SHP-00107,LOC-CCU-01,2026-08-28 16:17:00,2026-08-28 15:50:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00108,ORD-00108,SHP-00108,LOC-IXC-01,2026-08-15 10:57:00,2026-08-15 10:29:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00109,ORD-00109,SHP-00109,LOC-CJB-01,2026-08-27 23:30:00,2026-08-27 23:09:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00110,ORD-00110,SHP-00110,LOC-CJB-01,2026-08-23 08:08:00,2026-08-23 08:47:00,Delivered Late,39,True,Late delivery: Isolated transit delay of 26 min.
+DEL-00111,ORD-00111,SHP-00111,LOC-JAI-02,2026-08-28 11:31:00,2026-08-28 11:03:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00112,ORD-00112,SHP-00112,LOC-STV-01,2026-08-19 16:56:00,2026-08-19 17:16:00,Delivered Late,20,False,Late delivery: Propagated cascading delay from upstream disruption (External).
+DEL-00113,ORD-00113,SHP-00113,LOC-BOM-01,2026-08-11 14:33:00,2026-08-11 13:47:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00114,ORD-00114,SHP-00114,LOC-MAA-02,2026-08-15 19:02:00,2026-08-15 18:10:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00115,ORD-00115,SHP-00115,LOC-AMD-02,2026-08-24 19:17:00,2026-08-24 19:51:00,Delivered Late,34,False,Late delivery: Isolated transit delay of 33 min.
+DEL-00116,ORD-00116,SHP-00116,LOC-BLR-02,2026-08-07 11:55:00,2026-08-07 11:41:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00117,ORD-00117,SHP-00117,LOC-MAA-02,2026-08-13 18:49:00,2026-08-13 17:22:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00118,ORD-00118,SHP-00118,LOC-STV-01,2026-08-21 15:02:00,2026-08-21 14:22:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00119,ORD-00119,SHP-00119,LOC-IDR-01,2026-08-06 07:15:00,2026-08-06 05:47:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00120,ORD-00120,SHP-00120,LOC-MAA-02,2026-08-21 16:51:00,2026-08-21 17:39:00,Delivered Late,48,True,Late delivery: Propagated cascading delay from upstream disruption (Operational).
+DEL-00121,ORD-00121,SHP-00121,LOC-CCU-01,2026-08-07 13:41:00,2026-08-07 13:05:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00122,ORD-00122,SHP-00122,LOC-NAG-01,2026-08-26 21:04:00,2026-08-26 19:34:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00123,ORD-00123,SHP-00123,LOC-LKO-01,2026-08-15 01:30:00,2026-08-15 01:22:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00124,ORD-00124,SHP-00124,LOC-STV-01,2026-08-16 11:55:00,2026-08-16 12:30:00,Delivered Late,35,False,Late delivery: Isolated transit delay of 28 min.
+DEL-00125,ORD-00125,SHP-00125,LOC-HYD-01,2026-08-08 15:17:00,2026-08-08 15:10:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00126,ORD-00126,SHP-00126,LOC-MAA-02,2026-08-05 18:36:00,2026-08-05 18:40:00,Delivered Late,4,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00127,ORD-00127,SHP-00127,LOC-NAG-01,2026-08-24 03:49:00,2026-08-24 02:48:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00128,ORD-00128,SHP-00128,LOC-CCU-02,2026-08-17 11:18:00,2026-08-17 11:56:00,Delivered Late,38,True,Late delivery: Isolated transit delay of 51 min.
+DEL-00129,ORD-00129,SHP-00129,LOC-MAA-02,2026-08-25 06:52:00,2026-08-25 06:38:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00130,ORD-00130,SHP-00130,LOC-BLR-03,2026-08-23 22:31:00,2026-08-23 23:47:00,Delivered Late,76,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00131,ORD-00131,SHP-00131,LOC-MAA-02,2026-08-30 17:58:00,2026-08-30 17:45:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00132,ORD-00132,SHP-00132,LOC-HYD-02,2026-08-27 13:57:00,2026-08-27 13:08:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00133,ORD-00133,SHP-00133,LOC-DEL-01,2026-08-11 20:36:00,2026-08-11 19:44:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00134,ORD-00134,SHP-00134,LOC-JAI-02,2026-08-11 19:51:00,2026-08-11 20:07:00,Delivered Late,16,True,Late delivery: Isolated transit delay of 38 min.
+DEL-00135,ORD-00135,SHP-00135,LOC-CJB-01,2026-08-19 07:43:00,2026-08-19 07:12:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00136,ORD-00136,SHP-00136,LOC-BDQ-01,2026-08-03 19:50:00,2026-08-03 20:01:00,Delivered Late,11,False,Late delivery: Isolated transit delay of 10 min.
+DEL-00137,ORD-00137,SHP-00137,LOC-IDR-01,2026-09-02 04:30:00,2026-09-02 03:30:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00138,ORD-00138,SHP-00138,LOC-JAI-01,2026-08-03 18:36:00,2026-08-03 19:06:00,Delivered Late,30,True,Late delivery: Isolated transit delay of 61 min.
+DEL-00139,ORD-00139,SHP-00139,LOC-MAA-02,2026-08-05 00:57:00,2026-08-05 00:04:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00140,ORD-00140,SHP-00140,LOC-GUR-01,2026-08-04 19:32:00,2026-08-04 19:33:00,Delivered Late,1,True,Late delivery: Isolated transit delay of 8 min.
+DEL-00141,ORD-00141,SHP-00141,LOC-NOI-01,2026-08-01 12:11:00,2026-08-01 12:30:00,Delivered Late,19,True,Late delivery: Isolated transit delay of 4 min.
+DEL-00142,ORD-00142,SHP-00142,LOC-BOM-02,2026-08-12 05:11:00,2026-08-12 03:48:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00143,ORD-00143,SHP-00143,LOC-MAA-02,2026-08-29 11:42:00,2026-08-29 11:10:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00144,ORD-00144,SHP-00144,LOC-JAI-01,2026-08-08 07:51:00,2026-08-08 09:11:00,Delivered Late,80,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00145,ORD-00145,SHP-00145,LOC-BLR-03,2026-08-31 20:31:00,2026-08-31 20:40:00,Delivered Late,9,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00146,ORD-00146,SHP-00146,LOC-DEL-01,2026-08-29 04:30:00,2026-08-29 04:01:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00147,ORD-00147,SHP-00147,LOC-NOI-01,2026-08-14 21:55:00,2026-08-14 21:51:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00148,ORD-00148,SHP-00148,LOC-JAI-01,2026-08-20 12:53:00,2026-08-20 14:47:00,Delivered Late,114,True,Late delivery: Root disruption delay of 115 min at origin hub.
+DEL-00149,ORD-00149,SHP-00149,LOC-BLR-03,2026-08-21 20:05:00,2026-08-21 20:52:00,Delivered Late,47,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00150,ORD-00150,SHP-00150,LOC-BLR-02,2026-08-26 22:57:00,2026-08-26 22:08:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00151,ORD-00151,SHP-00151,LOC-IXC-01,2026-08-09 20:23:00,2026-08-09 19:41:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00152,ORD-00152,SHP-00152,LOC-PNQ-01,2026-08-26 05:46:00,2026-08-26 05:51:00,Delivered Late,5,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00153,ORD-00153,SHP-00153,LOC-HYD-01,2026-09-01 01:09:00,2026-09-01 00:00:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00154,ORD-00154,SHP-00154,LOC-DEL-01,2026-08-27 16:30:00,2026-08-27 16:14:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00155,ORD-00155,SHP-00155,LOC-MAA-02,2026-08-24 23:13:00,2026-08-24 22:47:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00156,ORD-00156,SHP-00156,LOC-AMD-02,2026-08-02 16:20:00,2026-08-02 19:24:00,Delivered Late,184,True,Late delivery: Root disruption delay of 150 min at origin hub.
+DEL-00157,ORD-00157,SHP-00157,LOC-CCU-02,2026-08-12 12:28:00,2026-08-12 12:05:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00158,ORD-00158,SHP-00158,LOC-IDR-01,2026-08-19 23:34:00,2026-08-19 23:11:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00159,ORD-00159,SHP-00159,LOC-PNQ-01,2026-08-19 03:49:00,2026-08-19 03:59:00,Delivered Late,10,False,Late delivery: Isolated transit delay of 0 min.
+DEL-00160,ORD-00160,SHP-00160,LOC-DEL-02,2026-08-14 13:01:00,2026-08-14 12:55:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00161,ORD-00161,SHP-00161,LOC-STV-01,2026-08-08 14:33:00,2026-08-08 15:08:00,Delivered Late,35,False,Late delivery: Isolated transit delay of 24 min.
+DEL-00162,ORD-00162,SHP-00162,LOC-NAG-01,2026-08-23 14:32:00,2026-08-23 13:57:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00163,ORD-00163,SHP-00163,LOC-BLR-01,2026-08-02 12:46:00,2026-08-02 11:41:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00164,ORD-00164,SHP-00164,LOC-NAG-01,2026-08-16 00:03:00,2026-08-15 23:57:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00165,ORD-00165,SHP-00165,LOC-BLR-02,2026-08-02 23:56:00,2026-08-03 00:51:00,Delivered Late,55,True,Late delivery: Isolated transit delay of 27 min.
+DEL-00166,ORD-00166,SHP-00166,LOC-CCU-02,2026-08-13 21:08:00,2026-08-13 20:49:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00167,ORD-00167,SHP-00167,LOC-CJB-01,2026-08-13 00:54:00,2026-08-13 01:24:00,Delivered Late,30,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-00168,ORD-00168,SHP-00168,LOC-NAG-01,2026-08-08 08:04:00,2026-08-08 07:37:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00169,ORD-00169,SHP-00169,LOC-IXC-01,2026-08-29 20:36:00,2026-08-29 20:25:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00170,ORD-00170,SHP-00170,LOC-LKO-02,2026-09-02 01:50:00,2026-09-02 02:14:00,Delivered Late,24,True,Late delivery: Isolated transit delay of 32 min.
+DEL-00171,ORD-00171,SHP-00171,LOC-IXC-01,2026-08-24 03:17:00,2026-08-24 02:34:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00172,ORD-00172,SHP-00172,LOC-JAI-02,2026-08-24 12:09:00,2026-08-24 11:57:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00173,ORD-00173,SHP-00173,LOC-BDQ-01,2026-08-18 14:06:00,2026-08-18 14:11:00,Delivered Late,5,True,Late delivery: Root disruption delay of 71 min at origin hub.
+DEL-00174,ORD-00174,SHP-00174,LOC-HYD-02,2026-08-04 12:27:00,2026-08-04 11:18:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00175,ORD-00175,SHP-00175,LOC-AMD-01,2026-08-20 10:31:00,2026-08-20 10:45:00,Delivered Late,14,False,Late delivery: Isolated transit delay of 0 min.
+DEL-00176,ORD-00176,SHP-00176,LOC-JAI-01,2026-08-14 14:25:00,2026-08-14 15:30:00,Delivered Late,65,True,Late delivery: Root disruption delay of 97 min at origin hub.
+DEL-00177,ORD-00177,SHP-00177,LOC-STV-01,2026-08-23 13:05:00,2026-08-23 14:46:00,Delivered Late,101,True,Late delivery: Root disruption delay of 100 min at origin hub.
+DEL-00178,ORD-00178,SHP-00178,LOC-LKO-01,2026-08-24 05:17:00,2026-08-24 04:31:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00179,ORD-00179,SHP-00179,LOC-BLR-01,2026-08-23 15:33:00,2026-08-23 15:48:00,Delivered Late,15,True,Late delivery: Isolated transit delay of 0 min.
+DEL-00180,ORD-00180,SHP-00180,LOC-PNQ-01,2026-08-31 04:56:00,2026-08-31 04:15:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00181,ORD-00181,SHP-00181,LOC-DEL-01,2026-08-05 15:40:00,2026-08-05 17:34:00,Delivered Late,114,True,Late delivery: Root disruption delay of 169 min at origin hub.
+DEL-00182,ORD-00182,SHP-00182,LOC-BLR-02,2026-08-18 00:06:00,2026-08-17 23:57:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00183,ORD-00183,SHP-00183,LOC-DEL-01,2026-08-08 05:46:00,2026-08-08 05:24:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00184,ORD-00184,SHP-00184,LOC-JAI-02,2026-08-22 20:09:00,2026-08-22 19:52:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00185,ORD-00185,SHP-00185,LOC-CJB-01,2026-08-21 15:27:00,2026-08-21 16:51:00,Delivered Late,84,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-00186,ORD-00186,SHP-00186,LOC-STV-01,2026-08-14 17:42:00,2026-08-14 17:27:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00187,ORD-00187,SHP-00187,LOC-BLR-02,2026-08-17 15:01:00,2026-08-17 16:07:00,Delivered Late,66,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00188,ORD-00188,SHP-00188,LOC-HYD-02,2026-08-28 18:45:00,2026-08-28 19:17:00,Delivered Late,32,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-00189,ORD-00189,SHP-00189,LOC-AMD-02,2026-08-30 22:15:00,2026-08-30 22:25:00,Delivered Late,10,False,Late delivery: Isolated transit delay of 0 min.
+DEL-00190,ORD-00190,SHP-00190,LOC-BLR-03,2026-08-19 05:40:00,2026-08-19 05:35:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00191,ORD-00191,SHP-00191,LOC-JAI-01,2026-08-15 18:55:00,2026-08-15 21:24:00,Delivered Late,149,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-00292,ORD-00292,SHP-00292,LOC-BOM-02,2026-08-22 23:25:00,2026-08-23 01:35:00,Delivered Late,130,True,Late delivery: Root disruption delay of 113 min at origin hub.
+DEL-00491,ORD-00491,SHP-00491,LOC-STV-01,2026-08-12 17:03:00,2026-08-12 17:12:00,Delivered Late,9,False,Late delivery: Propagated cascading delay from upstream disruption (Operational).
+DEL-00558,ORD-00558,SHP-00558,LOC-MAA-02,2026-08-27 08:42:00,2026-08-27 07:41:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-00799,ORD-00799,SHP-00799,LOC-MAA-02,2026-08-09 07:31:00,2026-08-09 09:51:00,Delivered Late,140,True,Late delivery: Root disruption delay of 195 min at origin hub.
+DEL-00871,ORD-00871,SHP-00871,LOC-CCU-01,2026-08-08 06:42:00,2026-08-08 11:26:00,Delivered Late,284,True,Late delivery: Root disruption delay of 261 min at origin hub.
+DEL-01663,ORD-01663,SHP-01663,LOC-DEL-02,2026-08-24 13:14:00,2026-08-24 12:05:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-01973,ORD-01973,SHP-01973,LOC-AMD-01,2026-08-12 09:26:00,2026-08-12 09:39:00,Delivered Late,13,True,Late delivery: Root disruption delay of 89 min at origin hub.
+DEL-02434,ORD-02434,SHP-02434,LOC-JAI-01,2026-08-17 15:11:00,2026-08-17 17:57:00,Delivered Late,166,True,Late delivery: Root disruption delay of 176 min at origin hub.
+DEL-02658,ORD-02658,SHP-02658,LOC-BDQ-01,2026-08-09 02:27:00,2026-08-09 02:18:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-02667,ORD-02667,SHP-02667,LOC-IDR-01,2026-08-08 16:42:00,2026-08-08 17:16:00,Delivered Late,34,False,Late delivery: Root disruption delay of 107 min at origin hub.
+DEL-02686,ORD-02686,SHP-02686,LOC-HYD-01,2026-08-20 11:13:00,2026-08-20 12:50:00,Delivered Late,97,True,Late delivery: Root disruption delay of 84 min at origin hub.
+DEL-02997,ORD-02997,SHP-02997,LOC-BLR-03,2026-08-18 23:36:00,2026-08-19 00:21:00,Delivered Late,45,False,Late delivery: Propagated cascading delay from upstream disruption (Operational).
+DEL-03354,ORD-03354,SHP-03354,LOC-JAI-02,2026-08-10 02:57:00,2026-08-10 06:22:00,Delivered Late,205,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-03377,ORD-03377,SHP-03377,LOC-STV-01,2026-08-08 18:44:00,2026-08-08 20:43:00,Delivered Late,119,True,Late delivery: Root disruption delay of 175 min at origin hub.
+DEL-03399,ORD-03399,SHP-03399,LOC-BOM-01,2026-08-19 00:18:00,2026-08-19 01:47:00,Delivered Late,89,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-03490,ORD-03490,SHP-03490,LOC-BOM-01,2026-08-10 08:00:00,2026-08-10 08:51:00,Delivered Late,51,True,Late delivery: Root disruption delay of 101 min at origin hub.
+DEL-03566,ORD-03566,SHP-03566,LOC-CCU-01,2026-08-11 07:26:00,2026-08-11 06:26:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-03945,ORD-03945,SHP-03945,LOC-BOM-02,2026-08-10 20:23:00,2026-08-10 20:56:00,Delivered Late,33,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-04120,ORD-04120,SHP-04120,LOC-JAI-01,2026-08-11 02:08:00,2026-08-11 01:32:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-04330,ORD-04330,SHP-04330,LOC-LKO-02,2026-08-24 01:13:00,2026-08-24 01:57:00,Delivered Late,44,False,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-04724,ORD-04724,SHP-04724,LOC-IDR-01,2026-08-20 13:03:00,2026-08-20 15:59:00,Delivered Late,176,True,Late delivery: Root disruption delay of 196 min at origin hub.
+DEL-04927,ORD-04927,SHP-04927,LOC-AMD-02,2026-08-10 21:49:00,2026-08-10 21:49:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-04986,ORD-04986,SHP-04986,LOC-CCU-01,2026-08-21 14:19:00,2026-08-21 14:34:00,Delivered Late,15,False,Late delivery: Propagated cascading delay from upstream disruption (External).
+DEL-05562,ORD-05562,SHP-05562,LOC-BOM-02,2026-08-10 14:42:00,2026-08-10 16:54:00,Delivered Late,132,True,Late delivery: Root disruption delay of 106 min at origin hub.
+DEL-05712,ORD-05712,SHP-05712,LOC-AMD-01,2026-08-10 01:00:00,2026-08-10 02:10:00,Delivered Late,70,True,Late delivery: Root disruption delay of 90 min at origin hub.
+DEL-05881,ORD-05881,SHP-05881,LOC-CCU-02,2026-08-27 08:01:00,2026-08-27 07:22:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-06393,ORD-06393,SHP-06393,LOC-IDR-01,2026-08-17 13:27:00,2026-08-17 14:12:00,Delivered Late,45,False,Late delivery: Root disruption delay of 114 min at origin hub.
+DEL-06422,ORD-06422,SHP-06422,LOC-BLR-03,2026-08-28 05:18:00,2026-08-28 05:45:00,Delivered Late,27,True,Late delivery: Propagated cascading delay from upstream disruption (Documentation).
+DEL-06573,ORD-06573,SHP-06573,LOC-BOM-02,2026-08-23 02:52:00,2026-08-23 03:39:00,Delivered Late,47,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-06674,ORD-06674,SHP-06674,LOC-AMD-01,2026-08-19 07:27:00,2026-08-19 10:26:00,Delivered Late,179,True,Late delivery: Root disruption delay of 185 min at origin hub.
+DEL-06805,ORD-06805,SHP-06805,LOC-AMD-01,2026-08-18 08:39:00,2026-08-18 12:12:00,Delivered Late,213,True,Late delivery: Root disruption delay of 237 min at origin hub.
+DEL-06857,ORD-06857,SHP-06857,LOC-MAA-02,2026-08-23 11:03:00,2026-08-23 14:29:00,Delivered Late,206,True,Late delivery: Root disruption delay of 279 min at origin hub.
+DEL-08184,ORD-08184,SHP-08184,LOC-AMD-02,2026-08-25 04:02:00,2026-08-25 06:21:00,Delivered Late,139,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-08230,ORD-08230,SHP-08230,LOC-MAA-01,2026-08-14 01:37:00,2026-08-14 01:38:00,Delivered Late,1,True,Late delivery: Propagated cascading delay from upstream disruption (Operational).
+DEL-08260,ORD-08260,SHP-08260,LOC-AMD-01,2026-08-25 13:46:00,2026-08-25 13:42:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-08402,ORD-08402,SHP-08402,LOC-MAA-01,2026-08-20 06:09:00,2026-08-20 07:46:00,Delivered Late,97,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-08425,ORD-08425,SHP-08425,LOC-LKO-02,2026-08-11 09:34:00,2026-08-11 09:30:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-08623,ORD-08623,SHP-08623,LOC-JAI-02,2026-08-11 11:12:00,2026-08-11 11:53:00,Delivered Late,41,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-08660,ORD-08660,SHP-08660,LOC-BLR-01,2026-08-22 02:43:00,2026-08-22 04:59:00,Delivered Late,136,True,Late delivery: Root disruption delay of 125 min at origin hub.
+DEL-09674,ORD-09674,SHP-09674,LOC-JAI-02,2026-08-09 15:16:00,2026-08-09 19:23:00,Delivered Late,247,True,Late delivery: Root disruption delay of 259 min at origin hub.
+DEL-09829,ORD-09829,SHP-09829,LOC-IXC-01,2026-08-29 06:29:00,2026-08-29 06:19:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-09913,ORD-09913,SHP-09913,LOC-CJB-01,2026-08-12 01:00:00,2026-08-12 03:49:00,Delivered Late,169,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-09961,ORD-09961,SHP-09961,LOC-BLR-01,2026-08-20 21:25:00,2026-08-20 22:35:00,Delivered Late,70,True,Late delivery: Propagated cascading delay from upstream disruption (External).
+DEL-09999,ORD-09999,SHP-09999,LOC-NOI-01,2026-08-09 19:46:00,2026-08-09 20:44:00,Delivered Late,58,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-10024,ORD-10024,SHP-10024,LOC-CJB-01,2026-08-27 11:04:00,2026-08-27 11:03:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-10078,ORD-10078,SHP-10078,LOC-BDQ-01,2026-08-10 11:47:00,2026-08-10 11:32:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-10126,ORD-10126,SHP-10126,LOC-DEL-02,2026-08-12 06:24:00,2026-08-12 06:07:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-10360,ORD-10360,SHP-10360,LOC-HYD-01,2026-08-18 07:32:00,2026-08-18 07:50:00,Delivered Late,18,False,Late delivery: Propagated cascading delay from upstream disruption (Operational).
+DEL-10559,ORD-10559,SHP-10559,LOC-BLR-03,2026-08-12 00:20:00,2026-08-12 00:56:00,Delivered Late,36,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-11359,ORD-11359,SHP-11359,LOC-LKO-01,2026-08-12 04:41:00,2026-08-12 05:10:00,Delivered Late,29,False,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-11530,ORD-11530,SHP-11530,LOC-IDR-01,2026-08-18 20:35:00,2026-08-18 21:37:00,Delivered Late,62,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-11910,ORD-11910,SHP-11910,LOC-DEL-02,2026-08-26 00:24:00,2026-08-26 02:16:00,Delivered Late,112,True,Late delivery: Root disruption delay of 135 min at origin hub.
+DEL-11913,ORD-11913,SHP-11913,LOC-DEL-01,2026-08-24 15:49:00,2026-08-24 17:26:00,Delivered Late,97,True,Late delivery: Root disruption delay of 126 min at origin hub.
+DEL-11939,ORD-11939,SHP-11939,LOC-HYD-02,2026-08-11 01:41:00,2026-08-11 04:59:00,Delivered Late,198,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-12102,ORD-12102,SHP-12102,LOC-NAG-01,2026-08-24 09:21:00,2026-08-24 08:19:00,Delivered On Time,0,False,Delivered within promised SLA window.
+DEL-12169,ORD-12169,SHP-12169,LOC-MAA-02,2026-08-21 03:37:00,2026-08-21 03:38:00,Delivered Late,1,False,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-12693,ORD-12693,SHP-12693,LOC-JAI-02,2026-08-19 04:14:00,2026-08-19 05:32:00,Delivered Late,78,True,Late delivery: Propagated cascading delay from upstream disruption (Warehouse).
+DEL-12985,ORD-12985,SHP-12985,LOC-CJB-01,2026-08-21 21:54:00,2026-08-22 00:44:00,Delivered Late,170,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
+DEL-13151,ORD-13151,SHP-13151,LOC-MAA-02,2026-08-19 08:38:00,2026-08-19 11:20:00,Delivered Late,162,True,Late delivery: Propagated cascading delay from upstream disruption (Transportation).
