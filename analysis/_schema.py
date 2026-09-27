@@ -14,19 +14,44 @@ from typing import Any, Optional
 
 import pandas as pd
 
-SHIPMENT_CANDIDATES = ("shipment_id",)
-DELAY_DURATION_CANDIDATES = ("delay_duration",)
-DELAY_REASON_CANDIDATES = ("delay_reason",)
-ROUTE_CANDIDATES = ("route_id",)
+SHIPMENT_CANDIDATES = ("shipment_id", "affected_shipment_id", "root_shipment_id")
+DELAY_DURATION_CANDIDATES = (
+    "delay_duration",
+    "final_delay_minutes",
+    "total_delay_minutes",
+    "delay_minutes",
+    "initial_delay_minutes",
+)
+DELAY_REASON_CANDIDATES = (
+    "delay_reason",
+    "root_cause_category",
+    "root_cause",
+    "disruption_type",
+    "reason_name",
+)
+ROUTE_CANDIDATES = ("route_id", "route", "corridor")
 WAREHOUSE_CANDIDATES = (
     "warehouse_id",
+    "origin_location_id",
+    "destination_location_id",
+    "location_id",
+    "upstream_location_id",
+    "downstream_location_id",
     "source_warehouse",
     "destination_warehouse",
 )
-STATUS_CANDIDATES = ("status",)
-SCAN_TYPE_CANDIDATES = ("scan_type",)
+STATUS_CANDIDATES = ("status", "delivery_status", "event_status", "impact_status", "delay_status")
+SCAN_TYPE_CANDIDATES = ("scan_type", "event_type", "propagation_type")
 TIMESTAMP_CANDIDATES = (
     "timestamp",
+    "actual_departure",
+    "planned_departure",
+    "scheduled_timestamp",
+    "actual_timestamp",
+    "actual_delivery_time",
+    "promised_delivery_time",
+    "start_time",
+    "planned_dependency_time",
     "reported_at",
     "transfer_time",
     "expected_transfer_time",
@@ -39,7 +64,14 @@ TRANSFER_MATCH_COLUMN = "_transfer_match"
 
 #: Default status values treated as "delayed" (case-insensitive, stripped).
 #: Caller-overridable; used only when no duration/flag column exists.
-DEFAULT_DELAYED_STATUS_VALUES = ("delayed",)
+DEFAULT_DELAYED_STATUS_VALUES = (
+    "delayed",
+    "delivered late",
+    "at risk",
+    "active cascade",
+    "severe delay breached",
+    "delayed - propagated",
+)
 
 
 def find_column(dataset: pd.DataFrame, candidates: tuple[str, ...]) -> Optional[str]:

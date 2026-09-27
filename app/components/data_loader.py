@@ -19,22 +19,24 @@ import pandas as pd
 PathLike = Union[str, Path]
 
 PROCESSED_DIR = Path("data/processed")
+DATASET_DIR = Path("cascading-delay-dataset/data")
 INTEGRATED_FILENAME = "integrated_logistics_data.csv"
 
 
 def discover_processed_datasets(
     processed_dir: PathLike = PROCESSED_DIR,
 ) -> list[Path]:
-    """List processed CSVs, integrated output first, then alphabetical."""
+    """List processed CSVs, integrated output first, then dataset tables, then alphabetical."""
     directory = Path(processed_dir)
-    if not directory.is_dir():
-        return []
-    files = sorted(
-        (p for p in directory.glob("*.csv") if p.is_file()),
-        key=lambda p: p.name,
-    )
+    files = []
+    if directory.is_dir():
+        files.extend([p for p in directory.glob("*.csv") if p.is_file()])
+    if processed_dir == PROCESSED_DIR and DATASET_DIR.is_dir():
+        files.extend([p for p in DATASET_DIR.glob("*.csv") if p.is_file()])
+
     integrated = [p for p in files if p.name == INTEGRATED_FILENAME]
-    return integrated + [p for p in files if p.name != INTEGRATED_FILENAME]
+    others = sorted([p for p in files if p.name != INTEGRATED_FILENAME], key=lambda p: p.name)
+    return integrated + others
 
 
 def load_processed_csv(path: PathLike) -> pd.DataFrame:
