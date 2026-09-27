@@ -4,3 +4,7 @@ pandas
 numpy
 streamlit
 plotly
+fastapi
+uvicorn
+httpx
+requests
