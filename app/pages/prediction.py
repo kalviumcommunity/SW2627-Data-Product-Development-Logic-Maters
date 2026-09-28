@@ -57,6 +57,27 @@ def _cached_route_predictions(
     return route_prediction_summary(predictions), info
 
 
+@st.cache_data(show_spinner=False)
+def _resolve_default_dataset(dataset_hint: str | None = None) -> pd.DataFrame:
+    """Load default dataset when filtered frame is empty (e.g. routed from app shell)."""
+    from app.components.data_loader import discover_processed_datasets, load_processed_csv
+
+    if dataset_hint:
+        candidate = Path(f"data/processed/integrated_logistics_{dataset_hint}.csv")
+        if candidate.is_file():
+            try:
+                return load_processed_csv(candidate)
+            except Exception:
+                pass
+    available = discover_processed_datasets()
+    if available:
+        try:
+            return load_processed_csv(available[0])
+        except Exception:
+            pass
+    return pd.DataFrame()
+
+
 def _render_unavailable(models_dir: Path) -> None:
     st.info(UNAVAILABLE_MESSAGE)
     st.markdown(
@@ -251,6 +272,8 @@ def render(filtered: pd.DataFrame, full: pd.DataFrame) -> None:
     if artifact is None:
         _render_unavailable(models_dir)
         return
+    if filtered is None or filtered.empty:
+        filtered = _resolve_default_dataset(artifact.get("dataset"))
     _render_model_status(artifact)
     _render_metrics(artifact)
     _render_route_predictions(filtered, artifact, models_dir)
