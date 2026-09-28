@@ -36,8 +36,43 @@ _HTTP_TIMEOUT = float(os.environ.get("CASCADE_API_TIMEOUT", "300"))
 # Low-level transport
 # ---------------------------------------------------------------------------
 
+_api_probe_cache: Optional[tuple[float, bool]] = None
+
+
+def is_api_reachable() -> bool:
+    """True when a live FastAPI server answers ``GET /`` (cached for 10s)."""
+    global _api_probe_cache
+    import time
+
+    now = time.time()
+    if _api_probe_cache is not None and (now - _api_probe_cache[0]) < 10.0:
+        return _api_probe_cache[1]
+
+    try:
+        import httpx  # type: ignore
+
+        with httpx.Client(timeout=0.25) as client:
+            resp = client.get(f"{API_BASE_URL}/")
+            ok = resp.status_code == 200 and resp.json().get("status") == "operational"
+            _api_probe_cache = (now, ok)
+            return ok
+    except Exception:
+        try:
+            import requests  # type: ignore
+
+            resp = requests.get(f"{API_BASE_URL}/", timeout=0.25)
+            ok = resp.status_code == 200 and resp.json().get("status") == "operational"
+            _api_probe_cache = (now, ok)
+            return ok
+        except Exception:
+            _api_probe_cache = (now, False)
+            return False
+
+
 def _http_get(path: str, params: Optional[Dict[str, Any]] = None) -> Optional[Any]:
     """GET ``path`` from the FastAPI server. Returns parsed JSON or None."""
+    if not is_api_reachable():
+        return None
     try:
         import httpx  # type: ignore
 
@@ -60,12 +95,6 @@ def _http_get(path: str, params: Optional[Dict[str, Any]] = None) -> Optional[An
             return None
     except Exception:
         return None
-
-
-def is_api_reachable() -> bool:
-    """True when a live FastAPI server answers ``GET /``."""
-    data = _http_get("/")
-    return isinstance(data, dict) and data.get("status") == "operational"
 
 
 # ---------------------------------------------------------------------------
@@ -112,6 +141,7 @@ def _direct_call(fn_name: str, *args: Any, **kwargs: Any) -> Any:
     return result
 
 
+@lru_cache(maxsize=1)
 def _direct_overview() -> Dict[str, Any]:
     """Mirror of GET /api/dashboard/overview without HTTP."""
     import pandas as pd

@@ -84,4 +84,7 @@ class LocationIntelligence:
         """
         Lists all locations with bottleneck indicators and summary metrics.
         """
-        return self.impact_analyzer.analyze_location_bottlenecks()
+        if getattr(self, "_cached_locations", None) is not None:
+            return self._cached_locations
+        self._cached_locations = self.impact_analyzer.analyze_location_bottlenecks()
+        return self._cached_locations
