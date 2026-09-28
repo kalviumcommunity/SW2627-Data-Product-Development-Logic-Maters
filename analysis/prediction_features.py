@@ -421,16 +421,17 @@ def build_feature_matrix(
                 enriched["initial_warehouse"].astype(str).unique().tolist()
             ),
         }
-    one_hot = pd.DataFrame(index=enriched.index)
+    one_hot_cols = {}
     for column, prefix in (
         ("route", "route"),
         ("initial_scan_type", "scan"),
         ("initial_warehouse", "wh"),
     ):
         for level in vocabularies.get(column, []):
-            one_hot[f"{prefix}={level}"] = (
+            one_hot_cols[f"{prefix}={level}"] = (
                 enriched[column].astype(str) == str(level)
             ).astype(int)
+    one_hot = pd.DataFrame(one_hot_cols, index=enriched.index)
     numeric = enriched[[c for c in NUMERIC_FEATURES if c in enriched.columns]].copy()
     missing_numeric = [c for c in NUMERIC_FEATURES if c not in enriched.columns]
     for column in missing_numeric:
