@@ -135,10 +135,15 @@ def _init_state() -> None:
     except Exception:
         pass
 
-    cur = st.session_state.get("page", "dashboard")
-    cur_legacy = PAGE_TO_LEGACY.get(cur, "Dashboard")
-    st.session_state.setdefault("nav_legacy_radio", cur_legacy)
-    st.session_state.setdefault("_last_synced_legacy", cur_legacy)
+    pending_legacy = st.session_state.pop("_pending_nav_legacy", None)
+    if pending_legacy:
+        st.session_state["nav_legacy_radio"] = pending_legacy
+        st.session_state["_last_synced_legacy"] = pending_legacy
+    else:
+        cur = st.session_state.get("page", "dashboard")
+        cur_legacy = PAGE_TO_LEGACY.get(cur, "Dashboard")
+        st.session_state.setdefault("nav_legacy_radio", cur_legacy)
+        st.session_state.setdefault("_last_synced_legacy", cur_legacy)
 
 
 def navigate(page: str, **kwargs) -> None:
@@ -160,8 +165,12 @@ def navigate(page: str, **kwargs) -> None:
 
     target_legacy = PAGE_TO_LEGACY.get(page)
     if target_legacy:
-        st.session_state["nav_legacy_radio"] = target_legacy
+        st.session_state["_pending_nav_legacy"] = target_legacy
         st.session_state["_last_synced_legacy"] = target_legacy
+        try:
+            st.session_state["nav_legacy_radio"] = target_legacy
+        except Exception:
+            pass
     st.rerun()
 
 

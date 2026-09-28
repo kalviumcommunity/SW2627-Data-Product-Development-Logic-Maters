@@ -231,7 +231,21 @@ class CascadeIntelligence:
     def list_all_cascade_summaries(self) -> List[Dict[str, Any]]:
         """
         Returns high-level summary cards for all cascades in the dataset.
+        Uses cached summaries if available for instant sub-second response.
         """
+        if getattr(self, "_cached_summaries", None):
+            return self._cached_summaries
+
+        cache_path = os.path.join(self.data_dir, "cascade_summaries.json")
+        if os.path.isfile(cache_path):
+            try:
+                import json
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    self._cached_summaries = json.load(f)
+                    return self._cached_summaries
+            except Exception:
+                pass
+
         all_ids = self.cascades["cascade_id"].unique().tolist()
         summaries = []
 

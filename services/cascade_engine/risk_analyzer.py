@@ -168,6 +168,12 @@ class RiskAnalyzer:
         """
         Scans shipments and returns the highest-risk shipments with full diagnostic context.
         """
+        if not hasattr(self, "_risk_cache"):
+            self._risk_cache = {}
+        cache_key = (limit, filter_level)
+        if cache_key in self._risk_cache:
+            return self._risk_cache[cache_key]
+
         # Prioritize candidates by highest final delay, cascade participation, and delivery_at_risk
         top_delayed = self.shipments.sort_values(by=["delivery_at_risk", "final_delay_minutes"], ascending=[False, False])
         candidate_ids = top_delayed["shipment_id"].head(max(limit * 4, 100)).tolist()
@@ -181,4 +187,5 @@ class RiskAnalyzer:
                 results.append(risk_obj)
 
         results.sort(key=lambda x: x["risk_score"], reverse=True)
-        return results[:limit]
+        self._risk_cache[cache_key] = results[:limit]
+        return self._risk_cache[cache_key]
